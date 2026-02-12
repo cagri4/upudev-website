@@ -16,6 +16,7 @@ export default async function ProductDetailPage({ params }: { params: Promise<{ 
   const { slug } = await params;
   const product = getProductBySlug(slug);
   const dict = getHomeDictionary("tr");
+  const resolveNavHref = (href: string) => (href.startsWith("#") ? `/${href}` : href);
 
   if (!product) notFound();
 
@@ -32,12 +33,12 @@ export default async function ProductDetailPage({ params }: { params: Promise<{ 
           </Link>
           <nav>
             {dict.nav.map((item) => (
-              <Link href={`/${item.href}`} key={item.href}>
+              <Link href={resolveNavHref(item.href)} key={item.href}>
                 {item.label}
               </Link>
             ))}
           </nav>
-          <Link className="io-btn io-btn-dark" href="/#iletisim">
+          <Link className="io-btn io-btn-dark" href="/iletisim">
             İletişime Geç
           </Link>
         </div>
@@ -161,7 +162,7 @@ export default async function ProductDetailPage({ params }: { params: Promise<{ 
           <div>
             <Link href="/">Home</Link>
             <Link href="/#projeler">Cases</Link>
-            <Link href="/#iletisim">Contact</Link>
+            <Link href="/iletisim">Contact</Link>
           </div>
         </div>
       </footer>

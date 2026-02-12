@@ -8,6 +8,7 @@ import { SaasProjectsGrid } from "@/components/saas-projects-grid";
 
 export default function Home() {
   const dict = getHomeDictionary("tr");
+  const resolveNavHref = (href: string) => href;
 
   return (
     <div className="io-page">
@@ -22,12 +23,12 @@ export default function Home() {
           </a>
           <nav>
             {dict.nav.map((item) => (
-              <a href={item.href} key={item.href}>
+              <a href={resolveNavHref(item.href)} key={item.href}>
                 {item.label}
               </a>
             ))}
           </nav>
-          <a className="io-btn io-btn-dark" href="#iletisim">
+          <a className="io-btn io-btn-dark" href="/iletisim">
             İletişime Geç
           </a>
         </div>
@@ -43,7 +44,7 @@ export default function Home() {
               <a className="io-btn io-btn-dark" href="#projeler">
                 {dict.hero.ctaSecondary}
               </a>
-              <a className="io-btn io-btn-ghost" href="#iletisim">
+              <a className="io-btn io-btn-ghost" href="/iletisim">
                 {dict.hero.ctaPrimary}
               </a>
             </div>
@@ -200,7 +201,7 @@ export default function Home() {
           <div>
             <a href="#ana-sayfa">Home</a>
             <a href="#projeler">Cases</a>
-            <a href="#iletisim">Contact</a>
+            <a href="/iletisim">Contact</a>
           </div>
         </div>
       </footer>

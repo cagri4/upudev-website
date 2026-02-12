@@ -91,11 +91,11 @@ export const homeTr: HomeDictionary = {
   },
   nav: [
     { href: "#ana-sayfa", label: "Ana Sayfa" },
-    { href: "#projeler", label: "Devam Eden Projeler" },
+    { href: "#projeler", label: "Projeler" },
     { href: "#hizmetler", label: "Hizmetler" },
     { href: "#hakkimizda", label: "Hakkımızda" },
     { href: "#surec", label: "Süreç" },
-    { href: "#iletisim", label: "İletişim" },
+    { href: "/iletisim", label: "İletişim" },
   ],
   hero: {
     badge: "Smart Technology",
@@ -124,6 +124,7 @@ export const homeTr: HomeDictionary = {
           "https://images.unsplash.com/photo-1556740749-887f6717d7e4?auto=format&fit=crop&w=1200&q=80",
       },
       {
+        slug: "muhasebe-asistani",
         name: "Muhasebe Asistanı",
         category: "AI Destekli Finans Operasyonları",
         summary:
@@ -132,6 +133,7 @@ export const homeTr: HomeDictionary = {
           "https://images.unsplash.com/photo-1554224154-26032ffc0d07?auto=format&fit=crop&w=1200&q=80",
       },
       {
+        slug: "emlak-danismani-yardimcisi",
         name: "Emlak Danışmanı Yardımcısı",
         category: "Emlak Operasyon SaaS",
         summary:
@@ -140,6 +142,7 @@ export const homeTr: HomeDictionary = {
           "https://images.unsplash.com/photo-1560518883-ce09059eeffa?auto=format&fit=crop&w=1200&q=80",
       },
       {
+        slug: "otel-asistanlari",
         name: "Otel Asistanları",
         category: "Rezervasyon ve Operasyon",
         summary:
@@ -148,6 +151,7 @@ export const homeTr: HomeDictionary = {
           "https://images.unsplash.com/photo-1566073771259-6a8506099945?auto=format&fit=crop&w=1200&q=80",
       },
       {
+        slug: "agent-ai-calismalari",
         name: "Agent AI Çalışmaları",
         category: "AI Agent Implementasyonu",
         summary:
@@ -156,6 +160,7 @@ export const homeTr: HomeDictionary = {
           "https://images.unsplash.com/photo-1485827404703-89b55fcc595e?auto=format&fit=crop&w=1200&q=80",
       },
       {
+        slug: "e-ticaret-web-uygulamalari",
         name: "E-Ticaret Web Uygulamaları",
         category: "Commerce Platformları",
         summary:
