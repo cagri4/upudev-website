@@ -7,7 +7,7 @@ import { Card, CardContent } from "@/components/ui/card";
 import { Separator } from "@/components/ui/separator";
 import { cn } from "@/lib/utils";
 import { SaasProjectsGrid } from "@/components/saas-projects-grid";
-import { LocaleSwitcher } from "@/components/locale-switcher";
+import { SiteHeader } from "@/components/site-header";
 
 const uiText: Record<
   Locale,
@@ -76,34 +76,18 @@ export default async function HomeLocalePage({ params }: { params: Promise<{ loc
 
   const dict = getHomeDictionary(locale);
   const ui = uiText[locale];
-  const resolveNavHref = (href: string) => (href.startsWith("#") ? `/${locale}${href}` : `/${locale}${href}`);
+  const contactLabel = dict.nav.find((x) => x.href === "/iletisim")?.label ?? "Contact";
 
   return (
     <div className="io-page">
-      <header className="io-header">
-        <div className="io-wrap io-topline">
-          <p>{dict.topbar.address}</p>
-          <a href={dict.topbar.phoneHref}>{dict.topbar.phone}</a>
-        </div>
-        <div className="io-wrap io-nav">
-          <Link href={`/${locale}`} className="io-logo">
-            upu<span>dev</span>
-          </Link>
-          <nav>
-            {dict.nav.map((item) => (
-              <Link href={resolveNavHref(item.href)} key={item.href}>
-                {item.label}
-              </Link>
-            ))}
-          </nav>
-          <div className="flex items-center gap-2">
-            <LocaleSwitcher currentLocale={locale} />
-            <Link className="io-btn io-btn-dark" href={`/${locale}/iletisim`}>
-              {dict.nav.find((x) => x.href === "/iletisim")?.label ?? "Contact"}
-            </Link>
-          </div>
-        </div>
-      </header>
+      <SiteHeader
+        locale={locale}
+        navItems={dict.nav}
+        topbarAddress={dict.topbar.address}
+        topbarPhone={dict.topbar.phone}
+        topbarPhoneHref={dict.topbar.phoneHref}
+        contactLabel={contactLabel}
+      />
 
       <main>
         <section className="io-hero io-wrap" id="ana-sayfa">

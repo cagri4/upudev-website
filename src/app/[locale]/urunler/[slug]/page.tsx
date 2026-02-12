@@ -7,7 +7,7 @@ import { Separator } from "@/components/ui/separator";
 import { getProductBySlug, productDetails } from "@/content/products";
 import { getHomeDictionary, isLocale, locales, type Locale } from "@/lib/i18n";
 import { SaasProjectsGrid } from "@/components/saas-projects-grid";
-import { LocaleSwitcher } from "@/components/locale-switcher";
+import { SiteHeader } from "@/components/site-header";
 
 const pageText: Record<
   Locale,
@@ -81,36 +81,19 @@ export default async function ProductDetailPage({ params }: { params: Promise<{ 
   const product = getProductBySlug(slug, locale);
   const dict = getHomeDictionary(locale);
   const t = pageText[locale];
-  const resolveNavHref = (href: string) => (href.startsWith("#") ? `/${locale}${href}` : `/${locale}${href}`);
 
   if (!product) notFound();
 
   return (
     <div className="io-page">
-      <header className="io-header">
-        <div className="io-wrap io-topline">
-          <p>{dict.topbar.address}</p>
-          <a href={dict.topbar.phoneHref}>{dict.topbar.phone}</a>
-        </div>
-        <div className="io-wrap io-nav">
-          <Link href={`/${locale}`} className="io-logo">
-            upu<span>dev</span>
-          </Link>
-          <nav>
-            {dict.nav.map((item) => (
-              <Link href={resolveNavHref(item.href)} key={item.href}>
-                {item.label}
-              </Link>
-            ))}
-          </nav>
-          <div className="flex items-center gap-2">
-            <LocaleSwitcher currentLocale={locale} />
-            <Link className="io-btn io-btn-dark" href={`/${locale}/iletisim`}>
-              {t.contactButton}
-            </Link>
-          </div>
-        </div>
-      </header>
+      <SiteHeader
+        locale={locale}
+        navItems={dict.nav}
+        topbarAddress={dict.topbar.address}
+        topbarPhone={dict.topbar.phone}
+        topbarPhoneHref={dict.topbar.phoneHref}
+        contactLabel={t.contactButton}
+      />
 
       <main className="min-h-screen bg-neutral-50">
         <section className="mx-auto w-[min(1180px,calc(100%-2rem))] py-10">

@@ -1,7 +1,7 @@
 import Link from "next/link";
 import { notFound } from "next/navigation";
 import { ContactForm } from "@/components/contact-form";
-import { LocaleSwitcher } from "@/components/locale-switcher";
+import { SiteHeader } from "@/components/site-header";
 import { getHomeDictionary, isLocale, locales, type Locale } from "@/lib/i18n";
 
 const pageText: Record<
@@ -130,34 +130,17 @@ export default async function ContactPage({ params }: { params: Promise<{ locale
 
   const dict = getHomeDictionary(locale);
   const t = pageText[locale];
-  const resolveNavHref = (href: string) => (href.startsWith("#") ? `/${locale}${href}` : `/${locale}${href}`);
 
   return (
     <div className="io-page">
-      <header className="io-header">
-        <div className="io-wrap io-topline">
-          <p>{dict.topbar.address}</p>
-          <a href={dict.topbar.phoneHref}>{dict.topbar.phone}</a>
-        </div>
-        <div className="io-wrap io-nav">
-          <Link href={`/${locale}`} className="io-logo">
-            upu<span>dev</span>
-          </Link>
-          <nav>
-            {dict.nav.map((item) => (
-              <Link href={resolveNavHref(item.href)} key={item.href}>
-                {item.label}
-              </Link>
-            ))}
-          </nav>
-          <div className="flex items-center gap-2">
-            <LocaleSwitcher currentLocale={locale} />
-            <Link className="io-btn io-btn-dark" href={`/${locale}/iletisim`}>
-              {t.contactButton}
-            </Link>
-          </div>
-        </div>
-      </header>
+      <SiteHeader
+        locale={locale}
+        navItems={dict.nav}
+        topbarAddress={dict.topbar.address}
+        topbarPhone={dict.topbar.phone}
+        topbarPhoneHref={dict.topbar.phoneHref}
+        contactLabel={t.contactButton}
+      />
 
       <main className="bg-neutral-50 pb-12">
         <section className="io-wrap py-10 md:py-12">
