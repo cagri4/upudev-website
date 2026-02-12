@@ -32,11 +32,9 @@ function requiredEnv(name: string) {
 }
 
 export async function POST(request: NextRequest) {
+  let serverMessage = "Sunucu hatasi olustu. Lutfen tekrar deneyin.";
   try {
     const ip = request.headers.get("x-forwarded-for")?.split(",")[0]?.trim() ?? "unknown";
-    if (isRateLimited(ip)) {
-      return NextResponse.json({ ok: false, message: "Çok fazla deneme yaptınız. Lütfen sonra tekrar deneyin." }, { status: 429 });
-    }
 
     const body = (await request.json()) as {
       name?: string;
@@ -46,7 +44,41 @@ export async function POST(request: NextRequest) {
       subject?: string;
       message?: string;
       website?: string;
+      locale?: "tr" | "en" | "nl";
     };
+    const locale = body.locale ?? "tr";
+    const isEn = locale === "en";
+    const isNl = locale === "nl";
+
+    const t = {
+      rateLimit: isEn
+        ? "Too many attempts. Please try again later."
+        : isNl
+          ? "Te veel pogingen. Probeer het later opnieuw."
+          : "Çok fazla deneme yaptınız. Lütfen sonra tekrar deneyin.",
+      required: isEn
+        ? "Please fill in required fields."
+        : isNl
+          ? "Vul de verplichte velden in."
+          : "Lütfen zorunlu alanları doldurun.",
+      limits: isEn
+        ? "Input length limits were exceeded."
+        : isNl
+          ? "De invoerlimieten zijn overschreden."
+          : "Gönderilen veri sınırları aşıldı.",
+      email: isEn ? "Please enter a valid email." : isNl ? "Voer een geldig e-mailadres in." : "Geçerli bir e-posta girin.",
+      server:
+        isEn
+          ? "Server error occurred. Please try again."
+          : isNl
+            ? "Er is een serverfout opgetreden. Probeer opnieuw."
+            : "Sunucu hatasi olustu. Lutfen tekrar deneyin.",
+    };
+    serverMessage = t.server;
+
+    if (isRateLimited(ip)) {
+      return NextResponse.json({ ok: false, message: t.rateLimit }, { status: 429 });
+    }
 
     const name = (body.name ?? "").trim();
     const email = (body.email ?? "").trim();
@@ -61,15 +93,15 @@ export async function POST(request: NextRequest) {
     }
 
     if (!name || !email || !subject || !message) {
-      return NextResponse.json({ ok: false, message: "Lütfen zorunlu alanları doldurun." }, { status: 400 });
+      return NextResponse.json({ ok: false, message: t.required }, { status: 400 });
     }
 
     if (name.length > 100 || email.length > 160 || subject.length > 140 || message.length > 2500) {
-      return NextResponse.json({ ok: false, message: "Gönderilen veri sınırları aşıldı." }, { status: 400 });
+      return NextResponse.json({ ok: false, message: t.limits }, { status: 400 });
     }
 
     if (!email.includes("@")) {
-      return NextResponse.json({ ok: false, message: "Geçerli bir e-posta girin." }, { status: 400 });
+      return NextResponse.json({ ok: false, message: t.email }, { status: 400 });
     }
 
     const host = requiredEnv("SMTP_HOST");
@@ -116,7 +148,6 @@ export async function POST(request: NextRequest) {
     return NextResponse.json({ ok: true });
   } catch (error) {
     console.error("Contact API error:", error);
-    return NextResponse.json({ ok: false, message: "Sunucu hatasi olustu. Lutfen tekrar deneyin." }, { status: 500 });
+    return NextResponse.json({ ok: false, message: serverMessage }, { status: 500 });
   }
 }
-

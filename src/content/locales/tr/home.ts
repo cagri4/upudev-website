@@ -22,6 +22,9 @@ export type HomeDictionary = {
     stats: { value: string; label: string; note: string }[];
   };
   ongoing: {
+    badge: string;
+    openLabel: string;
+    soonLabel: string;
     title: string;
     subtitle: string;
     items: {
@@ -111,6 +114,9 @@ export const homeTr: HomeDictionary = {
     ],
   },
   ongoing: {
+    badge: "Portföy",
+    openLabel: "Detay sayfasını aç",
+    soonLabel: "Detay sayfası yakında",
     title: "SaaS Projeleri ve Çalışmalar",
     subtitle: "Şu an aktif geliştirmede olan ürün ve çözüm hatlarımızı paylaşıyoruz.",
     items: [
