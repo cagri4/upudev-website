@@ -22,8 +22,8 @@ export const homeEn: HomeDictionary = {
     ctaPrimary: "View Projects",
     ctaSecondary: "Get Quote",
     stats: [
-      { value: "638+", label: "Consulting Sessions", note: "Completed sessions in the last 30 months" },
-      { value: "%95", label: "Client Satisfaction", note: "Average post-delivery feedback score" },
+      { value: "50+", label: "Completed Projects", note: "Solutions delivered across various industries" },
+      { value: "15+", label: "Years of Experience", note: "Software and digital product development expertise" },
       { value: "24/7", label: "Active Support", note: "Continuous monitoring for live systems" },
     ],
   },

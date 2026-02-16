@@ -22,8 +22,8 @@ export const homeNl: HomeDictionary = {
     ctaPrimary: "Projecten Bekijken",
     ctaSecondary: "Offerte Aanvragen",
     stats: [
-      { value: "638+", label: "Adviessessies", note: "Afgeronde sessies in de afgelopen 30 maanden" },
-      { value: "%95", label: "Klanttevredenheid", note: "Gemiddelde feedbackscore na oplevering" },
+      { value: "50+", label: "Afgeronde Projecten", note: "Oplossingen geleverd in diverse sectoren" },
+      { value: "15+", label: "Jaar Ervaring", note: "Expertise in software- en digitale productontwikkeling" },
       { value: "24/7", label: "Actieve Support", note: "Continue monitoring van live systemen" },
     ],
   },

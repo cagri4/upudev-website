@@ -108,8 +108,8 @@ export const homeTr: HomeDictionary = {
     ctaPrimary: "Projeleri İncele",
     ctaSecondary: "Teklif Al",
     stats: [
-      { value: "638+", label: "Danışmanlık Oturumu", note: "Son 30 ayda tamamlanan görüşmeler" },
-      { value: "%95", label: "Müşteri Memnuniyeti", note: "Teslim sonrası geri bildirim ortalaması" },
+      { value: "50+", label: "Tamamlanan Proje", note: "Farklı sektörlerde hayata geçirilen çözümler" },
+      { value: "15+", label: "Yıllık Deneyim", note: "Yazılım ve dijital ürün geliştirme tecrübesi" },
       { value: "24/7", label: "Aktif Destek", note: "Canlı sistemler için kesintisiz takip" },
     ],
   },
