@@ -8,6 +8,8 @@ import { getProductBySlug, productDetails } from "@/content/products";
 import { getHomeDictionary, isLocale, locales, type Locale } from "@/lib/i18n";
 import { SaasProjectsGrid } from "@/components/saas-projects-grid";
 import { SiteHeader } from "@/components/site-header";
+import { SiteContact } from "@/components/site-contact";
+import { SiteFooter } from "@/components/site-footer";
 import { ProductFAQ } from "@/components/product-faq";
 import { ProductUseCases } from "@/components/product-use-cases";
 import { ProductFeaturesDetailed } from "@/components/product-features-detailed";
@@ -21,12 +23,6 @@ const pageText: Record<
     benefits: string;
     audience: string;
     contactButton: string;
-    contactBadge: string;
-    email: string;
-    phone: string;
-    address: string;
-    kvk: string;
-    iban: string;
     featuresDetailed: string;
     faq: string;
     useCases: string;
@@ -45,12 +41,6 @@ const pageText: Record<
     benefits: "Faydalar",
     audience: "Kimler için?",
     contactButton: "İletişime Geç",
-    contactBadge: "Contact",
-    email: "E-posta",
-    phone: "Telefon",
-    address: "Adres",
-    kvk: "KVK",
-    iban: "IBAN",
     featuresDetailed: "Detaylı Özellikler",
     faq: "Sıkça Sorulan Sorular",
     useCases: "Kullanım Senaryoları",
@@ -68,12 +58,6 @@ const pageText: Record<
     benefits: "Benefits",
     audience: "Who is it for?",
     contactButton: "Contact Us",
-    contactBadge: "Contact",
-    email: "Email",
-    phone: "Phone",
-    address: "Address",
-    kvk: "KVK",
-    iban: "IBAN",
     featuresDetailed: "Detailed Features",
     faq: "Frequently Asked Questions",
     useCases: "Use Cases",
@@ -91,12 +75,6 @@ const pageText: Record<
     benefits: "Voordelen",
     audience: "Voor wie?",
     contactButton: "Contact Opnemen",
-    contactBadge: "Contact",
-    email: "E-mail",
-    phone: "Telefoon",
-    address: "Adres",
-    kvk: "KVK",
-    iban: "IBAN",
     featuresDetailed: "Gedetailleerde Functies",
     faq: "Veelgestelde Vragen",
     useCases: "Gebruiksscenario's",
@@ -219,55 +197,10 @@ export default async function ProductDetailPage({ params }: { params: Promise<{ 
 
         <SaasProjectsGrid ongoing={dict.ongoing} locale={locale} />
 
-        <section className="io-wrap io-contact" id="iletisim">
-          <div className="io-contact-left">
-            <p className="io-eyebrow io-eyebrow-invert">{t.contactBadge}</p>
-            <h2>{dict.cta.title}</h2>
-            <p>{dict.cta.text}</p>
-            <a className="io-btn io-btn-accent" href={`mailto:${dict.contact.email}`}>
-              {dict.cta.button}
-            </a>
-          </div>
-          <div className="io-contact-right">
-            <ul>
-              <li>
-                <strong>{t.email}</strong>
-                <span>{dict.contact.email}</span>
-              </li>
-              <li>
-                <strong>{t.phone}</strong>
-                <a href={dict.contact.phoneHref}>{dict.contact.phone}</a>
-              </li>
-              <li>
-                <strong>{t.address}</strong>
-                <span>{dict.contact.location}</span>
-              </li>
-              <li>
-                <strong>{t.kvk}</strong>
-                <span>{dict.contact.kvk}</span>
-              </li>
-              <li>
-                <strong>{t.iban}</strong>
-                <span>{dict.contact.iban}</span>
-              </li>
-            </ul>
-            <a className="io-btn io-btn-whatsapp" href={dict.contact.whatsapp} target="_blank" rel="noreferrer">
-              WhatsApp
-            </a>
-          </div>
-        </section>
+        <SiteContact locale={locale} cta={dict.cta} contact={dict.contact} />
       </main>
 
-      <footer className="io-footer">
-        <div className="io-wrap">
-          <p>{dict.footer}</p>
-          <div>
-            <Link href={`/${locale}`}>Home</Link>
-            <Link href={`/${locale}#projeler`}>Cases</Link>
-            <Link href={`/${locale}/iletisim`}>Contact</Link>
-          </div>
-        </div>
-      </footer>
+      <SiteFooter locale={locale} copyright={dict.footer} />
     </div>
   );
 }

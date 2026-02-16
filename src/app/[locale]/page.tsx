@@ -4,6 +4,8 @@ import { notFound } from "next/navigation";
 import { getHomeDictionary, isLocale, locales, type Locale } from "@/lib/i18n";
 import { SaasProjectsGrid } from "@/components/saas-projects-grid";
 import { SiteHeader } from "@/components/site-header";
+import { SiteContact } from "@/components/site-contact";
+import { SiteFooter } from "@/components/site-footer";
 import { PartnersGrid } from "@/components/partners-grid";
 import { StatsSection } from "@/components/stats-section";
 import { AboutSection } from "@/components/about-section";
@@ -166,52 +168,10 @@ export default async function HomeLocalePage({ params }: { params: Promise<{ loc
           </div>
         </section>
 
-        <section className="io-wrap io-contact" id="iletisim">
-          <div className="io-contact-left">
-            <p className="io-eyebrow io-eyebrow-invert">{ui.contact}</p>
-            <h2>{dict.cta.title}</h2>
-            <p>{dict.cta.text}</p>
-            <a className="io-btn io-btn-accent mt-6" href={`mailto:${dict.contact.email}`}>
-              {dict.cta.button}
-            </a>
-          </div>
-          <div className="io-contact-right">
-            <ul>
-              <li>
-                <strong>{ui.email}</strong>
-                <span>{dict.contact.email}</span>
-              </li>
-              <li>
-                <strong>{ui.phone}</strong>
-                <a href={dict.contact.phoneHref}>{dict.contact.phone}</a>
-              </li>
-              <li>
-                <strong>{ui.address}</strong>
-                <span>{dict.contact.location}</span>
-              </li>
-              <li>
-                <strong>{ui.kvk}</strong>
-                <span>{dict.contact.kvk}</span>
-              </li>
-              <li>
-                <strong>{ui.iban}</strong>
-                <span>{dict.contact.iban}</span>
-              </li>
-            </ul>
-          </div>
-        </section>
+        <SiteContact locale={locale} cta={dict.cta} contact={dict.contact} />
       </main>
 
-      <footer className="io-footer">
-        <div className="io-wrap">
-          <p>{dict.footer}</p>
-          <div>
-            <Link href={`/${locale}`}>{ui.home}</Link>
-            <Link href={`/${locale}#projeler`}>{ui.cases}</Link>
-            <Link href={`/${locale}/iletisim`}>{ui.contact}</Link>
-          </div>
-        </div>
-      </footer>
+      <SiteFooter locale={locale} copyright={dict.footer} />
     </div>
   );
 }
