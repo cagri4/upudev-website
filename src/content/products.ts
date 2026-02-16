@@ -630,6 +630,73 @@ const productDetailsEn: ProductDetail[] = [
       "Supports standardized operations while the dealer network grows",
     ],
     targetUsers: ["Manufacturers", "Distributors and wholesalers", "Sales operations teams", "Channel and regional managers"],
+    featuresDetailed: [
+      {
+        title: "Dealer Onboarding & Authorization",
+        description: "Manage the entire process from adding new dealers to the system to defining their permissions in a digital environment.",
+        highlights: ["Automated approval workflows", "Role-based access control", "Digital contract signing"],
+      },
+      {
+        title: "Order & Inventory Management",
+        description: "Track orders from dealers in a single panel and view inventory status in real time.",
+        highlights: ["Real-time inventory tracking", "Automatic order notifications", "Bulk order processing"],
+      },
+      {
+        title: "Performance & Commission Reporting",
+        description: "Measure dealer performance with objective metrics and automate commission calculations.",
+        highlights: ["Customizable KPIs", "Automatic commission calculation", "Periodic comparison reports"],
+      },
+      {
+        title: "Regional & Channel Analysis",
+        description: "Analyze your sales data in depth by region, channel, and product.",
+        highlights: ["Geographic performance maps", "Channel-based sales analysis", "Trend forecasting"],
+      },
+    ],
+    faq: [
+      {
+        question: "Can the platform integrate with our existing ERP system?",
+        answer: "Yes, thanks to our REST API infrastructure, integration with common ERP systems such as SAP, Logo, and Netsis is possible. The integration process is typically completed within 2-4 weeks.",
+      },
+      {
+        question: "How many dealers can be managed?",
+        answer: "Our platform is built on a scalable cloud infrastructure and can seamlessly manage dealer networks from 10 to 10,000.",
+      },
+      {
+        question: "Is mobile access available?",
+        answer: "Yes, the platform has a fully responsive design, and native mobile apps for iOS and Android are also available.",
+      },
+      {
+        question: "How is data security ensured?",
+        answer: "All data is protected with AES-256 encryption. It is hosted in ISO 27001 certified data centers with regular security audits.",
+      },
+      {
+        question: "Is training and support available?",
+        answer: "We provide onboarding training, video documentation, and 24/7 technical support. Additionally, a dedicated success manager is assigned to each customer.",
+      },
+    ],
+    useCases: [
+      {
+        title: "Home Appliances Manufacturer",
+        scenario: "National home appliances manufacturer with 200+ dealers",
+        problem: "Order tracking is done in Excel, inventory information is outdated, dealer performance cannot be measured.",
+        solution: "A centralized dealer portal was established, automatic inventory synchronization was enabled, and performance dashboards were created.",
+        outcome: "Order errors decreased by 85%, inventory turnover rate increased by 30%.",
+      },
+      {
+        title: "Food Distributor",
+        scenario: "Regional food distributor with a 50-dealer network",
+        problem: "Commission calculations are manual, errors are causing increased dealer complaints.",
+        solution: "An automatic commission calculation system was deployed with transparent reporting.",
+        outcome: "Commission disputes dropped to zero, dealer satisfaction increased by 45%.",
+      },
+      {
+        title: "Automotive Spare Parts",
+        scenario: "Automotive spare parts manufacturer with 300+ authorized retailers",
+        problem: "Regional sales performance is not visible, growth opportunities are being missed.",
+        solution: "Sales maps were created with a geographic analysis module, and potential regions were identified.",
+        outcome: "Sales increased by 25% in new regions, market entry time was reduced by 40%.",
+      },
+    ],
   },
   {
     slug: "muhasebe-asistani",
@@ -655,6 +722,73 @@ const productDetailsEn: ProductDetail[] = [
       "Provides a scalable operating model for small teams",
     ],
     targetUsers: ["SME finance teams", "Businesses working with accounting firms", "Operations and management teams", "Document-heavy organizations"],
+    featuresDetailed: [
+      {
+        title: "Smart Document Recognition (OCR+AI)",
+        description: "Automatically scan, classify, and import invoices, receipts, and financial documents into the system.",
+        highlights: ["98%+ accuracy rate", "Multiple format support (PDF, images, e-invoices)", "Automatic data extraction"],
+      },
+      {
+        title: "Expense Categorization",
+        description: "Automatically categorize your expenses with an AI-powered system and simplify budget tracking.",
+        highlights: ["Learning algorithm", "Customizable categories", "Anomaly detection"],
+      },
+      {
+        title: "Reconciliation Controls",
+        description: "Automatically match bank statements with accounting records and instantly detect discrepancies.",
+        highlights: ["Automatic matching", "Discrepancy reporting", "Bulk processing support"],
+      },
+      {
+        title: "Financial Reporting",
+        description: "Generate periodic financial reports with one click and prepare summary views for management.",
+        highlights: ["Customizable templates", "Charts and trend analysis", "Export options"],
+      },
+    ],
+    faq: [
+      {
+        question: "Can I use it alongside my existing accounting software?",
+        answer: "Yes, the platform works as an independent assistant and can be used in parallel with your existing accounting software. Data synchronization via API integration is also possible.",
+      },
+      {
+        question: "How reliable are the AI recommendations?",
+        answer: "Our system has a continuously learning structure and accuracy improves with use. Starting at 90%, it reaches 98%+ accuracy after 3 months of usage.",
+      },
+      {
+        question: "Which document formats are supported?",
+        answer: "We support PDF, JPEG, PNG, TIFF image formats as well as e-Invoice (UBL), e-Archive, and Excel formats.",
+      },
+      {
+        question: "Is my data secure?",
+        answer: "All financial data is stored encrypted, GDPR-compliant infrastructure is used, and your data is never shared with third parties.",
+      },
+      {
+        question: "Can I share with my accountant?",
+        answer: "Yes, you can define special access permissions for your accountant and securely share documents and reports.",
+      },
+    ],
+    useCases: [
+      {
+        title: "Retail Chain",
+        scenario: "Retail chain with 50 branches, 3,000+ monthly invoice transactions",
+        problem: "Invoice entry is manual, error rate is high, data is delivered late to the accountant.",
+        solution: "Automatic invoice recognition system was installed, categorization automation was deployed.",
+        outcome: "Processing time decreased by 70%, error rate dropped from 5% to 0.5%.",
+      },
+      {
+        title: "E-commerce Company",
+        scenario: "Fast-growing e-commerce company with multiple payment channels",
+        problem: "Reconciliation of payments from different sources is difficult, cash flow visibility is low.",
+        solution: "Automatic reconciliation module was integrated, real-time cash flow dashboard was created.",
+        outcome: "Reconciliation time dropped from 3 days to 2 hours, financial visibility increased by 100%.",
+      },
+      {
+        title: "Manufacturing SME",
+        scenario: "Medium-sized manufacturing company with a 2-person accounting team",
+        problem: "Team capacity is insufficient, end-of-period reporting is delayed, no data for management decisions.",
+        solution: "Routine tasks were automated with the AI assistant, instant reporting infrastructure was set up.",
+        outcome: "Accounting team focused on strategic tasks, reporting time was reduced by 80%.",
+      },
+    ],
   },
   {
     slug: "emlak-danismani-yardimcisi",
@@ -680,6 +814,73 @@ const productDetailsEn: ProductDetail[] = [
       "Protects process quality while office scale increases",
     ],
     targetUsers: ["Real estate advisors", "Small and mid-sized real estate offices", "Portfolio managers", "Client relations teams"],
+    featuresDetailed: [
+      {
+        title: "Centralized Portfolio Management",
+        description: "Manage, update, and distribute all your listings from a single panel to different platforms.",
+        highlights: ["Multi-platform integration", "Bulk listing updates", "Photo and video management"],
+      },
+      {
+        title: "Client Tracking System (CRM)",
+        description: "Record client requests, meeting notes, and communication history.",
+        highlights: ["360° client view", "Automatic reminders", "Interaction history"],
+      },
+      {
+        title: "Appointment & Calendar Management",
+        description: "Schedule viewing appointments and send automatic reminders to clients.",
+        highlights: ["Calendar synchronization", "SMS/Email reminders", "Conflict detection"],
+      },
+      {
+        title: "Document & Transaction Tracking",
+        description: "Manage all documents during the sales process digitally and track transaction status.",
+        highlights: ["Digital document archive", "Transaction stage tracking", "E-signature integration"],
+      },
+    ],
+    faq: [
+      {
+        question: "Is there integration with portals like Zillow, Realtor.com?",
+        answer: "Yes, API integration with leading real estate portals is available. You can publish listings to multiple platforms with a single click.",
+      },
+      {
+        question: "Can all advisors in the office use the same system?",
+        answer: "Yes, multi-user support is available. Each advisor manages their own portfolio while the office manager can monitor all activities.",
+      },
+      {
+        question: "Is there a mobile app?",
+        answer: "Yes, native mobile apps for iOS and Android are available. You can perform all operations even in the field.",
+      },
+      {
+        question: "Can I import client data?",
+        answer: "You can perform bulk client imports from Excel, CSV, and vCard formats. Data transfer from existing CRM systems is also supported.",
+      },
+      {
+        question: "What reporting features are available?",
+        answer: "Detailed reports including advisor performance, portfolio analysis, sales conversion rates, and market trend reports are provided.",
+      },
+    ],
+    useCases: [
+      {
+        title: "Boutique Real Estate Office",
+        scenario: "Boutique real estate office with 5 advisors, 150+ active listings",
+        problem: "Listing updates take time, client follow-ups are forgotten, appointments get mixed up.",
+        solution: "Centralized portfolio management and automatic reminder system was set up.",
+        outcome: "Listing update time decreased by 60%, client response rate increased by 35%.",
+      },
+      {
+        title: "Franchise Real Estate Network",
+        scenario: "Real estate franchise with 10 branches, 40+ advisors",
+        problem: "Coordination between branches is weak, performance comparison is not possible.",
+        solution: "All branches were unified on a single platform with a centralized management panel.",
+        outcome: "Portfolio sharing between branches started, total sales increased by 20%.",
+      },
+      {
+        title: "Independent Real Estate Advisor",
+        scenario: "Solo real estate advisor with 50+ client portfolio",
+        problem: "Client tracking is in Excel, appointments are in phone calendar, document organization is complex.",
+        solution: "All operations were unified in a single mobile application.",
+        outcome: "Daily operations time reduced by 2 hours, closing rate increased by 25%.",
+      },
+    ],
   },
   {
     slug: "otel-asistanlari",
@@ -705,6 +906,73 @@ const productDetailsEn: ProductDetail[] = [
       "Decreases service-impacting delays in guest operations",
     ],
     targetUsers: ["Boutique hotels", "Hotel chains", "Reservation and revenue teams", "Hospitality operations managers"],
+    featuresDetailed: [
+      {
+        title: "Central Reservation Panel",
+        description: "Manage reservations from all channels in a single screen and prevent conflicts.",
+        highlights: ["Real-time availability", "Drag & drop reservations", "Multiple room type support"],
+      },
+      {
+        title: "Channel Management",
+        description: "Provide automatic synchronization with all OTAs like Booking, Expedia, and Airbnb.",
+        highlights: ["Instant rate updates", "Availability synchronization", "Overbooking protection"],
+      },
+      {
+        title: "Dynamic Pricing",
+        description: "Maximize occupancy and revenue with AI-powered price optimization.",
+        highlights: ["Market analysis", "Competitor price tracking", "Automatic price adjustment"],
+      },
+      {
+        title: "Operations Dashboards",
+        description: "Central control panel for daily check-in/out, housekeeping, and guest requests.",
+        highlights: ["Daily task list", "Department coordination", "Guest request tracking"],
+      },
+    ],
+    faq: [
+      {
+        question: "Which OTAs do you integrate with?",
+        answer: "We provide integration with Booking.com, Expedia, Airbnb, Hotels.com, Agoda, and 50+ local and international OTAs.",
+      },
+      {
+        question: "Is it suitable for small boutique hotels?",
+        answer: "Yes, it can be used for everything from 5-room boutique hotels to 500+ room hotel chains. Flexible pricing model is available.",
+      },
+      {
+        question: "Can it integrate with my existing PMS system?",
+        answer: "Integration with common PMS systems like Opera, Protel, and Clock PMS is possible. Our API infrastructure also supports custom integrations.",
+      },
+      {
+        question: "How does the pricing AI work?",
+        answer: "The system analyzes factors such as historical data, market demand, competitor prices, and event calendars to provide optimal price recommendations.",
+      },
+      {
+        question: "What reporting and analytics features are available?",
+        answer: "Comprehensive KPI reports including RevPAR, ADR, occupancy rates, channel performance, and revenue forecasts are provided.",
+      },
+    ],
+    useCases: [
+      {
+        title: "Boutique Hotel",
+        scenario: "12-room boutique hotel in a tourist destination",
+        problem: "Manual price updates are time-consuming, OTA commissions are high, direct bookings are low.",
+        solution: "Dynamic pricing and direct booking engine were integrated.",
+        outcome: "Direct bookings increased by 40%, average room revenue increased by 25%.",
+      },
+      {
+        title: "Apart Hotel Chain",
+        scenario: "Apart hotel chain with 5 locations, 200 units",
+        problem: "Price inconsistency between locations, no central visibility, overbooking problems.",
+        solution: "Centralized channel manager and price management system was set up.",
+        outcome: "Overbooking dropped to zero, price consistency achieved, revenue increased by 30%.",
+      },
+      {
+        title: "Resort",
+        scenario: "100-room resort on the Mediterranean coast",
+        problem: "Seasonal occupancy fluctuations, revenue loss during low season.",
+        solution: "Seasonal strategy was optimized with AI-powered pricing.",
+        outcome: "Low season occupancy increased by 35%, annual RevPAR improved by 20%.",
+      },
+    ],
   },
   {
     slug: "agent-ai-calismalari",
@@ -731,6 +999,73 @@ const productDetailsEn: ProductDetail[] = [
       "Provides scalable operations for growing workloads",
     ],
     targetUsers: ["HR teams", "Customer operations teams", "SMEs and enterprises targeting workflow automation", "Product teams planning AI transformation"],
+    featuresDetailed: [
+      {
+        title: "Task-Based Agent Design",
+        description: "We design AI agents that autonomously perform specific tasks customized to your business processes.",
+        highlights: ["Process analysis and modeling", "Rule-based decision mechanisms", "Human-AI hybrid workflows"],
+      },
+      {
+        title: "HR & Onboarding Agents",
+        description: "Customized agent solutions that handle recruitment, orientation, and employee questions.",
+        highlights: ["Candidate screening automation", "Orientation assistant", "Policy and procedure bot"],
+      },
+      {
+        title: "Customer Service Agents",
+        description: "Smart agents that answer customer questions 24/7, create tickets, and route inquiries.",
+        highlights: ["Natural language understanding", "Multi-channel support", "Escalation management"],
+      },
+      {
+        title: "Process Automation Agents",
+        description: "Agent solutions that automate repetitive workflows, collect data, and generate reports.",
+        highlights: ["Data entry automation", "Report generation", "System integrations"],
+      },
+    ],
+    faq: [
+      {
+        question: "What exactly does an AI agent do?",
+        answer: "AI agents are software programs that autonomously perform designated tasks. For example, they handle customer queries, process data, or follow process steps without human intervention.",
+      },
+      {
+        question: "Can it integrate with our existing systems?",
+        answer: "Yes, the agents we develop can be integrated with CRM, ERP, HRIS, and other enterprise systems via APIs.",
+      },
+      {
+        question: "How long does agent development take?",
+        answer: "Simple task agents can be developed in 2-4 weeks, complex process agents in 6-12 weeks. The process starts with a needs analysis.",
+      },
+      {
+        question: "Can agents learn?",
+        answer: "Yes, the agents we develop use AI models that learn from feedback and improve their performance over time.",
+      },
+      {
+        question: "What happens when human intervention is needed?",
+        answer: "Agents detect situations outside their authority and automatically route to the appropriate human operator. Full traceability is ensured.",
+      },
+    ],
+    useCases: [
+      {
+        title: "E-commerce Customer Service",
+        scenario: "E-commerce company receiving 500+ daily customer requests",
+        problem: "Customer service team is insufficient, response times are long, satisfaction is low.",
+        solution: "A 24/7 customer service agent was deployed, complex requests were routed to human operators.",
+        outcome: "Response time dropped from 4 hours to 30 seconds, customer satisfaction increased by 40%.",
+      },
+      {
+        title: "HR Onboarding Automation",
+        scenario: "Technology company with 200+ annual new hires",
+        problem: "Onboarding process is manual and inconsistent, HR team is overwhelmed with routine questions.",
+        solution: "Onboarding agent automated the orientation process, a self-service knowledge center was created.",
+        outcome: "HR team's routine workload decreased by 60%, new employee adaptation time shortened by 30%.",
+      },
+      {
+        title: "Finance Process Automation",
+        scenario: "Medium-sized company processing 1,000+ invoices monthly",
+        problem: "Invoice approval process is slow, tracking is difficult, delays are causing cost increases.",
+        solution: "Invoice processing agent with automatic classification, approval workflow, and tracking system was set up.",
+        outcome: "Invoice processing time decreased by 75%, early payment discounts started being utilized.",
+      },
+    ],
   },
   {
     slug: "e-ticaret-web-uygulamalari",
@@ -756,6 +1091,73 @@ const productDetailsEn: ProductDetail[] = [
       "Strengthens brand experience with modern UX patterns",
     ],
     targetUsers: ["B2C and B2B commerce brands", "Retail companies", "Online sales operations teams", "Digital brands targeting fast growth"],
+    featuresDetailed: [
+      {
+        title: "Modern Shopping Experience",
+        description: "We develop fast, mobile-friendly, and user-centric e-commerce interfaces.",
+        highlights: ["Mobile-first design", "Fast page loading", "Personalized recommendations"],
+      },
+      {
+        title: "Order & Inventory Management",
+        description: "Manage the entire process from order to delivery in a single panel and track inventory levels in real time.",
+        highlights: ["Multi-warehouse support", "Automatic inventory alerts", "Bulk order processing"],
+      },
+      {
+        title: "Payment & Shipping Integrations",
+        description: "Seamless integration with leading payment and shipping infrastructures.",
+        highlights: ["All banks and virtual POS", "Shipping tracking integration", "Installment options"],
+      },
+      {
+        title: "Admin & Analytics Panel",
+        description: "Analyze sales, customer, and product performance with detailed reports.",
+        highlights: ["Real-time sales dashboard", "Customer behavior analysis", "Campaign performance tracking"],
+      },
+    ],
+    faq: [
+      {
+        question: "What's the difference from ready-made e-commerce solutions?",
+        answer: "We provide a fully custom, scalable infrastructure that you own. No limitations or monthly fees of ready-made solutions.",
+      },
+      {
+        question: "Is it suitable for B2B e-commerce?",
+        answer: "Yes, we develop B2B-specific features such as customer-based pricing, bulk ordering, quote management, and corporate approval workflows.",
+      },
+      {
+        question: "Can it integrate with my existing ERP/accounting system?",
+        answer: "Yes, we provide integration with common ERP systems like SAP, Oracle, QuickBooks and e-Invoice/e-Archive infrastructures.",
+      },
+      {
+        question: "How is site performance?",
+        answer: "Using modern technologies (Next.js, CDN, caching), we develop fast-loading sites that meet Google Core Web Vitals standards.",
+      },
+      {
+        question: "Is there post-launch support?",
+        answer: "Yes, maintenance, updates, and technical support services are available. We also provide performance monitoring and optimization support.",
+      },
+    ],
+    useCases: [
+      {
+        title: "Fashion E-commerce",
+        scenario: "Local fashion brand targeting 50K+ annual orders",
+        problem: "Existing ready-made solution is slow, customization is limited, marketplace commissions are high.",
+        solution: "Custom e-commerce platform was developed with all payment and shipping integrations.",
+        outcome: "Page speed increased 3x, conversion rate increased by 45%, marketplace dependency decreased.",
+      },
+      {
+        title: "B2B Industrial Products",
+        scenario: "Industrial spare parts distributor with 500+ corporate customers",
+        problem: "Phone ordering is inefficient, customer-based pricing is manually tracked.",
+        solution: "B2B e-commerce portal was developed with ERP integration and automatic pricing system.",
+        outcome: "Online order rate reached 70%, order processing time decreased by 60%.",
+      },
+      {
+        title: "Food & Grocery",
+        scenario: "Regional grocery chain wanting to start online ordering and delivery",
+        problem: "Ready-made solutions are not suitable for food logistics, stock-order synchronization is difficult.",
+        solution: "Slot-based delivery management, real-time inventory tracking, and mobile app were developed.",
+        outcome: "Online sales reached 25% of total revenue, order value per customer increased by 30%.",
+      },
+    ],
   },
 ];
 
@@ -784,6 +1186,73 @@ const productDetailsNl: ProductDetail[] = [
       "Ondersteunt gestandaardiseerde operatie bij schaalvergroting",
     ],
     targetUsers: ["Fabrikanten", "Distributeurs en groothandels", "Verkoopoperatieteams", "Kanaal- en regiomanagers"],
+    featuresDetailed: [
+      {
+        title: "Dealer Onboarding & Autorisatie",
+        description: "Beheer het volledige proces van het toevoegen van nieuwe dealers tot het definiëren van hun rechten in een digitale omgeving.",
+        highlights: ["Geautomatiseerde goedkeuringsworkflows", "Rolgebaseerde toegangscontrole", "Digitale contractondertekening"],
+      },
+      {
+        title: "Order- & Voorraadbeheer",
+        description: "Volg orders van dealers in één paneel en bekijk de voorraadstatus in realtime.",
+        highlights: ["Realtime voorraadtracking", "Automatische ordermeldingen", "Bulkorderverwerking"],
+      },
+      {
+        title: "Prestatie- & Commissierapportage",
+        description: "Meet dealerprestaties met objectieve metrics en automatiseer commissieberekeningen.",
+        highlights: ["Aanpasbare KPI's", "Automatische commissieberekening", "Periodieke vergelijkingsrapporten"],
+      },
+      {
+        title: "Regionale & Kanaalanalyse",
+        description: "Analyseer uw verkoopdata diepgaand per regio, kanaal en product.",
+        highlights: ["Geografische prestatiekaarten", "Kanaalgebaseerde verkoopanalyse", "Trendvoorspelling"],
+      },
+    ],
+    faq: [
+      {
+        question: "Kan het platform integreren met ons bestaande ERP-systeem?",
+        answer: "Ja, dankzij onze REST API-infrastructuur is integratie met gangbare ERP-systemen zoals SAP, Exact en Unit4 mogelijk. Het integratieproces wordt doorgaans binnen 2-4 weken afgerond.",
+      },
+      {
+        question: "Hoeveel dealers kunnen worden beheerd?",
+        answer: "Ons platform is gebouwd op een schaalbare cloudinfrastructuur en kan naadloos dealernetwerken van 10 tot 10.000 beheren.",
+      },
+      {
+        question: "Is mobiele toegang beschikbaar?",
+        answer: "Ja, het platform heeft een volledig responsive ontwerp en native mobiele apps voor iOS en Android zijn ook beschikbaar.",
+      },
+      {
+        question: "Hoe wordt dataveiligheid gewaarborgd?",
+        answer: "Alle gegevens worden beschermd met AES-256-encryptie. Het wordt gehost in ISO 27001-gecertificeerde datacenters met regelmatige beveiligingsaudits.",
+      },
+      {
+        question: "Is er training en ondersteuning beschikbaar?",
+        answer: "We bieden onboarding-training, videodocumentatie en 24/7 technische ondersteuning. Daarnaast wordt aan elke klant een toegewijde succesbegeleider toegewezen.",
+      },
+    ],
+    useCases: [
+      {
+        title: "Witgoedfabrikant",
+        scenario: "Nationale witgoedfabrikant met 200+ dealers",
+        problem: "Ordertracking gebeurt in Excel, voorraadinformatie is verouderd, dealerprestaties kunnen niet worden gemeten.",
+        solution: "Een gecentraliseerd dealerportaal werd opgezet, automatische voorraadsynchronisatie werd ingeschakeld en prestatiedashboards werden gecreëerd.",
+        outcome: "Orderfouten namen af met 85%, voorraadrotatie steeg met 30%.",
+      },
+      {
+        title: "Voedingsdistributeur",
+        scenario: "Regionale voedingsdistributeur met een netwerk van 50 dealers",
+        problem: "Commissieberekeningen zijn handmatig, fouten leiden tot meer klachten van dealers.",
+        solution: "Een automatisch commissieberekeningssysteem werd geïmplementeerd met transparante rapportage.",
+        outcome: "Commissiegeschillen daalden naar nul, dealertevredenheid steeg met 45%.",
+      },
+      {
+        title: "Auto-onderdelen",
+        scenario: "Fabrikant van auto-onderdelen met 300+ geautoriseerde verkopers",
+        problem: "Regionale verkoopprestaties zijn niet zichtbaar, groeikansen worden gemist.",
+        solution: "Verkoopkaarten werden gemaakt met een geografische analysemodule en potentiële regio's werden geïdentificeerd.",
+        outcome: "Verkoop steeg met 25% in nieuwe regio's, markttoetreding werd 40% sneller.",
+      },
+    ],
   },
   {
     slug: "muhasebe-asistani",
@@ -809,6 +1278,73 @@ const productDetailsNl: ProductDetail[] = [
       "Biedt een schaalbaar werkmodel voor kleinere teams",
     ],
     targetUsers: ["MKB-financeteams", "Bedrijven met accountantskantoor", "Operationele en managementteams", "Document-intensieve organisaties"],
+    featuresDetailed: [
+      {
+        title: "Slimme Documentherkenning (OCR+AI)",
+        description: "Scan, classificeer en importeer facturen, bonnen en financiële documenten automatisch in het systeem.",
+        highlights: ["98%+ nauwkeurigheid", "Ondersteuning voor meerdere formaten (PDF, afbeeldingen, e-facturen)", "Automatische data-extractie"],
+      },
+      {
+        title: "Kostencategorisatie",
+        description: "Categoriseer uw uitgaven automatisch met een AI-aangedreven systeem en vereenvoudig budgettracking.",
+        highlights: ["Lerend algoritme", "Aanpasbare categorieën", "Anomaliedetectie"],
+      },
+      {
+        title: "Afstemmingscontroles",
+        description: "Koppel bankafschriften automatisch aan boekhoudkundige records en detecteer onmiddellijk afwijkingen.",
+        highlights: ["Automatische matching", "Afwijkingsrapportage", "Ondersteuning voor bulkverwerking"],
+      },
+      {
+        title: "Financiële Rapportage",
+        description: "Genereer periodieke financiële rapporten met één klik en bereid samenvattende overzichten voor het management voor.",
+        highlights: ["Aanpasbare sjablonen", "Grafieken en trendanalyse", "Exportopties"],
+      },
+    ],
+    faq: [
+      {
+        question: "Kan ik het naast mijn bestaande boekhoudsoftware gebruiken?",
+        answer: "Ja, het platform werkt als een onafhankelijke assistent en kan parallel met uw bestaande boekhoudsoftware worden gebruikt. Datasynchronisatie via API-integratie is ook mogelijk.",
+      },
+      {
+        question: "Hoe betrouwbaar zijn de AI-aanbevelingen?",
+        answer: "Ons systeem heeft een continu lerende structuur en de nauwkeurigheid verbetert met gebruik. Beginnend op 90%, bereikt het 98%+ nauwkeurigheid na 3 maanden gebruik.",
+      },
+      {
+        question: "Welke documentformaten worden ondersteund?",
+        answer: "We ondersteunen PDF, JPEG, PNG, TIFF afbeeldingsformaten evenals e-Factuur (UBL), e-Archief en Excel-formaten.",
+      },
+      {
+        question: "Zijn mijn gegevens veilig?",
+        answer: "Alle financiële gegevens worden versleuteld opgeslagen, AVG-conforme infrastructuur wordt gebruikt en uw gegevens worden nooit gedeeld met derden.",
+      },
+      {
+        question: "Kan ik delen met mijn accountant?",
+        answer: "Ja, u kunt speciale toegangsrechten voor uw accountant definiëren en veilig documenten en rapporten delen.",
+      },
+    ],
+    useCases: [
+      {
+        title: "Retailketen",
+        scenario: "Retailketen met 50 filialen, 3.000+ maandelijkse factuurtransacties",
+        problem: "Factuurinvoer is handmatig, foutenpercentage is hoog, gegevens worden te laat aan de accountant geleverd.",
+        solution: "Automatisch factuurherkenningssysteem werd geïnstalleerd, categorisatie-automatisering werd ingezet.",
+        outcome: "Verwerkingstijd daalde met 70%, foutenpercentage daalde van 5% naar 0,5%.",
+      },
+      {
+        title: "E-commercebedrijf",
+        scenario: "Snelgroeiend e-commercebedrijf met meerdere betaalkanalen",
+        problem: "Afstemming van betalingen uit verschillende bronnen is moeilijk, cashflowzichtbaarheid is laag.",
+        solution: "Automatische afstemmingsmodule werd geïntegreerd, realtime cashflow-dashboard werd gecreëerd.",
+        outcome: "Afstemmingstijd daalde van 3 dagen naar 2 uur, financiële zichtbaarheid steeg met 100%.",
+      },
+      {
+        title: "Productie-MKB",
+        scenario: "Middelgroot productiebedrijf met een 2-persoons boekhoudteam",
+        problem: "Teamcapaciteit is onvoldoende, einde-perioderepportage loopt vertraging op, geen data voor managementbeslissingen.",
+        solution: "Routinetaken werden geautomatiseerd met de AI-assistent, directe rapportage-infrastructuur werd opgezet.",
+        outcome: "Boekhoudteam richtte zich op strategische taken, rapportagetijd werd 80% verkort.",
+      },
+    ],
   },
   {
     slug: "emlak-danismani-yardimcisi",
@@ -834,6 +1370,73 @@ const productDetailsNl: ProductDetail[] = [
       "Behoudt proceskwaliteit bij groei van het kantoor",
     ],
     targetUsers: ["Vastgoedadviseurs", "Kleine en middelgrote vastgoedkantoren", "Portfoliomanagers", "Klantrelatieteams"],
+    featuresDetailed: [
+      {
+        title: "Gecentraliseerd Portfoliobeheer",
+        description: "Beheer, update en distribueer al uw objecten vanuit één paneel naar verschillende platforms.",
+        highlights: ["Multi-platform integratie", "Bulk objectupdates", "Foto- en videobeheer"],
+      },
+      {
+        title: "Klantvolgsysteem (CRM)",
+        description: "Leg klantverzoeken, gespreksnotities en communicatiegeschiedenis vast.",
+        highlights: ["360° klantoverzicht", "Automatische herinneringen", "Interactiegeschiedenis"],
+      },
+      {
+        title: "Afspraak- & Agendabeheer",
+        description: "Plan bezichtigingsafspraken en stuur automatische herinneringen naar klanten.",
+        highlights: ["Agendasynchronisatie", "SMS/E-mail herinneringen", "Conflictdetectie"],
+      },
+      {
+        title: "Document- & Transactievolging",
+        description: "Beheer alle documenten tijdens het verkoopproces digitaal en volg de transactiestatus.",
+        highlights: ["Digitaal documentarchief", "Transactiefasetracking", "E-handtekening integratie"],
+      },
+    ],
+    faq: [
+      {
+        question: "Is er integratie met portals zoals Funda, Pararius?",
+        answer: "Ja, API-integratie met toonaangevende vastgoedportalen is beschikbaar. U kunt met één klik naar meerdere platforms publiceren.",
+      },
+      {
+        question: "Kunnen alle adviseurs op kantoor hetzelfde systeem gebruiken?",
+        answer: "Ja, ondersteuning voor meerdere gebruikers is beschikbaar. Elke adviseur beheert zijn eigen portfolio terwijl de kantoormanager alle activiteiten kan monitoren.",
+      },
+      {
+        question: "Is er een mobiele app?",
+        answer: "Ja, native mobiele apps voor iOS en Android zijn beschikbaar. U kunt alle handelingen zelfs in het veld uitvoeren.",
+      },
+      {
+        question: "Kan ik klantgegevens importeren?",
+        answer: "U kunt bulk klantimports uitvoeren vanuit Excel, CSV en vCard-formaten. Datatransfer vanuit bestaande CRM-systemen wordt ook ondersteund.",
+      },
+      {
+        question: "Welke rapportagefuncties zijn beschikbaar?",
+        answer: "Gedetailleerde rapporten waaronder adviseursprestaties, portfolioanalyse, verkoopconversieratio's en markttrendrapporten worden aangeboden.",
+      },
+    ],
+    useCases: [
+      {
+        title: "Boutique Vastgoedkantoor",
+        scenario: "Boutique vastgoedkantoor met 5 adviseurs, 150+ actieve objecten",
+        problem: "Objectupdates kosten tijd, klantopvolgingen worden vergeten, afspraken raken door elkaar.",
+        solution: "Gecentraliseerd portfoliobeheer en automatisch herinneringssysteem werden opgezet.",
+        outcome: "Objectupdatetijd daalde met 60%, klantresponsratio steeg met 35%.",
+      },
+      {
+        title: "Franchise Vastgoednetwerk",
+        scenario: "Vastgoedfranchise met 10 vestigingen, 40+ adviseurs",
+        problem: "Coördinatie tussen vestigingen is zwak, prestatievergelijking is niet mogelijk.",
+        solution: "Alle vestigingen werden verenigd op één platform met een gecentraliseerd beheerpaneel.",
+        outcome: "Portfoliodeling tussen vestigingen startte, totale verkoop steeg met 20%.",
+      },
+      {
+        title: "Zelfstandig Vastgoedadviseur",
+        scenario: "Solo vastgoedadviseur met 50+ klantenportfolio",
+        problem: "Klanttracking is in Excel, afspraken in telefoonagenda, documentorganisatie is complex.",
+        solution: "Alle operaties werden verenigd in één mobiele applicatie.",
+        outcome: "Dagelijkse operatietijd verminderd met 2 uur, sluitingsratio steeg met 25%.",
+      },
+    ],
   },
   {
     slug: "otel-asistanlari",
@@ -859,6 +1462,73 @@ const productDetailsNl: ProductDetail[] = [
       "Verlaagt operationele vertragingen die gastenervaring raken",
     ],
     targetUsers: ["Boetiekhotels", "Hotelketens", "Reserverings- en revenueteams", "Operationeel managers in hospitality"],
+    featuresDetailed: [
+      {
+        title: "Centraal Reserveringspaneel",
+        description: "Beheer reserveringen van alle kanalen in één scherm en voorkom conflicten.",
+        highlights: ["Realtime beschikbaarheid", "Drag & drop reserveringen", "Ondersteuning voor meerdere kamertypes"],
+      },
+      {
+        title: "Kanaalbeheer",
+        description: "Zorg voor automatische synchronisatie met alle OTA's zoals Booking, Expedia en Airbnb.",
+        highlights: ["Directe tariefupdates", "Beschikbaarheidssynchronisatie", "Overbookingbescherming"],
+      },
+      {
+        title: "Dynamische Prijsstelling",
+        description: "Maximaliseer bezetting en omzet met AI-aangedreven prijsoptimalisatie.",
+        highlights: ["Marktanalyse", "Concurrentprijsmonitoring", "Automatische prijsaanpassing"],
+      },
+      {
+        title: "Operationele Dashboards",
+        description: "Centraal controlepaneel voor dagelijkse check-in/out, housekeeping en gastverzoeken.",
+        highlights: ["Dagelijkse takenlijst", "Afdelingscoördinatie", "Gastverzoektracking"],
+      },
+    ],
+    faq: [
+      {
+        question: "Met welke OTA's integreert u?",
+        answer: "We bieden integratie met Booking.com, Expedia, Airbnb, Hotels.com, Agoda en 50+ lokale en internationale OTA's.",
+      },
+      {
+        question: "Is het geschikt voor kleine boetiekhotels?",
+        answer: "Ja, het kan worden gebruikt voor alles van 5-kamer boetiekhotels tot 500+ kamer hotelketens. Flexibel prijsmodel is beschikbaar.",
+      },
+      {
+        question: "Kan het integreren met mijn bestaande PMS-systeem?",
+        answer: "Integratie met gangbare PMS-systemen zoals Opera, Protel en Clock PMS is mogelijk. Onze API-infrastructuur ondersteunt ook maatwerkintegraties.",
+      },
+      {
+        question: "Hoe werkt de prijs-AI?",
+        answer: "Het systeem analyseert factoren zoals historische gegevens, marktvraag, concurrentprijzen en evenementenkalenders om optimale prijsaanbevelingen te doen.",
+      },
+      {
+        question: "Welke rapportage- en analysefuncties zijn beschikbaar?",
+        answer: "Uitgebreide KPI-rapporten waaronder RevPAR, ADR, bezettingsgraden, kanaalprestaties en omzetprognoses worden aangeboden.",
+      },
+    ],
+    useCases: [
+      {
+        title: "Boetiekhotel",
+        scenario: "12-kamer boetiekhotel op een toeristische bestemming",
+        problem: "Handmatige prijsupdates kosten tijd, OTA-commissies zijn hoog, directe boekingen zijn laag.",
+        solution: "Dynamische prijsstelling en directe boekingsmotor werden geïntegreerd.",
+        outcome: "Directe boekingen stegen met 40%, gemiddelde kameromzet steeg met 25%.",
+      },
+      {
+        title: "Aparthotelketen",
+        scenario: "Aparthotelketen met 5 locaties, 200 units",
+        problem: "Prijsinconsistentie tussen locaties, geen centraal overzicht, overbookingproblemen.",
+        solution: "Gecentraliseerde channel manager en prijsbeheersysteem werden opgezet.",
+        outcome: "Overbooking daalde naar nul, prijsconsistentie bereikt, omzet steeg met 30%.",
+      },
+      {
+        title: "Resort",
+        scenario: "100-kamer resort aan de Middellandse Zee",
+        problem: "Seizoensgebonden bezettingsschommelingen, omzetverlies tijdens laagseizoen.",
+        solution: "Seizoensstrategie werd geoptimaliseerd met AI-aangedreven prijsstelling.",
+        outcome: "Laagseizoen bezetting steeg met 35%, jaarlijkse RevPAR verbeterde met 20%.",
+      },
+    ],
   },
   {
     slug: "agent-ai-calismalari",
@@ -885,6 +1555,73 @@ const productDetailsNl: ProductDetail[] = [
       "Biedt schaalbare operatie bij groeiende workloads",
     ],
     targetUsers: ["HR-teams", "Klantoperatieteams", "MKB en grotere bedrijven met automatiseringsdoelen", "Productteams met AI-transformatieplannen"],
+    featuresDetailed: [
+      {
+        title: "Taakgebaseerd Agent Design",
+        description: "We ontwerpen AI-agenten die autonoom specifieke taken uitvoeren, aangepast aan uw bedrijfsprocessen.",
+        highlights: ["Procesanalyse en modellering", "Regelgebaseerde beslissingsmechanismen", "Mens-AI hybride workflows"],
+      },
+      {
+        title: "HR & Onboarding Agents",
+        description: "Maatwerkagentoplossingen voor werving, oriëntatie en werknemersvragen.",
+        highlights: ["Automatische kandidaatscreening", "Oriëntatieassistent", "Beleid- en procedurebot"],
+      },
+      {
+        title: "Klantenservice Agents",
+        description: "Slimme agenten die 24/7 klantvragen beantwoorden, tickets aanmaken en doorverwijzen.",
+        highlights: ["Natuurlijke taalverwerking", "Multi-channel ondersteuning", "Escalatiebeheer"],
+      },
+      {
+        title: "Procesautomatisering Agents",
+        description: "Agentoplossingen die repetitieve workflows automatiseren, data verzamelen en rapporten genereren.",
+        highlights: ["Data-invoerautomatisering", "Rapportgeneratie", "Systeemintegraties"],
+      },
+    ],
+    faq: [
+      {
+        question: "Wat doet een AI-agent precies?",
+        answer: "AI-agenten zijn softwareprogramma's die aangewezen taken autonoom uitvoeren. Bijvoorbeeld klantvragen beantwoorden, data verwerken of processtappen volgen zonder menselijke tussenkomst.",
+      },
+      {
+        question: "Kan het integreren met onze bestaande systemen?",
+        answer: "Ja, de agenten die we ontwikkelen kunnen via API's worden geïntegreerd met CRM, ERP, HRIS en andere bedrijfssystemen.",
+      },
+      {
+        question: "Hoe lang duurt agentontwikkeling?",
+        answer: "Eenvoudige taakagenten kunnen in 2-4 weken worden ontwikkeld, complexe procesagenten in 6-12 weken. Het proces begint met een behoefteanalyse.",
+      },
+      {
+        question: "Kunnen agenten leren?",
+        answer: "Ja, de agenten die we ontwikkelen gebruiken AI-modellen die leren van feedback en hun prestaties in de loop van de tijd verbeteren.",
+      },
+      {
+        question: "Wat gebeurt er als menselijke tussenkomst nodig is?",
+        answer: "Agenten detecteren situaties buiten hun bevoegdheid en routeren automatisch naar de juiste menselijke operator. Volledige traceerbaarheid is gewaarborgd.",
+      },
+    ],
+    useCases: [
+      {
+        title: "E-commerce Klantenservice",
+        scenario: "E-commercebedrijf dat dagelijks 500+ klantverzoeken ontvangt",
+        problem: "Klantenserviceteam is onvoldoende, reactietijden zijn lang, tevredenheid is laag.",
+        solution: "Een 24/7 klantenserviceagent werd ingezet, complexe verzoeken werden doorgestuurd naar menselijke operators.",
+        outcome: "Reactietijd daalde van 4 uur naar 30 seconden, klanttevredenheid steeg met 40%.",
+      },
+      {
+        title: "HR Onboarding Automatisering",
+        scenario: "Technologiebedrijf met 200+ nieuwe aanwervingen per jaar",
+        problem: "Onboardingproces is handmatig en inconsistent, HR-team wordt overspoeld met routinevragen.",
+        solution: "Onboarding-agent automatiseerde het oriëntatieproces, een self-service kenniscentrum werd gecreëerd.",
+        outcome: "Routinebelasting van HR-team daalde met 60%, nieuwe werknemersadaptatietijd verkort met 30%.",
+      },
+      {
+        title: "Financiële Procesautomatisering",
+        scenario: "Middelgroot bedrijf dat maandelijks 1.000+ facturen verwerkt",
+        problem: "Factuurgoedkeuringsproces is traag, tracking is moeilijk, vertragingen veroorzaken kostenstijgingen.",
+        solution: "Factuurverwerkingsagent met automatische classificatie, goedkeuringsworkflow en volgsysteem werd opgezet.",
+        outcome: "Factuurverwerkingstijd daalde met 75%, vroegbetalingskortingen werden benut.",
+      },
+    ],
   },
   {
     slug: "e-ticaret-web-uygulamalari",
@@ -910,6 +1647,73 @@ const productDetailsNl: ProductDetail[] = [
       "Versterkt merkbeleving met moderne UX-patronen",
     ],
     targetUsers: ["B2C- en B2B-commerce merken", "Retailbedrijven", "Online sales operations teams", "Digitale merken met groeidoelen"],
+    featuresDetailed: [
+      {
+        title: "Moderne Winkelervaring",
+        description: "We ontwikkelen snelle, mobiel-vriendelijke en gebruikersgerichte e-commerce interfaces.",
+        highlights: ["Mobile-first design", "Snelle paginalading", "Gepersonaliseerde aanbevelingen"],
+      },
+      {
+        title: "Order- & Voorraadbeheer",
+        description: "Beheer het volledige proces van order tot levering in één paneel en volg voorraadniveaus in realtime.",
+        highlights: ["Multi-warehouse ondersteuning", "Automatische voorraadwaarschuwingen", "Bulkorderverwerking"],
+      },
+      {
+        title: "Betaling & Verzendintegraties",
+        description: "Naadloze integratie met toonaangevende betaal- en verzendinfrastructuren.",
+        highlights: ["Alle banken en virtuele POS", "Verzendtracking integratie", "Termijnbetalingsopties"],
+      },
+      {
+        title: "Beheer & Analysepaneel",
+        description: "Analyseer verkoop-, klant- en productprestaties met gedetailleerde rapporten.",
+        highlights: ["Realtime verkoopdashboard", "Klantgedragsanalyse", "Campagneprestatiemonitoring"],
+      },
+    ],
+    faq: [
+      {
+        question: "Wat is het verschil met kant-en-klare e-commerce oplossingen?",
+        answer: "We bieden een volledig op maat gemaakte, schaalbare infrastructuur die u bezit. Geen beperkingen of maandelijkse kosten van kant-en-klare oplossingen.",
+      },
+      {
+        question: "Is het geschikt voor B2B e-commerce?",
+        answer: "Ja, we ontwikkelen B2B-specifieke functies zoals klantgebaseerde prijzen, bulkorders, offertemanagement en zakelijke goedkeuringsworkflows.",
+      },
+      {
+        question: "Kan het integreren met mijn bestaande ERP/boekhoudsysteem?",
+        answer: "Ja, we bieden integratie met gangbare ERP-systemen zoals SAP, Exact, Unit4 en e-Factuur/e-Archief infrastructuren.",
+      },
+      {
+        question: "Hoe is de siteprestatie?",
+        answer: "Met moderne technologieën (Next.js, CDN, caching) ontwikkelen we snel ladende sites die voldoen aan Google Core Web Vitals standaarden.",
+      },
+      {
+        question: "Is er ondersteuning na lancering?",
+        answer: "Ja, onderhoud, updates en technische ondersteuning zijn beschikbaar. We bieden ook prestatiemonitoring en optimalisatieondersteuning.",
+      },
+    ],
+    useCases: [
+      {
+        title: "Mode E-commerce",
+        scenario: "Lokaal modemerk met doel van 50K+ jaarlijkse orders",
+        problem: "Bestaande kant-en-klare oplossing is traag, aanpassing is beperkt, marktplaatscommissies zijn hoog.",
+        solution: "Custom e-commerce platform werd ontwikkeld met alle betaal- en verzendintegraties.",
+        outcome: "Paginasnelheid steeg 3x, conversieratio steeg met 45%, marktplaatsafhankelijkheid daalde.",
+      },
+      {
+        title: "B2B Industriële Producten",
+        scenario: "Distributeur van industriële onderdelen met 500+ zakelijke klanten",
+        problem: "Telefonische bestellingen zijn inefficiënt, klantgebaseerde prijzen worden handmatig bijgehouden.",
+        solution: "B2B e-commerce portaal werd ontwikkeld met ERP-integratie en automatisch prijssysteem.",
+        outcome: "Online bestelpercentage bereikte 70%, orderverwerkingstijd daalde met 60%.",
+      },
+      {
+        title: "Food & Supermarkt",
+        scenario: "Regionale supermarktketen die online bestellen en bezorgen wil starten",
+        problem: "Kant-en-klare oplossingen zijn niet geschikt voor voedsellogistiek, voorraad-ordersynchronisatie is moeilijk.",
+        solution: "Slotgebaseerd bezorgbeheer, realtime voorraadtracking en mobiele app werden ontwikkeld.",
+        outcome: "Online verkoop bereikte 25% van totale omzet, orderwaarde per klant steeg met 30%.",
+      },
+    ],
   },
 ];
 
