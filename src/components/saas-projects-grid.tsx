@@ -19,7 +19,7 @@ export function SaasProjectsGrid({ ongoing, locale, id }: Props) {
         <h2 className="io-process-title">{ongoing.title}</h2>
         <p className="io-lead-small">{ongoing.subtitle}</p>
       </div>
-      <div className="mt-6 grid gap-4 md:grid-cols-2 xl:grid-cols-3">
+      <div className="mt-8 grid gap-6 md:grid-cols-2 xl:grid-cols-3">
         {ongoing.items.map((item) => (
           <article key={item.name}>
             {item.slug ? (

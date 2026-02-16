@@ -2,12 +2,11 @@ import Image from "next/image";
 import Link from "next/link";
 import { notFound } from "next/navigation";
 import { getHomeDictionary, isLocale, locales, type Locale } from "@/lib/i18n";
-import { Badge } from "@/components/ui/badge";
-import { Card, CardContent } from "@/components/ui/card";
-import { Separator } from "@/components/ui/separator";
-import { cn } from "@/lib/utils";
 import { SaasProjectsGrid } from "@/components/saas-projects-grid";
 import { SiteHeader } from "@/components/site-header";
+import { PartnersGrid } from "@/components/partners-grid";
+import { StatsSection } from "@/components/stats-section";
+import { AboutSection } from "@/components/about-section";
 
 const uiText: Record<
   Locale,
@@ -31,9 +30,9 @@ const uiText: Record<
     capabilities: "Yetenekler",
     about: "Hakkında",
     process: "Süreç",
-    contact: "Contact",
-    home: "Home",
-    cases: "Cases",
+    contact: "İletişim",
+    home: "Ana Sayfa",
+    cases: "Projeler",
     email: "E-posta",
     phone: "Telefon",
     address: "Adres",
@@ -116,52 +115,15 @@ export default async function HomeLocalePage({ params }: { params: Promise<{ loc
           </div>
         </section>
 
-        <section className="border-y border-neutral-200 bg-neutral-50">
-          <div className="io-wrap py-5 md:py-6">
-            <div className="space-y-4">
-              <div className="space-y-2">
-                <Badge>{ui.ecosystem}</Badge>
-                <p className="text-xs font-semibold uppercase tracking-[0.18em] text-neutral-700">{dict.partners.title}</p>
-              </div>
-              <div className="grid grid-cols-2 gap-3 md:grid-cols-4 lg:grid-cols-8">
-                {dict.partners.items.map((partner) => (
-                  <Card key={partner.name} className="h-12 rounded-xl shadow-none">
-                    <CardContent className="flex h-full items-center justify-center p-3">
-                      <Image
-                        src={partner.logo}
-                        alt={`${partner.name} logo`}
-                        width={120}
-                        height={26}
-                        loading="lazy"
-                        className="h-5 w-auto max-w-full object-contain"
-                      />
-                    </CardContent>
-                  </Card>
-                ))}
-              </div>
-            </div>
-
-            <Separator className="my-5" />
-
-            <div className="grid rounded-2xl border border-neutral-200 bg-white md:grid-cols-3">
-              {dict.hero.stats.map((stat, index) => (
-                <article
-                  key={stat.label}
-                  className={cn(
-                    "px-7 py-6 text-center",
-                    index < dict.hero.stats.length - 1 && "border-b border-neutral-200 md:border-r md:border-b-0",
-                  )}
-                >
-                  <p className="text-5xl font-bold tracking-tight text-neutral-900 md:text-6xl">{stat.value}</p>
-                  <h3 className="mt-2 text-3xl font-semibold tracking-tight text-neutral-900">{stat.label}</h3>
-                  <small className="mt-2 block text-base leading-relaxed text-neutral-600">{stat.note}</small>
-                </article>
-              ))}
-            </div>
-          </div>
-        </section>
+        <PartnersGrid
+          title={dict.partners.title}
+          badgeText={ui.ecosystem}
+          partners={dict.partners.items}
+        />
 
         <SaasProjectsGrid ongoing={dict.ongoing} locale={locale} id="projeler" />
+
+        <StatsSection stats={dict.hero.stats} />
 
         <section className="io-wrap io-section" id="hizmetler">
           <div className="io-section-head">
@@ -183,20 +145,12 @@ export default async function HomeLocalePage({ params }: { params: Promise<{ loc
           </div>
         </section>
 
-        <section className="io-wrap io-section" id="hakkimizda">
-          <div className="io-two-col">
-            <article>
-              <p className="io-eyebrow">{ui.about}</p>
-              <h2>{dict.about.title}</h2>
-              <p className="io-lead-small">{dict.about.description}</p>
-            </article>
-            <article className="io-notes">
-              {dict.about.bullets.map((bullet) => (
-                <p key={bullet}>{bullet}</p>
-              ))}
-            </article>
-          </div>
-        </section>
+        <AboutSection
+          badge={ui.about}
+          title={dict.about.title}
+          description={dict.about.description}
+          bullets={dict.about.bullets}
+        />
 
         <section className="io-wrap io-section" id="surec">
           <p className="io-eyebrow">{ui.process}</p>
@@ -217,7 +171,7 @@ export default async function HomeLocalePage({ params }: { params: Promise<{ loc
             <p className="io-eyebrow io-eyebrow-invert">{ui.contact}</p>
             <h2>{dict.cta.title}</h2>
             <p>{dict.cta.text}</p>
-            <a className="io-btn io-btn-accent" href={`mailto:${dict.contact.email}`}>
+            <a className="io-btn io-btn-accent mt-6" href={`mailto:${dict.contact.email}`}>
               {dict.cta.button}
             </a>
           </div>
@@ -244,9 +198,6 @@ export default async function HomeLocalePage({ params }: { params: Promise<{ loc
                 <span>{dict.contact.iban}</span>
               </li>
             </ul>
-            <a className="io-btn io-btn-whatsapp" href={dict.contact.whatsapp} target="_blank" rel="noreferrer">
-              WhatsApp
-            </a>
           </div>
         </section>
       </main>
@@ -257,7 +208,7 @@ export default async function HomeLocalePage({ params }: { params: Promise<{ loc
           <div>
             <Link href={`/${locale}`}>{ui.home}</Link>
             <Link href={`/${locale}#projeler`}>{ui.cases}</Link>
-            <Link href={`/${locale}/iletisim`}>Contact</Link>
+            <Link href={`/${locale}/iletisim`}>{ui.contact}</Link>
           </div>
         </div>
       </footer>
