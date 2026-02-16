@@ -8,6 +8,9 @@ import { getProductBySlug, productDetails } from "@/content/products";
 import { getHomeDictionary, isLocale, locales, type Locale } from "@/lib/i18n";
 import { SaasProjectsGrid } from "@/components/saas-projects-grid";
 import { SiteHeader } from "@/components/site-header";
+import { ProductFAQ } from "@/components/product-faq";
+import { ProductUseCases } from "@/components/product-use-cases";
+import { ProductFeaturesDetailed } from "@/components/product-features-detailed";
 
 const pageText: Record<
   Locale,
@@ -24,6 +27,15 @@ const pageText: Record<
     address: string;
     kvk: string;
     iban: string;
+    featuresDetailed: string;
+    faq: string;
+    useCases: string;
+    useCaseLabels: {
+      scenario: string;
+      problem: string;
+      solution: string;
+      outcome: string;
+    };
   }
 > = {
   tr: {
@@ -39,6 +51,15 @@ const pageText: Record<
     address: "Adres",
     kvk: "KVK",
     iban: "IBAN",
+    featuresDetailed: "Detaylı Özellikler",
+    faq: "Sıkça Sorulan Sorular",
+    useCases: "Kullanım Senaryoları",
+    useCaseLabels: {
+      scenario: "Senaryo",
+      problem: "Problem",
+      solution: "Çözüm",
+      outcome: "Sonuç",
+    },
   },
   en: {
     back: "← Back to home",
@@ -53,6 +74,15 @@ const pageText: Record<
     address: "Address",
     kvk: "KVK",
     iban: "IBAN",
+    featuresDetailed: "Detailed Features",
+    faq: "Frequently Asked Questions",
+    useCases: "Use Cases",
+    useCaseLabels: {
+      scenario: "Scenario",
+      problem: "Problem",
+      solution: "Solution",
+      outcome: "Outcome",
+    },
   },
   nl: {
     back: "← Terug naar home",
@@ -67,6 +97,15 @@ const pageText: Record<
     address: "Adres",
     kvk: "KVK",
     iban: "IBAN",
+    featuresDetailed: "Gedetailleerde Functies",
+    faq: "Veelgestelde Vragen",
+    useCases: "Gebruiksscenario's",
+    useCaseLabels: {
+      scenario: "Scenario",
+      problem: "Probleem",
+      solution: "Oplossing",
+      outcome: "Resultaat",
+    },
   },
 };
 
@@ -162,6 +201,18 @@ export default async function ProductDetailPage({ params }: { params: Promise<{ 
               </CardContent>
             </Card>
           </div>
+
+          {product.featuresDetailed && product.featuresDetailed.length > 0 && (
+            <ProductFeaturesDetailed items={product.featuresDetailed} title={t.featuresDetailed} />
+          )}
+
+          {product.useCases && product.useCases.length > 0 && (
+            <ProductUseCases items={product.useCases} title={t.useCases} labels={t.useCaseLabels} />
+          )}
+
+          {product.faq && product.faq.length > 0 && (
+            <ProductFAQ items={product.faq} title={t.faq} />
+          )}
 
           <Separator className="my-8" />
         </section>

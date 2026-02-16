@@ -1,5 +1,24 @@
 export type ProductLocale = "tr" | "en" | "nl";
 
+export type FAQItem = {
+  question: string;
+  answer: string;
+};
+
+export type UseCase = {
+  title: string;
+  scenario: string;
+  problem: string;
+  solution: string;
+  outcome: string;
+};
+
+export type FeatureDetail = {
+  title: string;
+  description: string;
+  highlights?: string[];
+};
+
 export type ProductDetail = {
   slug: string;
   title: string;
@@ -10,6 +29,9 @@ export type ProductDetail = {
   whatItDoes: string[];
   benefits: string[];
   targetUsers: string[];
+  featuresDetailed?: FeatureDetail[];
+  faq?: FAQItem[];
+  useCases?: UseCase[];
 };
 
 const productDetailsTr: ProductDetail[] = [
@@ -38,6 +60,73 @@ const productDetailsTr: ProductDetail[] = [
       "Büyüyen bayi ağlarında standart süreç yönetimi sağlar",
     ],
     targetUsers: ["Üretici firmalar", "Distribütörler ve toptancılar", "Satış operasyon ekipleri", "Bölge ve kanal yöneticileri"],
+    featuresDetailed: [
+      {
+        title: "Bayi Onboarding ve Yetkilendirme",
+        description: "Yeni bayilerin sisteme dahil edilmesinden yetki tanımlamalarına kadar tüm süreçleri dijital ortamda yönetin.",
+        highlights: ["Otomatik onay akışları", "Rol bazlı erişim kontrolü", "Dijital sözleşme imzalama"],
+      },
+      {
+        title: "Sipariş ve Stok Yönetimi",
+        description: "Bayilerden gelen siparişleri tek panelden takip edin, stok durumunu anlık görüntüleyin.",
+        highlights: ["Gerçek zamanlı stok takibi", "Otomatik sipariş bildirimleri", "Toplu sipariş işleme"],
+      },
+      {
+        title: "Performans ve Komisyon Raporlama",
+        description: "Bayi performansını objektif metriklerle ölçün, komisyon hesaplamalarını otomatikleştirin.",
+        highlights: ["Özelleştirilebilir KPI'lar", "Otomatik komisyon hesaplama", "Dönemsel karşılaştırma raporları"],
+      },
+      {
+        title: "Bölge ve Kanal Analizi",
+        description: "Satış verilerinizi bölge, kanal ve ürün bazında derinlemesine analiz edin.",
+        highlights: ["Coğrafi performans haritaları", "Kanal bazlı satış analizi", "Trend tahminleme"],
+      },
+    ],
+    faq: [
+      {
+        question: "Platform mevcut ERP sistemimizle entegre olabilir mi?",
+        answer: "Evet, REST API altyapımız sayesinde SAP, Logo, Netsis gibi yaygın ERP sistemleriyle entegrasyon sağlanabilir. Entegrasyon süreci genellikle 2-4 hafta içinde tamamlanır.",
+      },
+      {
+        question: "Kaç bayi yönetilebilir?",
+        answer: "Platformumuz ölçeklenebilir bulut altyapısı üzerine kurulu olup, 10'dan 10.000'e kadar bayi ağlarını sorunsuz yönetebilir.",
+      },
+      {
+        question: "Mobil erişim mümkün mü?",
+        answer: "Evet, platform tamamen responsive tasarıma sahip olup, iOS ve Android için native mobil uygulamalar da mevcuttur.",
+      },
+      {
+        question: "Veri güvenliği nasıl sağlanıyor?",
+        answer: "Tüm veriler AES-256 şifreleme ile korunur. ISO 27001 sertifikalı veri merkezlerinde barındırılır ve düzenli güvenlik denetimleri yapılır.",
+      },
+      {
+        question: "Eğitim ve destek hizmeti var mı?",
+        answer: "Başlangıç eğitimi, video dokümantasyon ve 7/24 teknik destek hizmetimiz mevcuttur. Ayrıca her müşteriye özel bir başarı yöneticisi atanır.",
+      },
+    ],
+    useCases: [
+      {
+        title: "Beyaz Eşya Üreticisi",
+        scenario: "200+ bayisi olan ulusal beyaz eşya üreticisi",
+        problem: "Sipariş takibi Excel'de yapılıyor, stok bilgisi güncel değil, bayi performansı ölçülemiyor.",
+        solution: "Merkezi bayi portalı kuruldu, otomatik stok senkronizasyonu sağlandı, performans dashboard'ları oluşturuldu.",
+        outcome: "Sipariş hataları %85 azaldı, stok devir hızı %30 arttı.",
+      },
+      {
+        title: "Gıda Distribütörü",
+        scenario: "Bölgesel gıda distribütörü, 50 bayi ağı",
+        problem: "Komisyon hesaplamaları manuel, hatalar nedeniyle bayi şikayetleri artıyor.",
+        solution: "Otomatik komisyon hesaplama sistemi devreye alındı, şeffaf raporlama sağlandı.",
+        outcome: "Komisyon anlaşmazlıkları sıfıra indi, bayi memnuniyeti %45 arttı.",
+      },
+      {
+        title: "Otomotiv Yedek Parça",
+        scenario: "Otomotiv yedek parça üreticisi, 300+ yetkili satıcı",
+        problem: "Bölgesel satış performansı görünür değil, büyüme fırsatları kaçırılıyor.",
+        solution: "Coğrafi analiz modülü ile satış haritaları oluşturuldu, potansiyel bölgeler belirlendi.",
+        outcome: "Yeni bölgelerde %25 satış artışı, pazara giriş süresi %40 kısaldı.",
+      },
+    ],
   },
   {
     slug: "muhasebe-asistani",
@@ -69,6 +158,73 @@ const productDetailsTr: ProductDetail[] = [
       "Operasyon ve yönetim ekipleri",
       "Belge yoğun süreç yürüten şirketler",
     ],
+    featuresDetailed: [
+      {
+        title: "Akıllı Belge Tanıma (OCR+AI)",
+        description: "Fatura, fiş ve finansal belgeleri otomatik olarak tarayın, sınıflandırın ve sisteme aktarın.",
+        highlights: ["%98+ doğruluk oranı", "Çoklu format desteği (PDF, görsel, e-fatura)", "Otomatik veri çıkarma"],
+      },
+      {
+        title: "Gider Kategorilendirme",
+        description: "Harcamalarınızı AI destekli sistemle otomatik kategorilendirin, bütçe takibini kolaylaştırın.",
+        highlights: ["Öğrenen algoritma", "Özelleştirilebilir kategoriler", "Anomali tespiti"],
+      },
+      {
+        title: "Mutabakat Kontrolleri",
+        description: "Banka ekstreleri ile muhasebe kayıtlarını otomatik eşleştirin, tutarsızlıkları anında tespit edin.",
+        highlights: ["Otomatik eşleştirme", "Farklılık raporlama", "Toplu işlem desteği"],
+      },
+      {
+        title: "Finans Raporlama",
+        description: "Dönemsel finans raporlarını tek tıkla oluşturun, yönetim için özet görünümler hazırlayın.",
+        highlights: ["Özelleştirilebilir şablonlar", "Grafik ve trend analizi", "Dışa aktarım seçenekleri"],
+      },
+    ],
+    faq: [
+      {
+        question: "Mevcut muhasebe programımla birlikte kullanabilir miyim?",
+        answer: "Evet, platform bağımsız bir asistan olarak çalışır ve mevcut muhasebe yazılımınızla paralel kullanılabilir. API entegrasyonu ile veri senkronizasyonu da mümkündür.",
+      },
+      {
+        question: "AI önerileri ne kadar güvenilir?",
+        answer: "Sistemimiz sürekli öğrenen bir yapıya sahip ve kullanıldıkça doğruluk oranı artar. Başlangıçta %90, 3 ay kullanım sonrası %98+ doğruluk oranına ulaşır.",
+      },
+      {
+        question: "Hangi belge formatlarını destekliyor?",
+        answer: "PDF, JPEG, PNG, TIFF görsel formatları ile e-Fatura (UBL), e-Arşiv ve Excel formatlarını destekliyoruz.",
+      },
+      {
+        question: "Verilerim güvende mi?",
+        answer: "Tüm finansal veriler şifreli olarak saklanır, KVKK uyumlu altyapı kullanılır ve verileriniz asla üçüncü taraflarla paylaşılmaz.",
+      },
+      {
+        question: "Mali müşavirimle paylaşım yapabilir miyim?",
+        answer: "Evet, mali müşavirinize özel erişim yetkisi tanımlayabilir, belge ve raporları güvenli şekilde paylaşabilirsiniz.",
+      },
+    ],
+    useCases: [
+      {
+        title: "Perakende Zinciri",
+        scenario: "50 şubeli perakende zinciri, aylık 3000+ fatura işlemi",
+        problem: "Fatura girişi manuel, hata oranı yüksek, mali müşavire geç veri iletimi.",
+        solution: "Otomatik fatura tanıma sistemi kuruldu, kategorilendirme otomasyonu devreye alındı.",
+        outcome: "İşlem süresi %70 azaldı, hata oranı %5'ten %0.5'e düştü.",
+      },
+      {
+        title: "E-Ticaret Şirketi",
+        scenario: "Hızlı büyüyen e-ticaret şirketi, çoklu ödeme kanalı",
+        problem: "Farklı kaynaklardan gelen ödemelerin mutabakatı zor, nakit akışı görünürlüğü düşük.",
+        solution: "Otomatik mutabakat modülü entegre edildi, gerçek zamanlı nakit akışı dashboard'u oluşturuldu.",
+        outcome: "Mutabakat süresi 3 günden 2 saate düştü, finansal görünürlük %100 arttı.",
+      },
+      {
+        title: "Üretim KOBİ'si",
+        scenario: "Orta ölçekli üretim şirketi, 2 kişilik muhasebe ekibi",
+        problem: "Ekip kapasitesi yetersiz, dönem sonu raporlama gecikmeli, yönetim kararları için veri yok.",
+        solution: "AI asistan ile rutin işlemler otomatize edildi, anlık raporlama altyapısı kuruldu.",
+        outcome: "Muhasebe ekibi stratejik işlere odaklandı, raporlama süresi %80 kısaldı.",
+      },
+    ],
   },
   {
     slug: "emlak-danismani-yardimcisi",
@@ -95,6 +251,73 @@ const productDetailsTr: ProductDetail[] = [
       "Ofis ölçeği büyürken süreç kalitesini korumaya yardımcı olur",
     ],
     targetUsers: ["Emlak danışmanları", "Küçük ve orta ölçekli emlak ofisleri", "Portföy yöneticileri", "Müşteri ilişkileri ekipleri"],
+    featuresDetailed: [
+      {
+        title: "Merkezi Portföy Yönetimi",
+        description: "Tüm ilanlarınızı tek panelden yönetin, güncelleyin ve farklı platformlara dağıtın.",
+        highlights: ["Çoklu platform entegrasyonu", "Toplu ilan güncelleme", "Fotoğraf ve video yönetimi"],
+      },
+      {
+        title: "Müşteri Takip Sistemi (CRM)",
+        description: "Müşteri taleplerini, görüşme notlarını ve iletişim geçmişini kayıt altına alın.",
+        highlights: ["360° müşteri görünümü", "Otomatik hatırlatmalar", "Etkileşim geçmişi"],
+      },
+      {
+        title: "Randevu ve Takvim Yönetimi",
+        description: "Görüşme randevularını planlayın, müşterilere otomatik hatırlatmalar gönderin.",
+        highlights: ["Takvim senkronizasyonu", "SMS/E-posta hatırlatma", "Çakışma kontrolü"],
+      },
+      {
+        title: "Doküman ve İşlem Takibi",
+        description: "Satış sürecindeki tüm belgeleri dijital ortamda yönetin, işlem durumunu takip edin.",
+        highlights: ["Dijital belge arşivi", "İşlem aşama takibi", "E-imza entegrasyonu"],
+      },
+    ],
+    faq: [
+      {
+        question: "Sahibinden, Hepsiemlak gibi portallarla entegrasyon var mı?",
+        answer: "Evet, Türkiye'nin önde gelen emlak portallarıyla API entegrasyonu mevcuttur. Tek tıkla çoklu platforma ilan yayınlayabilirsiniz.",
+      },
+      {
+        question: "Ofisteki tüm danışmanlar aynı sistemi kullanabilir mi?",
+        answer: "Evet, çoklu kullanıcı desteği mevcuttur. Her danışman kendi portföyünü yönetirken, ofis yöneticisi tüm aktiviteleri izleyebilir.",
+      },
+      {
+        question: "Mobil uygulama var mı?",
+        answer: "Evet, iOS ve Android için native mobil uygulamamız mevcuttur. Sahada bile tüm işlemlerinizi yapabilirsiniz.",
+      },
+      {
+        question: "Müşteri verilerini içe aktarabilir miyim?",
+        answer: "Excel, CSV ve vCard formatlarından toplu müşteri aktarımı yapabilirsiniz. Mevcut CRM sistemlerinden de veri transferi desteklenir.",
+      },
+      {
+        question: "Raporlama özellikleri neler?",
+        answer: "Danışman performansı, portföy analizi, satış dönüşüm oranları ve pazar trend raporları gibi detaylı raporlar sunulmaktadır.",
+      },
+    ],
+    useCases: [
+      {
+        title: "Butik Emlak Ofisi",
+        scenario: "5 danışmanlı butik emlak ofisi, 150+ aktif portföy",
+        problem: "İlan güncellemeleri zaman alıyor, müşteri takipleri unutuluyor, randevular karışıyor.",
+        solution: "Merkezi portföy yönetimi ve otomatik hatırlatma sistemi kuruldu.",
+        outcome: "İlan güncelleme süresi %60 azaldı, müşteri dönüş oranı %35 arttı.",
+      },
+      {
+        title: "Franchise Emlak Ağı",
+        scenario: "10 şubeli emlak franchise'ı, 40+ danışman",
+        problem: "Şubeler arası koordinasyon zayıf, performans karşılaştırması yapılamıyor.",
+        solution: "Merkezi yönetim paneli ile tüm şubeler tek platformda birleştirildi.",
+        outcome: "Şubeler arası portföy paylaşımı başladı, toplam satışlar %20 arttı.",
+      },
+      {
+        title: "Bağımsız Emlak Danışmanı",
+        scenario: "Solo çalışan emlak danışmanı, 50+ müşteri portföyü",
+        problem: "Müşteri takibi Excel'de, randevular telefon takviminde, belge organizasyonu karmaşık.",
+        solution: "Tüm operasyonlar tek mobil uygulamada birleştirildi.",
+        outcome: "Günlük operasyon süresi 2 saat azaldı, kapanış oranı %25 arttı.",
+      },
+    ],
   },
   {
     slug: "otel-asistanlari",
@@ -121,6 +344,73 @@ const productDetailsTr: ProductDetail[] = [
       "Misafir deneyimini etkileyen operasyonel gecikmeleri azaltır",
     ],
     targetUsers: ["Butik oteller", "Otel zincirleri", "Rezervasyon ve gelir yönetimi ekipleri", "Konaklama operasyon yöneticileri"],
+    featuresDetailed: [
+      {
+        title: "Merkezi Rezervasyon Paneli",
+        description: "Tüm kanallardan gelen rezervasyonları tek ekranda yönetin, çakışmaları önleyin.",
+        highlights: ["Gerçek zamanlı müsaitlik", "Drag & drop rezervasyon", "Çoklu oda tipi desteği"],
+      },
+      {
+        title: "Kanal Yönetimi (Channel Manager)",
+        description: "Booking, Expedia, Airbnb gibi tüm OTA'larla otomatik senkronizasyon sağlayın.",
+        highlights: ["Anında oran güncelleme", "Müsaitlik senkronizasyonu", "Overbooking koruması"],
+      },
+      {
+        title: "Dinamik Fiyatlandırma",
+        description: "AI destekli fiyat optimizasyonu ile doluluk ve geliri maksimize edin.",
+        highlights: ["Pazar analizi", "Rakip fiyat takibi", "Otomatik fiyat ayarlama"],
+      },
+      {
+        title: "Operasyon Dashboard'ları",
+        description: "Günlük check-in/out, housekeeping ve misafir talepleri için merkezi kontrol paneli.",
+        highlights: ["Günlük görev listesi", "Departman koordinasyonu", "Misafir talep takibi"],
+      },
+    ],
+    faq: [
+      {
+        question: "Hangi OTA'larla entegrasyon var?",
+        answer: "Booking.com, Expedia, Airbnb, Hotels.com, Agoda ve 50+ yerel ve uluslararası OTA ile entegrasyon sağlıyoruz.",
+      },
+      {
+        question: "Küçük butik oteller için uygun mu?",
+        answer: "Evet, 5 odalı butik otellerden 500+ odalı zincir otellere kadar her ölçekte kullanılabilir. Esnek fiyatlandırma modeli mevcuttur.",
+      },
+      {
+        question: "Mevcut PMS sistemimle entegre olabilir mi?",
+        answer: "Opera, Protel, Clock PMS gibi yaygın PMS sistemleriyle entegrasyon sağlanabilir. API altyapımız özel entegrasyonları da destekler.",
+      },
+      {
+        question: "Fiyatlandırma AI'ı nasıl çalışıyor?",
+        answer: "Sistem; geçmiş veriler, pazar talebi, rakip fiyatları ve etkinlik takvimi gibi faktörleri analiz ederek optimal fiyat önerileri sunar.",
+      },
+      {
+        question: "Raporlama ve analitik özellikleri neler?",
+        answer: "RevPAR, ADR, doluluk oranları, kanal performansı ve gelir tahminleri gibi kapsamlı KPI raporları sunulmaktadır.",
+      },
+    ],
+    useCases: [
+      {
+        title: "Butik Otel",
+        scenario: "Kapadokya'da 12 odalı butik otel",
+        problem: "Manuel fiyat güncellemesi zaman alıyor, OTA komisyonları yüksek, direkt rezervasyon az.",
+        solution: "Dinamik fiyatlandırma ve direkt booking motoru entegre edildi.",
+        outcome: "Direkt rezervasyonlar %40 arttı, ortalama oda geliri %25 yükseldi.",
+      },
+      {
+        title: "Apart Otel Zinciri",
+        scenario: "5 lokasyonlu apart otel zinciri, 200 ünite",
+        problem: "Lokasyonlar arası fiyat tutarsızlığı, merkezi görünürlük yok, overbooking problemleri.",
+        solution: "Merkezi channel manager ve fiyat yönetimi sistemi kuruldu.",
+        outcome: "Overbooking sıfıra indi, fiyat tutarlılığı sağlandı, gelir %30 arttı.",
+      },
+      {
+        title: "Tatil Köyü",
+        scenario: "Akdeniz'de 100 odalı tatil köyü",
+        problem: "Sezonsal doluluk dalgalanmaları, düşük sezonda gelir kaybı.",
+        solution: "AI destekli fiyatlandırma ile sezonsal strateji optimize edildi.",
+        outcome: "Düşük sezon doluluğu %35 arttı, yıllık RevPAR %20 iyileşti.",
+      },
+    ],
   },
   {
     slug: "agent-ai-calismalari",
@@ -152,6 +442,73 @@ const productDetailsTr: ProductDetail[] = [
       "Süreç otomasyonu hedefleyen KOBİ ve kurumsal firmalar",
       "AI dönüşümü planlayan ürün ekipleri",
     ],
+    featuresDetailed: [
+      {
+        title: "Görev Bazlı Agent Tasarımı",
+        description: "İş süreçlerinize özel, belirli görevleri otonom olarak yerine getiren AI agent'lar tasarlıyoruz.",
+        highlights: ["Süreç analizi ve modelleme", "Kural tabanlı karar mekanizmaları", "İnsan-AI hibrit akışlar"],
+      },
+      {
+        title: "HR ve Onboarding Agent'ları",
+        description: "İşe alım, oryantasyon ve çalışan sorularını yanıtlayan özelleştirilmiş agent çözümleri.",
+        highlights: ["Aday tarama otomasyonu", "Oryantasyon asistanı", "Politika ve prosedür bot'u"],
+      },
+      {
+        title: "Müşteri Hizmetleri Agent'ları",
+        description: "7/24 müşteri sorularını yanıtlayan, ticket oluşturan ve yönlendiren akıllı agent'lar.",
+        highlights: ["Doğal dil anlama", "Çok kanallı destek", "Eskalasyon yönetimi"],
+      },
+      {
+        title: "Süreç Otomasyon Agent'ları",
+        description: "Tekrarlayan iş akışlarını otomatize eden, veri toplayan ve raporlayan agent çözümleri.",
+        highlights: ["Veri girişi otomasyonu", "Rapor oluşturma", "Sistem entegrasyonları"],
+      },
+    ],
+    faq: [
+      {
+        question: "AI agent tam olarak ne yapıyor?",
+        answer: "AI agent, belirlenen görevleri otonom olarak yerine getiren yazılım programlarıdır. Örneğin müşteri sorularını yanıtlama, veri işleme veya süreç adımlarını takip etme gibi işleri insan müdahalesi olmadan gerçekleştirir.",
+      },
+      {
+        question: "Mevcut sistemlerimizle entegre olabilir mi?",
+        answer: "Evet, geliştirdiğimiz agent'lar API'ler aracılığıyla CRM, ERP, HRIS ve diğer kurumsal sistemlerle entegre edilebilir.",
+      },
+      {
+        question: "Agent geliştirme süreci ne kadar sürer?",
+        answer: "Basit görev agent'ları 2-4 hafta, karmaşık süreç agent'ları 6-12 hafta içinde geliştirilebilir. Süreç, ihtiyaç analizi ile başlar.",
+      },
+      {
+        question: "Agent'lar öğrenebilir mi?",
+        answer: "Evet, geliştirdiğimiz agent'lar geribildirimlerden öğrenen, zamanla performansını artıran yapay zeka modelleri kullanır.",
+      },
+      {
+        question: "İnsan müdahalesi gerektiğinde ne olur?",
+        answer: "Agent'lar, yetkisi dışındaki durumları tespit eder ve uygun insan operatörüne otomatik olarak yönlendirir. Tam izlenebilirlik sağlanır.",
+      },
+    ],
+    useCases: [
+      {
+        title: "E-Ticaret Müşteri Hizmetleri",
+        scenario: "Günlük 500+ müşteri talebi alan e-ticaret şirketi",
+        problem: "Müşteri hizmetleri ekibi yetersiz, yanıt süreleri uzun, memnuniyet düşük.",
+        solution: "7/24 çalışan müşteri hizmetleri agent'ı devreye alındı, karmaşık talepler insan operatöre yönlendirildi.",
+        outcome: "Yanıt süresi 4 saatten 30 saniyeye düştü, müşteri memnuniyeti %40 arttı.",
+      },
+      {
+        title: "HR Onboarding Otomasyonu",
+        scenario: "Yıllık 200+ yeni işe alım yapan teknoloji şirketi",
+        problem: "Onboarding süreci manuel ve tutarsız, HR ekibi rutin sorularla boğuluyor.",
+        solution: "Onboarding agent'ı ile oryantasyon süreci otomatize edildi, self-servis bilgi merkezi oluşturuldu.",
+        outcome: "HR ekibinin rutin yükü %60 azaldı, yeni çalışan adaptasyon süresi %30 kısaldı.",
+      },
+      {
+        title: "Finans Süreç Otomasyonu",
+        scenario: "Aylık 1000+ fatura işleyen orta ölçekli şirket",
+        problem: "Fatura onay süreci yavaş, takip zorluğu, gecikme kaynaklı maliyet artışı.",
+        solution: "Fatura işleme agent'ı ile otomatik sınıflandırma, onay akışı ve takip sistemi kuruldu.",
+        outcome: "Fatura işleme süresi %75 azaldı, erken ödeme indirimleri kullanılmaya başlandı.",
+      },
+    ],
   },
   {
     slug: "e-ticaret-web-uygulamalari",
@@ -178,6 +535,73 @@ const productDetailsTr: ProductDetail[] = [
       "Marka deneyimini güçlendiren modern bir kullanıcı akışı sağlar",
     ],
     targetUsers: ["B2C ve B2B e-ticaret markaları", "Perakende şirketleri", "Online satış operasyon ekipleri", "Hızlı büyüme hedefleyen dijital markalar"],
+    featuresDetailed: [
+      {
+        title: "Modern Alışveriş Deneyimi",
+        description: "Hızlı, mobil uyumlu ve kullanıcı dostu e-ticaret arayüzleri geliştiriyoruz.",
+        highlights: ["Mobil-first tasarım", "Hızlı sayfa yüklenme", "Kişiselleştirilmiş öneriler"],
+      },
+      {
+        title: "Sipariş ve Stok Yönetimi",
+        description: "Siparişten teslimata kadar tüm süreci tek panelden yönetin, stok seviyelerini gerçek zamanlı takip edin.",
+        highlights: ["Çoklu depo desteği", "Otomatik stok uyarıları", "Toplu sipariş işleme"],
+      },
+      {
+        title: "Ödeme ve Kargo Entegrasyonları",
+        description: "Türkiye'nin önde gelen ödeme ve kargo altyapılarıyla sorunsuz entegrasyon.",
+        highlights: ["Tüm bankalar ve sanal POS", "Kargo takip entegrasyonu", "Taksit seçenekleri"],
+      },
+      {
+        title: "Yönetim ve Analitik Paneli",
+        description: "Satış, müşteri ve ürün performansını detaylı raporlarla analiz edin.",
+        highlights: ["Gerçek zamanlı satış dashboard'u", "Müşteri davranış analizi", "Kampanya performans takibi"],
+      },
+    ],
+    faq: [
+      {
+        question: "Hazır e-ticaret çözümlerinden farkı ne?",
+        answer: "Tamamen markanıza özel, ölçeklenebilir ve sahip olduğunuz bir altyapı sunuyoruz. Hazır çözümlerin kısıtlamaları ve aylık ücretleri yok.",
+      },
+      {
+        question: "B2B e-ticaret için uygun mu?",
+        answer: "Evet, müşteri bazlı fiyatlandırma, toplu sipariş, teklif yönetimi ve kurumsal onay akışları gibi B2B'ye özel özellikler geliştiriyoruz.",
+      },
+      {
+        question: "Mevcut ERP/muhasebe sistemimle entegre olabilir mi?",
+        answer: "Evet, SAP, Logo, Netsis, Mikro gibi yaygın ERP sistemleri ve e-Fatura/e-Arşiv altyapılarıyla entegrasyon sağlıyoruz.",
+      },
+      {
+        question: "Site performansı nasıl?",
+        answer: "Modern teknolojiler (Next.js, CDN, önbellekleme) kullanarak Google Core Web Vitals standartlarını karşılayan, hızlı yüklenen siteler geliştiriyoruz.",
+      },
+      {
+        question: "Lansman sonrası destek var mı?",
+        answer: "Evet, bakım, güncelleme ve teknik destek hizmetlerimiz mevcuttur. Ayrıca performans izleme ve optimizasyon desteği sunuyoruz.",
+      },
+    ],
+    useCases: [
+      {
+        title: "Moda E-Ticaret",
+        scenario: "Yerli moda markası, yıllık 50K+ sipariş hedefi",
+        problem: "Mevcut hazır çözüm yavaş, özelleştirme kısıtlı, pazaryeri komisyonları yüksek.",
+        solution: "Özel e-ticaret platformu geliştirildi, tüm ödeme ve kargo entegrasyonları yapıldı.",
+        outcome: "Sayfa hızı 3 kat arttı, dönüşüm oranı %45 yükseldi, pazaryeri bağımlılığı azaldı.",
+      },
+      {
+        title: "B2B Endüstriyel Ürünler",
+        scenario: "Endüstriyel yedek parça distribütörü, 500+ kurumsal müşteri",
+        problem: "Telefonla sipariş alma verimsiz, müşteri bazlı fiyatlandırma manuel takip ediliyor.",
+        solution: "B2B e-ticaret portalı geliştirildi, ERP entegrasyonu ve otomatik fiyatlandırma sistemi kuruldu.",
+        outcome: "Online sipariş oranı %70'e ulaştı, sipariş işleme süresi %60 azaldı.",
+      },
+      {
+        title: "Gıda ve Market",
+        scenario: "Bölgesel market zinciri, online sipariş ve teslimat başlatmak istiyor",
+        problem: "Hazır çözümler gıda lojistiğine uygun değil, stok-sipariş senkronizasyonu zor.",
+        solution: "Slot bazlı teslimat yönetimi, gerçek zamanlı stok takibi ve mobil uygulama geliştirildi.",
+        outcome: "Online satışlar toplam cironun %25'ine ulaştı, müşteri başına sipariş değeri %30 arttı.",
+      },
+    ],
   },
 ];
 
