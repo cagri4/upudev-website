@@ -16,11 +16,11 @@ export const homeNl: HomeDictionary = {
   ],
   hero: {
     ...homeTr.hero,
-    title: "Wij zetten zakelijke ideeën om in schaalbare digitale producten.",
+    title: "Van idee naar product, snel.",
     subtitle:
-      "UPU Dev versnelt groei met moderne webproducten, SaaS-infrastructuur en digitale automatiseringsoplossingen.",
-    ctaPrimary: "Offerte Aanvragen",
-    ctaSecondary: "Projecten Bekijken",
+      "Wij versnellen uw groei met moderne webproducten, SaaS-infrastructuur en digitale automatiseringsoplossingen.",
+    ctaPrimary: "Projecten Bekijken",
+    ctaSecondary: "Offerte Aanvragen",
     stats: [
       { value: "638+", label: "Adviessessies", note: "Afgeronde sessies in de afgelopen 30 maanden" },
       { value: "%95", label: "Klanttevredenheid", note: "Gemiddelde feedbackscore na oplevering" },

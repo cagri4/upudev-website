@@ -27,6 +27,7 @@ body {
   background: var(--io-white);
   color: var(--io-ink);
   font-family: "Manrope", "Sora", "Segoe UI", sans-serif;
+  overflow-x: hidden;
 }
 
 a {
@@ -193,6 +194,7 @@ a {
 }
 
 .io-hero {
+  position: relative;
   padding-top: 6.5rem;
   padding-bottom: 3.5rem;
   display: grid;
@@ -238,9 +240,6 @@ a {
 .io-hero-media {
   position: relative;
   min-height: 480px;
-  border-radius: 26px;
-  overflow: hidden;
-  box-shadow: var(--io-shadow);
 }
 
 .io-image {

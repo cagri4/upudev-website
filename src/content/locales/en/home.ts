@@ -16,11 +16,11 @@ export const homeEn: HomeDictionary = {
   ],
   hero: {
     ...homeTr.hero,
-    title: "We turn business ideas into scalable digital products.",
+    title: "From idea to product, fast.",
     subtitle:
-      "As UPU Dev, we accelerate growth with modern web products, SaaS infrastructure, and digital automation solutions.",
-    ctaPrimary: "Get Quote",
-    ctaSecondary: "View Projects",
+      "We accelerate your growth with modern web products, SaaS infrastructure, and digital automation solutions.",
+    ctaPrimary: "View Projects",
+    ctaSecondary: "Get Quote",
     stats: [
       { value: "638+", label: "Consulting Sessions", note: "Completed sessions in the last 30 months" },
       { value: "%95", label: "Client Satisfaction", note: "Average post-delivery feedback score" },

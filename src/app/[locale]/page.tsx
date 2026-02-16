@@ -96,21 +96,22 @@ export default async function HomeLocalePage({ params }: { params: Promise<{ loc
             <h1>{dict.hero.title}</h1>
             <p className="io-lead">{dict.hero.subtitle}</p>
             <div className="io-hero-actions">
-              <a className="io-btn io-btn-dark" href={`/${locale}#projeler`}>
+              <Link className="io-btn io-btn-dark" href={`/${locale}/iletisim`}>
                 {dict.hero.ctaSecondary}
-              </a>
-              <Link className="io-btn io-btn-ghost" href={`/${locale}/iletisim`}>
-                {dict.hero.ctaPrimary}
               </Link>
+              <a className="io-btn io-btn-ghost" href={`/${locale}#projeler`}>
+                {dict.hero.ctaPrimary}
+              </a>
             </div>
           </div>
           <div className="io-hero-media">
             <Image
-              src="https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?auto=format&fit=crop&w=1800&q=80"
-              alt="Strategic workshop in progress"
+              src="/hero-illustration-square.jpg"
+              alt="AI-powered software development"
               fill
               priority
               className="io-image"
+              style={{ objectFit: "contain" }}
             />
           </div>
         </section>

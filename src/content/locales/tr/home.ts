@@ -101,12 +101,12 @@ export const homeTr: HomeDictionary = {
     { href: "/iletisim", label: "İletişim" },
   ],
   hero: {
-    badge: "Smart Technology",
-    title: "İş fikirlerini ölçeklenebilir teknoloji ürünlerine dönüştürüyoruz.",
+    badge: "SaaS & Yazılım Partneri",
+    title: "Fikirden ürüne, hızla.",
     subtitle:
-      "UPU Dev olarak modern web ürünleri, SaaS altyapıları ve dijital otomasyon çözümleri ile büyümeyi hızlandırıyoruz.",
-    ctaPrimary: "Teklif Al",
-    ctaSecondary: "Projeleri İncele",
+      "Modern web ürünleri, SaaS altyapıları ve dijital otomasyon çözümleri ile büyümenizi hızlandırıyoruz.",
+    ctaPrimary: "Projeleri İncele",
+    ctaSecondary: "Teklif Al",
     stats: [
       { value: "638+", label: "Danışmanlık Oturumu", note: "Son 30 ayda tamamlanan görüşmeler" },
       { value: "%95", label: "Müşteri Memnuniyeti", note: "Teslim sonrası geri bildirim ortalaması" },
