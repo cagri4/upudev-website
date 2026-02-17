@@ -1,9 +1,11 @@
 import { NextResponse } from "next/server";
 import type { NextRequest } from "next/server";
-import { defaultLocale, isLocale } from "@/lib/i18n";
+import { isLocale } from "@/lib/i18n";
+
+const FALLBACK_LOCALE = "en";
 
 function getPreferredLocale(acceptLanguage: string | null): string {
-  if (!acceptLanguage) return defaultLocale;
+  if (!acceptLanguage) return FALLBACK_LOCALE;
 
   // Parse Accept-Language header (e.g., "nl-NL,nl;q=0.9,en;q=0.8,tr;q=0.7")
   const languages = acceptLanguage
@@ -24,7 +26,7 @@ function getPreferredLocale(acceptLanguage: string | null): string {
     }
   }
 
-  return defaultLocale;
+  return FALLBACK_LOCALE;
 }
 
 export function proxy(request: NextRequest) {
