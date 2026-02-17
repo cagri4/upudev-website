@@ -2,6 +2,31 @@ import { NextResponse } from "next/server";
 import type { NextRequest } from "next/server";
 import { defaultLocale, isLocale } from "@/lib/i18n";
 
+function getPreferredLocale(acceptLanguage: string | null): string {
+  if (!acceptLanguage) return defaultLocale;
+
+  // Parse Accept-Language header (e.g., "nl-NL,nl;q=0.9,en;q=0.8,tr;q=0.7")
+  const languages = acceptLanguage
+    .split(",")
+    .map((lang) => {
+      const [code, qValue] = lang.trim().split(";q=");
+      return {
+        code: code.split("-")[0].toLowerCase(), // "nl-NL" -> "nl"
+        q: qValue ? parseFloat(qValue) : 1,
+      };
+    })
+    .sort((a, b) => b.q - a.q);
+
+  // Find first matching supported locale
+  for (const lang of languages) {
+    if (isLocale(lang.code)) {
+      return lang.code;
+    }
+  }
+
+  return defaultLocale;
+}
+
 export function proxy(request: NextRequest) {
   const { pathname } = request.nextUrl;
 
@@ -19,8 +44,12 @@ export function proxy(request: NextRequest) {
     return NextResponse.next();
   }
 
+  // Get preferred locale from Accept-Language header
+  const acceptLanguage = request.headers.get("accept-language");
+  const locale = getPreferredLocale(acceptLanguage);
+
   const url = request.nextUrl.clone();
-  url.pathname = `/${defaultLocale}${pathname}`;
+  url.pathname = `/${locale}${pathname}`;
   return NextResponse.redirect(url);
 }
 
