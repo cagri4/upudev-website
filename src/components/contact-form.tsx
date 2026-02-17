@@ -61,6 +61,8 @@ export function ContactForm({ locale, labels }: { locale: Locale; labels: Contac
       locale,
     };
 
+    const form = event.currentTarget;
+
     try {
       const response = await fetch("/api/contact", {
         method: "POST",
@@ -78,7 +80,7 @@ export function ContactForm({ locale, labels }: { locale: Locale; labels: Contac
 
       setState("success");
       setMessage(messages.success);
-      event.currentTarget.reset();
+      form.reset();
     } catch {
       setState("error");
       setMessage(messages.network);

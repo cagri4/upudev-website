@@ -118,7 +118,6 @@ export async function POST(request: NextRequest) {
       secure,
       auth: { user, pass },
     });
-
     await transporter.sendMail({
       from,
       to,
@@ -134,20 +133,90 @@ export async function POST(request: NextRequest) {
         message,
       ].join("\n"),
       html: `
-        <h2>Yeni Iletisim Formu</h2>
-        <p><strong>Ad Soyad:</strong> ${name}</p>
-        <p><strong>E-posta:</strong> ${email}</p>
-        <p><strong>Telefon:</strong> ${phone || "-"}</p>
-        <p><strong>Firma:</strong> ${company || "-"}</p>
-        <p><strong>Konu:</strong> ${subject}</p>
-        <p><strong>Mesaj:</strong></p>
-        <p>${message.replace(/\n/g, "<br/>")}</p>
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+</head>
+<body style="margin:0;padding:0;background-color:#f4f4f5;font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,sans-serif;">
+  <table width="100%" cellpadding="0" cellspacing="0" style="background-color:#f4f4f5;padding:40px 20px;">
+    <tr>
+      <td align="center">
+        <table width="100%" cellpadding="0" cellspacing="0" style="max-width:600px;background-color:#ffffff;border-radius:12px;overflow:hidden;box-shadow:0 4px 6px rgba(0,0,0,0.05);">
+          <!-- Header -->
+          <tr>
+            <td style="background-color:#18181b;padding:32px 40px;text-align:center;">
+              <h1 style="margin:0;color:#ffffff;font-size:24px;font-weight:600;">Yeni İletişim Formu</h1>
+            </td>
+          </tr>
+          <!-- Content -->
+          <tr>
+            <td style="padding:40px;">
+              <table width="100%" cellpadding="0" cellspacing="0">
+                <tr>
+                  <td style="padding-bottom:24px;border-bottom:1px solid #e4e4e7;">
+                    <p style="margin:0 0 4px;font-size:12px;color:#71717a;text-transform:uppercase;letter-spacing:0.5px;">Ad Soyad</p>
+                    <p style="margin:0;font-size:16px;color:#18181b;font-weight:500;">${name}</p>
+                  </td>
+                </tr>
+                <tr>
+                  <td style="padding:24px 0;border-bottom:1px solid #e4e4e7;">
+                    <p style="margin:0 0 4px;font-size:12px;color:#71717a;text-transform:uppercase;letter-spacing:0.5px;">E-posta</p>
+                    <p style="margin:0;font-size:16px;color:#18181b;"><a href="mailto:${email}" style="color:#2563eb;text-decoration:none;">${email}</a></p>
+                  </td>
+                </tr>
+                ${phone ? `
+                <tr>
+                  <td style="padding:24px 0;border-bottom:1px solid #e4e4e7;">
+                    <p style="margin:0 0 4px;font-size:12px;color:#71717a;text-transform:uppercase;letter-spacing:0.5px;">Telefon</p>
+                    <p style="margin:0;font-size:16px;color:#18181b;"><a href="tel:${phone}" style="color:#2563eb;text-decoration:none;">${phone}</a></p>
+                  </td>
+                </tr>
+                ` : ""}
+                ${company ? `
+                <tr>
+                  <td style="padding:24px 0;border-bottom:1px solid #e4e4e7;">
+                    <p style="margin:0 0 4px;font-size:12px;color:#71717a;text-transform:uppercase;letter-spacing:0.5px;">Firma</p>
+                    <p style="margin:0;font-size:16px;color:#18181b;font-weight:500;">${company}</p>
+                  </td>
+                </tr>
+                ` : ""}
+                <tr>
+                  <td style="padding:24px 0;border-bottom:1px solid #e4e4e7;">
+                    <p style="margin:0 0 4px;font-size:12px;color:#71717a;text-transform:uppercase;letter-spacing:0.5px;">Konu</p>
+                    <p style="margin:0;font-size:16px;color:#18181b;font-weight:500;">${subject}</p>
+                  </td>
+                </tr>
+                <tr>
+                  <td style="padding-top:24px;">
+                    <p style="margin:0 0 12px;font-size:12px;color:#71717a;text-transform:uppercase;letter-spacing:0.5px;">Mesaj</p>
+                    <div style="background-color:#fafafa;border-radius:8px;padding:20px;font-size:15px;color:#27272a;line-height:1.6;">
+                      ${message.replace(/\n/g, "<br/>")}
+                    </div>
+                  </td>
+                </tr>
+              </table>
+            </td>
+          </tr>
+          <!-- Footer -->
+          <tr>
+            <td style="background-color:#fafafa;padding:24px 40px;text-align:center;border-top:1px solid #e4e4e7;">
+              <p style="margin:0;font-size:13px;color:#71717a;">Bu mesaj <strong>upudev.nl</strong> iletişim formu üzerinden gönderildi.</p>
+            </td>
+          </tr>
+        </table>
+      </td>
+    </tr>
+  </table>
+</body>
+</html>
       `,
     });
 
     return NextResponse.json({ ok: true });
   } catch (error) {
-    console.error("Contact API error:", error);
+    console.error("Contact API error:", error instanceof Error ? error.message : error);
     return NextResponse.json({ ok: false, message: serverMessage }, { status: 500 });
   }
 }
