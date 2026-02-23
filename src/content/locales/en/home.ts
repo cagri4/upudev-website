@@ -2,6 +2,10 @@ import { homeTr, type HomeDictionary } from "@/content/locales/tr/home";
 
 export const homeEn: HomeDictionary = {
   ...homeTr,
+  partners: {
+    ...homeTr.partners,
+    title: "Our Technology Ecosystem and Partners",
+  },
   topbar: {
     ...homeTr.topbar,
     phoneLabel: "Phone",
@@ -16,6 +20,7 @@ export const homeEn: HomeDictionary = {
   ],
   hero: {
     ...homeTr.hero,
+    badge: "SaaS & Software Partner",
     title: "From idea to product, fast.",
     subtitle:
       "We accelerate your growth with modern web products, SaaS infrastructure, and digital automation solutions.",
