@@ -1,7 +1,7 @@
-import Link from "next/link";
 import { notFound } from "next/navigation";
 import { ContactForm } from "@/components/contact-form";
 import { SiteHeader } from "@/components/site-header";
+import { SiteFooter } from "@/components/site-footer";
 import { getHomeDictionary, isLocale, locales, type Locale } from "@/lib/i18n";
 
 const pageText: Record<
@@ -202,16 +202,7 @@ export default async function ContactPage({ params }: { params: Promise<{ locale
         </section>
       </main>
 
-      <footer className="io-footer">
-        <div className="io-wrap">
-          <p>{dict.footer}</p>
-          <div>
-            <Link href={`/${locale}`}>Home</Link>
-            <Link href={`/${locale}#projeler`}>Cases</Link>
-            <Link href={`/${locale}/iletisim`}>Contact</Link>
-          </div>
-        </div>
-      </footer>
+      <SiteFooter locale={locale} copyright={dict.footer} />
     </div>
   );
 }
