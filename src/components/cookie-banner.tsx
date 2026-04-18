@@ -77,9 +77,11 @@ export function CookieBanner() {
       <h2 className="text-base font-semibold text-neutral-900">{t.title}</h2>
       <p className="mt-2 text-sm leading-relaxed text-neutral-600">
         {t.description}{" "}
-        <Link href={`/${locale}/privacy`} className="underline underline-offset-2 hover:text-neutral-900">
+        (
+        <Link href={`/${locale}/privacy`} className="text-indigo-600 underline underline-offset-2 hover:text-indigo-700">
           {t.privacyLabel}
         </Link>
+        )
       </p>
       <div className="mt-4 flex gap-2">
         <button
