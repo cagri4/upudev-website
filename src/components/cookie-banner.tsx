@@ -78,7 +78,7 @@ export function CookieBanner() {
       <p className="mt-2 text-sm leading-relaxed text-neutral-600">
         {t.description}{" "}
         (
-        <Link href={`/${locale}/privacy`} className="text-indigo-600 underline underline-offset-2 hover:text-indigo-700">
+        <Link href={`/${locale}/privacy`} className="font-semibold text-blue-600 underline underline-offset-2 hover:text-blue-800">
           {t.privacyLabel}
         </Link>
         )
