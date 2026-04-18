@@ -1,6 +1,7 @@
 import type { Metadata, Viewport } from "next";
 import "./globals.css";
 import { ScrollToTop } from "@/components/scroll-to-top";
+import { CookieBanner } from "@/components/cookie-banner";
 
 export const metadata: Metadata = {
   title: "UpuDev | Dijital Urun ve Yazilim Cozumleri",
@@ -23,6 +24,7 @@ export default function RootLayout({
       <body className="antialiased">
         {children}
         <ScrollToTop />
+        <CookieBanner />
       </body>
     </html>
   );
