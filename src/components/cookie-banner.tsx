@@ -56,12 +56,34 @@ export function CookieBanner() {
   const [visible, setVisible] = useState(false);
 
   useEffect(() => {
-    const stored = typeof window !== "undefined" ? window.localStorage.getItem(STORAGE_KEY) : null;
-    if (!stored) setVisible(true);
+    if (typeof window === "undefined") return;
+    const stored = window.localStorage.getItem(STORAGE_KEY);
+    if (!stored) {
+      setVisible(true);
+      return;
+    }
+    try {
+      const parsed = JSON.parse(stored);
+      if (typeof parsed?.accepted !== "boolean") setVisible(true);
+    } catch {
+      setVisible(true);
+    }
   }, []);
 
-  const handleChoice = (value: "accepted" | "rejected") => {
-    window.localStorage.setItem(STORAGE_KEY, value);
+  const handleChoice = (accepted: boolean) => {
+    const consent = { accepted, timestamp: Date.now() };
+    window.localStorage.setItem(STORAGE_KEY, JSON.stringify(consent));
+
+    if (typeof window !== "undefined" && typeof window.gtag === "function") {
+      const value = accepted ? "granted" : "denied";
+      window.gtag("consent", "update", {
+        ad_storage: value,
+        ad_user_data: value,
+        ad_personalization: value,
+        analytics_storage: value,
+      });
+    }
+
     setVisible(false);
   };
 
@@ -86,14 +108,14 @@ export function CookieBanner() {
       <div className="mt-4 flex gap-2">
         <button
           type="button"
-          onClick={() => handleChoice("rejected")}
+          onClick={() => handleChoice(false)}
           className="flex-1 rounded-full border border-neutral-300 px-4 py-2 text-sm font-medium text-neutral-700 transition hover:bg-neutral-50"
         >
           {t.reject}
         </button>
         <button
           type="button"
-          onClick={() => handleChoice("accepted")}
+          onClick={() => handleChoice(true)}
           className="flex-1 rounded-full bg-neutral-900 px-4 py-2 text-sm font-medium text-white transition hover:bg-neutral-800"
         >
           {t.accept}

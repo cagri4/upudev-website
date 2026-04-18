@@ -2,6 +2,7 @@
 
 import { FormEvent, useState } from "react";
 import type { Locale } from "@/lib/i18n";
+import { pushEvent } from "@/lib/analytics";
 
 type FormState = "idle" | "sending" | "success" | "error";
 
@@ -80,6 +81,12 @@ export function ContactForm({ locale, labels }: { locale: Locale; labels: Contac
 
       setState("success");
       setMessage(messages.success);
+      pushEvent({
+        event: "quote_form_submit",
+        form_location: "iletisim_page",
+        form_subject: payload.subject,
+        locale,
+      });
       form.reset();
     } catch {
       setState("error");

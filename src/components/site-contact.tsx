@@ -1,4 +1,5 @@
 import type { Locale } from "@/lib/i18n";
+import { TrackedLink } from "@/components/tracked-link";
 
 const labels: Record<Locale, { badge: string; email: string; phone: string; address: string; kvk: string; iban: string }> = {
   tr: { badge: "İletişim", email: "E-posta", phone: "Telefon", address: "Adres", kvk: "KVK", iban: "IBAN" },
@@ -21,9 +22,14 @@ export function SiteContact({ locale, cta, contact }: SiteContactProps) {
         <p className="io-eyebrow io-eyebrow-invert">{t.badge}</p>
         <h2>{cta.title}</h2>
         <p>{cta.text}</p>
-        <a className="io-btn io-btn-accent mt-6" href={`mailto:${contact.email}`}>
+        <TrackedLink
+          className="io-btn io-btn-accent mt-6"
+          href={`mailto:${contact.email}`}
+          location="meeting_cta"
+          locale={locale}
+        >
           {cta.button}
-        </a>
+        </TrackedLink>
       </div>
       <div className="io-contact-right">
         <ul>
@@ -33,7 +39,9 @@ export function SiteContact({ locale, cta, contact }: SiteContactProps) {
           </li>
           <li>
             <strong>{t.phone}</strong>
-            <a href={contact.phoneHref}>{contact.phone}</a>
+            <TrackedLink href={contact.phoneHref} location="home_contact" locale={locale}>
+              {contact.phone}
+            </TrackedLink>
           </li>
           <li>
             <strong>{t.address}</strong>

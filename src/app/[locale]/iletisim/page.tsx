@@ -2,6 +2,7 @@ import { notFound } from "next/navigation";
 import { ContactForm } from "@/components/contact-form";
 import { SiteHeader } from "@/components/site-header";
 import { SiteFooter } from "@/components/site-footer";
+import { TrackedLink } from "@/components/tracked-link";
 import { getHomeDictionary, isLocale, locales, type Locale } from "@/lib/i18n";
 
 const pageText: Record<
@@ -159,11 +160,15 @@ export default async function ContactPage({ params }: { params: Promise<{ locale
                 <ul className="mt-4 space-y-3 text-sm leading-relaxed text-neutral-700">
                   <li>
                     <strong className="block text-xs uppercase tracking-[0.12em] text-neutral-500">{t.email}</strong>
-                    {dict.contact.email}
+                    <TrackedLink href={`mailto:${dict.contact.email}`} location="contact_page" locale={locale}>
+                      {dict.contact.email}
+                    </TrackedLink>
                   </li>
                   <li>
                     <strong className="block text-xs uppercase tracking-[0.12em] text-neutral-500">{t.phone}</strong>
-                    {dict.contact.phone}
+                    <TrackedLink href={dict.contact.phoneHref} location="contact_page" locale={locale}>
+                      {dict.contact.phone}
+                    </TrackedLink>
                   </li>
                   <li>
                     <strong className="block text-xs uppercase tracking-[0.12em] text-neutral-500">{t.address}</strong>
@@ -178,14 +183,16 @@ export default async function ContactPage({ params }: { params: Promise<{ locale
                     {dict.contact.iban}
                   </li>
                 </ul>
-                <a
+                <TrackedLink
                   className="io-btn io-btn-whatsapp mt-5"
                   href={dict.contact.whatsapp}
+                  location="contact_page"
+                  locale={locale}
                   target="_blank"
                   rel="noreferrer"
                 >
                   WhatsApp
-                </a>
+                </TrackedLink>
               </div>
 
               <div className="overflow-hidden rounded-2xl border border-neutral-200 bg-white">

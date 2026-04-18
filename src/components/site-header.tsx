@@ -3,6 +3,7 @@
 import Link from "next/link";
 import { useState } from "react";
 import { LocaleSwitcher } from "@/components/locale-switcher";
+import { TrackedLink } from "@/components/tracked-link";
 import type { Locale } from "@/lib/i18n";
 
 type SiteHeaderNavItem = {
@@ -35,7 +36,9 @@ export function SiteHeader({
     <header className="io-header">
       <div className="io-wrap io-topline">
         <p>{topbarAddress}</p>
-        <a href={topbarPhoneHref}>{topbarPhone}</a>
+        <TrackedLink href={topbarPhoneHref} location="header" locale={locale}>
+          {topbarPhone}
+        </TrackedLink>
       </div>
       <div className="io-wrap io-nav">
         <Link href={`/${locale}`} className="io-logo">
