@@ -26,7 +26,7 @@ function isRateLimited(ip: string) {
 }
 
 function requiredEnv(name: string) {
-  const value = process.env[name];
+  const value = process.env[name]?.trim();
   if (!value) throw new Error(`Missing env: ${name}`);
   return value;
 }
@@ -108,9 +108,9 @@ export async function POST(request: NextRequest) {
     const port = Number(requiredEnv("SMTP_PORT"));
     const user = requiredEnv("SMTP_USER");
     const pass = requiredEnv("SMTP_PASS");
-    const secure = process.env.SMTP_SECURE === "true" || port === 465;
-    const to = process.env.MAIL_TO ?? "info@upudev.nl";
-    const from = process.env.MAIL_FROM ?? user;
+    const secure = process.env.SMTP_SECURE?.trim() === "true" || port === 465;
+    const to = process.env.MAIL_TO?.trim() ?? "info@upudev.nl";
+    const from = process.env.MAIL_FROM?.trim() ?? user;
 
     const transporter = nodemailer.createTransport({
       host,
