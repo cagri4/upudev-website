@@ -4,7 +4,8 @@ import "./globals.css";
 import { ScrollToTop } from "@/components/scroll-to-top";
 import { CookieBanner } from "@/components/cookie-banner";
 
-const GTM_ID = process.env.NEXT_PUBLIC_GTM_ID;
+const GTM_ID = process.env.NEXT_PUBLIC_GTM_ID?.trim();
+const GA_ID = process.env.NEXT_PUBLIC_GA4_MEASUREMENT_ID?.trim();
 
 export const metadata: Metadata = {
   title: "UpuDev | Dijital Urun ve Yazilim Cozumleri",
