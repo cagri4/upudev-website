@@ -9,6 +9,7 @@ import { SiteFooter } from "@/components/site-footer";
 import { PartnersGrid } from "@/components/partners-grid";
 import { StatsSection } from "@/components/stats-section";
 import { AboutSection } from "@/components/about-section";
+import { MeetingTrigger } from "@/components/meeting-trigger";
 
 const uiText: Record<
   Locale,
@@ -100,6 +101,9 @@ export default async function HomeLocalePage({ params }: { params: Promise<{ loc
               <Link className="io-btn io-btn-dark" href={`/${locale}/iletisim`}>
                 {dict.hero.ctaSecondary}
               </Link>
+              <MeetingTrigger className="io-btn io-btn-outline">
+                {dict.cta.button}
+              </MeetingTrigger>
               <a className="io-btn io-btn-ghost" href={`/${locale}#projeler`}>
                 {dict.hero.ctaPrimary}
               </a>

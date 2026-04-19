@@ -3,6 +3,7 @@ import Script from "next/script";
 import "./globals.css";
 import { ScrollToTop } from "@/components/scroll-to-top";
 import { CookieBanner } from "@/components/cookie-banner";
+import { MeetingModal } from "@/components/meeting-modal";
 
 const GTM_ID = process.env.NEXT_PUBLIC_GTM_ID?.trim();
 const GA_ID = process.env.NEXT_PUBLIC_GA4_MEASUREMENT_ID?.trim();
@@ -76,6 +77,7 @@ export default function RootLayout({
         {children}
         <ScrollToTop />
         <CookieBanner />
+        <MeetingModal />
       </body>
     </html>
   );

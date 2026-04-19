@@ -181,6 +181,16 @@ a {
   background: #fff;
 }
 
+.io-btn-outline {
+  border-color: #2563eb;
+  color: #2563eb;
+  background: transparent;
+}
+
+.io-btn-outline:hover {
+  background: #eff6ff;
+}
+
 .io-btn-accent {
   background: #ffffff;
   color: var(--io-ink);

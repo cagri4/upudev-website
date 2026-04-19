@@ -1,5 +1,6 @@
 import type { Locale } from "@/lib/i18n";
 import { TrackedLink } from "@/components/tracked-link";
+import { MeetingTrigger } from "@/components/meeting-trigger";
 
 const labels: Record<Locale, { badge: string; email: string; phone: string; address: string; kvk: string; iban: string }> = {
   tr: { badge: "İletişim", email: "E-posta", phone: "Telefon", address: "Adres", kvk: "KVK", iban: "IBAN" },
@@ -22,14 +23,9 @@ export function SiteContact({ locale, cta, contact }: SiteContactProps) {
         <p className="io-eyebrow io-eyebrow-invert">{t.badge}</p>
         <h2>{cta.title}</h2>
         <p>{cta.text}</p>
-        <TrackedLink
-          className="io-btn io-btn-accent mt-6"
-          href={`mailto:${contact.email}`}
-          location="meeting_cta"
-          locale={locale}
-        >
+        <MeetingTrigger className="io-btn io-btn-accent mt-6">
           {cta.button}
-        </TrackedLink>
+        </MeetingTrigger>
       </div>
       <div className="io-contact-right">
         <ul>
