@@ -17,6 +17,14 @@ type ServiceKey =
 
 type BudgetKey = "unknown" | "1to5k" | "5to15k" | "15kplus";
 
+type MeetingMethodKey =
+  | "video_whatsapp"
+  | "video_meet"
+  | "video_teams"
+  | "video_zoom"
+  | "audio_whatsapp"
+  | "audio_phone";
+
 type T = {
   title: string;
   subtitle: string;
@@ -36,6 +44,9 @@ type T = {
   budget: string;
   budgetOptional: string;
   budgets: Record<BudgetKey, string>;
+  meetingMethod: string;
+  meetingMethodOptional: string;
+  meetingMethods: Record<MeetingMethodKey, string>;
   message: string;
   messageOptional: string;
   messagePlaceholder: string;
@@ -78,6 +89,16 @@ const labels: Record<Locale, T> = {
       "5to15k": "€5K – €15K",
       "15kplus": "€15K+",
     },
+    meetingMethod: "Toplantı yöntemi tercihiniz",
+    meetingMethodOptional: "(opsiyonel)",
+    meetingMethods: {
+      video_whatsapp: "Görüntülü görüşme — WhatsApp",
+      video_meet: "Görüntülü görüşme — Google Meet",
+      video_teams: "Görüntülü görüşme — Microsoft Teams",
+      video_zoom: "Görüntülü görüşme — Zoom",
+      audio_whatsapp: "Sadece sesli görüşme — WhatsApp",
+      audio_phone: "Sadece sesli görüşme — Telefon",
+    },
     message: "Notlar",
     messageOptional: "(opsiyonel)",
     messagePlaceholder: "Projenizle ilgili kısa bir açıklama...",
@@ -118,6 +139,16 @@ const labels: Record<Locale, T> = {
       "5to15k": "€5K – €15K",
       "15kplus": "€15K+",
     },
+    meetingMethod: "Preferred meeting method",
+    meetingMethodOptional: "(optional)",
+    meetingMethods: {
+      video_whatsapp: "Video call — WhatsApp",
+      video_meet: "Video call — Google Meet",
+      video_teams: "Video call — Microsoft Teams",
+      video_zoom: "Video call — Zoom",
+      audio_whatsapp: "Audio only — WhatsApp",
+      audio_phone: "Audio only — Phone",
+    },
     message: "Notes",
     messageOptional: "(optional)",
     messagePlaceholder: "A short description of your project...",
@@ -157,6 +188,16 @@ const labels: Record<Locale, T> = {
       "1to5k": "€1K – €5K",
       "5to15k": "€5K – €15K",
       "15kplus": "€15K+",
+    },
+    meetingMethod: "Voorkeur voor vergadermethode",
+    meetingMethodOptional: "(optioneel)",
+    meetingMethods: {
+      video_whatsapp: "Videogesprek — WhatsApp",
+      video_meet: "Videogesprek — Google Meet",
+      video_teams: "Videogesprek — Microsoft Teams",
+      video_zoom: "Videogesprek — Zoom",
+      audio_whatsapp: "Alleen audio — WhatsApp",
+      audio_phone: "Alleen audio — Telefoon",
     },
     message: "Opmerkingen",
     messageOptional: "(optioneel)",
@@ -229,12 +270,14 @@ export function MeetingModal() {
     const phone = String(data.get("phone") ?? "").trim();
     const serviceKey = String(data.get("service") ?? "") as ServiceKey | "";
     const budgetKey = String(data.get("budget") ?? "") as BudgetKey | "";
+    const meetingMethodKey = String(data.get("meetingMethod") ?? "") as MeetingMethodKey | "";
     const message = String(data.get("message") ?? "").trim();
 
     if (!name || !company || !email || !serviceKey) return;
 
     const serviceLabel = serviceKey ? t.services[serviceKey as ServiceKey] : "";
     const budgetLabel = budgetKey ? t.budgets[budgetKey as BudgetKey] : "";
+    const meetingMethodLabel = meetingMethodKey ? t.meetingMethods[meetingMethodKey as MeetingMethodKey] : "";
 
     const subject = `[Toplantı Talebi] ${serviceLabel} — ${name} (${company})`;
 
@@ -242,6 +285,7 @@ export function MeetingModal() {
       `Şirket / Company: ${company}`,
       `Hizmet / Service: ${serviceLabel}`,
       budgetLabel ? `Bütçe / Budget: ${budgetLabel}` : null,
+      meetingMethodLabel ? `Toplantı Yöntemi / Meeting Method: ${meetingMethodLabel}` : null,
       `Locale: ${locale}`,
       `Timestamp (UTC): ${new Date().toISOString()}`,
       "",
@@ -426,6 +470,22 @@ export function MeetingModal() {
                 {(Object.keys(t.budgets) as BudgetKey[]).map((key) => (
                   <option key={key} value={key}>
                     {t.budgets[key]}
+                  </option>
+                ))}
+              </select>
+            </label>
+
+            <label className="space-y-1.5 text-sm font-medium text-neutral-700">
+              {t.meetingMethod} <span className="text-neutral-400">{t.meetingMethodOptional}</span>
+              <select
+                name="meetingMethod"
+                defaultValue=""
+                className="w-full rounded-xl border border-neutral-300 bg-white px-3 py-2.5 text-sm outline-none transition focus:border-neutral-500"
+              >
+                <option value="">—</option>
+                {(Object.keys(t.meetingMethods) as MeetingMethodKey[]).map((key) => (
+                  <option key={key} value={key}>
+                    {t.meetingMethods[key]}
                   </option>
                 ))}
               </select>
