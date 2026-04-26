@@ -23,7 +23,7 @@ export const homeNl: HomeDictionary = {
     badge: "SaaS & Software Partner",
     title: "Van idee naar product, snel.",
     subtitle:
-      "Wij versnellen uw groei met moderne webproducten, SaaS-infrastructuur en digitale automatiseringsoplossingen.",
+      "Wij bouwen digitale oplossingen speciaal voor Turkse ondernemers en MKB-bedrijven in Nederland.",
     ctaPrimary: "Projecten Bekijken",
     ctaSecondary: "Offerte Aanvragen",
     stats: [
@@ -63,14 +63,6 @@ export const homeNl: HomeDictionary = {
         summary:
           "Brengt objectbeheer, klantopvolging, afspraken, documenten en geautomatiseerde communicatie samen in één operationele workflow.",
         image: "https://images.unsplash.com/photo-1560518883-ce09059eeffa?auto=format&fit=crop&w=1200&q=80",
-      },
-      {
-        slug: "otel-asistanlari",
-        name: "Hotelassistenten",
-        category: "Reservering & Operatie",
-        summary:
-          "AI-ondersteunde modules voor reserveringsstromen, kanaalbeheer en prijsoptimalisatie om bezetting en omzet beter te sturen.",
-        image: "https://images.unsplash.com/photo-1566073771259-6a8506099945?auto=format&fit=crop&w=1200&q=80",
       },
       {
         slug: "agent-ai-calismalari",

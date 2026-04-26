@@ -104,7 +104,7 @@ export const homeTr: HomeDictionary = {
     badge: "SaaS & Yazılım Partneri",
     title: "Fikirden ürüne, hızla.",
     subtitle:
-      "Modern web ürünleri, SaaS altyapıları ve dijital otomasyon çözümleri ile büyümenizi hızlandırıyoruz.",
+      "Hollanda'da faaliyet gösteren Türk girişimciler ve KOBİ'ler için özel dijital çözümler geliştiriyoruz.",
     ctaPrimary: "Projeleri İncele",
     ctaSecondary: "Teklif Al",
     stats: [
@@ -146,15 +146,6 @@ export const homeTr: HomeDictionary = {
           "İlan yönetimi, müşteri takibi, randevu planlama, doküman kontrolü ve otomatik iletişim akışlarını tek bir sistemde birleştirir. Danışmanların saha ve ofis tarafındaki süreçlerini görünür hale getirerek daha düzenli ve izlenebilir bir çalışma modeli sunar.",
         image:
           "https://images.unsplash.com/photo-1560518883-ce09059eeffa?auto=format&fit=crop&w=1200&q=80",
-      },
-      {
-        slug: "otel-asistanlari",
-        name: "Otel Asistanları",
-        category: "Rezervasyon ve Operasyon",
-        summary:
-          "Rezervasyon akışı, kanal dağıtımı ve fiyat optimizasyonu için tasarlanan AI destekli yardımcı modüllerden oluşur. Operasyon ekiplerinin doluluk, gelir ve misafir deneyimi metriklerini daha etkin yönetebilmesi için pratik araçlar sağlar.",
-        image:
-          "https://images.unsplash.com/photo-1566073771259-6a8506099945?auto=format&fit=crop&w=1200&q=80",
       },
       {
         slug: "agent-ai-calismalari",

@@ -23,7 +23,7 @@ export const homeEn: HomeDictionary = {
     badge: "SaaS & Software Partner",
     title: "From idea to product, fast.",
     subtitle:
-      "We accelerate your growth with modern web products, SaaS infrastructure, and digital automation solutions.",
+      "We build digital products specifically for Turkish-owned businesses and entrepreneurs operating in the Netherlands.",
     ctaPrimary: "View Projects",
     ctaSecondary: "Get Quote",
     stats: [
@@ -63,14 +63,6 @@ export const homeEn: HomeDictionary = {
         summary:
           "Unifies listing, client, appointment, document, and automated communication workflows for real estate agencies in a single operational flow.",
         image: "https://images.unsplash.com/photo-1560518883-ce09059eeffa?auto=format&fit=crop&w=1200&q=80",
-      },
-      {
-        slug: "otel-asistanlari",
-        name: "Hotel Assistants",
-        category: "Reservation & Operations",
-        summary:
-          "AI-assisted modules for reservation workflows, channel management, and pricing support to improve occupancy and revenue operations.",
-        image: "https://images.unsplash.com/photo-1566073771259-6a8506099945?auto=format&fit=crop&w=1200&q=80",
       },
       {
         slug: "agent-ai-calismalari",
