@@ -148,6 +148,15 @@ export const homeTr: HomeDictionary = {
           "https://images.unsplash.com/photo-1560518883-ce09059eeffa?auto=format&fit=crop&w=1200&q=80",
       },
       {
+        slug: "restoran-asistani",
+        name: "Restoran Asistanı",
+        category: "Restoran & Catering SaaS",
+        summary:
+          "Restoran, cafe ve catering işletmelerinin sipariş, rezervasyon, masa, stok ve menü süreçlerini tek panelde birleştiren AI destekli operasyon platformudur. WhatsApp ve web üzerinden çoklu dil müşteri asistanıyla rezervasyon ve sipariş akışını otomatize eder.",
+        image:
+          "https://images.unsplash.com/photo-1517248135467-4c7edcad34c4?auto=format&fit=crop&w=1200&q=80",
+      },
+      {
         slug: "agent-ai-calismalari",
         name: "Agent AI Çalışmaları",
         category: "AI Agent Implementasyonu",

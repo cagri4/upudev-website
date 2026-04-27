@@ -320,6 +320,99 @@ const productDetailsTr: ProductDetail[] = [
     ],
   },
   {
+    slug: "restoran-asistani",
+    title: "Restoran Asistanı",
+    category: "Restoran & Catering SaaS",
+    heroSummary:
+      "Restoran, cafe ve catering işletmelerinin sipariş, rezervasyon, masa, stok ve menü süreçlerini tek panelde birleştiren AI destekli operasyon platformudur.",
+    image: "https://images.unsplash.com/photo-1517248135467-4c7edcad34c4?auto=format&fit=crop&w=1600&q=80",
+    goals: [
+      "Sipariş ve rezervasyon süreçlerini tek panelde toplamak",
+      "Stok ve menü maliyetini gerçek zamanlı görünür hale getirmek",
+      "Müşteri iletişimini AI asistan ile çoklu kanaldan otomatize etmek",
+    ],
+    whatItDoes: [
+      "Online ve masa siparişlerini tek akışta yönetir",
+      "Masa müsaitliğini ve rezervasyon sürelerini görselleştirir",
+      "Stok seviyelerini ve menü maliyetini gerçek zamanlı izler",
+      "WhatsApp ve web AI asistan ile rezervasyon ve menü sorularını otomatize eder",
+    ],
+    benefits: [
+      "Yoğun saatlerde sipariş kayıplarını azaltır",
+      "Stok israfını ve menü dışı kalan ürün durumunu önler",
+      "Personel yükünü azaltır, servis hızını artırır",
+      "Müşteri deneyimini ve tekrar ziyaret oranını yükseltir",
+    ],
+    targetUsers: ["Restoran işletmecileri", "Cafe ve fast-food zincirleri", "Catering firmaları", "Mutfak ve servis ekipleri"],
+    featuresDetailed: [
+      {
+        title: "Sipariş Yönetimi",
+        description: "Online ve masa siparişlerini tek panelde toplayın, mutfak ve servis ekibini koordine edin.",
+        highlights: ["QR menüden sipariş", "Mutfak ekran sistemi (KDS)", "Çoklu şube desteği"],
+      },
+      {
+        title: "Masa ve Rezervasyon Takibi",
+        description: "Masa müsaitliğini görselleştirin, rezervasyonları çoklu kanaldan tek akışa alın.",
+        highlights: ["Görsel masa planı", "Web/WhatsApp/telefon rezervasyon", "Otomatik onay ve hatırlatma"],
+      },
+      {
+        title: "Stok ve Menü Yönetimi",
+        description: "Reçete bazlı stok düşümü, menü maliyetlendirme ve fire takibini otomatik yapın.",
+        highlights: ["Reçete bazlı stok takibi", "Menü maliyet ve kâr analizi", "Otomatik tedarik uyarıları"],
+      },
+      {
+        title: "AI Müşteri Asistanı",
+        description: "Türkçe ve Hollandaca konuşan AI asistan ile rezervasyon, menü ve sipariş sorularını otomatik yanıtlayın.",
+        highlights: ["WhatsApp Business entegrasyonu", "Çoklu dil (TR/NL/EN)", "Otomatik rezervasyon onayı"],
+      },
+    ],
+    faq: [
+      {
+        question: "Mevcut kasa ve POS sistemimle entegre olabilir mi?",
+        answer: "Evet, Lightspeed, Untill ve benzer popüler POS sistemleri ile iDEAL, Mollie ve Stripe gibi ödeme sağlayıcılarıyla entegrasyon yapabiliyoruz.",
+      },
+      {
+        question: "Teslimat platformlarıyla (Thuisbezorgd, Uber Eats) çalışıyor mu?",
+        answer: "Evet, Thuisbezorgd, Uber Eats ve Deliveroo gibi teslimat platformlarıyla sipariş senkronizasyonu sağlıyoruz, böylece tüm kanallar tek panelde görünür.",
+      },
+      {
+        question: "Küçük bir restoran için uygun mu?",
+        answer: "Evet, tek şubeli butik restoranlardan çoklu lokasyonlu zincirlere kadar her ölçekte kullanılabilir. Esnek paket ve fiyatlandırma modelimiz mevcuttur.",
+      },
+      {
+        question: "AI asistan hangi dilleri konuşuyor?",
+        answer: "Standart olarak Türkçe, Hollandaca ve İngilizce destekleniyor. İhtiyaç durumunda ek diller eklenebilir; tonlama ve ifadeler işletmeye özel kalibre edilir.",
+      },
+      {
+        question: "Catering işletmeleri için neler sunuyor?",
+        answer: "Etkinlik bazlı menü ve teklif yönetimi, kişi başı maliyetlendirme, teslimat takvimi ve müşteri imzalı onay akışı catering işletmelerine özel olarak sunulmaktadır.",
+      },
+    ],
+    useCases: [
+      {
+        title: "Restoran Zinciri",
+        scenario: "Amsterdam'da 4 şubeli Türk restoran zinciri, çoklu kanaldan rezervasyon ve sipariş",
+        problem: "Telefonla rezervasyon, WhatsApp talepleri ve online siparişler ayrı sistemlerde, masa doluluğu net değil, yoğun saatlerde sipariş kaçıyor.",
+        solution: "Tek panelde sipariş + rezervasyon + masa yönetimi kuruldu, AI asistan WhatsApp Business üzerinden aktive edildi.",
+        outcome: "Sipariş kayıpları %70 azaldı, masa devir hızı %25 arttı, müşteri yanıt süresi 30 saniyeye düştü.",
+      },
+      {
+        title: "Boutique Cafe",
+        scenario: "Utrecht'te tek şubeli butik kahve dükkanı, çıkışlı sipariş ve yerinde servis",
+        problem: "Hazır QR menü çözümü yetersiz, stok düşümü manuel yapılıyor, fire takibi ve menü kâr analizi yok.",
+        solution: "QR menü, reçete bazlı stok düşümü ve menü kâr-maliyet raporlaması entegre edildi.",
+        outcome: "Stok firesi %35 azaldı, menü kâr marjı %15 yükseldi, çıkışlı sipariş hacmi 2 kat arttı.",
+      },
+      {
+        title: "Catering İşletmesi",
+        scenario: "Rotterdam'da düğün ve etkinlik catering firması, aylık 50+ etkinlik",
+        problem: "Etkinlik bazlı teklifler manuel hazırlanıyor, kişi başı maliyetlendirme yavaş, teslimat takvimi karışıyor.",
+        solution: "Etkinlik + menü + teklif modülü ile dinamik fiyatlandırma ve teslimat takvimi kuruldu.",
+        outcome: "Teklif hazırlama süresi 2 saatten 10 dakikaya düştü, teslimat çakışmaları sıfırlandı.",
+      },
+    ],
+  },
+  {
     slug: "agent-ai-calismalari",
     title: "Agent AI Çalışmaları",
     category: "AI Agent Implementasyonu",
@@ -790,6 +883,99 @@ const productDetailsEn: ProductDetail[] = [
     ],
   },
   {
+    slug: "restoran-asistani",
+    title: "Restaurant Assistant",
+    category: "Restaurant & Catering SaaS",
+    heroSummary:
+      "An AI-supported operations platform that unifies orders, reservations, tables, stock, and menu workflows for restaurant, cafe, and catering businesses.",
+    image: "https://images.unsplash.com/photo-1517248135467-4c7edcad34c4?auto=format&fit=crop&w=1600&q=80",
+    goals: [
+      "Bring orders and reservations into a single panel",
+      "Make stock and menu cost visibility real-time",
+      "Automate multilingual customer interactions through AI",
+    ],
+    whatItDoes: [
+      "Manages online and on-table orders in a single flow",
+      "Visualizes table availability and reservation timing",
+      "Tracks stock levels and menu cost in real time",
+      "Automates reservation and menu queries via WhatsApp and web AI assistant",
+    ],
+    benefits: [
+      "Reduces missed orders during peak hours",
+      "Prevents stock waste and out-of-stock menu items",
+      "Lowers staff workload and speeds up service",
+      "Improves guest experience and repeat-visit rate",
+    ],
+    targetUsers: ["Restaurant operators", "Cafe and fast-food chains", "Catering companies", "Kitchen and service teams"],
+    featuresDetailed: [
+      {
+        title: "Order Management",
+        description: "Bring online and on-table orders into a single panel and coordinate kitchen and floor teams.",
+        highlights: ["QR-menu ordering", "Kitchen display system (KDS)", "Multi-branch support"],
+      },
+      {
+        title: "Tables & Reservation Tracking",
+        description: "Visualize table availability and consolidate reservations from multiple channels into one flow.",
+        highlights: ["Visual floor plan", "Web/WhatsApp/phone reservations", "Automatic confirmation and reminders"],
+      },
+      {
+        title: "Stock & Menu Management",
+        description: "Recipe-based stock deduction, menu costing, and waste tracking — fully automated.",
+        highlights: ["Recipe-based stock tracking", "Menu cost and margin analysis", "Automatic procurement alerts"],
+      },
+      {
+        title: "AI Customer Assistant",
+        description: "Answer reservation, menu, and order questions automatically with a Turkish- and Dutch-speaking AI assistant.",
+        highlights: ["WhatsApp Business integration", "Multilingual (TR/NL/EN)", "Automatic reservation confirmation"],
+      },
+    ],
+    faq: [
+      {
+        question: "Can it integrate with my existing register and POS system?",
+        answer: "Yes, we integrate with popular POS systems such as Lightspeed and Untill, plus payment providers like iDEAL, Mollie, and Stripe.",
+      },
+      {
+        question: "Does it work with delivery platforms (Thuisbezorgd, Uber Eats)?",
+        answer: "Yes, orders from Thuisbezorgd, Uber Eats, and Deliveroo are synced into the platform so all channels are visible in one panel.",
+      },
+      {
+        question: "Is it suitable for a small restaurant?",
+        answer: "Yes, it works for everything from single-location boutique restaurants to multi-location chains. We offer flexible package and pricing models.",
+      },
+      {
+        question: "What languages does the AI assistant support?",
+        answer: "Turkish, Dutch, and English are supported by default. Additional languages can be added; tone and phrasing are tuned per business.",
+      },
+      {
+        question: "What does it offer for catering businesses?",
+        answer: "Event-based menu and quotation management, per-person costing, delivery scheduling, and signed-confirmation workflows are tailored for caterers.",
+      },
+    ],
+    useCases: [
+      {
+        title: "Restaurant Chain",
+        scenario: "Amsterdam-based Turkish restaurant chain with 4 branches and multi-channel reservations and orders",
+        problem: "Phone reservations, WhatsApp requests, and online orders live in separate systems; table occupancy is unclear and orders are missed during peak hours.",
+        solution: "Single panel for orders, reservations, and table management was deployed, with an AI assistant activated on WhatsApp Business.",
+        outcome: "Missed orders decreased by 70%, table turnover increased by 25%, customer response time dropped to 30 seconds.",
+      },
+      {
+        title: "Boutique Cafe",
+        scenario: "Single-location boutique coffee shop in Utrecht with takeout and dine-in service",
+        problem: "Off-the-shelf QR-menu solution is limited, stock deduction is manual, and waste tracking with menu margin analysis is missing.",
+        solution: "QR menu, recipe-based stock deduction, and menu profit-and-cost reporting were integrated.",
+        outcome: "Stock waste decreased by 35%, menu margin rose by 15%, takeout volume doubled.",
+      },
+      {
+        title: "Catering Operator",
+        scenario: "Rotterdam-based wedding and event catering operator with 50+ events per month",
+        problem: "Event-based quotes are prepared manually, per-person costing is slow, and delivery scheduling gets tangled.",
+        solution: "Event + menu + quotation module with dynamic pricing and a delivery calendar was deployed.",
+        outcome: "Quote turnaround dropped from 2 hours to 10 minutes, delivery conflicts went to zero.",
+      },
+    ],
+  },
+  {
     slug: "agent-ai-calismalari",
     title: "Agent AI Initiatives",
     category: "AI Agent Implementation",
@@ -1250,6 +1436,99 @@ const productDetailsNl: ProductDetail[] = [
         problem: "Klanten, documenten en afspraken zitten in verschillende tools, snel reageren is lastig.",
         solution: "CRM, documentarchief en automatische herinneringen verenigd in één mobiele app.",
         outcome: "Dagelijkse operatietijd verminderd met 2 uur, sluitingsratio steeg met 35%.",
+      },
+    ],
+  },
+  {
+    slug: "restoran-asistani",
+    title: "Restaurantassistent",
+    category: "Restaurant & Catering SaaS",
+    heroSummary:
+      "Een AI-ondersteund operationeel platform dat orders, reserveringen, tafels, voorraad en menu's voor restaurants, cafés en cateringbedrijven verenigt.",
+    image: "https://images.unsplash.com/photo-1517248135467-4c7edcad34c4?auto=format&fit=crop&w=1600&q=80",
+    goals: [
+      "Orders en reserveringen samenbrengen in één paneel",
+      "Voorraad- en menukosten realtime inzichtelijk maken",
+      "Meertalige klantinteractie automatiseren met AI",
+    ],
+    whatItDoes: [
+      "Beheert online en tafelorders in één stroom",
+      "Visualiseert tafelbeschikbaarheid en reserveringstijden",
+      "Volgt voorraadniveaus en menukosten in realtime",
+      "Automatiseert reserverings- en menuvragen via WhatsApp en web AI-assistent",
+    ],
+    benefits: [
+      "Vermindert gemiste bestellingen tijdens piekuren",
+      "Voorkomt voorraadverspilling en uitverkochte menu-items",
+      "Verlaagt de werkdruk van personeel en versnelt de service",
+      "Verbetert de gastenervaring en herhaalbezoek",
+    ],
+    targetUsers: ["Restaurantexploitanten", "Café- en fastfoodketens", "Cateringbedrijven", "Keuken- en bedieningsteams"],
+    featuresDetailed: [
+      {
+        title: "Orderbeheer",
+        description: "Breng online en tafelorders samen in één paneel en coördineer keuken- en bedieningsteam.",
+        highlights: ["QR-menu bestellen", "Keukenscherm-systeem (KDS)", "Multi-vestigingsondersteuning"],
+      },
+      {
+        title: "Tafel- & Reserveringsbeheer",
+        description: "Visualiseer tafelbeschikbaarheid en consolideer reserveringen uit meerdere kanalen in één stroom.",
+        highlights: ["Visuele plattegrond", "Web/WhatsApp/telefonische reserveringen", "Automatische bevestiging en herinneringen"],
+      },
+      {
+        title: "Voorraad- & Menubeheer",
+        description: "Receptgebaseerde voorraadafboeking, menucalculatie en derving — volledig geautomatiseerd.",
+        highlights: ["Receptgebaseerde voorraadtracking", "Menukosten- en margeanalyse", "Automatische inkoopwaarschuwingen"],
+      },
+      {
+        title: "AI-klantassistent",
+        description: "Beantwoord reserverings-, menu- en bestelvragen automatisch met een Turks- en Nederlandstalige AI-assistent.",
+        highlights: ["WhatsApp Business-integratie", "Meertalig (TR/NL/EN)", "Automatische reserveringsbevestiging"],
+      },
+    ],
+    faq: [
+      {
+        question: "Kan het integreren met mijn bestaande kassa- en POS-systeem?",
+        answer: "Ja, we integreren met populaire POS-systemen zoals Lightspeed en Untill, plus betaaldiensten zoals iDEAL, Mollie en Stripe.",
+      },
+      {
+        question: "Werkt het met bezorgplatformen (Thuisbezorgd, Uber Eats)?",
+        answer: "Ja, bestellingen van Thuisbezorgd, Uber Eats en Deliveroo worden gesynchroniseerd, zodat alle kanalen zichtbaar zijn in één paneel.",
+      },
+      {
+        question: "Is het geschikt voor een klein restaurant?",
+        answer: "Ja, het werkt voor alles van single-locatie boutique-restaurants tot multi-vestigingsketens. We bieden flexibele pakketten en prijsmodellen.",
+      },
+      {
+        question: "Welke talen ondersteunt de AI-assistent?",
+        answer: "Standaard worden Turks, Nederlands en Engels ondersteund. Extra talen kunnen worden toegevoegd; toon en formuleringen worden per zaak gekalibreerd.",
+      },
+      {
+        question: "Wat biedt het voor cateringbedrijven?",
+        answer: "Event-gebaseerd menu- en offertebeheer, prijs per persoon, leveringsplanning en bevestigingsworkflows zijn op maat gemaakt voor cateraars.",
+      },
+    ],
+    useCases: [
+      {
+        title: "Restaurantketen",
+        scenario: "Turkse restaurantketen in Amsterdam met 4 vestigingen en multi-kanaal reserveringen en orders",
+        problem: "Telefonische reserveringen, WhatsApp-verzoeken en online bestellingen zitten in aparte systemen; tafelbezetting is onduidelijk en orders worden gemist tijdens piekuren.",
+        solution: "Eén paneel voor orders, reserveringen en tafelbeheer geïmplementeerd, met een AI-assistent actief op WhatsApp Business.",
+        outcome: "Gemiste bestellingen daalden met 70%, tafelrotatie steeg met 25%, klantreactietijd daalde naar 30 seconden.",
+      },
+      {
+        title: "Boutique Café",
+        scenario: "Single-locatie boutique-koffiezaak in Utrecht met afhaal en eet-binnen-service",
+        problem: "Standaard QR-menu-oplossing is beperkt, voorraadafboeking is handmatig, en dervings- en marge-analyse ontbreken.",
+        solution: "QR-menu, receptgebaseerde voorraadafboeking en menumarge-rapportage geïntegreerd.",
+        outcome: "Voorraadderving daalde met 35%, menumarge steeg met 15%, afhaalvolume verdubbelde.",
+      },
+      {
+        title: "Cateringbedrijf",
+        scenario: "Bruiloft- en eventcateraar in Rotterdam met 50+ events per maand",
+        problem: "Event-gebaseerde offertes worden handmatig opgesteld, prijs per persoon is traag, en bezorgplanning loopt door elkaar.",
+        solution: "Event + menu + offerte-module met dynamische prijsstelling en een bezorgkalender geïmplementeerd.",
+        outcome: "Offertedoorlooptijd daalde van 2 uur naar 10 minuten, bezorgconflicten naar nul.",
       },
     ],
   },

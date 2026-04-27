@@ -65,6 +65,14 @@ export const homeEn: HomeDictionary = {
         image: "https://images.unsplash.com/photo-1560518883-ce09059eeffa?auto=format&fit=crop&w=1200&q=80",
       },
       {
+        slug: "restoran-asistani",
+        name: "Restaurant Assistant",
+        category: "Restaurant & Catering SaaS",
+        summary:
+          "An AI-supported operations platform that unifies orders, reservations, tables, stock, and menu workflows for restaurant, cafe, and catering businesses, with a multilingual WhatsApp/web customer assistant.",
+        image: "https://images.unsplash.com/photo-1517248135467-4c7edcad34c4?auto=format&fit=crop&w=1200&q=80",
+      },
+      {
         slug: "agent-ai-calismalari",
         name: "Agent AI Initiatives",
         category: "AI Agent Implementation",

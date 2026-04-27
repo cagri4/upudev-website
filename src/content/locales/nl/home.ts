@@ -65,6 +65,14 @@ export const homeNl: HomeDictionary = {
         image: "https://images.unsplash.com/photo-1560518883-ce09059eeffa?auto=format&fit=crop&w=1200&q=80",
       },
       {
+        slug: "restoran-asistani",
+        name: "Restaurantassistent",
+        category: "Restaurant & Catering SaaS",
+        summary:
+          "Een AI-ondersteund operationeel platform dat orders, reserveringen, tafels, voorraad en menu's voor restaurants, cafés en catering verenigt, inclusief een meertalige WhatsApp/web-klantassistent.",
+        image: "https://images.unsplash.com/photo-1517248135467-4c7edcad34c4?auto=format&fit=crop&w=1200&q=80",
+      },
+      {
         slug: "agent-ai-calismalari",
         name: "Agent AI-trajecten",
         category: "AI Agent Implementatie",
