@@ -1,0 +1,232 @@
+import type { Metadata } from "next";
+import Link from "next/link";
+import { notFound } from "next/navigation";
+import { isLocale, locales, type Locale } from "@/lib/i18n";
+import { dijitalEkibinizTr, type DijitalEkibinizDictionary } from "@/content/locales/tr/dijital-ekibiniz";
+import { dijitalEkibinizEn } from "@/content/locales/en/dijital-ekibiniz";
+import { dijitalEkibinizNl } from "@/content/locales/nl/dijital-ekibiniz";
+import { DijitalEkibinizForm } from "@/components/landing/dijital-ekibiniz-form";
+import { SiteFooter } from "@/components/site-footer";
+
+const WHATSAPP_NUMBER = "31644967207";
+const WHATSAPP_HREF = `https://wa.me/${WHATSAPP_NUMBER}`;
+
+const dictionaries: Record<Locale, DijitalEkibinizDictionary> = {
+  tr: dijitalEkibinizTr,
+  en: dijitalEkibinizEn,
+  nl: dijitalEkibinizNl,
+};
+
+export function generateStaticParams() {
+  return locales.map((locale) => ({ locale }));
+}
+
+export async function generateMetadata({
+  params,
+}: {
+  params: Promise<{ locale: string }>;
+}): Promise<Metadata> {
+  const { locale } = await params;
+  if (!isLocale(locale)) return {};
+  const dict = dictionaries[locale];
+  return {
+    title: dict.meta.title,
+    description: dict.meta.description,
+    alternates: {
+      canonical: `https://upudev.nl/${locale}/dijital-ekibiniz`,
+      languages: {
+        tr: "https://upudev.nl/tr/dijital-ekibiniz",
+        en: "https://upudev.nl/en/dijital-ekibiniz",
+        nl: "https://upudev.nl/nl/dijital-ekibiniz",
+      },
+    },
+    openGraph: {
+      title: dict.meta.title,
+      description: dict.meta.description,
+      url: `https://upudev.nl/${locale}/dijital-ekibiniz`,
+      type: "website",
+      locale,
+    },
+    robots: { index: true, follow: true },
+  };
+}
+
+export default async function DijitalEkibinizPage({
+  params,
+}: {
+  params: Promise<{ locale: string }>;
+}) {
+  const { locale } = await params;
+  if (!isLocale(locale)) notFound();
+
+  const dict = dictionaries[locale];
+  const copyright =
+    locale === "en"
+      ? "© 2026 UpuDev. All rights reserved."
+      : locale === "nl"
+        ? "© 2026 UpuDev. Alle rechten voorbehouden."
+        : "© 2026 UpuDev. Tüm hakları saklıdır.";
+
+  return (
+    <div className="min-h-screen bg-white">
+      <header className="border-b border-neutral-200 bg-white">
+        <div className="mx-auto flex max-w-6xl items-center justify-between px-4 py-4 md:px-6">
+          <Link href={`/${locale}`} className="text-xl font-bold tracking-tight text-neutral-900">
+            upu<span className="text-[#122d54]">dev</span>
+          </Link>
+          <a
+            href={WHATSAPP_HREF}
+            target="_blank"
+            rel="noopener"
+            className="inline-flex items-center gap-2 rounded-full border border-emerald-600 px-3 py-1.5 text-xs font-semibold text-emerald-700 transition hover:bg-emerald-50 md:text-sm"
+          >
+            <span aria-hidden>💬</span> WhatsApp
+          </a>
+        </div>
+      </header>
+
+      <main>
+        <section className="relative overflow-hidden bg-gradient-to-br from-[#0b1f3a] via-[#122d54] to-[#1e3a6f] py-16 text-white md:py-24">
+          <div
+            aria-hidden
+            className="pointer-events-none absolute inset-0 opacity-20"
+            style={{
+              backgroundImage:
+                "radial-gradient(circle at 20% 30%, rgba(255,255,255,0.25) 0, transparent 40%), radial-gradient(circle at 80% 70%, rgba(255,255,255,0.18) 0, transparent 45%)",
+            }}
+          />
+          <div className="relative mx-auto max-w-6xl px-4 md:px-6">
+            <p className="mb-3 inline-block rounded-full border border-white/30 bg-white/10 px-3 py-1 text-xs font-medium uppercase tracking-wider text-white/90 backdrop-blur">
+              {dict.hero.badge}
+            </p>
+            <h1 className="text-3xl font-bold leading-tight tracking-tight md:text-5xl">
+              {dict.hero.title}
+            </h1>
+            <p className="mt-4 max-w-2xl text-base leading-relaxed text-white/85 md:text-lg">
+              {dict.hero.subtitle}
+            </p>
+            <div className="mt-7 flex flex-col gap-3 sm:flex-row sm:items-center">
+              <a
+                href="#form"
+                className="inline-flex items-center justify-center rounded-full bg-white px-6 py-3 text-sm font-semibold text-[#122d54] transition hover:bg-neutral-100"
+              >
+                {dict.hero.ctaPrimary}
+              </a>
+              <a
+                href={WHATSAPP_HREF}
+                target="_blank"
+                rel="noopener"
+                className="inline-flex items-center justify-center gap-2 rounded-full border border-white/40 bg-white/5 px-6 py-3 text-sm font-semibold text-white transition hover:bg-white/15"
+              >
+                <span aria-hidden>💬</span> {dict.hero.ctaSecondary}
+              </a>
+            </div>
+            <p className="mt-6 text-xs text-white/70 md:text-sm">
+              <span aria-hidden>🇳🇱</span> {dict.hero.trust}
+            </p>
+          </div>
+        </section>
+
+        <section className="border-b border-neutral-100 bg-white py-14 md:py-20">
+          <div className="mx-auto max-w-6xl px-4 md:px-6">
+            <h2 className="mb-8 text-2xl font-semibold tracking-tight text-neutral-900 md:text-3xl">
+              {dict.benefits.title}
+            </h2>
+            <div className="grid grid-cols-2 gap-4 md:grid-cols-4 md:gap-6">
+              {dict.benefits.items.map((item) => (
+                <div
+                  key={item.title}
+                  className="rounded-2xl border border-neutral-200 bg-white p-5 transition hover:border-neutral-300 hover:shadow-sm md:p-6"
+                >
+                  <div className="mb-3 text-3xl" aria-hidden>
+                    {item.icon}
+                  </div>
+                  <h3 className="text-base font-semibold text-neutral-900 md:text-lg">{item.title}</h3>
+                  <p className="mt-2 text-sm leading-relaxed text-neutral-600">{item.text}</p>
+                </div>
+              ))}
+            </div>
+          </div>
+        </section>
+
+        <section className="bg-neutral-50 py-14 md:py-20">
+          <div className="mx-auto max-w-6xl px-4 md:px-6">
+            <h2 className="mb-8 text-2xl font-semibold tracking-tight text-neutral-900 md:text-3xl">
+              {dict.process.title}
+            </h2>
+            <div className="grid gap-4 md:grid-cols-3 md:gap-6">
+              {dict.process.steps.map((step) => (
+                <div key={step.id} className="rounded-2xl bg-white p-6 shadow-sm">
+                  <div className="mb-3 inline-flex h-9 w-9 items-center justify-center rounded-full bg-[#122d54] text-sm font-bold text-white">
+                    {step.id}
+                  </div>
+                  <h3 className="text-base font-semibold text-neutral-900 md:text-lg">{step.title}</h3>
+                  <p className="mt-2 text-sm leading-relaxed text-neutral-600">{step.text}</p>
+                </div>
+              ))}
+            </div>
+          </div>
+        </section>
+
+        <section className="bg-white py-12 md:py-16">
+          <div className="mx-auto max-w-6xl px-4 md:px-6">
+            <p className="mb-6 text-center text-sm font-medium uppercase tracking-wider text-neutral-500">
+              {dict.trustClients.title}
+            </p>
+            <div className="grid grid-cols-3 gap-3 md:grid-cols-6 md:gap-4">
+              {dict.trustClients.items.map((name, i) => (
+                <div
+                  key={`${name}-${i}`}
+                  className="flex h-16 items-center justify-center rounded-xl border border-neutral-200 bg-neutral-50 px-3 text-center text-xs font-medium text-neutral-600 md:h-20 md:text-sm"
+                >
+                  {name}
+                </div>
+              ))}
+            </div>
+          </div>
+        </section>
+
+        <section className="bg-gradient-to-b from-neutral-50 to-white py-14 md:py-20">
+          <div className="mx-auto max-w-3xl px-4 md:px-6">
+            <DijitalEkibinizForm locale={locale} labels={dict.form} />
+          </div>
+        </section>
+
+        <section className="border-t border-neutral-100 bg-white py-14 md:py-20">
+          <div className="mx-auto max-w-3xl px-4 md:px-6">
+            <h2 className="mb-6 text-2xl font-semibold tracking-tight text-neutral-900 md:text-3xl">
+              {dict.faq.title}
+            </h2>
+            <div className="space-y-3">
+              {dict.faq.items.map((item) => (
+                <details
+                  key={item.q}
+                  className="group rounded-2xl border border-neutral-200 bg-white p-5 open:shadow-sm"
+                >
+                  <summary className="flex cursor-pointer items-center justify-between gap-4 text-base font-medium text-neutral-900 marker:hidden [&::-webkit-details-marker]:hidden">
+                    <span>{item.q}</span>
+                    <span
+                      aria-hidden
+                      className="flex h-7 w-7 shrink-0 items-center justify-center rounded-full border border-neutral-300 text-lg leading-none transition group-open:rotate-45"
+                    >
+                      +
+                    </span>
+                  </summary>
+                  <p className="mt-3 text-sm leading-relaxed text-neutral-600">{item.a}</p>
+                </details>
+              ))}
+            </div>
+          </div>
+        </section>
+
+        <section className="bg-[#122d54] py-10 text-center text-white">
+          <div className="mx-auto max-w-3xl px-4 md:px-6">
+            <p className="text-sm text-white/80">{dict.footerNote}</p>
+          </div>
+        </section>
+      </main>
+
+      <SiteFooter locale={locale} copyright={copyright} />
+    </div>
+  );
+}
