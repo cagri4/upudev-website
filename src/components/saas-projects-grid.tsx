@@ -20,11 +20,24 @@ export function SaasProjectsGrid({ ongoing, locale, id }: Props) {
         <p className="io-lead-small">{ongoing.subtitle}</p>
       </div>
       <div className="mt-8 grid gap-6 md:grid-cols-2 xl:grid-cols-3">
-        {ongoing.items.map((item) => (
+        {ongoing.items.map((item) => {
+          const href = item.href
+            ? `/${locale}${item.href}`
+            : item.slug
+              ? `/${locale}/urunler/${item.slug}`
+              : null;
+
+          return (
           <article key={item.name}>
-            {item.slug ? (
-              <Link href={`/${locale}/urunler/${item.slug}`} className="group block">
-                <Card className="overflow-hidden rounded-2xl border-neutral-200 transition-all duration-300 group-hover:-translate-y-0.5 group-hover:shadow-lg">
+            {href ? (
+              <Link href={href} className="group block">
+                <Card
+                  className={`overflow-hidden rounded-2xl transition-all duration-300 group-hover:-translate-y-0.5 group-hover:shadow-lg ${
+                    item.featured
+                      ? "border-2 border-[#122d54] shadow-md"
+                      : "border-neutral-200"
+                  }`}
+                >
                   <div className="relative aspect-[16/10] overflow-hidden">
                     <Image
                       src={item.image}
@@ -32,6 +45,11 @@ export function SaasProjectsGrid({ ongoing, locale, id }: Props) {
                       fill
                       className="object-cover transition-transform duration-500 group-hover:scale-105"
                     />
+                    {item.featuredBadge ? (
+                      <span className="absolute left-3 top-3 inline-flex items-center rounded-full bg-[#122d54] px-2.5 py-1 text-[10px] font-semibold uppercase tracking-[0.12em] text-white shadow-sm">
+                        {item.featuredBadge}
+                      </span>
+                    ) : null}
                   </div>
                   <CardContent className="space-y-3 p-5">
                     <div className="flex flex-wrap gap-2">
@@ -59,7 +77,8 @@ export function SaasProjectsGrid({ ongoing, locale, id }: Props) {
               </Card>
             )}
           </article>
-        ))}
+          );
+        })}
       </div>
     </section>
   );

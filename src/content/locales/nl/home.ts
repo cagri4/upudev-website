@@ -41,6 +41,17 @@ export const homeNl: HomeDictionary = {
     subtitle: "Overzicht van producten en oplossingslijnen die momenteel actief in ontwikkeling zijn.",
     items: [
       {
+        href: "/dijital-ekibiniz",
+        name: "UPU Uw Digitale Team",
+        category: "Compleet Digitaal Team",
+        summary:
+          "AI-gedreven sales, social media, website en content — één team in één pakket. Voor uw Turkse onderneming in Nederland.",
+        image:
+          "https://images.unsplash.com/photo-1556761175-5973dc0f32e7?auto=format&fit=crop&w=1200&q=80",
+        featured: true,
+        featuredBadge: "Nieuw",
+      },
+      {
         slug: "bayi-yonetimi",
         name: "Dealerbeheer",
         category: "Dealer / Distributor SaaS",

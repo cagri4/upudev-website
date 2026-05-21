@@ -41,6 +41,17 @@ export const homeEn: HomeDictionary = {
     subtitle: "A snapshot of the products and solution tracks currently in active development.",
     items: [
       {
+        href: "/dijital-ekibiniz",
+        name: "UPU Your Digital Team",
+        category: "All-in-One Digital Team",
+        summary:
+          "AI-driven sales, social media, website and content — one team in one package. Built for Turkish businesses in the Netherlands.",
+        image:
+          "https://images.unsplash.com/photo-1556761175-5973dc0f32e7?auto=format&fit=crop&w=1200&q=80",
+        featured: true,
+        featuredBadge: "New",
+      },
+      {
         slug: "bayi-yonetimi",
         name: "Dealer Management",
         category: "Dealer / Distributor SaaS",

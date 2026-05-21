@@ -29,10 +29,13 @@ export type HomeDictionary = {
     subtitle: string;
     items: {
       slug?: string;
+      href?: string;
       name: string;
       category: string;
       summary: string;
       image: string;
+      featured?: boolean;
+      featuredBadge?: string;
     }[];
   };
   services: {
@@ -120,6 +123,17 @@ export const homeTr: HomeDictionary = {
     title: "SaaS Projeleri ve Çalışmalar",
     subtitle: "Şu an aktif geliştirmede olan ürün ve çözüm hatlarımızı paylaşıyoruz.",
     items: [
+      {
+        href: "/dijital-ekibiniz",
+        name: "UPU Dijital Ekibiniz",
+        category: "Tek Pakette Dijital Ekip",
+        summary:
+          "Yapay zeka destekli satış, sosyal medya, web ve içerik — tek pakette ekip. Hollanda'daki Türk işletmeniz için.",
+        image:
+          "https://images.unsplash.com/photo-1556761175-5973dc0f32e7?auto=format&fit=crop&w=1200&q=80",
+        featured: true,
+        featuredBadge: "Yeni",
+      },
       {
         slug: "bayi-yonetimi",
         name: "Bayi Yönetimi",
