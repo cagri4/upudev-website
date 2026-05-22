@@ -45,11 +45,9 @@ export const homeNl: HomeDictionary = {
         name: "UPU Uw Digitale Team",
         category: "Compleet Digitaal Team",
         summary:
-          "AI-gedreven sales, social media, website en content — één team in één pakket. Voor uw Turkse onderneming in Nederland.",
+          "AI-gedreven sales, social media, website en content — één team in één pakket. Beheer van Google-, Facebook- en Instagram-advertenties inbegrepen. Voor uw Turkse onderneming in Nederland: B2B dealerportaal, e-commerce setup en sector-SaaS bij één partner.",
         image:
           "https://images.unsplash.com/photo-1556761175-5973dc0f32e7?auto=format&fit=crop&w=1200&q=80",
-        featured: true,
-        featuredBadge: "Nieuw",
       },
       {
         slug: "bayi-yonetimi",

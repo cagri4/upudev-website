@@ -128,11 +128,9 @@ export const homeTr: HomeDictionary = {
         name: "UPU Dijital Ekibiniz",
         category: "Tek Pakette Dijital Ekip",
         summary:
-          "Yapay zeka destekli satış, sosyal medya, web ve içerik — tek pakette ekip. Hollanda'daki Türk işletmeniz için.",
+          "Yapay zeka destekli satış, sosyal medya, web ve içerik — tek pakette ekip. Google, Facebook, Instagram reklam yönetimi dahil. Hollanda'daki Türk işletmeniz için B2B portal, e-ticaret kurulum ve sektörel SaaS çözümleri tek partner ile.",
         image:
           "https://images.unsplash.com/photo-1556761175-5973dc0f32e7?auto=format&fit=crop&w=1200&q=80",
-        featured: true,
-        featuredBadge: "Yeni",
       },
       {
         slug: "bayi-yonetimi",
