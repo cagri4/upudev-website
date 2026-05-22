@@ -3,29 +3,31 @@ import type { NextRequest } from "next/server";
 import { isLocale } from "@/lib/i18n";
 
 const FALLBACK_LOCALE = "en";
+const COOKIE_NAME = "NEXT_LOCALE";
+const COOKIE_MAX_AGE = 60 * 60 * 24 * 365;
 
-function getPreferredLocale(acceptLanguage: string | null): string {
+function getPreferredLocale(request: NextRequest): string {
+  const cookie = request.cookies.get(COOKIE_NAME)?.value;
+  if (cookie && isLocale(cookie)) return cookie;
+
+  const acceptLanguage = request.headers.get("accept-language");
   if (!acceptLanguage) return FALLBACK_LOCALE;
 
-  // Parse Accept-Language header (e.g., "nl-NL,nl;q=0.9,en;q=0.8,tr;q=0.7")
   const languages = acceptLanguage
     .split(",")
     .map((lang) => {
       const [code, qValue] = lang.trim().split(";q=");
       return {
-        code: code.split("-")[0].toLowerCase(), // "nl-NL" -> "nl"
+        code: code.split("-")[0].toLowerCase(),
         q: qValue ? parseFloat(qValue) : 1,
       };
     })
+    .filter((entry) => entry.code.length > 0)
     .sort((a, b) => b.q - a.q);
 
-  // Find first matching supported locale
   for (const lang of languages) {
-    if (isLocale(lang.code)) {
-      return lang.code;
-    }
+    if (isLocale(lang.code)) return lang.code;
   }
-
   return FALLBACK_LOCALE;
 }
 
@@ -42,17 +44,31 @@ export function proxy(request: NextRequest) {
   }
 
   const firstSegment = pathname.split("/")[1];
+
   if (isLocale(firstSegment)) {
+    const current = request.cookies.get(COOKIE_NAME)?.value;
+    if (current !== firstSegment) {
+      const res = NextResponse.next();
+      res.cookies.set(COOKIE_NAME, firstSegment, {
+        maxAge: COOKIE_MAX_AGE,
+        path: "/",
+        sameSite: "lax",
+      });
+      return res;
+    }
     return NextResponse.next();
   }
 
-  // Get preferred locale from Accept-Language header
-  const acceptLanguage = request.headers.get("accept-language");
-  const locale = getPreferredLocale(acceptLanguage);
-
+  const locale = getPreferredLocale(request);
   const url = request.nextUrl.clone();
-  url.pathname = `/${locale}${pathname}`;
-  return NextResponse.redirect(url);
+  url.pathname = `/${locale}${pathname === "/" ? "" : pathname}`;
+  const res = NextResponse.redirect(url);
+  res.cookies.set(COOKIE_NAME, locale, {
+    maxAge: COOKIE_MAX_AGE,
+    path: "/",
+    sameSite: "lax",
+  });
+  return res;
 }
 
 export const config = {
