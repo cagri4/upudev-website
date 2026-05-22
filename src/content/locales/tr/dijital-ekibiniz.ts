@@ -98,9 +98,9 @@ export const dijitalEkibinizTr: DijitalEkibinizDictionary = {
     items: [
       {
         icon: "🎯",
-        title: "Google Ads & Sosyal Medya Reklamları",
+        title: "Google Ads & Meta Reklam Yönetimi",
         text:
-          "AI destekli kampanyalarla satışlarınızı ölçülebilir şekilde artırın. Google, Meta ve Instagram reklamlarınızı uzman ekiple yönetin.",
+          "Google Ads ve Meta (Facebook/Instagram) reklamlarınızı uzman ekiple kuruyoruz, aylık optimize ediyoruz. Conversion tracking, hedefleme, raporlama dahil.",
       },
       {
         icon: "🤖",

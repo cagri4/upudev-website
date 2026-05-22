@@ -23,8 +23,8 @@ export const dijitalEkibinizNl: DijitalEkibinizDictionary = {
     items: [
       {
         icon: "🎯",
-        title: "Google Ads & Social Media Advertenties",
-        text: "Verhoog meetbaar uw omzet met AI-gedreven campagnes. Wij beheren uw Google-, Meta- en Instagram-advertenties met een specialistenteam.",
+        title: "Google Ads & Meta Beheer",
+        text: "Wij zetten uw Google Ads- en Meta-campagnes (Facebook/Instagram) op en optimaliseren ze maandelijks met een specialistenteam. Conversion tracking, targeting en rapportages inbegrepen.",
       },
       {
         icon: "🤖",

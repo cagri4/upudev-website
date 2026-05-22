@@ -23,8 +23,8 @@ export const dijitalEkibinizEn: DijitalEkibinizDictionary = {
     items: [
       {
         icon: "🎯",
-        title: "Google Ads & Social Media Ads",
-        text: "Grow sales measurably with AI-driven campaigns. We manage your Google, Meta and Instagram ads with a specialist team.",
+        title: "Google Ads & Meta Ad Management",
+        text: "We set up and monthly optimize your Google Ads and Meta (Facebook/Instagram) campaigns with a specialist team. Conversion tracking, targeting and reporting included.",
       },
       {
         icon: "🤖",
