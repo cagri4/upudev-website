@@ -5,7 +5,7 @@ import { isLocale, locales, type Locale } from "@/lib/i18n";
 import { dijitalEkibinizTr, type DijitalEkibinizDictionary } from "@/content/locales/tr/dijital-ekibiniz";
 import { dijitalEkibinizEn } from "@/content/locales/en/dijital-ekibiniz";
 import { dijitalEkibinizNl } from "@/content/locales/nl/dijital-ekibiniz";
-import { DijitalEkibinizForm } from "@/components/landing/dijital-ekibiniz-form";
+import { DijitalEkibinizCTAs } from "@/components/landing/dijital-ekibiniz-modals";
 import { SiteFooter } from "@/components/site-footer";
 
 const WHATSAPP_NUMBER = "31644967207";
@@ -105,22 +105,14 @@ export default async function DijitalEkibinizPage({
             <p className="mt-4 max-w-2xl text-base leading-relaxed text-white/85 md:text-lg">
               {dict.hero.subtitle}
             </p>
-            <div className="mt-7 flex flex-col gap-3 sm:flex-row sm:items-center">
-              <a
-                href="#form"
-                className="inline-flex items-center justify-center rounded-full bg-white px-6 py-3 text-sm font-semibold text-[#122d54] transition hover:bg-neutral-100"
-              >
-                {dict.hero.ctaPrimary}
-              </a>
-              <a
-                href={WHATSAPP_HREF}
-                target="_blank"
-                rel="noopener"
-                className="inline-flex items-center justify-center gap-2 rounded-full border border-white/40 bg-white/5 px-6 py-3 text-sm font-semibold text-white transition hover:bg-white/15"
-              >
-                <span aria-hidden>💬</span> {dict.hero.ctaSecondary}
-              </a>
-            </div>
+            <DijitalEkibinizCTAs
+              locale={locale}
+              common={dict.formCommon}
+              hero={dict.hero}
+              teklif={dict.teklifModal}
+              toplanti={dict.toplantiModal}
+              whatsappHref={WHATSAPP_HREF}
+            />
             <p className="mt-6 text-xs text-white/70 md:text-sm">
               <span aria-hidden>🇳🇱</span> {dict.hero.trust}
             </p>
@@ -129,11 +121,16 @@ export default async function DijitalEkibinizPage({
 
         <section className="border-b border-neutral-100 bg-white py-14 md:py-20">
           <div className="mx-auto max-w-6xl px-4 md:px-6">
-            <h2 className="mb-8 text-2xl font-semibold tracking-tight text-neutral-900 md:text-3xl">
-              {dict.benefits.title}
-            </h2>
-            <div className="grid grid-cols-2 gap-4 md:grid-cols-4 md:gap-6">
-              {dict.benefits.items.map((item) => (
+            <div className="mb-10 max-w-2xl">
+              <h2 className="text-2xl font-semibold tracking-tight text-neutral-900 md:text-3xl">
+                {dict.capabilities.title}
+              </h2>
+              <p className="mt-3 text-base leading-relaxed text-neutral-600">
+                {dict.capabilities.subtitle}
+              </p>
+            </div>
+            <div className="grid grid-cols-1 gap-4 sm:grid-cols-2 md:gap-6 xl:grid-cols-4">
+              {dict.capabilities.items.map((item) => (
                 <div
                   key={item.title}
                   className="rounded-2xl border border-neutral-200 bg-white p-5 transition hover:border-neutral-300 hover:shadow-sm md:p-6"
@@ -165,30 +162,6 @@ export default async function DijitalEkibinizPage({
                 </div>
               ))}
             </div>
-          </div>
-        </section>
-
-        <section className="bg-white py-12 md:py-16">
-          <div className="mx-auto max-w-6xl px-4 md:px-6">
-            <p className="mb-6 text-center text-sm font-medium uppercase tracking-wider text-neutral-500">
-              {dict.trustClients.title}
-            </p>
-            <div className="grid grid-cols-3 gap-3 md:grid-cols-6 md:gap-4">
-              {dict.trustClients.items.map((name, i) => (
-                <div
-                  key={`${name}-${i}`}
-                  className="flex h-16 items-center justify-center rounded-xl border border-neutral-200 bg-neutral-50 px-3 text-center text-xs font-medium text-neutral-600 md:h-20 md:text-sm"
-                >
-                  {name}
-                </div>
-              ))}
-            </div>
-          </div>
-        </section>
-
-        <section className="bg-gradient-to-b from-neutral-50 to-white py-14 md:py-20">
-          <div className="mx-auto max-w-3xl px-4 md:px-6">
-            <DijitalEkibinizForm locale={locale} labels={dict.form} />
           </div>
         </section>
 

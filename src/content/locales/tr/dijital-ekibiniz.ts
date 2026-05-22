@@ -1,3 +1,9 @@
+export type CardItem = {
+  icon: string;
+  title: string;
+  text: string;
+};
+
 export type DijitalEkibinizDictionary = {
   meta: {
     title: string;
@@ -7,25 +13,21 @@ export type DijitalEkibinizDictionary = {
     badge: string;
     title: string;
     subtitle: string;
-    ctaPrimary: string;
-    ctaSecondary: string;
+    ctaQuote: string;
+    ctaMeeting: string;
+    ctaWhatsapp: string;
     trust: string;
   };
-  benefits: {
+  capabilities: {
     title: string;
-    items: { icon: string; title: string; text: string }[];
+    subtitle: string;
+    items: CardItem[];
   };
   process: {
     title: string;
     steps: { id: string; title: string; text: string }[];
   };
-  trustClients: {
-    title: string;
-    items: string[];
-  };
-  form: {
-    title: string;
-    subtitle: string;
+  formCommon: {
     nameLabel: string;
     namePlaceholder: string;
     phoneLabel: string;
@@ -36,12 +38,36 @@ export type DijitalEkibinizDictionary = {
     sectorOptions: string[];
     priorityLabel: string;
     priorityOptions: string[];
-    submit: string;
-    sending: string;
-    success: string;
-    error: string;
     requiredError: string;
     phoneError: string;
+    error: string;
+    sending: string;
+  };
+  teklifModal: {
+    triggerHelp: string;
+    title: string;
+    subtitle: string;
+    messageLabel: string;
+    messagePlaceholder: string;
+    submit: string;
+    successTitle: string;
+    successText: string;
+    closeLabel: string;
+  };
+  toplantiModal: {
+    triggerHelp: string;
+    title: string;
+    subtitle: string;
+    dateLabel: string;
+    dateHelp: string;
+    timeLabel: string;
+    timePlaceholder: string;
+    contactPreferenceLabel: string;
+    contactPreferenceOptions: { value: string; label: string }[];
+    submit: string;
+    successTitle: string;
+    successText: string;
+    closeLabel: string;
   };
   faq: {
     title: string;
@@ -52,41 +78,71 @@ export type DijitalEkibinizDictionary = {
 
 export const dijitalEkibinizTr: DijitalEkibinizDictionary = {
   meta: {
-    title: "UPU Dijital Ekibiniz — AI Destekli Satış, AI Eleman, SaaS, Sosyal Medya",
+    title: "UPU Dijital Ekibiniz — AI Destekli Satış, B2B Bayi Portalı, E-ticaret",
     description:
-      "Hollanda'daki Türk işletmeniz için tek pakette dijital ekip: yapay zeka destekli satış kampanyaları, AI Eleman, sektöre özel SaaS'lar, sosyal medya ve web sitesi.",
+      "Hollanda'daki Türk işletmeniz için tek pakette dijital ekip: yapay zeka destekli satış kampanyaları, AI Eleman, B2B bayi portalı, e-ticaret sitesi, sektörel SaaS, sosyal medya ve içerik.",
   },
   hero: {
-    badge: "Tek pakette dijital ekip",
+    badge: "Tek pakette dijital ekip — Hollanda'da Türkçe destek",
     title: "UPU Dijital Ekibiniz",
     subtitle:
-      "Yapay zeka destekli satış kampanyaları, AI Eleman, sektöre özel SaaS'lar, sosyal medya yönetimi, web sitesi ve içerik üretim — Hollanda'daki Türk işletmeniz için tek pakette ekip.",
-    ctaPrimary: "Ücretsiz Tanışma",
-    ctaSecondary: "WhatsApp",
+      "Yapay zeka destekli satış kampanyaları, AI Eleman, sektöre özel SaaS, B2B bayi portalı, e-ticaret sitesi, sosyal medya yönetimi ve içerik üretim — Hollanda'daki Türk işletmeniz için tek pakette ekip.",
+    ctaQuote: "Teklif Al",
+    ctaMeeting: "Toplantı Planla",
+    ctaWhatsapp: "WhatsApp",
     trust: "Hollanda'da, KVK 98902148, Türkçe destek",
   },
-  benefits: {
-    title: "Tek bir partner, dört uzmanlık",
+  capabilities: {
+    title: "Bir ekip, çok uzmanlık alanı",
+    subtitle: "İşletmenizin her dijital ihtiyacı için uzman ekip, tek pakette.",
     items: [
       {
         icon: "🎯",
-        title: "Satış Kampanyaları",
-        text: "AI destekli Google Ads + sosyal medya reklamlarıyla satışlarınızı ölçülebilir şekilde artırın.",
+        title: "Google Ads & Sosyal Medya Reklamları",
+        text:
+          "AI destekli kampanyalarla satışlarınızı ölçülebilir şekilde artırın. Google, Meta ve Instagram reklamlarınızı uzman ekiple yönetin.",
       },
       {
         icon: "🤖",
-        title: "UPU AI Eleman",
-        text: "7/24 çalışan AI asistan: WhatsApp'tan operasyon, rapor, müşteri takip.",
+        title: "Yapay Zeka Asistan & Otomasyon",
+        text:
+          "WhatsApp'tan operasyon yöneten, raporlama yapan, müşteri takibini otomatik yürüten AI eleman. 7/24 çalışır, asla yorulmaz.",
+      },
+      {
+        icon: "🏪",
+        title: "Bayi & Toptan Satış Yönetim Sistemi",
+        text:
+          "Bayilerinizin sipariş verebileceği özel B2B portal. Cari hesap, stok yönetimi, WhatsApp sipariş, tahsilat ve vade takibi tek panelde.",
+      },
+      {
+        icon: "🛒",
+        title: "E-ticaret Sitesi & Online Satış Platformu",
+        text:
+          "Uygun fiyatlı, profesyonel e-ticaret sitenizi anahtar teslim teslim ediyoruz. Ödeme entegrasyonu, ürün yönetimi, mobil uyumlu.",
+      },
+      {
+        icon: "💻",
+        title: "Hollanda'da Türk Yazılım Firması",
+        text:
+          "İşletmenize özel web sitesi, mobil uygulama, kurumsal yazılım. Hollanda'da Türkçe destek veren tek geliştirici ekip.",
       },
       {
         icon: "📱",
-        title: "Sosyal Medya + Web + İçerik",
-        text: "Instagram + Facebook + web sitesi + blog içeriği — uzman ekibimizden.",
+        title: "Sosyal Medya Yönetimi ve İçerik Üretimi",
+        text:
+          "Instagram, Facebook, blog içeriği — profesyonel sosyal medya ajansı hizmeti. Markanız her kanalda parlak görünür.",
       },
       {
-        icon: "📊",
-        title: "Sektöre Özel SaaS",
-        text: "Emlak, bayi, restoran, otel, market — sektörünüze özel hazır yazılım.",
+        icon: "🏬",
+        title: "Sektöre Özel Hazır Yazılımlar",
+        text:
+          "Emlakçı CRM, restoran yönetim, otel rezervasyon, market POS, site yönetimi — sektörünüze özel hazır SaaS.",
+      },
+      {
+        icon: "🍽",
+        title: "QR Menü & Online Sipariş Sistemi",
+        text:
+          "Restoranınız için QR kodlu dijital menü, online sipariş, masa rezerve, müşteri sadakat yönetimi tek pakette.",
       },
     ],
   },
@@ -98,13 +154,7 @@ export const dijitalEkibinizTr: DijitalEkibinizDictionary = {
       { id: "03", title: "Ekibimiz devreye giriyor", text: "Uygulamayı biz yapıyoruz, sonuçları siz izliyorsunuz." },
     ],
   },
-  trustClients: {
-    title: "Birlikte çalıştığımız işletmeler",
-    items: ["Doga Turizm Kaş", "—", "—", "—", "—", "—"],
-  },
-  form: {
-    title: "Tanışalım — 24 saat içinde dönüş",
-    subtitle: "Hiçbir taahhüt yok, ücretsiz tanışma görüşmesi.",
+  formCommon: {
     nameLabel: "Ad Soyad",
     namePlaceholder: "Adınız Soyadınız",
     phoneLabel: "Telefon",
@@ -112,22 +162,52 @@ export const dijitalEkibinizTr: DijitalEkibinizDictionary = {
     companyLabel: "Şirket Adı (opsiyonel)",
     companyPlaceholder: "Şirketinizin adı",
     sectorLabel: "Sektörünüz",
-    sectorOptions: ["Seçiniz", "Emlak", "Bayi / Distribütör", "Restoran / Catering", "Otel", "Market / Perakende", "Muhasebe", "Diğer"],
+    sectorOptions: ["Seçiniz", "Emlak", "Bayi / Toptan", "Restoran / Catering", "Otel", "Market / Perakende", "Muhasebe", "Diğer"],
     priorityLabel: "Sizin için ne öncelikli?",
     priorityOptions: [
       "Seçiniz",
-      "AI Eleman / SaaS yazılımı",
-      "Satış kampanyaları (Google + sosyal)",
-      "Sosyal medya yönetimi",
-      "Web sitesi / içerik",
-      "Hepsi",
+      "B2B Bayi Portalı",
+      "E-ticaret Sitesi",
+      "AI Eleman / Otomasyon",
+      "Web Sitesi / Mobil Uygulama",
+      "Sosyal Medya Yönetimi",
+      "Sektörel SaaS (emlak/restoran/otel/market)",
+      "Diğer",
     ],
-    submit: "Ücretsiz Tanışma Talep Et",
-    sending: "Gönderiliyor...",
-    success: "Talebiniz alındı, 24 saat içinde döneceğiz!",
-    error: "Bir hata oluştu. Lütfen tekrar deneyin veya WhatsApp'tan ulaşın.",
     requiredError: "Lütfen zorunlu alanları doldurun.",
     phoneError: "Lütfen geçerli bir telefon numarası girin.",
+    error: "Bir hata oluştu. Lütfen tekrar deneyin veya WhatsApp'tan ulaşın.",
+    sending: "Gönderiliyor...",
+  },
+  teklifModal: {
+    triggerHelp: "Size özel teklif için kısa bilgilerinizi alalım.",
+    title: "Teklif Al",
+    subtitle: "24 saat içinde size özel teklif ile dönüş yapıyoruz.",
+    messageLabel: "İhtiyacınızı kısaca yazın (opsiyonel)",
+    messagePlaceholder: "Mevcut durumunuz, hedefiniz veya özel istekleriniz...",
+    submit: "Teklif Talep Et",
+    successTitle: "Talebiniz alındı",
+    successText: "24 saat içinde size özel teklif ile dönüş yapacağız.",
+    closeLabel: "Kapat",
+  },
+  toplantiModal: {
+    triggerHelp: "Uygun zamanınızı seçin, biz arayalım.",
+    title: "Toplantı Planla",
+    subtitle: "Tarih ve saat seçin, iletişim tercihinizi belirtin — uygunluğu 1-2 saat içinde teyit ediyoruz.",
+    dateLabel: "Tarih seçin",
+    dateHelp: "Yarından itibaren 14 gün içinde uygun bir gün seçebilirsiniz (hafta sonu dahil).",
+    timeLabel: "Saat seçin (09:00–17:30, 30 dk dilimler)",
+    timePlaceholder: "Saat seçiniz",
+    contactPreferenceLabel: "İletişim tercihiniz",
+    contactPreferenceOptions: [
+      { value: "WhatsApp Görüntülü", label: "WhatsApp Görüntülü" },
+      { value: "Online Görüntülü (Zoom/Meet)", label: "Online Görüntülü (Zoom/Meet)" },
+      { value: "Telefon Aramasız (sesli)", label: "Telefon (sadece sesli)" },
+    ],
+    submit: "Toplantı Talep Et",
+    successTitle: "Talebiniz alındı",
+    successText: "Seçtiğiniz tarih ve saat uygunluğu için 1-2 saat içinde dönüş yapacağız.",
+    closeLabel: "Kapat",
   },
   faq: {
     title: "Sık Sorulanlar",
@@ -151,6 +231,14 @@ export const dijitalEkibinizTr: DijitalEkibinizDictionary = {
       {
         q: "Sözleşme süresi var mı?",
         a: "Aylık abonelik şeklinde çalışıyoruz, uzun süreli taahhüt zorunlu değil. İlk ay deneyip karar verebilirsiniz.",
+      },
+      {
+        q: "B2B bayi portalı / e-ticaret sitesi anahtar teslim mi?",
+        a: "Evet. Domain, hosting, tasarım, ödeme entegrasyonu, ürün/bayi tanımı, kullanıcı eğitimi dahil anahtar teslim çalışıyoruz. Yayına alındığında siz sadece yönetim panelinden çalışırsınız.",
+      },
+      {
+        q: "Sektörel SaaS'lar için demo alabilir miyim?",
+        a: "Tabii. Emlak CRM, restoran yönetim, otel rezervasyon, market POS ve site yönetimi modüllerimiz için 15 dk'lık canlı demo planlayabiliriz. Toplantı Planla butonundan tarihinizi seçin.",
       },
     ],
   },
