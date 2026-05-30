@@ -6,6 +6,7 @@ import { dijitalEkibinizTr, type DijitalEkibinizDictionary } from "@/content/loc
 import { dijitalEkibinizEn } from "@/content/locales/en/dijital-ekibiniz";
 import { dijitalEkibinizNl } from "@/content/locales/nl/dijital-ekibiniz";
 import { DijitalEkibinizCTAs } from "@/components/landing/dijital-ekibiniz-modals";
+import { DijitalEkibinizLeadForm } from "@/components/landing/dijital-ekibiniz-lead-form";
 import { SiteFooter } from "@/components/site-footer";
 
 const WHATSAPP_NUMBER = "31644967207";
@@ -106,12 +107,9 @@ export default async function DijitalEkibinizPage({
               {dict.hero.subtitle}
             </p>
             <DijitalEkibinizCTAs
-              locale={locale}
-              common={dict.formCommon}
               hero={dict.hero}
-              teklif={dict.teklifModal}
-              toplanti={dict.toplantiModal}
               whatsappHref={WHATSAPP_HREF}
+              leadFormHref={`#${dict.leadForm.sectionId}`}
             />
             <p className="mt-6 text-xs text-white/70 md:text-sm">
               <span aria-hidden>🇳🇱</span> {dict.hero.trust}
@@ -119,7 +117,10 @@ export default async function DijitalEkibinizPage({
           </div>
         </section>
 
-        <section className="border-b border-neutral-100 bg-white py-14 md:py-20">
+        <section
+          id="capabilities"
+          className="scroll-mt-20 border-b border-neutral-100 bg-white py-14 md:py-20"
+        >
           <div className="mx-auto max-w-6xl px-4 md:px-6">
             <div className="mb-10 max-w-2xl">
               <h2 className="text-2xl font-semibold tracking-tight text-neutral-900 md:text-3xl">
@@ -142,6 +143,18 @@ export default async function DijitalEkibinizPage({
                   <p className="mt-2 text-sm leading-relaxed text-neutral-600">{item.text}</p>
                 </div>
               ))}
+            </div>
+
+            <div className="mt-12 flex flex-col items-center gap-4 rounded-3xl bg-emerald-50 px-6 py-8 text-center md:flex-row md:justify-between md:gap-6 md:px-8 md:text-left">
+              <p className="text-base font-semibold text-emerald-950 md:text-lg">
+                {dict.ctaBand.midTitle}
+              </p>
+              <a
+                href={`#${dict.leadForm.sectionId}`}
+                className="inline-flex shrink-0 items-center justify-center rounded-full bg-emerald-600 px-6 py-3 text-sm font-semibold text-white shadow-sm transition hover:bg-emerald-700"
+              >
+                {dict.ctaBand.midButton}
+              </a>
             </div>
           </div>
         </section>
@@ -189,6 +202,26 @@ export default async function DijitalEkibinizPage({
                 </details>
               ))}
             </div>
+          </div>
+        </section>
+
+        <section
+          id={dict.leadForm.sectionId}
+          className="scroll-mt-16 border-t border-neutral-100 bg-gradient-to-br from-emerald-50 via-white to-emerald-50/60 py-16 md:py-24"
+        >
+          <div className="mx-auto max-w-3xl px-4 md:px-6">
+            <div className="mb-8 text-center md:mb-10">
+              <p className="text-xs font-semibold uppercase tracking-wider text-emerald-700">
+                {dict.leadForm.eyebrow}
+              </p>
+              <h2 className="mt-3 text-2xl font-bold tracking-tight text-neutral-900 md:text-3xl">
+                {dict.ctaBand.endTitle} — {dict.leadForm.title}
+              </h2>
+              <p className="mx-auto mt-3 max-w-xl text-sm leading-relaxed text-neutral-600 md:text-base">
+                {dict.leadForm.subtitle}
+              </p>
+            </div>
+            <DijitalEkibinizLeadForm locale={locale} labels={dict.leadForm} />
           </div>
         </section>
 

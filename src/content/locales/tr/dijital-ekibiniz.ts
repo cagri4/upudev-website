@@ -16,6 +16,7 @@ export type DijitalEkibinizDictionary = {
     ctaQuote: string;
     ctaMeeting: string;
     ctaWhatsapp: string;
+    ctaPrimary: string;
     trust: string;
   };
   capabilities: {
@@ -69,6 +70,51 @@ export type DijitalEkibinizDictionary = {
     successText: string;
     closeLabel: string;
   };
+  leadForm: {
+    sectionId: string;
+    eyebrow: string;
+    title: string;
+    subtitle: string;
+    groupPersonal: string;
+    groupNeeds: string;
+    groupExtra: string;
+    nameLabel: string;
+    namePlaceholder: string;
+    emailLabel: string;
+    emailPlaceholder: string;
+    phoneLabel: string;
+    phonePlaceholder: string;
+    companyLabel: string;
+    companyPlaceholder: string;
+    sectorLabel: string;
+    sectorPlaceholder: string;
+    sectorOptions: string[];
+    servicesLabel: string;
+    servicesHint: string;
+    servicesOptions: string[];
+    currentToolsLabel: string;
+    currentToolsPlaceholder: string;
+    messageLabel: string;
+    messagePlaceholder: string;
+    kvkkLabel: string;
+    submit: string;
+    sending: string;
+    requiredError: string;
+    emailError: string;
+    servicesError: string;
+    kvkkError: string;
+    successTitle: string;
+    successText: string;
+    successCtaLabel: string;
+    successCtaHref: string;
+  };
+  ctaBand: {
+    midTitle: string;
+    midButton: string;
+    endTitle: string;
+    endSubtitle: string;
+    endButton: string;
+  };
   faq: {
     title: string;
     items: { q: string; a: string }[];
@@ -90,6 +136,7 @@ export const dijitalEkibinizTr: DijitalEkibinizDictionary = {
     ctaQuote: "Teklif Al",
     ctaMeeting: "Toplantı Planla",
     ctaWhatsapp: "WhatsApp",
+    ctaPrimary: "Ücretsiz Toplantı Talep Et",
     trust: "Hollanda'da, KVK 98902148, Türkçe destek",
   },
   capabilities: {
@@ -208,6 +255,74 @@ export const dijitalEkibinizTr: DijitalEkibinizDictionary = {
     successTitle: "Talebiniz alındı",
     successText: "Seçtiğiniz tarih ve saat uygunluğu için 1-2 saat içinde dönüş yapacağız.",
     closeLabel: "Kapat",
+  },
+  leadForm: {
+    sectionId: "lead-form",
+    eyebrow: "Ücretsiz tanışma",
+    title: "Size özel paket için 30 dakika ayıralım",
+    subtitle:
+      "30 dakikalık ücretsiz toplantı. Sizi dinleyelim, size özel paket önerelim — sözsüz, sözleşmesiz.",
+    groupPersonal: "İletişim bilgileriniz",
+    groupNeeds: "İhtiyaç tespiti",
+    groupExtra: "Ek bilgi (opsiyonel)",
+    nameLabel: "Ad Soyad",
+    namePlaceholder: "Adınız Soyadınız",
+    emailLabel: "E-posta",
+    emailPlaceholder: "ornek@firmaniz.nl",
+    phoneLabel: "Telefon (opsiyonel)",
+    phonePlaceholder: "+31 ...",
+    companyLabel: "Firma adı (opsiyonel)",
+    companyPlaceholder: "Firmanızın adı",
+    sectorLabel: "Sektörünüz",
+    sectorPlaceholder: "Sektörünüzü seçin",
+    sectorOptions: [
+      "Restoran / Horeca",
+      "Market / Perakende",
+      "Bayi / Distribütör / Toptan",
+      "Muhasebe / Mali Müşavirlik",
+      "E-ticaret",
+      "Üretim / İmalat",
+      "Hizmet sektörü",
+      "Diğer",
+    ],
+    servicesLabel: "Hangi konularda destek arıyorsunuz?",
+    servicesHint: "Birden fazla seçebilirsiniz",
+    servicesOptions: [
+      "Web sitesi tasarımı / yenileme",
+      "E-ticaret sitesi kurulumu",
+      "Sosyal medya yönetimi",
+      "Google / Meta reklam yönetimi",
+      "AI Çalışan — iş süreçleri otomasyonu",
+      "Sektöre özel SaaS (panel, stok, sipariş, vb.)",
+      "Mobil uygulama",
+      "Diğer / Henüz emin değilim",
+    ],
+    currentToolsLabel: "Şu an hangi araçları/sistemleri kullanıyorsunuz?",
+    currentToolsPlaceholder: "Örnek: Excel + WhatsApp, hazır bir SaaS, henüz yok...",
+    messageLabel: "Detay yazmak ister misiniz?",
+    messagePlaceholder:
+      "Beklentilerinizi, mevcut süreçlerinizi veya sormak istediklerinizi paylaşabilirsiniz.",
+    kvkkLabel:
+      "Aydınlatma metnini okudum, kişisel verilerimin toplantı planlama amacıyla işlenmesini kabul ediyorum.",
+    submit: "Toplantı Talep Et",
+    sending: "Gönderiliyor...",
+    requiredError: "Lütfen zorunlu alanları doldurun.",
+    emailError: "Lütfen geçerli bir e-posta adresi girin.",
+    servicesError: "Lütfen en az bir konu seçin.",
+    kvkkError: "Devam etmek için aydınlatma onayını işaretleyin.",
+    successTitle: "Mesajınız bize ulaştı",
+    successText:
+      "1-2 iş günü içinde sizinle iletişime geçeceğiz. Bu sırada hizmetlerimize göz atabilirsiniz.",
+    successCtaLabel: "Hizmetlerimize göz at",
+    successCtaHref: "#capabilities",
+  },
+  ctaBand: {
+    midTitle: "Sektörünüze özel paketi konuşalım",
+    midButton: "Bana Özel Paket Hazırlayın",
+    endTitle: "Hadi Başlayalım",
+    endSubtitle:
+      "30 dakikalık ücretsiz toplantı. Sizi dinleyelim, size özel paket önerelim.",
+    endButton: "Toplantı Talep Et",
   },
   faq: {
     title: "Sık Sorulanlar",

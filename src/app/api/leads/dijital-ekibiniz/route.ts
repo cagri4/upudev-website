@@ -37,14 +37,18 @@ export async function POST(request: NextRequest) {
 
     const body = (await request.json()) as {
       name?: string;
+      email?: string;
       phone?: string;
       company?: string;
       sector?: string;
       priority?: string;
+      services?: string[];
+      currentTools?: string;
       message?: string;
       date?: string;
       time?: string;
       contactPreference?: string;
+      kvkkConsent?: boolean;
       formLocation?: string;
       website?: string;
       locale?: "tr" | "en" | "nl";
@@ -77,14 +81,24 @@ export async function POST(request: NextRequest) {
     }
 
     const name = (body.name ?? "").trim();
+    const email = (body.email ?? "").trim();
     const phone = (body.phone ?? "").trim();
     const company = (body.company ?? "").trim();
     const sector = (body.sector ?? "").trim();
     const priority = (body.priority ?? "").trim();
+    const services = Array.isArray(body.services)
+      ? body.services
+          .filter((s): s is string => typeof s === "string")
+          .map((s) => s.trim())
+          .filter(Boolean)
+          .slice(0, 20)
+      : [];
+    const currentTools = (body.currentTools ?? "").trim();
     const message = (body.message ?? "").trim();
     const date = (body.date ?? "").trim();
     const time = (body.time ?? "").trim();
     const contactPreference = (body.contactPreference ?? "").trim();
+    const kvkkConsent = body.kvkkConsent === true;
     const formLocation = (body.formLocation ?? "landing_form").trim().slice(0, 60);
     const website = (body.website ?? "").trim();
 
@@ -92,26 +106,43 @@ export async function POST(request: NextRequest) {
       return NextResponse.json({ ok: true });
     }
 
-    if (!name || !phone || !sector || !priority) {
+    const isInlineLeadForm = formLocation === "dijital_ekibiniz_lead_form";
+
+    // Lead-form requirements: ad + email + sektör + ≥1 hizmet + KVKK onay.
+    // Modallar: ad + telefon + sektör + öncelik (geri uyumluluk).
+    if (isInlineLeadForm) {
+      if (!name || !email || !sector || services.length === 0 || !kvkkConsent) {
+        return NextResponse.json({ ok: false, message: t.required }, { status: 400 });
+      }
+      if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)) {
+        return NextResponse.json({ ok: false, message: t.required }, { status: 400 });
+      }
+    } else if (!name || !phone || !sector || !priority) {
       return NextResponse.json({ ok: false, message: t.required }, { status: 400 });
     }
 
     if (
       name.length > 100 ||
+      email.length > 160 ||
       phone.length > 40 ||
       company.length > 120 ||
       sector.length > 80 ||
       priority.length > 200 ||
+      currentTools.length > 220 ||
       message.length > 2000 ||
       date.length > 20 ||
       time.length > 12 ||
-      contactPreference.length > 60
+      contactPreference.length > 60 ||
+      services.some((s) => s.length > 120)
     ) {
       return NextResponse.json({ ok: false, message: t.required }, { status: 400 });
     }
 
     const submittedAt = new Date().toISOString();
-    const isMeeting = formLocation === "toplanti_planla_modal" || Boolean(date || time);
+    const isMeeting =
+      isInlineLeadForm ||
+      formLocation === "toplanti_planla_modal" ||
+      Boolean(date || time);
     const logEntry = {
       source: "dijital-ekibiniz",
       formLocation,
@@ -119,14 +150,18 @@ export async function POST(request: NextRequest) {
       ip,
       locale,
       name,
-      phone,
+      email: email || null,
+      phone: phone || null,
       company: company || null,
       sector,
-      priority,
+      priority: priority || null,
+      services: services.length ? services : null,
+      currentTools: currentTools || null,
       message: message || null,
       date: date || null,
       time: time || null,
       contactPreference: contactPreference || null,
+      kvkkConsent: isInlineLeadForm ? kvkkConsent : null,
     };
     console.log("[landing-lead]", JSON.stringify(logEntry));
 
@@ -158,10 +193,13 @@ export async function POST(request: NextRequest) {
             `Yeni Landing Page lead'i — /dijital-ekibiniz (${formLocation})`,
             "",
             `Ad Soyad     : ${name}`,
-            `Telefon      : ${phone}`,
+            email ? `E-posta      : ${email}` : "",
+            phone ? `Telefon      : ${phone}` : "",
             `Şirket       : ${company || "-"}`,
             `Sektör       : ${sector}`,
-            `Öncelik      : ${priority}`,
+            priority ? `Öncelik      : ${priority}` : "",
+            services.length ? `İhtiyaçlar   : ${services.join(", ")}` : "",
+            currentTools ? `Mevcut araç  : ${currentTools}` : "",
             date ? `Tarih        : ${date}` : "",
             time ? `Saat         : ${time}` : "",
             contactPreference ? `İletişim     : ${contactPreference}` : "",
@@ -186,10 +224,13 @@ export async function POST(request: NextRequest) {
         <tr><td style="padding:24px 32px;">
           <table width="100%" cellpadding="0" cellspacing="0" style="font-size:14px;color:#18181b;">
             <tr><td style="padding:6px 0;width:140px;color:#71717a;">Ad Soyad</td><td style="padding:6px 0;font-weight:600;">${escapeHtml(name)}</td></tr>
-            <tr><td style="padding:6px 0;color:#71717a;">Telefon</td><td style="padding:6px 0;"><a href="tel:${escapeHtml(phone)}" style="color:#2563eb;text-decoration:none;">${escapeHtml(phone)}</a> · <a href="https://wa.me/${escapeHtml(phone.replace(/\D/g, ""))}" style="color:#16a34a;text-decoration:none;">WhatsApp</a></td></tr>
+            ${email ? `<tr><td style="padding:6px 0;color:#71717a;">E-posta</td><td style="padding:6px 0;"><a href="mailto:${escapeHtml(email)}" style="color:#2563eb;text-decoration:none;">${escapeHtml(email)}</a></td></tr>` : ""}
+            ${phone ? `<tr><td style="padding:6px 0;color:#71717a;">Telefon</td><td style="padding:6px 0;"><a href="tel:${escapeHtml(phone)}" style="color:#2563eb;text-decoration:none;">${escapeHtml(phone)}</a> · <a href="https://wa.me/${escapeHtml(phone.replace(/\D/g, ""))}" style="color:#16a34a;text-decoration:none;">WhatsApp</a></td></tr>` : ""}
             <tr><td style="padding:6px 0;color:#71717a;">Şirket</td><td style="padding:6px 0;">${escapeHtml(company || "-")}</td></tr>
             <tr><td style="padding:6px 0;color:#71717a;">Sektör</td><td style="padding:6px 0;font-weight:600;">${escapeHtml(sector)}</td></tr>
-            <tr><td style="padding:6px 0;color:#71717a;">Öncelik</td><td style="padding:6px 0;">${escapeHtml(priority)}</td></tr>
+            ${priority ? `<tr><td style="padding:6px 0;color:#71717a;">Öncelik</td><td style="padding:6px 0;">${escapeHtml(priority)}</td></tr>` : ""}
+            ${services.length ? `<tr><td style="padding:6px 0;color:#71717a;">İhtiyaçlar</td><td style="padding:6px 0;">${services.map((s) => `<span style="display:inline-block;margin:2px 4px 2px 0;padding:2px 8px;background:#eef2ff;color:#3730a3;border-radius:999px;font-size:12px;">${escapeHtml(s)}</span>`).join("")}</td></tr>` : ""}
+            ${currentTools ? `<tr><td style="padding:6px 0;color:#71717a;">Mevcut araç</td><td style="padding:6px 0;">${escapeHtml(currentTools)}</td></tr>` : ""}
             ${date ? `<tr><td style="padding:6px 0;color:#71717a;">Tercih Tarih</td><td style="padding:6px 0;font-weight:600;">${escapeHtml(date)}${time ? " · " + escapeHtml(time) : ""}</td></tr>` : ""}
             ${contactPreference ? `<tr><td style="padding:6px 0;color:#71717a;">İletişim Tercihi</td><td style="padding:6px 0;">${escapeHtml(contactPreference)}</td></tr>` : ""}
             ${message ? `<tr><td colspan="2" style="padding:14px 0 6px;color:#71717a;">Mesaj</td></tr><tr><td colspan="2" style="padding:0 0 6px;font-size:14px;line-height:1.5;background:#fafafa;border-radius:8px;padding:14px;">${escapeHtml(message).replace(/\n/g, "<br/>")}</td></tr>` : ""}

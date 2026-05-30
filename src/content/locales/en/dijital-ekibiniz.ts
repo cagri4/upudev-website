@@ -15,6 +15,7 @@ export const dijitalEkibinizEn: DijitalEkibinizDictionary = {
     ctaQuote: "Request a Quote",
     ctaMeeting: "Book a Meeting",
     ctaWhatsapp: "WhatsApp",
+    ctaPrimary: "Book a Free Consultation",
     trust: "Based in the Netherlands, KVK 98902148, Turkish & English support",
   },
   capabilities: {

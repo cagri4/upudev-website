@@ -15,6 +15,7 @@ export const dijitalEkibinizNl: DijitalEkibinizDictionary = {
     ctaQuote: "Offerte Aanvragen",
     ctaMeeting: "Afspraak Plannen",
     ctaWhatsapp: "WhatsApp",
+    ctaPrimary: "Plan een Gratis Gesprek",
     trust: "Gevestigd in Nederland, KVK 98902148, Nederlandstalige & Turkse support",
   },
   capabilities: {

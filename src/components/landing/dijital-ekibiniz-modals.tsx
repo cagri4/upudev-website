@@ -36,66 +36,30 @@ type CommonProps = {
 
 type ModalType = "teklif" | "toplanti";
 
-type CTAProps = CommonProps & {
+type CTAProps = {
   hero: DijitalEkibinizDictionary["hero"];
-  teklif: DijitalEkibinizDictionary["teklifModal"];
-  toplanti: DijitalEkibinizDictionary["toplantiModal"];
   whatsappHref: string;
+  leadFormHref: string;
 };
 
-export function DijitalEkibinizCTAs({
-  locale,
-  common,
-  hero,
-  teklif,
-  toplanti,
-  whatsappHref,
-}: CTAProps) {
-  const [active, setActive] = useState<ModalType | null>(null);
-  const close = () => setActive(null);
-
+export function DijitalEkibinizCTAs({ hero, whatsappHref, leadFormHref }: CTAProps) {
   return (
-    <>
-      <div className="mt-7 flex flex-col gap-3 sm:flex-row sm:items-center sm:flex-wrap">
-        <button
-          type="button"
-          onClick={() => setActive("teklif")}
-          className="inline-flex items-center justify-center rounded-full bg-white px-6 py-3 text-sm font-semibold text-[#122d54] transition hover:bg-neutral-100"
-        >
-          {hero.ctaQuote}
-        </button>
-        <button
-          type="button"
-          onClick={() => setActive("toplanti")}
-          className="inline-flex items-center justify-center rounded-full border border-white/70 bg-transparent px-6 py-3 text-sm font-semibold text-white transition hover:bg-white/10"
-        >
-          {hero.ctaMeeting}
-        </button>
-        <a
-          href={whatsappHref}
-          target="_blank"
-          rel="noopener"
-          className="inline-flex items-center justify-center gap-2 rounded-full border border-white/40 bg-white/5 px-6 py-3 text-sm font-semibold text-white transition hover:bg-white/15"
-        >
-          <span aria-hidden>💬</span> {hero.ctaWhatsapp}
-        </a>
-      </div>
-
-      <TeklifAlModal
-        open={active === "teklif"}
-        onClose={close}
-        locale={locale}
-        common={common}
-        labels={teklif}
-      />
-      <ToplantiPlanlaModal
-        open={active === "toplanti"}
-        onClose={close}
-        locale={locale}
-        common={common}
-        labels={toplanti}
-      />
-    </>
+    <div className="mt-7 flex flex-col gap-3 sm:flex-row sm:items-center sm:flex-wrap">
+      <a
+        href={leadFormHref}
+        className="inline-flex items-center justify-center rounded-full bg-emerald-500 px-6 py-3 text-sm font-semibold text-white shadow-sm transition hover:bg-emerald-400 md:text-base"
+      >
+        {hero.ctaPrimary}
+      </a>
+      <a
+        href={whatsappHref}
+        target="_blank"
+        rel="noopener"
+        className="inline-flex items-center justify-center gap-2 rounded-full border border-white/40 bg-white/5 px-6 py-3 text-sm font-semibold text-white transition hover:bg-white/15"
+      >
+        <span aria-hidden>💬</span> {hero.ctaWhatsapp}
+      </a>
+    </div>
   );
 }
 
