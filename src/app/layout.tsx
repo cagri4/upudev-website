@@ -4,6 +4,7 @@ import "./globals.css";
 import { ScrollToTop } from "@/components/scroll-to-top";
 import { CookieBanner } from "@/components/cookie-banner";
 import { MeetingModal } from "@/components/meeting-modal";
+import { MetaPixel } from "@/components/meta-pixel";
 
 const GTM_ID = process.env.NEXT_PUBLIC_GTM_ID?.trim();
 const GA_ID = process.env.NEXT_PUBLIC_GA4_MEASUREMENT_ID?.trim();
@@ -62,6 +63,8 @@ export default function RootLayout({
             `}
           </Script>
         )}
+
+        <MetaPixel />
       </head>
       <body className="antialiased">
         {GTM_ID && (

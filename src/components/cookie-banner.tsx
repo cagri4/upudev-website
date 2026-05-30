@@ -84,6 +84,10 @@ export function CookieBanner() {
       });
     }
 
+    if (typeof window !== "undefined" && typeof window.fbq === "function") {
+      window.fbq("consent", accepted ? "grant" : "revoke");
+    }
+
     setVisible(false);
   };
 
