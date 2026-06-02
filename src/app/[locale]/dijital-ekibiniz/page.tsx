@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import Image from "next/image";
 import Link from "next/link";
 import { notFound } from "next/navigation";
 import { isLocale, locales, type Locale } from "@/lib/i18n";
@@ -11,6 +12,16 @@ import { SiteFooter } from "@/components/site-footer";
 
 const WHATSAPP_NUMBER = "31644967207";
 const WHATSAPP_HREF = `https://wa.me/${WHATSAPP_NUMBER}`;
+
+const TRUST_LOGOS = [
+  { name: "Next.js", src: "/logos/partners/nextjs.svg" },
+  { name: "Vercel", src: "/logos/partners/vercel.svg" },
+  { name: "Supabase", src: "/logos/partners/supabase.svg" },
+  { name: "Google", src: "/logos/partners/google.svg" },
+  { name: "Meta", src: "/logos/partners/meta.svg" },
+  { name: "OpenAI", src: "/logos/partners/openai.svg" },
+  { name: "Mollie", src: "/logos/partners/mollie.png" },
+] as const;
 
 const dictionaries: Record<Locale, DijitalEkibinizDictionary> = {
   tr: dijitalEkibinizTr,
@@ -200,6 +211,28 @@ export default async function DijitalEkibinizPage({
                   </summary>
                   <p className="mt-3 text-sm leading-relaxed text-neutral-600">{item.a}</p>
                 </details>
+              ))}
+            </div>
+          </div>
+        </section>
+
+        <section className="border-t border-neutral-100 bg-white py-12 md:py-16">
+          <div className="mx-auto max-w-5xl px-4 text-center md:px-6">
+            <h2 className="text-xl font-semibold tracking-tight text-neutral-900 md:text-2xl">
+              {dict.trust.title}
+            </h2>
+            <p className="mt-2 text-sm text-neutral-600">{dict.trust.subtitle}</p>
+            <div className="mt-8 grid grid-cols-3 items-center gap-6 sm:grid-cols-4 md:grid-cols-7 md:gap-8">
+              {TRUST_LOGOS.map((logo) => (
+                <div key={logo.name} className="flex items-center justify-center">
+                  <Image
+                    src={logo.src}
+                    alt={logo.name}
+                    width={96}
+                    height={32}
+                    className="h-7 w-auto opacity-60 grayscale transition duration-300 hover:opacity-100 hover:grayscale-0 md:h-8"
+                  />
+                </div>
               ))}
             </div>
           </div>

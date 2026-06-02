@@ -39,6 +39,7 @@ export async function POST(request: NextRequest) {
       name?: string;
       email?: string;
       phone?: string;
+      whatsappPhone?: string;
       company?: string;
       sector?: string;
       priority?: string;
@@ -82,7 +83,7 @@ export async function POST(request: NextRequest) {
 
     const name = (body.name ?? "").trim();
     const email = (body.email ?? "").trim();
-    const phone = (body.phone ?? "").trim();
+    const phone = (body.whatsappPhone ?? body.phone ?? "").trim();
     const company = (body.company ?? "").trim();
     const sector = (body.sector ?? "").trim();
     const priority = (body.priority ?? "").trim();
@@ -108,13 +109,13 @@ export async function POST(request: NextRequest) {
 
     const isInlineLeadForm = formLocation === "dijital_ekibiniz_lead_form";
 
-    // Lead-form requirements: ad + email + sektör + ≥1 hizmet + KVKK onay.
+    // Sadeleştirilmiş lead-form: ad + WhatsApp no + sektör + mesaj + KVKK onay.
     // Modallar: ad + telefon + sektör + öncelik (geri uyumluluk).
     if (isInlineLeadForm) {
-      if (!name || !email || !sector || services.length === 0 || !kvkkConsent) {
+      if (!name || !phone || !sector || !message || !kvkkConsent) {
         return NextResponse.json({ ok: false, message: t.required }, { status: 400 });
       }
-      if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)) {
+      if (phone.replace(/\D/g, "").length < 7) {
         return NextResponse.json({ ok: false, message: t.required }, { status: 400 });
       }
     } else if (!name || !phone || !sector || !priority) {
@@ -140,9 +141,7 @@ export async function POST(request: NextRequest) {
 
     const submittedAt = new Date().toISOString();
     const isMeeting =
-      isInlineLeadForm ||
-      formLocation === "toplanti_planla_modal" ||
-      Boolean(date || time);
+      formLocation === "toplanti_planla_modal" || Boolean(date || time);
     const logEntry = {
       source: "dijital-ekibiniz",
       formLocation,
@@ -184,7 +183,11 @@ export async function POST(request: NextRequest) {
           auth: { user, pass },
         });
 
-        const subjectPrefix = isMeeting ? "Toplantı Talebi" : "Teklif Talebi";
+        const subjectPrefix = isInlineLeadForm
+          ? "Mesaj / Soru"
+          : isMeeting
+            ? "Toplantı Talebi"
+            : "Teklif Talebi";
         await transporter.sendMail({
           from,
           to,

@@ -70,43 +70,35 @@ export type DijitalEkibinizDictionary = {
     successText: string;
     closeLabel: string;
   };
+  trust: {
+    title: string;
+    subtitle: string;
+  };
   leadForm: {
     sectionId: string;
     eyebrow: string;
     title: string;
     subtitle: string;
-    groupPersonal: string;
-    groupNeeds: string;
-    groupExtra: string;
     nameLabel: string;
     namePlaceholder: string;
-    emailLabel: string;
-    emailPlaceholder: string;
-    phoneLabel: string;
-    phonePlaceholder: string;
-    companyLabel: string;
-    companyPlaceholder: string;
+    whatsappLabel: string;
+    whatsappPlaceholder: string;
     sectorLabel: string;
     sectorPlaceholder: string;
     sectorOptions: string[];
-    servicesLabel: string;
-    servicesHint: string;
-    servicesOptions: string[];
-    currentToolsLabel: string;
-    currentToolsPlaceholder: string;
     messageLabel: string;
     messagePlaceholder: string;
     kvkkLabel: string;
     submit: string;
+    submitHint: string;
     sending: string;
     requiredError: string;
-    emailError: string;
-    servicesError: string;
+    phoneError: string;
     kvkkError: string;
     successTitle: string;
     successText: string;
-    successCtaLabel: string;
-    successCtaHref: string;
+    successWaLabel: string;
+    successWaPrefix: string;
   };
   ctaBand: {
     midTitle: string;
@@ -136,7 +128,7 @@ export const dijitalEkibinizTr: DijitalEkibinizDictionary = {
     ctaQuote: "Teklif Al",
     ctaMeeting: "Toplantı Planla",
     ctaWhatsapp: "WhatsApp",
-    ctaPrimary: "Ücretsiz Toplantı Talep Et",
+    ctaPrimary: "Mesajınızı Gönderin",
     trust: "Hollanda'da, KVK 98902148, Türkçe destek",
   },
   capabilities: {
@@ -256,23 +248,20 @@ export const dijitalEkibinizTr: DijitalEkibinizDictionary = {
     successText: "Seçtiğiniz tarih ve saat uygunluğu için 1-2 saat içinde dönüş yapacağız.",
     closeLabel: "Kapat",
   },
+  trust: {
+    title: "Hollanda'nın en güncel altyapısıyla",
+    subtitle: "Sektör lideri teknolojilerle güvenli ve hızlı çözümler.",
+  },
   leadForm: {
     sectionId: "lead-form",
-    eyebrow: "Ücretsiz tanışma",
-    title: "Size özel paket için 30 dakika ayıralım",
+    eyebrow: "Sorunuzu yazın",
+    title: "Sorunuzu yazın, gerisini biz halledelim",
     subtitle:
-      "30 dakikalık ücretsiz toplantı. Sizi dinleyelim, size özel paket önerelim — sözsüz, sözleşmesiz.",
-    groupPersonal: "İletişim bilgileriniz",
-    groupNeeds: "İhtiyaç tespiti",
-    groupExtra: "Ek bilgi (opsiyonel)",
+      "Kısa bir mesaj bırakın — 24 saat içinde WhatsApp'tan size dönelim. Taahhüt yok, ücretsiz.",
     nameLabel: "Ad Soyad",
     namePlaceholder: "Adınız Soyadınız",
-    emailLabel: "E-posta",
-    emailPlaceholder: "ornek@firmaniz.nl",
-    phoneLabel: "Telefon (opsiyonel)",
-    phonePlaceholder: "+31 ...",
-    companyLabel: "Firma adı (opsiyonel)",
-    companyPlaceholder: "Firmanızın adı",
+    whatsappLabel: "WhatsApp Numaranız",
+    whatsappPlaceholder: "+31 ...",
     sectorLabel: "Sektörünüz",
     sectorPlaceholder: "Sektörünüzü seçin",
     sectorOptions: [
@@ -285,44 +274,29 @@ export const dijitalEkibinizTr: DijitalEkibinizDictionary = {
       "Hizmet sektörü",
       "Diğer",
     ],
-    servicesLabel: "Hangi konularda destek arıyorsunuz?",
-    servicesHint: "Birden fazla seçebilirsiniz",
-    servicesOptions: [
-      "Web sitesi tasarımı / yenileme",
-      "E-ticaret sitesi kurulumu",
-      "Sosyal medya yönetimi",
-      "Google / Meta reklam yönetimi",
-      "AI Çalışan — iş süreçleri otomasyonu",
-      "Sektöre özel SaaS (panel, stok, sipariş, vb.)",
-      "Mobil uygulama",
-      "Diğer / Henüz emin değilim",
-    ],
-    currentToolsLabel: "Şu an hangi araçları/sistemleri kullanıyorsunuz?",
-    currentToolsPlaceholder: "Örnek: Excel + WhatsApp, hazır bir SaaS, henüz yok...",
-    messageLabel: "Detay yazmak ister misiniz?",
+    messageLabel: "Mesajınız",
     messagePlaceholder:
-      "Beklentilerinizi, mevcut süreçlerinizi veya sormak istediklerinizi paylaşabilirsiniz.",
+      "Örn: E-ticaret siteme AI sohbet botu istiyorum, bütçem sınırlı. Ne yapabiliriz?",
     kvkkLabel:
-      "Aydınlatma metnini okudum, kişisel verilerimin toplantı planlama amacıyla işlenmesini kabul ediyorum.",
-    submit: "Toplantı Talep Et",
+      "Aydınlatma metnini okudum, kişisel verilerimin iletişim amacıyla işlenmesini kabul ediyorum.",
+    submit: "Mesajınızı Gönderin",
+    submitHint: "Ortalama dönüş süresi: 24 saat içinde, WhatsApp'tan.",
     sending: "Gönderiliyor...",
     requiredError: "Lütfen zorunlu alanları doldurun.",
-    emailError: "Lütfen geçerli bir e-posta adresi girin.",
-    servicesError: "Lütfen en az bir konu seçin.",
+    phoneError: "Lütfen geçerli bir WhatsApp numarası girin.",
     kvkkError: "Devam etmek için aydınlatma onayını işaretleyin.",
-    successTitle: "Mesajınız bize ulaştı",
-    successText:
-      "1-2 iş günü içinde sizinle iletişime geçeceğiz. Bu sırada hizmetlerimize göz atabilirsiniz.",
-    successCtaLabel: "Hizmetlerimize göz at",
-    successCtaHref: "#capabilities",
+    successTitle: "Teşekkürler! Sorunuzu aldık.",
+    successText: "24 saat içinde WhatsApp'tan size döneceğiz.",
+    successWaLabel: "WhatsApp'ta Hemen Başla",
+    successWaPrefix:
+      "Merhaba, /tr/dijital-ekibiniz sayfasından yazıyorum. Sorum:",
   },
   ctaBand: {
     midTitle: "Sektörünüze özel paketi konuşalım",
     midButton: "Bana Özel Paket Hazırlayın",
     endTitle: "Hadi Başlayalım",
-    endSubtitle:
-      "30 dakikalık ücretsiz toplantı. Sizi dinleyelim, size özel paket önerelim.",
-    endButton: "Toplantı Talep Et",
+    endSubtitle: "Kısa bir mesaj bırakın, 24 saat içinde WhatsApp'tan dönelim.",
+    endButton: "Mesajınızı Gönderin",
   },
   faq: {
     title: "Sık Sorulanlar",
@@ -353,7 +327,7 @@ export const dijitalEkibinizTr: DijitalEkibinizDictionary = {
       },
       {
         q: "Sektörel SaaS'lar için demo alabilir miyim?",
-        a: "Tabii. Emlak CRM, restoran yönetim, otel rezervasyon, market POS ve site yönetimi modüllerimiz için 15 dk'lık canlı demo planlayabiliriz. Toplantı Planla butonundan tarihinizi seçin.",
+        a: "Tabii. Emlak CRM, restoran yönetim, otel rezervasyon, market POS ve site yönetimi modüllerimiz için 15 dk'lık canlı demo ayarlayabiliriz. Aşağıdaki formdan mesaj bırakın, WhatsApp'tan demo için iletişime geçelim.",
       },
     ],
   },
