@@ -10,7 +10,7 @@ import { DijitalEkibinizCTAs } from "@/components/landing/dijital-ekibiniz-modal
 import { DijitalEkibinizLeadForm } from "@/components/landing/dijital-ekibiniz-lead-form";
 import { SiteFooter } from "@/components/site-footer";
 
-const WHATSAPP_NUMBER = "31644967207";
+const WHATSAPP_NUMBER = "31611352773";
 const WHATSAPP_HREF = `https://wa.me/${WHATSAPP_NUMBER}`;
 
 const TRUST_LOGOS = [
