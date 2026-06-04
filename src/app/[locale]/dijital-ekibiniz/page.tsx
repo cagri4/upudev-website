@@ -8,6 +8,7 @@ import { dijitalEkibinizEn } from "@/content/locales/en/dijital-ekibiniz";
 import { dijitalEkibinizNl } from "@/content/locales/nl/dijital-ekibiniz";
 import { DijitalEkibinizCTAs } from "@/components/landing/dijital-ekibiniz-modals";
 import { DijitalEkibinizLeadForm } from "@/components/landing/dijital-ekibiniz-lead-form";
+import { WhatsAppLink } from "@/components/landing/whatsapp-link";
 import { SiteFooter } from "@/components/site-footer";
 
 const WHATSAPP_NUMBER = "31611352773";
@@ -86,14 +87,13 @@ export default async function DijitalEkibinizPage({
           <Link href={`/${locale}`} className="text-xl font-bold tracking-tight text-neutral-900">
             upu<span className="text-[#122d54]">dev</span>
           </Link>
-          <a
+          <WhatsAppLink
             href={WHATSAPP_HREF}
-            target="_blank"
-            rel="noopener"
+            source="header"
             className="inline-flex items-center gap-2 rounded-full border border-emerald-600 px-3 py-1.5 text-xs font-semibold text-emerald-700 transition hover:bg-emerald-50 md:text-sm"
           >
             <span aria-hidden>💬</span> WhatsApp
-          </a>
+          </WhatsAppLink>
         </div>
       </header>
 

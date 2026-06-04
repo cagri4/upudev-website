@@ -28,6 +28,7 @@ export default function RootLayout({
   return (
     <html lang="tr">
       <head>
+        <meta name="facebook-domain-verification" content="igwywyo7m787er5o2jz0zrmhk0p1pk" />
         <Script id="gtm-consent-default" strategy="beforeInteractive">
           {`
             window.dataLayer = window.dataLayer || [];

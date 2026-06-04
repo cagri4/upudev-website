@@ -4,6 +4,7 @@ import { FormEvent, useMemo, useState } from "react";
 import type { Locale } from "@/lib/i18n";
 import { pushEvent } from "@/lib/analytics";
 import { Dialog } from "@/components/ui/dialog";
+import { WhatsAppLink } from "@/components/landing/whatsapp-link";
 import type { DijitalEkibinizDictionary } from "@/content/locales/tr/dijital-ekibiniz";
 
 type FormStatus = "idle" | "sending" | "success" | "error";
@@ -51,14 +52,13 @@ export function DijitalEkibinizCTAs({ hero, whatsappHref, leadFormHref }: CTAPro
       >
         {hero.ctaPrimary}
       </a>
-      <a
+      <WhatsAppLink
         href={whatsappHref}
-        target="_blank"
-        rel="noopener"
+        source="hero"
         className="inline-flex items-center justify-center gap-2 rounded-full border border-white/40 bg-white/5 px-6 py-3 text-sm font-semibold text-white transition hover:bg-white/15"
       >
         <span aria-hidden>💬</span> {hero.ctaWhatsapp}
-      </a>
+      </WhatsAppLink>
     </div>
   );
 }

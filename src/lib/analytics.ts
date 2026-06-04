@@ -16,13 +16,8 @@ export function pushEvent(event: GtmEvent) {
   window.dataLayer = window.dataLayer || [];
   window.dataLayer.push(event as unknown as Record<string, unknown>);
 
-  // Meta Pixel mirror — quote_form_submit her zaman Lead'dir (OUTCOME_LEADS
-  // kampanyası optimization sinyali). Value/currency Google Ads ile paralel,
-  // content_category sektör adı (varsa) — Meta'da sektör-bazlı CTR analizine
-  // izin verir.
-  if (event.event === "quote_form_submit") {
-    const params: Record<string, unknown> = { value: 50, currency: "EUR" };
-    if (event.sektor) params.content_category = event.sektor;
-    window.fbq?.("track", "Lead", params);
-  }
+  // NOT: Meta Pixel Lead/Contact event'leri tek kaynaktan fire edilir:
+  //   - Lead + FormSubmit → dijital-ekibiniz-lead-form.tsx (form success)
+  //   - Contact + WhatsAppClick → whatsapp-link.tsx (WA tıklamaları)
+  // Burada fbq mirror'ı tutulmuyor ki çift-Lead olmasın.
 }

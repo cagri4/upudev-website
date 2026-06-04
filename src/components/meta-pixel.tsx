@@ -13,12 +13,14 @@ import Script from "next/script";
  *   - Banner'dan accept/reject akışı `cookie-banner.tsx` tarafından
  *     `fbq('consent','grant'|'revoke')` çağrısı ile yansıtılır.
  *
- * Pixel ID `NEXT_PUBLIC_META_PIXEL_ID` env var ile gelir; tanımsızsa script
- * mount edilmez (PR preview / lokal-dev güvenli).
+ * Pixel ID hardcoded default ile gelir (production Vercel env'ine bağımlı
+ * değil — pixel her sayfada garanti yüklenir). `NEXT_PUBLIC_META_PIXEL_ID`
+ * env var tanımlıysa onu kullanır (staging/test pixel override için).
  */
+const DEFAULT_PIXEL_ID = "977358011871870";
+
 export function MetaPixel() {
-  const pixelId = process.env.NEXT_PUBLIC_META_PIXEL_ID?.trim();
-  if (!pixelId) return null;
+  const pixelId = process.env.NEXT_PUBLIC_META_PIXEL_ID?.trim() || DEFAULT_PIXEL_ID;
 
   return (
     <>

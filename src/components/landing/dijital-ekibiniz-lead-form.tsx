@@ -18,6 +18,7 @@
 import { FormEvent, useState } from "react";
 import type { Locale } from "@/lib/i18n";
 import { pushEvent } from "@/lib/analytics";
+import { WhatsAppLink } from "@/components/landing/whatsapp-link";
 import type { DijitalEkibinizDictionary } from "@/content/locales/tr/dijital-ekibiniz";
 
 type Status = "idle" | "sending" | "success" | "error";
@@ -97,6 +98,22 @@ export function DijitalEkibinizLeadForm({ locale, labels }: Props) {
         sektor: sector,
         locale,
       });
+      // Meta Pixel: standard Lead (OUTCOME_LEADS optimization sinyali) +
+      // custom FormSubmit (sektör segmentasyonu). Tek kaynak — analytics.ts
+      // mirror'ı kaldırıldı, çift-Lead yok.
+      if (typeof window !== "undefined" && typeof window.fbq === "function") {
+        window.fbq("track", "Lead", {
+          content_name: "dijital-ekibiniz-form",
+          content_category: sector,
+          value: 50,
+          currency: "EUR",
+        });
+        window.fbq("trackCustom", "FormSubmit", {
+          form: "dijital-ekibiniz-form",
+          sector,
+          locale,
+        });
+      }
       setLastMessage(message);
       setStatus("success");
       formEl.reset();
@@ -132,14 +149,13 @@ export function DijitalEkibinizLeadForm({ locale, labels }: Props) {
         <p className="mx-auto mt-3 max-w-md text-sm leading-relaxed text-emerald-900 md:text-base">
           {labels.successText}
         </p>
-        <a
+        <WhatsAppLink
           href={waHref}
-          target="_blank"
-          rel="noopener"
+          source="success"
           className="mt-6 inline-flex items-center justify-center gap-2 rounded-full bg-emerald-600 px-6 py-3.5 text-sm font-semibold text-white shadow-sm transition hover:bg-emerald-700 md:text-base"
         >
           <span aria-hidden>💬</span> {labels.successWaLabel}
-        </a>
+        </WhatsAppLink>
       </div>
     );
   }
