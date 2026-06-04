@@ -60,6 +60,7 @@ export const dijitalEkibinizEn: DijitalEkibinizDictionary = {
     successWaLabel: "Start on WhatsApp Now",
     successWaPrefix:
       "Hello, I'm writing from the /en/dijital-ekibiniz page. My question:",
+    stickyCta: "💬 Send Message Now",
   },
   ctaBand: {
     midTitle: "Let's talk about a package for your sector",

@@ -60,6 +60,7 @@ export const dijitalEkibinizNl: DijitalEkibinizDictionary = {
     successWaLabel: "Start nu op WhatsApp",
     successWaPrefix:
       "Hallo, ik schrijf vanaf de /nl/dijital-ekibiniz pagina. Mijn vraag:",
+    stickyCta: "💬 Stuur Direct Bericht",
   },
   ctaBand: {
     midTitle: "Laten we praten over een pakket voor uw sector",

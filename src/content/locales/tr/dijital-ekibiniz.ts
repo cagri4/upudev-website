@@ -99,6 +99,7 @@ export type DijitalEkibinizDictionary = {
     successText: string;
     successWaLabel: string;
     successWaPrefix: string;
+    stickyCta: string;
   };
   ctaBand: {
     midTitle: string;
@@ -290,6 +291,7 @@ export const dijitalEkibinizTr: DijitalEkibinizDictionary = {
     successWaLabel: "WhatsApp'ta Hemen Başla",
     successWaPrefix:
       "Merhaba, /tr/dijital-ekibiniz sayfasından yazıyorum. Sorum:",
+    stickyCta: "💬 Hemen Mesaj Gönder",
   },
   ctaBand: {
     midTitle: "Sektörünüze özel paketi konuşalım",
