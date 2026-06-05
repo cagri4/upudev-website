@@ -2,7 +2,7 @@
 
 import type { ReactNode } from "react";
 
-type Source = "header" | "hero" | "success" | "sticky";
+type Source = "header" | "hero" | "success" | "sticky" | "packages";
 
 /**
  * WhatsApp deep-link + Meta Pixel tracking.

@@ -10,6 +10,7 @@ import { DijitalEkibinizCTAs } from "@/components/landing/dijital-ekibiniz-modal
 import { DijitalEkibinizLeadForm } from "@/components/landing/dijital-ekibiniz-lead-form";
 import { WhatsAppLink } from "@/components/landing/whatsapp-link";
 import { MobileStickyCta } from "@/components/landing/mobile-sticky-cta";
+import { PackagesModal } from "@/components/landing/packages-modal";
 import { SiteFooter } from "@/components/site-footer";
 
 const WHATSAPP_NUMBER = "31611352773";
@@ -146,6 +147,12 @@ export default async function DijitalEkibinizPage({
               </p>
             </div>
             <DijitalEkibinizLeadForm locale={locale} labels={dict.leadForm} />
+          </div>
+        </section>
+
+        <section className="border-b border-neutral-100 bg-white py-10 md:py-12">
+          <div className="mx-auto max-w-3xl px-4 md:px-6">
+            <PackagesModal labels={dict.packages} />
           </div>
         </section>
 

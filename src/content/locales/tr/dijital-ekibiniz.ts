@@ -108,6 +108,23 @@ export type DijitalEkibinizDictionary = {
     endSubtitle: string;
     endButton: string;
   };
+  packages: {
+    triggerLabel: string;
+    triggerHint: string;
+    title: string;
+    subtitle: string;
+    annualBadge: string;
+    popularBadge: string;
+    featureColLabel: string;
+    packageNames: [string, string, string, string];
+    features: string[];
+    priceLabel: string;
+    priceBasic: string;
+    priceCustom: string;
+    ctaLabel: string;
+    waPrefill: string;
+    closeLabel: string;
+  };
   faq: {
     title: string;
     items: { q: string; a: string }[];
@@ -299,6 +316,32 @@ export const dijitalEkibinizTr: DijitalEkibinizDictionary = {
     endTitle: "Hadi Başlayalım",
     endSubtitle: "Kısa bir mesaj bırakın, 24 saat içinde WhatsApp'tan dönelim.",
     endButton: "Mesajınızı Gönderin",
+  },
+  packages: {
+    triggerLabel: "Paketleri Gör",
+    triggerHint: "Hangi paket size uygun? Özellikleri karşılaştırın.",
+    title: "Paketler",
+    subtitle: "İhtiyacınıza göre 4 paket. Basic dışındakiler görüşmede size özel fiyatlanır.",
+    annualBadge: "Yıllık öde, 2 ay bedava",
+    popularBadge: "EN POPÜLER",
+    featureColLabel: "Özellik",
+    packageNames: ["Basic", "Starter", "Pro", "Ultra"],
+    features: [
+      "Kurumsal web sitesi",
+      "AI asistan (web chatbot)",
+      "Admin panelli sayfa",
+      "WhatsApp bildirim",
+      "E-ticaret modülü",
+      "Reklam yönetimi (Meta + Google)",
+      "SaaS modülü (emlak/bayi/otel/...)",
+      "Özel entegrasyon (API/ERP)",
+    ],
+    priceLabel: "Fiyat",
+    priceBasic: "29€/ay",
+    priceCustom: "Görüşmede özelleştirilir",
+    ctaLabel: "WhatsApp ile görüşelim",
+    waPrefill: "Paketler hakkında bilgi almak istiyorum",
+    closeLabel: "Kapat",
   },
   faq: {
     title: "Sık Sorulanlar",

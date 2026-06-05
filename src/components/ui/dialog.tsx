@@ -9,13 +9,14 @@ type DialogProps = {
   subtitle?: string;
   closeLabel: string;
   children: ReactNode;
-  size?: "sm" | "md" | "lg";
+  size?: "sm" | "md" | "lg" | "xl";
 };
 
 const sizeClass: Record<NonNullable<DialogProps["size"]>, string> = {
   sm: "md:max-w-md",
   md: "md:max-w-xl",
   lg: "md:max-w-2xl",
+  xl: "md:max-w-5xl",
 };
 
 export function Dialog({
