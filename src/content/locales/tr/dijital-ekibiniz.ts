@@ -116,6 +116,7 @@ export type DijitalEkibinizDictionary = {
     annualBadge: string;
     popularBadge: string;
     featureColLabel: string;
+    portraitHint: string;
     packageNames: [string, string, string, string];
     features: string[];
     priceLabel: string;
@@ -325,6 +326,7 @@ export const dijitalEkibinizTr: DijitalEkibinizDictionary = {
     annualBadge: "Yıllık öde, 2 ay bedava",
     popularBadge: "EN POPÜLER",
     featureColLabel: "Özellik",
+    portraitHint: "Tablo geniş — telefonu yan tutarsanız daha rahat okunur.",
     packageNames: ["Basic", "Starter", "Pro", "Ultra"],
     features: [
       "Kurumsal web sitesi",
@@ -334,7 +336,7 @@ export const dijitalEkibinizTr: DijitalEkibinizDictionary = {
       "E-ticaret modülü",
       "Reklam yönetimi (Meta + Google)",
       "SaaS modülü (emlak/bayi/otel/...)",
-      "Özel entegrasyon (API/ERP)",
+      "Özel yapay zeka eleman çözümleri",
     ],
     priceLabel: "Fiyat",
     priceBasic: "29€/ay",

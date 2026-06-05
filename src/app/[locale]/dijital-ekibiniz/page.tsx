@@ -130,6 +130,12 @@ export default async function DijitalEkibinizPage({
           </div>
         </section>
 
+        <section className="border-b border-neutral-100 bg-white py-10 md:py-12">
+          <div className="mx-auto max-w-3xl px-4 md:px-6">
+            <PackagesModal labels={dict.packages} />
+          </div>
+        </section>
+
         <section
           id={dict.leadForm.sectionId}
           className="scroll-mt-16 border-b border-neutral-100 bg-gradient-to-br from-emerald-50 via-white to-emerald-50/60 py-14 md:py-20"
@@ -147,12 +153,6 @@ export default async function DijitalEkibinizPage({
               </p>
             </div>
             <DijitalEkibinizLeadForm locale={locale} labels={dict.leadForm} />
-          </div>
-        </section>
-
-        <section className="border-b border-neutral-100 bg-white py-10 md:py-12">
-          <div className="mx-auto max-w-3xl px-4 md:px-6">
-            <PackagesModal labels={dict.packages} />
           </div>
         </section>
 

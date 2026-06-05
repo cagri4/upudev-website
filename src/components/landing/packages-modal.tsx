@@ -80,6 +80,10 @@ export function PackagesModal({
             </span>
           </div>
 
+          <p className="mb-3 text-xs text-neutral-500 md:hidden landscape:hidden">
+            <span aria-hidden>↔️</span> {labels.portraitHint}
+          </p>
+
           <div className="overflow-x-auto">
             <table className="w-full min-w-[640px] border-collapse text-sm">
               <thead>

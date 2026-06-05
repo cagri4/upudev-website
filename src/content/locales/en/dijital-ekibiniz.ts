@@ -77,6 +77,7 @@ export const dijitalEkibinizEn: DijitalEkibinizDictionary = {
     annualBadge: "Pay yearly, 2 months free",
     popularBadge: "MOST POPULAR",
     featureColLabel: "Feature",
+    portraitHint: "Wide table — turn your phone sideways for easier reading.",
     packageNames: ["Basic", "Starter", "Pro", "Ultra"],
     features: [
       "Corporate website",
@@ -86,7 +87,7 @@ export const dijitalEkibinizEn: DijitalEkibinizDictionary = {
       "E-commerce module",
       "Ad management (Meta + Google)",
       "SaaS module (real estate/dealer/hotel/...)",
-      "Custom integration (API/ERP)",
+      "Custom AI employee solutions",
     ],
     priceLabel: "Price",
     priceBasic: "€29/mo",

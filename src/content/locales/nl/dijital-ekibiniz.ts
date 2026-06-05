@@ -77,6 +77,7 @@ export const dijitalEkibinizNl: DijitalEkibinizDictionary = {
     annualBadge: "Jaarlijks betalen, 2 maanden gratis",
     popularBadge: "MEEST GEKOZEN",
     featureColLabel: "Functie",
+    portraitHint: "Brede tabel — houd uw telefoon horizontaal voor beter lezen.",
     packageNames: ["Basic", "Starter", "Pro", "Ultra"],
     features: [
       "Zakelijke website",
@@ -86,7 +87,7 @@ export const dijitalEkibinizNl: DijitalEkibinizDictionary = {
       "E-commerce module",
       "Advertentiebeheer (Meta + Google)",
       "SaaS-module (vastgoed/dealer/hotel/...)",
-      "Maatwerk integratie (API/ERP)",
+      "Aangepaste AI-medewerker-oplossingen",
     ],
     priceLabel: "Prijs",
     priceBasic: "€29/mnd",
