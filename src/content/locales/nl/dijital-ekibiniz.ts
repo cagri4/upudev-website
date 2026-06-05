@@ -77,7 +77,7 @@ export const dijitalEkibinizNl: DijitalEkibinizDictionary = {
     annualBadge: "Jaarlijks betalen, 2 maanden gratis",
     popularBadge: "MEEST GEKOZEN",
     featureColLabel: "Functie",
-    portraitHint: "Brede tabel — houd uw telefoon horizontaal voor beter lezen.",
+    portraitHint: "Het wordt aanbevolen uw telefoon te draaien",
     packageNames: ["Basic", "Starter", "Pro", "Ultra"],
     features: [
       "Zakelijke website",

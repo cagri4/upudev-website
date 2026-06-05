@@ -77,7 +77,7 @@ export const dijitalEkibinizEn: DijitalEkibinizDictionary = {
     annualBadge: "Pay yearly, 2 months free",
     popularBadge: "MOST POPULAR",
     featureColLabel: "Feature",
-    portraitHint: "Wide table — turn your phone sideways for easier reading.",
+    portraitHint: "We recommend rotating your phone",
     packageNames: ["Basic", "Starter", "Pro", "Ultra"],
     features: [
       "Corporate website",

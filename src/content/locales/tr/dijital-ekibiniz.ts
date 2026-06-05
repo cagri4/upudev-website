@@ -326,7 +326,7 @@ export const dijitalEkibinizTr: DijitalEkibinizDictionary = {
     annualBadge: "Yıllık öde, 2 ay bedava",
     popularBadge: "EN POPÜLER",
     featureColLabel: "Özellik",
-    portraitHint: "Tablo geniş — telefonu yan tutarsanız daha rahat okunur.",
+    portraitHint: "Telefonu yan çevirmeniz tavsiye edilir",
     packageNames: ["Basic", "Starter", "Pro", "Ultra"],
     features: [
       "Kurumsal web sitesi",

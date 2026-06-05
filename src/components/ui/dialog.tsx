@@ -16,7 +16,7 @@ const sizeClass: Record<NonNullable<DialogProps["size"]>, string> = {
   sm: "md:max-w-md",
   md: "md:max-w-xl",
   lg: "md:max-w-2xl",
-  xl: "md:max-w-3xl",
+  xl: "md:max-w-[652px]",
 };
 
 export function Dialog({
