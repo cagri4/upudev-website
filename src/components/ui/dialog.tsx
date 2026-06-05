@@ -57,7 +57,7 @@ export function Dialog({
 
   return (
     <div
-      className="fixed inset-0 z-[70] flex items-end justify-center bg-black/60 backdrop-blur-sm p-0 md:items-center md:p-4"
+      className="fixed inset-0 z-[70] flex items-center justify-center bg-black/60 backdrop-blur-sm p-4"
       onClick={(event) => {
         if (event.target === event.currentTarget) onClose();
       }}
@@ -68,9 +68,9 @@ export function Dialog({
         role="dialog"
         aria-modal="true"
         aria-label={title}
-        className={`max-h-[92vh] w-full overflow-y-auto rounded-t-2xl bg-white shadow-2xl md:rounded-2xl ${sizeClass[size]}`}
+        className={`max-h-[85vh] w-[90vw] overflow-y-auto rounded-2xl bg-white shadow-2xl md:w-full ${sizeClass[size]}`}
       >
-        <div className="sticky top-0 z-10 border-b border-neutral-200 bg-white px-6 py-4 pr-14">
+        <div className="sticky top-0 z-10 border-b border-neutral-200 bg-white px-4 py-3 pr-12 md:px-6 md:py-4 md:pr-14">
           <h2 className="text-lg font-semibold text-neutral-900">{title}</h2>
           {subtitle ? <p className="mt-1 text-sm text-neutral-600">{subtitle}</p> : null}
           <button

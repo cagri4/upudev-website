@@ -73,7 +73,7 @@ export function PackagesModal({
         closeLabel={labels.closeLabel}
         size="xl"
       >
-        <div className="px-4 py-5 md:px-6">
+        <div className="px-3 py-3 md:px-6 md:py-5">
           <div className="mb-4 flex justify-end">
             <span className="inline-flex items-center gap-1.5 rounded-full bg-emerald-50 px-3 py-1 text-xs font-semibold text-emerald-700">
               <span aria-hidden>🎁</span> {labels.annualBadge}
@@ -88,7 +88,7 @@ export function PackagesModal({
             <table className="w-full min-w-[640px] border-collapse text-sm">
               <thead>
                 <tr>
-                  <th className="w-2/5 px-3 pb-3 text-left align-bottom text-xs font-semibold uppercase tracking-wider text-neutral-500">
+                  <th className="w-2/5 px-2 pb-3 text-left align-bottom text-xs font-semibold uppercase tracking-wider text-neutral-500 md:px-3">
                     {labels.featureColLabel}
                   </th>
                   {labels.packageNames.map((name, i) => {
@@ -96,7 +96,7 @@ export function PackagesModal({
                     return (
                       <th
                         key={name}
-                        className={`relative px-3 pb-3 pt-7 text-center align-bottom ${
+                        className={`relative px-2 pb-3 pt-7 text-center align-bottom md:px-3 ${
                           popular ? "rounded-t-xl bg-emerald-50" : ""
                         }`}
                       >
@@ -121,11 +121,11 @@ export function PackagesModal({
               <tbody>
                 {labels.features.map((feature, r) => (
                   <tr key={feature} className="border-t border-neutral-100">
-                    <td className="px-3 py-3 text-left text-neutral-700">{feature}</td>
+                    <td className="px-2 py-2 text-left text-neutral-700 md:px-3 md:py-3">{feature}</td>
                     {MATRIX[r].map((on, c) => (
                       <td
                         key={c}
-                        className={`px-3 py-3 text-center ${
+                        className={`px-2 py-2 text-center md:px-3 md:py-3 ${
                           c === POPULAR_INDEX ? "bg-emerald-50/50" : ""
                         }`}
                       >
