@@ -16,7 +16,7 @@ const sizeClass: Record<NonNullable<DialogProps["size"]>, string> = {
   sm: "md:max-w-md",
   md: "md:max-w-xl",
   lg: "md:max-w-2xl",
-  xl: "md:max-w-5xl",
+  xl: "md:max-w-3xl",
 };
 
 export function Dialog({
@@ -70,17 +70,15 @@ export function Dialog({
         aria-label={title}
         className={`max-h-[92vh] w-full overflow-y-auto rounded-t-2xl bg-white shadow-2xl md:rounded-2xl ${sizeClass[size]}`}
       >
-        <div className="sticky top-0 z-10 flex items-start justify-between gap-4 border-b border-neutral-200 bg-white px-6 py-4">
-          <div>
-            <h2 className="text-lg font-semibold text-neutral-900">{title}</h2>
-            {subtitle ? <p className="mt-1 text-sm text-neutral-600">{subtitle}</p> : null}
-          </div>
+        <div className="sticky top-0 z-10 border-b border-neutral-200 bg-white px-6 py-4 pr-14">
+          <h2 className="text-lg font-semibold text-neutral-900">{title}</h2>
+          {subtitle ? <p className="mt-1 text-sm text-neutral-600">{subtitle}</p> : null}
           <button
             type="button"
             data-dialog-close
             aria-label={closeLabel}
             onClick={onClose}
-            className="flex h-9 w-9 shrink-0 items-center justify-center rounded-full text-neutral-500 transition hover:bg-neutral-100 hover:text-neutral-900"
+            className="absolute right-3 top-3 flex h-9 w-9 items-center justify-center rounded-full text-neutral-500 transition hover:bg-neutral-100 hover:text-neutral-900"
           >
             <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
               <line x1="18" y1="6" x2="6" y2="18" />
