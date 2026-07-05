@@ -107,7 +107,7 @@ export const homeTr: HomeDictionary = {
     badge: "SaaS & Yazılım Partneri",
     title: "Fikirden ürüne, hızla.",
     subtitle:
-      "Hollanda'da faaliyet gösteren Türk girişimciler ve KOBİ'ler için özel dijital çözümler geliştiriyoruz.",
+      "Hollanda'daki KOBİ'ler ve girişimciler için özel dijital çözümler geliştiriyoruz — Türkçe, Hollandaca ve İngilizce destekle.",
     ctaPrimary: "Projeleri İncele",
     ctaSecondary: "Teklif Al",
     stats: [
@@ -128,7 +128,7 @@ export const homeTr: HomeDictionary = {
         name: "UPU Dijital Ekibiniz",
         category: "Tek Pakette Dijital Ekip",
         summary:
-          "Yapay zeka destekli satış, sosyal medya, web ve içerik — tek pakette ekip. Google, Facebook, Instagram reklam yönetimi dahil. Hollanda'daki Türk işletmeniz için B2B portal, e-ticaret kurulum ve sektörel SaaS çözümleri tek partner ile.",
+          "Yapay zeka destekli satış, sosyal medya, web ve içerik — tek pakette ekip. Google, Facebook, Instagram reklam yönetimi dahil. Hollanda'daki işletmeniz için B2B portal, e-ticaret kurulum ve sektörel SaaS çözümleri tek partner ile.",
         image:
           "https://images.unsplash.com/photo-1556761175-5973dc0f32e7?auto=format&fit=crop&w=1200&q=80",
       },

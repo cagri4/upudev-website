@@ -23,7 +23,7 @@ export const homeEn: HomeDictionary = {
     badge: "SaaS & Software Partner",
     title: "From idea to product, fast.",
     subtitle:
-      "We build digital products specifically for Turkish-owned businesses and entrepreneurs operating in the Netherlands.",
+      "We build custom digital products for SMEs and entrepreneurs in the Netherlands — with Turkish, Dutch and English support.",
     ctaPrimary: "View Projects",
     ctaSecondary: "Get Quote",
     stats: [
@@ -45,7 +45,7 @@ export const homeEn: HomeDictionary = {
         name: "UPU Your Digital Team",
         category: "All-in-One Digital Team",
         summary:
-          "AI-driven sales, social media, website and content — one team in one package. Google, Facebook and Instagram ad management included. For your Turkish business in the Netherlands: B2B dealer portal, e-commerce setup and industry SaaS — all with a single partner.",
+          "AI-driven sales, social media, website and content — one team in one package. Google, Facebook and Instagram ad management included. For your business in the Netherlands: B2B dealer portal, e-commerce setup and industry SaaS — all with a single partner.",
         image:
           "https://images.unsplash.com/photo-1556761175-5973dc0f32e7?auto=format&fit=crop&w=1200&q=80",
       },

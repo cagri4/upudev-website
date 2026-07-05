@@ -114,7 +114,7 @@ const productDetailsTr: ProductDetail[] = [
       },
       {
         title: "Giyim Markası Distribütörü",
-        scenario: "Rotterdam'da Türk giyim markasının NL distribütörü, 60 satış noktası",
+        scenario: "Rotterdam merkezli bir giyim markasının NL distribütörü, 60 satış noktası",
         problem: "Bölgesel satış performansı görünür değil, komisyon hesaplamaları manuel ve hata yapıyor.",
         solution: "Bölgesel performans dashboard'u ve otomatik komisyon hesaplama sistemi devreye alındı.",
         outcome: "Komisyon anlaşmazlıkları sıfıra indi, bölgesel satışlar %25 arttı.",
@@ -212,7 +212,7 @@ const productDetailsTr: ProductDetail[] = [
       },
       {
         title: "Restoran Zinciri Muhasebesi",
-        scenario: "Amsterdam'da 8 şubeli Türk restoran zinciri, çoklu ödeme kanalı",
+        scenario: "Amsterdam'da 8 şubeli bir restoran zinciri, çoklu ödeme kanalı",
         problem: "Günlük z-raporları, fiş ve fatura çoklu formatta geliyor, mutabakat manuel.",
         solution: "Otomatik fatura işleme, gider sınıflandırma ve şube bazlı dashboard kuruldu.",
         outcome: "Mutabakat süresi 3 günden 2 saate düştü, muhasebe iş yükü %60 azaldı.",
@@ -311,8 +311,8 @@ const productDetailsTr: ProductDetail[] = [
         outcome: "Şubeler arası satışlar %25 arttı, kapanış oranı %30 yükseldi.",
       },
       {
-        title: "Bağımsız Türk Emlakçı",
-        scenario: "Den Haag'da solo çalışan emlak danışmanı, ağırlıklı Türk müşteri portföyü",
+        title: "Bağımsız Emlak Danışmanı",
+        scenario: "Den Haag'da solo çalışan emlak danışmanı, karma müşteri portföyü",
         problem: "Müşteri+belge+randevu farklı sistemlerde, hızlı geri dönüş yapamıyor.",
         solution: "Tek mobil uygulamada CRM, doküman arşivi ve otomatik hatırlatma birleştirildi.",
         outcome: "Günlük operasyon süresi 2 saat azaldı, kapanış oranı %35 arttı.",
@@ -489,7 +489,7 @@ const productDetailsTr: ProductDetail[] = [
     useCases: [
       {
         title: "Restoran Rezervasyon Agent",
-        scenario: "Amsterdam'da 3 şubeli Türk restoran zinciri, çoklu kanaldan rezervasyon",
+        scenario: "Amsterdam'da 3 şubeli bir restoran zinciri, çoklu kanaldan rezervasyon",
         problem: "Telefon rezervasyonları yetiştirilemiyor, WhatsApp ve Instagram talepleri kaçıyor, çift rezervasyon yaşanıyor.",
         solution: "7/24 çalışan rezervasyon agent'ı + WhatsApp entegrasyonu kuruldu, masa müsaitliği gerçek zamanlı senkronize edildi.",
         outcome: "Rezervasyon kaçırma %85 azaldı, telefon yoğunluğu yarıya indi.",
@@ -589,7 +589,7 @@ const productDetailsTr: ProductDetail[] = [
       },
       {
         title: "Tekstil ve Giyim E-Ticaret",
-        scenario: "Den Haag'da Türk butik markası, NL pazarına online açılıyor",
+        scenario: "Den Haag'da bir butik moda markası, NL pazarına online açılıyor",
         problem: "Yavaş hazır çözüm, dönüşüm düşük, ödeme seçenekleri sınırlı, çok dilli destek yok.",
         solution: "Özel platform geliştirildi, iDEAL/Mollie ödeme ve Türkçe/Hollandaca/İngilizce çoklu dil eklendi.",
         outcome: "Sayfa hızı 3 kat arttı, dönüşüm oranı %50 yükseldi, pazaryeri bağımlılığı azaldı.",
@@ -684,7 +684,7 @@ const productDetailsEn: ProductDetail[] = [
       },
       {
         title: "Apparel Brand Distributor",
-        scenario: "Rotterdam-based NL distributor of a Turkish apparel brand, 60 retail points",
+        scenario: "Rotterdam-based NL distributor of an apparel brand, 60 retail points",
         problem: "Regional sales performance is not visible, commission calculations are manual and error-prone.",
         solution: "Regional performance dashboard and automatic commission calculation system were deployed.",
         outcome: "Commission disputes dropped to zero, regional sales increased by 25%.",
@@ -776,7 +776,7 @@ const productDetailsEn: ProductDetail[] = [
       },
       {
         title: "Restaurant Chain Bookkeeping",
-        scenario: "Amsterdam-based Turkish restaurant chain with 8 branches and multiple payment channels",
+        scenario: "Amsterdam-based restaurant chain with 8 branches and multiple payment channels",
         problem: "Daily Z-reports, receipts, and invoices arrive in mixed formats; reconciliation is fully manual.",
         solution: "Automatic invoice processing, expense classification, and per-branch dashboards were deployed.",
         outcome: "Reconciliation time dropped from 3 days to 2 hours, accounting workload decreased by 60%.",
@@ -874,8 +874,8 @@ const productDetailsEn: ProductDetail[] = [
         outcome: "Cross-branch sales increased by 25%, closing rate improved by 30%.",
       },
       {
-        title: "Independent Turkish Agent",
-        scenario: "Den Haag-based solo real estate advisor with a primarily Turkish client base",
+        title: "Independent Real Estate Agent",
+        scenario: "Den Haag-based solo real estate advisor with a mixed client base",
         problem: "Clients, documents, and appointments live in separate tools, hard to respond quickly.",
         solution: "CRM, document archive, and automated reminders unified in a single mobile app.",
         outcome: "Daily operations time reduced by 2 hours, closing rate increased by 35%.",
@@ -1047,7 +1047,7 @@ const productDetailsEn: ProductDetail[] = [
     useCases: [
       {
         title: "Restaurant Reservation Agent",
-        scenario: "Amsterdam-based Turkish restaurant chain with 3 branches and multi-channel inbound reservations",
+        scenario: "Amsterdam-based restaurant chain with 3 branches and multi-channel inbound reservations",
         problem: "Phone reservations cannot keep up, WhatsApp and Instagram requests slip, double-booking happens.",
         solution: "24/7 reservation agent with WhatsApp integration; table availability is synced in real time.",
         outcome: "Missed reservations decreased by 85%, phone load was cut in half.",
@@ -1146,7 +1146,7 @@ const productDetailsEn: ProductDetail[] = [
       },
       {
         title: "Apparel & Fashion E-commerce",
-        scenario: "Den Haag-based Turkish boutique brand launching online for the NL market",
+        scenario: "Den Haag-based boutique fashion brand launching online for the NL market",
         problem: "Slow off-the-shelf solution, low conversion, limited payment options, no multilingual support.",
         solution: "Custom platform with iDEAL/Mollie payments and Turkish/Dutch/English multilingual UI.",
         outcome: "Page speed increased 3x, conversion rate rose by 50%, marketplace dependency dropped.",
@@ -1241,7 +1241,7 @@ const productDetailsNl: ProductDetail[] = [
       },
       {
         title: "Kledingmerk Distributeur",
-        scenario: "Rotterdamse NL-distributeur van een Turks kledingmerk met 60 verkooppunten",
+        scenario: "Rotterdamse NL-distributeur van een kledingmerk met 60 verkooppunten",
         problem: "Regionale verkoopprestaties zijn niet zichtbaar, commissieberekeningen zijn handmatig en foutgevoelig.",
         solution: "Regionaal prestatiedashboard en automatisch commissieberekeningssysteem geïmplementeerd.",
         outcome: "Commissiegeschillen daalden naar nul, regionale verkoop steeg met 25%.",
@@ -1333,7 +1333,7 @@ const productDetailsNl: ProductDetail[] = [
       },
       {
         title: "Boekhouding Restaurantketen",
-        scenario: "Turkse restaurantketen in Amsterdam met 8 vestigingen en meerdere betaalkanalen",
+        scenario: "Restaurantketen in Amsterdam met 8 vestigingen en meerdere betaalkanalen",
         problem: "Dagelijkse Z-rapporten, bonnen en facturen komen in verschillende formaten; afstemming is volledig handmatig.",
         solution: "Automatische factuurverwerking, kostenclassificatie en dashboards per vestiging geïmplementeerd.",
         outcome: "Afstemmingstijd daalde van 3 dagen naar 2 uur, boekhoudbelasting verlaagd met 60%.",
@@ -1431,8 +1431,8 @@ const productDetailsNl: ProductDetail[] = [
         outcome: "Verkoop tussen vestigingen steeg met 25%, sluitingsratio verbeterde met 30%.",
       },
       {
-        title: "Zelfstandige Turkse Makelaar",
-        scenario: "Zelfstandige vastgoedadviseur in Den Haag met overwegend Turkse klantportefeuille",
+        title: "Zelfstandige Makelaar",
+        scenario: "Zelfstandige vastgoedadviseur in Den Haag met een gemengde klantenportefeuille",
         problem: "Klanten, documenten en afspraken zitten in verschillende tools, snel reageren is lastig.",
         solution: "CRM, documentarchief en automatische herinneringen verenigd in één mobiele app.",
         outcome: "Dagelijkse operatietijd verminderd met 2 uur, sluitingsratio steeg met 35%.",
@@ -1604,7 +1604,7 @@ const productDetailsNl: ProductDetail[] = [
     useCases: [
       {
         title: "Restaurant Reserveringsagent",
-        scenario: "Turkse restaurantketen in Amsterdam met 3 vestigingen en multi-kanaal reserveringen",
+        scenario: "Restaurantketen in Amsterdam met 3 vestigingen en multi-kanaal reserveringen",
         problem: "Telefonische reserveringen zijn niet bij te benen, WhatsApp- en Instagram-verzoeken vallen tussen wal en schip, dubbele boekingen komen voor.",
         solution: "24/7 reserveringsagent met WhatsApp-integratie; tafelbeschikbaarheid wordt realtime gesynchroniseerd.",
         outcome: "Gemiste reserveringen daalden met 85%, telefoondrukte gehalveerd.",
@@ -1703,7 +1703,7 @@ const productDetailsNl: ProductDetail[] = [
       },
       {
         title: "Mode & Kleding E-commerce",
-        scenario: "Turks boutique-merk in Den Haag lanceert online voor de NL-markt",
+        scenario: "Boutique-modemerk in Den Haag lanceert online voor de NL-markt",
         problem: "Trage kant-en-klare oplossing, lage conversie, beperkte betaalopties, geen meertalige ondersteuning.",
         solution: "Custom platform met iDEAL/Mollie-betalingen en Turks/Nederlands/Engels meertalige UI.",
         outcome: "Paginasnelheid 3x sneller, conversieratio steeg met 50%, marktplaatsafhankelijkheid afgenomen.",

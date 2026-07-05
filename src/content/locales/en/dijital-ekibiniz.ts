@@ -5,13 +5,13 @@ export const dijitalEkibinizEn: DijitalEkibinizDictionary = {
   meta: {
     title: "UPU Your Digital Team — AI Sales, B2B Dealer Portal, E-commerce",
     description:
-      "An all-in-one digital team for Turkish-owned businesses in the Netherlands: AI-driven sales campaigns, AI Employee, B2B dealer portal, e-commerce site, industry SaaS, social media and content.",
+      "An all-in-one digital team for SMEs in the Netherlands: AI-driven sales campaigns, AI Employee, B2B dealer portal, e-commerce site, industry SaaS, social media and content.",
   },
   hero: {
     badge: "All-in-one digital team — Turkish & English support in the Netherlands",
     title: "UPU Your Digital Team",
     subtitle:
-      "AI-driven sales campaigns, AI Employee, industry-specific SaaS, B2B dealer portal, e-commerce site, social media management and content production — one team in one package for your Turkish business in the Netherlands.",
+      "AI-driven sales campaigns, AI Employee, industry-specific SaaS, B2B dealer portal, e-commerce site, social media management and content production — one team in one package for your business in the Netherlands.",
     ctaQuote: "Request a Quote",
     ctaMeeting: "Book a Meeting",
     ctaWhatsapp: "WhatsApp",
@@ -122,8 +122,8 @@ export const dijitalEkibinizEn: DijitalEkibinizDictionary = {
       },
       {
         icon: "💻",
-        title: "Turkish Software Firm in the Netherlands",
-        text: "Custom website, mobile app and enterprise software for your business — the only developer team in the Netherlands offering Turkish support.",
+        title: "Netherlands-based software firm — Turkish support",
+        text: "Custom website, mobile app and enterprise software for your business — a developer team in the Netherlands offering Turkish, Dutch and English support.",
       },
       {
         icon: "📱",
@@ -211,7 +211,7 @@ export const dijitalEkibinizEn: DijitalEkibinizDictionary = {
       { q: "How fast can we start?", a: "Within 3-5 working days after the intro call. For urgent needs we can start in 24 hours." },
       { q: "What does it cost monthly?", a: "Between €99-€399 depending on the service. The exact figure is set after the free intro call." },
       { q: "Can I get Turkish support?", a: "Yes. All communication and reporting is available in Turkish, Dutch and English." },
-      { q: "Do you work outside the Netherlands?", a: "Our focus is Turkish businesses in the Netherlands. We also work with Turkish entrepreneurs in Belgium and Germany." },
+      { q: "Do you work outside the Netherlands?", a: "Our focus is SMEs in the Netherlands; we give the Turkish community special care with Turkish-language support. We also work with entrepreneurs in Belgium and Germany." },
       { q: "Is there a contract lock-in?", a: "We work on monthly subscriptions, no long-term commitment required." },
       {
         q: "Is the B2B dealer portal / e-commerce site delivered turnkey?",

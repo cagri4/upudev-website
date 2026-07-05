@@ -137,13 +137,13 @@ export const dijitalEkibinizTr: DijitalEkibinizDictionary = {
   meta: {
     title: "UPU Dijital Ekibiniz — AI Destekli Satış, B2B Bayi Portalı, E-ticaret",
     description:
-      "Hollanda'daki Türk işletmeniz için tek pakette dijital ekip: yapay zeka destekli satış kampanyaları, AI Eleman, B2B bayi portalı, e-ticaret sitesi, sektörel SaaS, sosyal medya ve içerik.",
+      "Hollanda'daki işletmeniz için tek pakette dijital ekip: yapay zeka destekli satış kampanyaları, AI Eleman, B2B bayi portalı, e-ticaret sitesi, sektörel SaaS, sosyal medya ve içerik.",
   },
   hero: {
     badge: "Tek pakette dijital ekip — Hollanda'da Türkçe destek",
     title: "UPU Dijital Ekibiniz",
     subtitle:
-      "Yapay zeka destekli satış kampanyaları, AI Eleman, sektöre özel SaaS, B2B bayi portalı, e-ticaret sitesi, sosyal medya yönetimi ve içerik üretim — Hollanda'daki Türk işletmeniz için tek pakette ekip.",
+      "Yapay zeka destekli satış kampanyaları, AI Eleman, sektöre özel SaaS, B2B bayi portalı, e-ticaret sitesi, sosyal medya yönetimi ve içerik üretim — Hollanda'daki işletmeniz için tek pakette ekip.",
     ctaQuote: "Teklif Al",
     ctaMeeting: "Toplantı Planla",
     ctaWhatsapp: "WhatsApp",
@@ -180,9 +180,9 @@ export const dijitalEkibinizTr: DijitalEkibinizDictionary = {
       },
       {
         icon: "💻",
-        title: "Hollanda'da Türk Yazılım Firması",
+        title: "Hollanda merkezli yazılım firması — Türkçe destek",
         text:
-          "İşletmenize özel web sitesi, mobil uygulama, kurumsal yazılım. Hollanda'da Türkçe destek veren tek geliştirici ekip.",
+          "İşletmenize özel web sitesi, mobil uygulama, kurumsal yazılım. Hollanda'da Türkçe, Hollandaca ve İngilizce destek veren geliştirici ekip.",
       },
       {
         icon: "📱",
@@ -362,7 +362,7 @@ export const dijitalEkibinizTr: DijitalEkibinizDictionary = {
       },
       {
         q: "Hollanda dışında çalışıyor musunuz?",
-        a: "Önceliğimiz Hollanda'daki Türk işletmeleri. Belçika ve Almanya'daki Türk girişimcilerle de proje yapıyoruz.",
+        a: "Önceliğimiz Hollanda'daki KOBİ'ler; Türk topluluğuna Türkçe destekle özel önem veriyoruz. Belçika ve Almanya'daki girişimcilerle de proje yapıyoruz.",
       },
       {
         q: "Sözleşme süresi var mı?",
