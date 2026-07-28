@@ -4,7 +4,7 @@ import { homeNl } from "@/content/locales/nl/home";
 
 export type Locale = "tr" | "en" | "nl";
 export const locales: Locale[] = ["tr", "en", "nl"];
-export const defaultLocale: Locale = "tr";
+export const defaultLocale: Locale = "nl";
 
 export function isLocale(value: string): value is Locale {
   return locales.includes(value as Locale);

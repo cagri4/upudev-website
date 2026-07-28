@@ -2,7 +2,7 @@ import { NextResponse } from "next/server";
 import type { NextRequest } from "next/server";
 import { isLocale } from "@/lib/i18n";
 
-const FALLBACK_LOCALE = "en";
+const FALLBACK_LOCALE = "nl";
 const COOKIE_NAME = "NEXT_LOCALE";
 const COOKIE_MAX_AGE = 60 * 60 * 24 * 365;
 
@@ -32,6 +32,16 @@ function getPreferredLocale(request: NextRequest): string {
 }
 
 export function proxy(request: NextRequest) {
+  // Canonical host: redirect www.upudev.nl -> upudev.nl (301, single host).
+  const host = request.headers.get("host") ?? "";
+  if (host.startsWith("www.")) {
+    const url = request.nextUrl.clone();
+    url.host = host.slice(4);
+    url.protocol = "https:";
+    url.port = "";
+    return NextResponse.redirect(url, 301);
+  }
+
   const { pathname } = request.nextUrl;
 
   if (

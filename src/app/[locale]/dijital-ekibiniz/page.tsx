@@ -3,6 +3,7 @@ import Image from "next/image";
 import Link from "next/link";
 import { notFound } from "next/navigation";
 import { isLocale, locales, type Locale } from "@/lib/i18n";
+import { buildAlternates } from "@/lib/seo";
 import { dijitalEkibinizTr, type DijitalEkibinizDictionary } from "@/content/locales/tr/dijital-ekibiniz";
 import { dijitalEkibinizEn } from "@/content/locales/en/dijital-ekibiniz";
 import { dijitalEkibinizNl } from "@/content/locales/nl/dijital-ekibiniz";
@@ -47,14 +48,7 @@ export async function generateMetadata({
   return {
     title: dict.meta.title,
     description: dict.meta.description,
-    alternates: {
-      canonical: `https://upudev.nl/${locale}/dijital-ekibiniz`,
-      languages: {
-        tr: "https://upudev.nl/tr/dijital-ekibiniz",
-        en: "https://upudev.nl/en/dijital-ekibiniz",
-        nl: "https://upudev.nl/nl/dijital-ekibiniz",
-      },
-    },
+    alternates: buildAlternates(locale, "dijital-ekibiniz"),
     openGraph: {
       title: dict.meta.title,
       description: dict.meta.description,

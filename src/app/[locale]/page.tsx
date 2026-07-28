@@ -1,7 +1,9 @@
+import type { Metadata } from "next";
 import Image from "next/image";
 import Link from "next/link";
 import { notFound } from "next/navigation";
 import { getHomeDictionary, isLocale, locales, type Locale } from "@/lib/i18n";
+import { buildAlternates } from "@/lib/seo";
 import { SaasProjectsGrid } from "@/components/saas-projects-grid";
 import { SiteHeader } from "@/components/site-header";
 import { SiteContact } from "@/components/site-contact";
@@ -71,6 +73,21 @@ const uiText: Record<
     iban: "IBAN",
   },
 };
+
+export async function generateMetadata({
+  params,
+}: {
+  params: Promise<{ locale: string }>;
+}): Promise<Metadata> {
+  const { locale } = await params;
+  if (!isLocale(locale)) return {};
+  const dict = getHomeDictionary(locale);
+  return {
+    title: dict.meta.title,
+    description: dict.meta.description,
+    alternates: buildAlternates(locale, ""),
+  };
+}
 
 export default async function HomeLocalePage({ params }: { params: Promise<{ locale: string }> }) {
   const { locale } = await params;

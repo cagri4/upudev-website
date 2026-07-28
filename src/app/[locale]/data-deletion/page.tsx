@@ -1,8 +1,23 @@
+import type { Metadata } from "next";
 import { notFound } from "next/navigation";
 import { SiteHeader } from "@/components/site-header";
 import { SiteFooter } from "@/components/site-footer";
 import { getHomeDictionary, isLocale, locales } from "@/lib/i18n";
+import { buildAlternates } from "@/lib/seo";
 import { dataDeletionContent } from "@/content/legal";
+
+export async function generateMetadata({
+  params,
+}: {
+  params: Promise<{ locale: string }>;
+}): Promise<Metadata> {
+  const { locale } = await params;
+  if (!isLocale(locale)) return {};
+  return {
+    title: `${dataDeletionContent[locale].title} | UpuDev`,
+    alternates: buildAlternates(locale, "data-deletion"),
+  };
+}
 
 export default async function DataDeletionPage({ params }: { params: Promise<{ locale: string }> }) {
   const { locale } = await params;

@@ -1,4 +1,8 @@
 export type HomeDictionary = {
+  meta: {
+    title: string;
+    description: string;
+  };
   partners: {
     title: string;
     items: {
@@ -76,6 +80,11 @@ export type HomeDictionary = {
 };
 
 export const homeTr: HomeDictionary = {
+  meta: {
+    title: "UpuDev | Dijital Ürün ve Yazılım Çözümleri",
+    description:
+      "Hollanda merkezli yazılım firması: web, e-ticaret, otomasyon ve AI destekli dijital çözümler. Türkçe, Hollandaca ve İngilizce destek.",
+  },
   partners: {
     title: "Teknoloji Ekosistemimiz ve İş Ortaklarımız",
     items: [

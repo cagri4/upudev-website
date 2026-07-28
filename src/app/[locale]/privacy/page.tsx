@@ -1,8 +1,23 @@
+import type { Metadata } from "next";
 import { notFound } from "next/navigation";
 import { SiteHeader } from "@/components/site-header";
 import { SiteFooter } from "@/components/site-footer";
 import { getHomeDictionary, isLocale, locales } from "@/lib/i18n";
+import { buildAlternates } from "@/lib/seo";
 import { privacyContent } from "@/content/legal";
+
+export async function generateMetadata({
+  params,
+}: {
+  params: Promise<{ locale: string }>;
+}): Promise<Metadata> {
+  const { locale } = await params;
+  if (!isLocale(locale)) return {};
+  return {
+    title: `${privacyContent[locale].title} | UpuDev`,
+    alternates: buildAlternates(locale, "privacy"),
+  };
+}
 
 export default async function PrivacyPage({ params }: { params: Promise<{ locale: string }> }) {
   const { locale } = await params;

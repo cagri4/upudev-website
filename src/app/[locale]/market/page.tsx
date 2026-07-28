@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import { notFound } from "next/navigation";
 import { isLocale, locales } from "@/lib/i18n";
+import { buildAlternates } from "@/lib/seo";
 import { getMarketLanding } from "@/content/saas-landing/market";
 import { SaasLanding } from "@/components/saas-landing/saas-landing";
 import { SiteFooter } from "@/components/site-footer";
@@ -20,14 +21,7 @@ export async function generateMetadata({
   return {
     title: config.meta.title,
     description: config.meta.description,
-    alternates: {
-      canonical: `https://upudev.nl/${locale}/market`,
-      languages: {
-        tr: "https://upudev.nl/tr/market",
-        en: "https://upudev.nl/en/market",
-        nl: "https://upudev.nl/nl/market",
-      },
-    },
+    alternates: buildAlternates(locale, "market"),
     openGraph: {
       title: config.meta.title,
       description: config.meta.description,

@@ -2,6 +2,11 @@ import { homeTr, type HomeDictionary } from "@/content/locales/tr/home";
 
 export const homeEn: HomeDictionary = {
   ...homeTr,
+  meta: {
+    title: "UpuDev | Digital Products & Software Solutions",
+    description:
+      "Netherlands-based software firm: web, e-commerce, automation and AI-powered digital solutions. Support in Turkish, Dutch and English.",
+  },
   partners: {
     ...homeTr.partners,
     title: "Our Technology Ecosystem and Partners",

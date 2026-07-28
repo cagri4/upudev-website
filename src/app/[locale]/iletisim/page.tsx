@@ -1,9 +1,11 @@
+import type { Metadata } from "next";
 import { notFound } from "next/navigation";
 import { ContactForm } from "@/components/contact-form";
 import { SiteHeader } from "@/components/site-header";
 import { SiteFooter } from "@/components/site-footer";
 import { TrackedLink } from "@/components/tracked-link";
 import { getHomeDictionary, isLocale, locales, type Locale } from "@/lib/i18n";
+import { buildAlternates } from "@/lib/seo";
 
 const pageText: Record<
   Locale,
@@ -124,6 +126,21 @@ const pageText: Record<
     },
   },
 };
+
+export async function generateMetadata({
+  params,
+}: {
+  params: Promise<{ locale: string }>;
+}): Promise<Metadata> {
+  const { locale } = await params;
+  if (!isLocale(locale)) return {};
+  const t = pageText[locale];
+  return {
+    title: `${t.title} | UpuDev`,
+    description: t.intro,
+    alternates: buildAlternates(locale, "iletisim"),
+  };
+}
 
 export default async function ContactPage({ params }: { params: Promise<{ locale: string }> }) {
   const { locale } = await params;

@@ -1,8 +1,7 @@
-// Root page - middleware handles locale redirect based on browser language
-// This is a fallback in case middleware doesn't run
+// Apex (/) redirects to the default locale (nl). Netherlands-first target.
 import { redirect } from "next/navigation";
+import { defaultLocale } from "@/lib/i18n";
 
 export default function RootPage() {
-  redirect("/tr");
+  redirect(`/${defaultLocale}`);
 }
-

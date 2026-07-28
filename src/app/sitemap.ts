@@ -1,5 +1,5 @@
 import type { MetadataRoute } from "next";
-import { locales, type Locale } from "@/lib/i18n";
+import { defaultLocale, locales, type Locale } from "@/lib/i18n";
 
 const BASE_URL = "https://upudev.nl";
 
@@ -32,7 +32,10 @@ function localeUrl(locale: Locale, path: string) {
 }
 
 function languagesFor(path: string): Record<string, string> {
-  return Object.fromEntries(locales.map((l) => [l, localeUrl(l, path)]));
+  return {
+    ...Object.fromEntries(locales.map((l) => [l, localeUrl(l, path)])),
+    "x-default": localeUrl(defaultLocale, path),
+  };
 }
 
 export default function sitemap(): MetadataRoute.Sitemap {

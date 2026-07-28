@@ -1,6 +1,8 @@
+import type { Metadata } from "next";
 import Image from "next/image";
 import Link from "next/link";
 import { notFound } from "next/navigation";
+import { buildAlternates } from "@/lib/seo";
 import { Badge } from "@/components/ui/badge";
 import { Card, CardContent } from "@/components/ui/card";
 import { Separator } from "@/components/ui/separator";
@@ -89,6 +91,22 @@ const pageText: Record<
 
 export function generateStaticParams() {
   return locales.flatMap((locale) => productDetails.map((product) => ({ locale, slug: product.slug })));
+}
+
+export async function generateMetadata({
+  params,
+}: {
+  params: Promise<{ locale: string; slug: string }>;
+}): Promise<Metadata> {
+  const { locale, slug } = await params;
+  if (!isLocale(locale)) return {};
+  const product = getProductBySlug(slug, locale);
+  if (!product) return {};
+  return {
+    title: `${product.title} | UpuDev`,
+    description: product.heroSummary,
+    alternates: buildAlternates(locale, `urunler/${slug}`),
+  };
 }
 
 export default async function ProductDetailPage({ params }: { params: Promise<{ locale: string; slug: string }> }) {
