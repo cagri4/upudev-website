@@ -101,8 +101,8 @@ export const homeTr: HomeDictionary = {
   topbar: {
     address: "Computerweg 22, 3542 DR Utrecht, Nederland",
     phoneLabel: "Telefon",
-    phone: "+31 6 11352773",
-    phoneHref: "tel:+31611352773",
+    phone: "+31 30 369 1880",
+    phoneHref: "tel:+31303691880",
   },
   nav: [
     { href: "#ana-sayfa", label: "Ana Sayfa" },
@@ -307,8 +307,8 @@ export const homeTr: HomeDictionary = {
     title: "İletişim",
     intro: "Yeni proje, revizyon veya teknik destek taleplerin için bize ulaşabilirsin.",
     email: "info@upudev.nl",
-    phone: "+31 6 11352773",
-    phoneHref: "tel:+31611352773",
+    phone: "+31 30 369 1880",
+    phoneHref: "tel:+31303691880",
     location: "Computerweg 22, 3542 DR Utrecht, Nederland",
     kvk: "98902148",
     iban: "NL59INGB0117119474",
