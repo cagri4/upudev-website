@@ -4,6 +4,7 @@ import { notFound } from "next/navigation";
 import { getHomeDictionary, isLocale, locales } from "@/lib/i18n";
 import { canonicalUrl } from "@/lib/seo";
 import { ScrollToTop } from "@/components/scroll-to-top";
+import { FloatingContact } from "@/components/floating-contact";
 import { CookieBanner } from "@/components/cookie-banner";
 import { MeetingModal } from "@/components/meeting-modal";
 import { MetaPixel } from "@/components/meta-pixel";
@@ -105,6 +106,7 @@ export default async function LocaleLayout({
           </noscript>
         )}
         {children}
+        <FloatingContact locale={locale} />
         <ScrollToTop />
         <CookieBanner />
         <MeetingModal />
