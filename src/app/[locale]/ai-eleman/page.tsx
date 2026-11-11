@@ -103,6 +103,11 @@ export default async function AiElemanPage({
             <p className="mt-5 max-w-2xl text-lg leading-relaxed text-white/85 md:text-xl">
               {dict.hero.subtitle}
             </p>
+            {dict.hero.pricing ? (
+              <p className="mt-4 max-w-2xl text-base font-semibold leading-relaxed text-emerald-300 md:text-lg">
+                {dict.hero.pricing}
+              </p>
+            ) : null}
             <div className="mt-8 flex flex-col gap-4 sm:flex-row sm:items-center">
               <WhatsAppLink href={waHref} source="ai-eleman-hero" className={waButtonClass}>
                 <WhatsAppIcon className="h-6 w-6" /> {dict.hero.whatsappCta}

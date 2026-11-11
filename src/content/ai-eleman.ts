@@ -17,6 +17,8 @@ export type AiElemanDictionary = {
     badge: string;
     title: string;
     subtitle: string;
+    /** Fiyat satırı (reklamla tutarlı) — yalnız NL'de var. */
+    pricing?: string;
     whatsappCta: string;
     formCta: string;
     trust: string;
@@ -63,6 +65,7 @@ const nl: AiElemanDictionary = {
     title: "Jij runt je zaak. Je AI-medewerker regelt de rest.",
     subtitle:
       "Berichten, afspraken en facturen — 24/7 geregeld. Je social media en website altijd up-to-date.",
+    pricing: "Jouw digitale team vanaf €69 p/m · eerste maand gratis · in een gesprek stellen we jouw pakket samen",
     whatsappCta: "Start via WhatsApp",
     formCta: "Liever een formulier?",
     trust: "Binnen een paar minuten antwoord · Nederlands en Turks",
