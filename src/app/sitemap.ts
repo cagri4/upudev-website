@@ -20,7 +20,6 @@ type PageMeta = {
 
 const PAGE_PATHS: Record<PagePath, PageMeta> = {
   "": { priority: 1.0, changeFrequency: "weekly" },
-  "dijital-ekibiniz": { priority: 0.9, changeFrequency: "weekly" },
   iletisim: { priority: 0.6, changeFrequency: "monthly" },
   privacy: { priority: 0.3, changeFrequency: "yearly" },
   terms: { priority: 0.3, changeFrequency: "yearly" },
