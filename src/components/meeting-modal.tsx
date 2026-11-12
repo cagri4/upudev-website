@@ -7,15 +7,12 @@ import { isLocale, type Locale } from "@/lib/i18n";
 
 export const OPEN_MEETING_MODAL_EVENT = "open-meeting-modal";
 
-type ServiceKey =
-  | "web"
-  | "software"
-  | "dealer"
-  | "accounting"
-  | "ai"
-  | "unsure";
-
-type BudgetKey = "unknown" | "1to5k" | "5to15k" | "15kplus";
+/**
+ * "Plan een gesprek" modalı — AI Eleman konumlaması (12 Kas 2026).
+ * Eski proje-bütçe mantığı (€1K–€15K+) ve yazılım-hizmet listesi kaldırıldı;
+ * yerine sade "işletme türü" seçimi + "vanaf €69" paket satırı.
+ */
+type SectorKey = "supermarket" | "wholesale" | "horeca" | "other";
 
 type T = {
   title: string;
@@ -30,12 +27,10 @@ type T = {
   phone: string;
   phoneOptional: string;
   phonePlaceholder: string;
-  service: string;
-  serviceChoose: string;
-  services: Record<ServiceKey, string>;
-  budget: string;
-  budgetOptional: string;
-  budgets: Record<BudgetKey, string>;
+  pricing: string;
+  sector: string;
+  sectorChoose: string;
+  sectors: Record<SectorKey, string>;
   message: string;
   messageOptional: string;
   messagePlaceholder: string;
@@ -48,8 +43,8 @@ type T = {
 
 const labels: Record<Locale, T> = {
   tr: {
-    title: "Toplantı Planla",
-    subtitle: "Kısa bir form doldurun, 48 saat içinde size geri dönelim.",
+    title: "Görüşme planlayın",
+    subtitle: "İşletmenizi kısaca anlatın, bir iş günü içinde size dönelim.",
     close: "Kapat",
     name: "Ad Soyad",
     namePlaceholder: "Adınız Soyadınız",
@@ -60,36 +55,27 @@ const labels: Record<Locale, T> = {
     phone: "Telefon",
     phoneOptional: "(opsiyonel)",
     phonePlaceholder: "+31 ...",
-    service: "Hangi hizmet?",
-    serviceChoose: "Seçiniz",
-    services: {
-      web: "Web sitesi / E-ticaret",
-      software: "Özel yazılım geliştirme",
-      dealer: "Bayi / Toptan yönetim sistemi",
-      accounting: "Muhasebe / Stok / Kasa yazılımı",
-      ai: "AI entegrasyon / chatbot",
-      unsure: "Henüz emin değilim, konuşalım",
-    },
-    budget: "Bütçe aralığı",
-    budgetOptional: "(opsiyonel)",
-    budgets: {
-      unknown: "Bilmiyorum / sohbet edelim",
-      "1to5k": "€1K – €5K",
-      "5to15k": "€5K – €15K",
-      "15kplus": "€15K+",
+    pricing: "Birlikte çalışma paketleri aylık €69'dan · ilk ay ücretsiz",
+    sector: "İşletmeniz",
+    sectorChoose: "Seçiniz",
+    sectors: {
+      supermarket: "Market / bakkal",
+      wholesale: "Toptancı / dağıtıcı",
+      horeca: "Restoran / kafe / horeca",
+      other: "Başka bir sektör",
     },
     message: "Notlar",
     messageOptional: "(opsiyonel)",
-    messagePlaceholder: "Projenizle ilgili kısa bir açıklama...",
+    messagePlaceholder: "Sizde hangi iş birikiyor? AI elemanınız neyi devralsın?",
     submit: "Talebi Gönder",
     sending: "Gönderiliyor...",
     successTitle: "Talebiniz alındı",
-    successText: "48 saat içinde dönüş yapacağız. — UpuDev Ekibi",
+    successText: "Bir iş günü içinde dönüş yapacağız. — UpuDev Ekibi",
     errorText: "Bir hata oluştu, lütfen tekrar deneyin veya info@upudev.nl'e mail atın.",
   },
   en: {
-    title: "Book a Meeting",
-    subtitle: "Fill out the short form and we'll get back to you within 48 hours.",
+    title: "Plan a call",
+    subtitle: "Tell us briefly about your business — we'll get back to you within one business day.",
     close: "Close",
     name: "Full Name",
     namePlaceholder: "Your full name",
@@ -100,36 +86,27 @@ const labels: Record<Locale, T> = {
     phone: "Phone",
     phoneOptional: "(optional)",
     phonePlaceholder: "+31 ...",
-    service: "Which service?",
-    serviceChoose: "Choose",
-    services: {
-      web: "Website / E-commerce",
-      software: "Custom software development",
-      dealer: "Dealer / Wholesale management system",
-      accounting: "Accounting / Inventory / POS software",
-      ai: "AI integration / chatbot",
-      unsure: "Not sure yet, let's talk",
-    },
-    budget: "Budget range",
-    budgetOptional: "(optional)",
-    budgets: {
-      unknown: "Not sure / let's chat",
-      "1to5k": "€1K – €5K",
-      "5to15k": "€5K – €15K",
-      "15kplus": "€15K+",
+    pricing: "Partnership packages from €69 per month · first month free",
+    sector: "Your business",
+    sectorChoose: "Choose",
+    sectors: {
+      supermarket: "Supermarket / grocery",
+      wholesale: "Wholesaler / distributor",
+      horeca: "Restaurant / café / hospitality",
+      other: "Another sector",
     },
     message: "Notes",
     messageOptional: "(optional)",
-    messagePlaceholder: "A short description of your project...",
+    messagePlaceholder: "Which work piles up for you? What should your AI employee take over?",
     submit: "Send Request",
     sending: "Sending...",
     successTitle: "Request received",
-    successText: "We'll get back to you within 48 hours. — The UpuDev Team",
+    successText: "We'll get back to you within one business day. — The UpuDev Team",
     errorText: "Something went wrong. Please try again or email info@upudev.nl.",
   },
   nl: {
-    title: "Afspraak Inplannen",
-    subtitle: "Vul het korte formulier in, we nemen binnen 48 uur contact met je op.",
+    title: "Plan een gesprek",
+    subtitle: "Vertel kort over je zaak — we nemen binnen één werkdag contact op.",
     close: "Sluiten",
     name: "Naam",
     namePlaceholder: "Je volledige naam",
@@ -140,31 +117,22 @@ const labels: Record<Locale, T> = {
     phone: "Telefoon",
     phoneOptional: "(optioneel)",
     phonePlaceholder: "+31 ...",
-    service: "Welke dienst?",
-    serviceChoose: "Kies",
-    services: {
-      web: "Website / E-commerce",
-      software: "Maatwerk softwareontwikkeling",
-      dealer: "Dealer / Groothandel managementsysteem",
-      accounting: "Boekhouding / Voorraad / Kassasoftware",
-      ai: "AI-integratie / chatbot",
-      unsure: "Nog niet zeker, laten we praten",
-    },
-    budget: "Budget",
-    budgetOptional: "(optioneel)",
-    budgets: {
-      unknown: "Weet ik nog niet / laten we overleggen",
-      "1to5k": "€1K – €5K",
-      "5to15k": "€5K – €15K",
-      "15kplus": "€15K+",
+    pricing: "Samenwerkingspakketten vanaf €69 p/m · eerste maand gratis",
+    sector: "Jouw zaak",
+    sectorChoose: "Kies",
+    sectors: {
+      supermarket: "Supermarkt / toko",
+      wholesale: "Groothandel / distributeur",
+      horeca: "Restaurant / café / horeca",
+      other: "Andere sector",
     },
     message: "Opmerkingen",
     messageOptional: "(optioneel)",
-    messagePlaceholder: "Een korte beschrijving van je project...",
+    messagePlaceholder: "Welk werk blijft er bij jou liggen? Wat moet je AI-medewerker overnemen?",
     submit: "Aanvraag Versturen",
     sending: "Bezig met verzenden...",
     successTitle: "Aanvraag ontvangen",
-    successText: "We nemen binnen 48 uur contact op. — Het UpuDev-team",
+    successText: "We nemen binnen één werkdag contact op. — Het UpuDev-team",
     errorText: "Er is iets misgegaan. Probeer opnieuw of mail info@upudev.nl.",
   },
 };
@@ -227,21 +195,18 @@ export function MeetingModal() {
     const company = String(data.get("company") ?? "").trim();
     const email = String(data.get("email") ?? "").trim();
     const phone = String(data.get("phone") ?? "").trim();
-    const serviceKey = String(data.get("service") ?? "") as ServiceKey | "";
-    const budgetKey = String(data.get("budget") ?? "") as BudgetKey | "";
+    const sectorKey = String(data.get("sector") ?? "") as SectorKey | "";
     const message = String(data.get("message") ?? "").trim();
 
-    if (!name || !company || !email || !serviceKey) return;
+    if (!name || !company || !email || !sectorKey) return;
 
-    const serviceLabel = serviceKey ? t.services[serviceKey as ServiceKey] : "";
-    const budgetLabel = budgetKey ? t.budgets[budgetKey as BudgetKey] : "";
+    const sectorLabel = t.sectors[sectorKey as SectorKey];
 
-    const subject = `[Toplantı Talebi] ${serviceLabel} — ${name} (${company})`;
+    const subject = `[Görüşme Talebi] AI Eleman — ${sectorLabel} — ${name} (${company})`;
 
     const messageBody = [
       `Şirket / Company: ${company}`,
-      `Hizmet / Service: ${serviceLabel}`,
-      budgetLabel ? `Bütçe / Budget: ${budgetLabel}` : null,
+      `İşletme / Sector: ${sectorLabel}`,
       `Locale: ${locale}`,
       `Timestamp (UTC): ${new Date().toISOString()}`,
       "",
@@ -277,7 +242,7 @@ export function MeetingModal() {
       pushEvent({
         event: "quote_form_submit",
         form_location: "meeting_modal",
-        form_subject: serviceLabel,
+        form_subject: `ai_eleman_${sectorKey}`,
         locale,
       });
 
@@ -309,6 +274,9 @@ export function MeetingModal() {
           <div>
             <h2 className="text-lg font-semibold text-neutral-900">{t.title}</h2>
             <p className="mt-1 text-sm text-neutral-600">{t.subtitle}</p>
+            <p className="mt-2 inline-flex rounded-full bg-emerald-50 px-3 py-1 text-xs font-semibold text-emerald-800 ring-1 ring-emerald-200">
+              {t.pricing}
+            </p>
           </div>
           <button
             type="button"
@@ -397,35 +365,19 @@ export function MeetingModal() {
             </div>
 
             <label className="space-y-1.5 text-sm font-medium text-neutral-700">
-              {t.service}
+              {t.sector}
               <select
                 required
-                name="service"
+                name="sector"
                 defaultValue=""
                 className="w-full rounded-xl border border-neutral-300 bg-white px-3 py-2.5 text-sm outline-none transition focus:border-neutral-500"
               >
                 <option value="" disabled>
-                  {t.serviceChoose}
+                  {t.sectorChoose}
                 </option>
-                {(Object.keys(t.services) as ServiceKey[]).map((key) => (
+                {(Object.keys(t.sectors) as SectorKey[]).map((key) => (
                   <option key={key} value={key}>
-                    {t.services[key]}
-                  </option>
-                ))}
-              </select>
-            </label>
-
-            <label className="space-y-1.5 text-sm font-medium text-neutral-700">
-              {t.budget} <span className="text-neutral-400">{t.budgetOptional}</span>
-              <select
-                name="budget"
-                defaultValue=""
-                className="w-full rounded-xl border border-neutral-300 bg-white px-3 py-2.5 text-sm outline-none transition focus:border-neutral-500"
-              >
-                <option value="">—</option>
-                {(Object.keys(t.budgets) as BudgetKey[]).map((key) => (
-                  <option key={key} value={key}>
-                    {t.budgets[key]}
+                    {t.sectors[key]}
                   </option>
                 ))}
               </select>
