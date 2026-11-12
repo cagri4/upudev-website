@@ -11,7 +11,9 @@ type Source =
   | "ai-eleman-header"
   | "ai-eleman-hero"
   | "ai-eleman-closing"
-  | "ai-eleman-success";
+  | "ai-eleman-success"
+  | "home-hero"
+  | "home-pricing";
 
 /**
  * WhatsApp deep-link + Meta Pixel tracking.
