@@ -3,9 +3,9 @@ import { homeTr, type HomeDictionary } from "@/content/locales/tr/home";
 export const homeEn: HomeDictionary = {
   ...homeTr,
   meta: {
-    title: "UpuDev | Digital Products & Software Solutions",
+    title: "UpuDev | AI Employees — Hire an employee, but make it AI",
     description:
-      "Netherlands-based software firm: web, e-commerce, automation and AI-powered digital solutions. Support in Turkish, Dutch and English.",
+      "An AI employee that takes over the recurring work in your business. Connects to your existing systems, no new software. Partnership packages from €69 per month, first month free.",
   },
   partners: {
     ...homeTr.partners,
@@ -17,10 +17,9 @@ export const homeEn: HomeDictionary = {
   },
   nav: [
     { href: "#ana-sayfa", label: "Home" },
-    { href: "#projeler", label: "Projects" },
-    { href: "#hizmetler", label: "Services" },
-    { href: "#hakkimizda", label: "About" },
-    { href: "#surec", label: "Process" },
+    { href: "#nasil-calisir", label: "How it works" },
+    { href: "#fiyat", label: "Pricing" },
+    { href: "#hakkimizda", label: "Why UPU" },
     { href: "/iletisim", label: "Contact" },
   ],
   hero: {

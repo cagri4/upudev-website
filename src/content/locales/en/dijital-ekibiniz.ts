@@ -90,7 +90,7 @@ export const dijitalEkibinizEn: DijitalEkibinizDictionary = {
       "Custom AI employee solutions",
     ],
     priceLabel: "Price",
-    priceBasic: "€29/mo",
+    priceBasic: "from €69/mo",
     priceCustom: "Customized in consultation",
     ctaLabel: "Let's talk on WhatsApp",
     waPrefill: "I'd like information about the packages",
@@ -209,7 +209,7 @@ export const dijitalEkibinizEn: DijitalEkibinizDictionary = {
     title: "Frequently Asked",
     items: [
       { q: "How fast can we start?", a: "Within 3-5 working days after the intro call. For urgent needs we can start in 24 hours." },
-      { q: "What does it cost monthly?", a: "Between €99-€399 depending on the service. The exact figure is set after the free intro call." },
+      { q: "What does it cost monthly?", a: "Our partnership packages start from €69 per month, and the first month is free. Which package fits you is decided together in the free intro call." },
       { q: "Can I get Turkish support?", a: "Yes. All communication and reporting is available in Turkish, Dutch and English." },
       { q: "Do you work outside the Netherlands?", a: "Our focus is SMEs in the Netherlands; we give the Turkish community special care with Turkish-language support. We also work with entrepreneurs in Belgium and Germany." },
       { q: "Is there a contract lock-in?", a: "We work on monthly subscriptions, no long-term commitment required." },

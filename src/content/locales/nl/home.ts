@@ -3,9 +3,9 @@ import { homeTr, type HomeDictionary } from "@/content/locales/tr/home";
 export const homeNl: HomeDictionary = {
   ...homeTr,
   meta: {
-    title: "UpuDev | Digitale Producten & Softwareoplossingen",
+    title: "UpuDev | AI-medewerkers — Huur een medewerker, maar dan AI",
     description:
-      "Softwarebureau gevestigd in Nederland: web, e-commerce, automatisering en AI-gedreven digitale oplossingen. Ondersteuning in het Turks, Nederlands en Engels.",
+      "Een AI-medewerker die het terugkerende werk in je zaak overneemt. Koppelt aan je bestaande systemen, geen nieuw pakket. Samenwerkingspakketten vanaf €69 p/m, eerste maand gratis.",
   },
   partners: {
     ...homeTr.partners,
@@ -17,10 +17,9 @@ export const homeNl: HomeDictionary = {
   },
   nav: [
     { href: "#ana-sayfa", label: "Home" },
-    { href: "#projeler", label: "Projecten" },
-    { href: "#hizmetler", label: "Diensten" },
-    { href: "#hakkimizda", label: "Over ons" },
-    { href: "#surec", label: "Proces" },
+    { href: "#nasil-calisir", label: "Hoe het werkt" },
+    { href: "#fiyat", label: "Prijs" },
+    { href: "#hakkimizda", label: "Waarom UPU" },
     { href: "/iletisim", label: "Contact" },
   ],
   hero: {

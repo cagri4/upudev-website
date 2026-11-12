@@ -81,9 +81,9 @@ export type HomeDictionary = {
 
 export const homeTr: HomeDictionary = {
   meta: {
-    title: "UpuDev | Dijital Ürün ve Yazılım Çözümleri",
+    title: "UpuDev | AI Eleman — Bir eleman tutun, ama AI olsun",
     description:
-      "Hollanda merkezli yazılım firması: web, e-ticaret, otomasyon ve AI destekli dijital çözümler. Türkçe, Hollandaca ve İngilizce destek.",
+      "İşletmenizde tekrar eden işi devralan AI eleman. Mevcut sistemlerinize bağlanır, yeni program yok. Birlikte çalışma paketleri aylık €69'dan, ilk ay ücretsiz. Türkçe ve Felemenkçe destek.",
   },
   partners: {
     title: "Teknoloji Ekosistemimiz ve İş Ortaklarımız",
@@ -106,10 +106,9 @@ export const homeTr: HomeDictionary = {
   },
   nav: [
     { href: "#ana-sayfa", label: "Ana Sayfa" },
-    { href: "#projeler", label: "Projeler" },
-    { href: "#hizmetler", label: "Hizmetler" },
-    { href: "#hakkimizda", label: "Hakkımızda" },
-    { href: "#surec", label: "Süreç" },
+    { href: "#nasil-calisir", label: "Nasıl Çalışır" },
+    { href: "#fiyat", label: "Fiyat" },
+    { href: "#hakkimizda", label: "Neden UPU" },
     { href: "/iletisim", label: "İletişim" },
   ],
   hero: {
