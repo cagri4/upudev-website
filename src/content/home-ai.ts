@@ -48,6 +48,7 @@ export type HomeAiDictionary = {
     title: string;
     description: string;
     bullets: string[];
+    stats: { value: string; label: string }[];
   };
   pricing: {
     eyebrow: string;
@@ -155,6 +156,11 @@ const nl: HomeAiDictionary = {
       "Wij zetten hem aan het werk — jij hoeft niets te installeren of te leren",
       "Nederlands en Turks, persoonlijk contact",
       "Maandelijks opzegbaar",
+    ],
+    stats: [
+      { value: "50+", label: "Projecten opgeleverd" },
+      { value: "15+", label: "Jaar ervaring" },
+      { value: "3", label: "Talen: NL · TR · EN" },
     ],
   },
   pricing: {
@@ -273,6 +279,11 @@ const tr: HomeAiDictionary = {
       "Türkçe ve Felemenkçe, birebir iletişim",
       "Aylık iptal edilebilir",
     ],
+    stats: [
+      { value: "50+", label: "Tamamlanan proje" },
+      { value: "15+", label: "Yıllık deneyim" },
+      { value: "3", label: "Dil: TR · NL · EN" },
+    ],
   },
   pricing: {
     eyebrow: "Fiyat",
@@ -355,6 +366,11 @@ const en: HomeAiDictionary = {
       "We set it up — you don't install or learn anything",
       "Dutch, Turkish and English, personal contact",
       "Cancel monthly",
+    ],
+    stats: [
+      { value: "50+", label: "Projects delivered" },
+      { value: "15+", label: "Years of experience" },
+      { value: "3", label: "Languages: NL · TR · EN" },
     ],
   },
   pricing: {
