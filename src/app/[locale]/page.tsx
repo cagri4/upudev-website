@@ -159,6 +159,7 @@ export default async function HomeLocalePage({ params }: { params: Promise<{ loc
           title={dict.why.title}
           description={dict.why.description}
           bullets={dict.why.bullets}
+          stats={dict.why.stats}
         />
 
         {/* FİYAT — tek dil: paketler vanaf €69 */}
