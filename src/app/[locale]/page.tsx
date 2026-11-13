@@ -9,6 +9,7 @@ import { SiteHeader } from "@/components/site-header";
 import { SiteContact } from "@/components/site-contact";
 import { SiteFooter } from "@/components/site-footer";
 import { WhatsAppLink } from "@/components/landing/whatsapp-link";
+import { PartnersGrid } from "@/components/partners-grid";
 
 /**
  * Ana sayfa v2 — "het uitzendbureau voor AI-medewerkers" (13 Kas 2026).
@@ -166,6 +167,24 @@ export default async function HomeLocalePage({ params }: { params: Promise<{ loc
           </div>
         </section>
 
+        {/* ZIET → DENKT → DOET — AI'ın iç çalışması (küçük üçlü). "Zo werkt het" = müşteri süreci, ayrı. */}
+        <section className="io-wrap io-section" id="ziet-denkt-doet">
+          <div className="rounded-3xl border border-neutral-200 bg-white p-6 md:p-10">
+            <p className="io-eyebrow">{dict.think.eyebrow}</p>
+            <h2 className="mt-2 text-3xl font-bold tracking-tight text-[#122d54] md:text-4xl">{dict.think.title}</h2>
+            <p className="mt-2 text-neutral-600">{dict.think.intro}</p>
+            <ol className="mt-6 grid gap-5 md:grid-cols-3">
+              {dict.think.steps.map((step) => (
+                <li key={step.id} className="border-l-2 border-[#122d54] pl-4">
+                  <p className="text-xl font-bold text-neutral-900">{step.title}</p>
+                  <p className="mt-1 text-sm leading-relaxed text-neutral-600">{step.text}</p>
+                </li>
+              ))}
+            </ol>
+            <p className="mt-6 text-xs leading-relaxed text-neutral-500">{dict.think.footnote}</p>
+          </div>
+        </section>
+
         {/* 4. ZO WERKT HET — funnel 4 adım */}
         <section className="io-wrap io-section" id="nasil-calisir">
           <p className="io-eyebrow">{dict.how.eyebrow}</p>
@@ -283,6 +302,8 @@ export default async function HomeLocalePage({ params }: { params: Promise<{ loc
             ) : null}
           </div>
         </section>
+
+        <PartnersGrid title={dict.tech.title} badgeText={dict.tech.badge} partners={base.partners.items} />
 
         {/* 8. KIES JE SECTOR — gıda ilk, diğerleri op aanvraag */}
         <section className="io-wrap io-section" id="sector">

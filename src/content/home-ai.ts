@@ -42,6 +42,8 @@ export type HomeAiDictionary = {
     members: { title: string; role: string; does: string; connects: string; asks: string }[];
     note: string;
   };
+  /** 'Ziet. Denkt. Doet.' — AI'ın iç çalışması (12 Kas içeriği). 'how' = müşteri süreci, ayrı. */
+  think: { eyebrow: string; title: string; intro: string; steps: Step[]; footnote: string };
   how: { eyebrow: string; title: string; intro: string; steps: Step[] };
   control: {
     eyebrow: string;
@@ -77,6 +79,7 @@ export type HomeAiDictionary = {
     others: { name: string; whatsappText: string }[];
     otherCta: string;
   };
+  tech: { badge: string; title: string };
   faq: { eyebrow: string; title: string; items: { q: string; a: string }[] };
   closing: { title: string; text: string; cta: string };
   cta: { title: string; text: string; button: string };
@@ -150,6 +153,29 @@ const nl: HomeAiDictionary = {
       },
     ],
     note: "Ander werk dat steeds terugkomt? Vertel het ons. We kijken samen welke medewerker past.",
+  },
+  think: {
+    eyebrow: "Hoe een AI-medewerker werkt",
+    title: "Ziet. Denkt. Doet.",
+    intro: "Elke AI-medewerker werkt op dezelfde manier — net als een goede collega.",
+    steps: [
+      {
+        id: "01",
+        title: "Ziet",
+        text: "Hij merkt op wat er binnenkomt: een bericht, een factuur, een bestelling, een cijfer dat afwijkt.",
+      },
+      {
+        id: "02",
+        title: "Denkt",
+        text: "Hij kent jouw zaak: je prijzen, je klanten, je afspraken. Daarmee weet hij wat er moet gebeuren.",
+      },
+      {
+        id: "03",
+        title: "Doet",
+        text: "Hij voert het uit — verwerken, beantwoorden, herinneren, plannen — en houdt jou op de hoogte.",
+      },
+    ],
+    footnote: "Het scherm waar je meekijkt is geen extra werk: het is de plek waar je ziet wat je medewerker gedaan heeft.",
   },
   how: {
     eyebrow: "Zo werkt het",
@@ -235,6 +261,7 @@ const nl: HomeAiDictionary = {
     ],
     otherCta: "Vraag het ons",
   },
+  tech: { badge: "Technologie", title: "Gebouwd op betrouwbare technologie" },
   faq: {
     eyebrow: "Veelgestelde vragen",
     title: "Goed om te weten",
@@ -350,6 +377,29 @@ const tr: HomeAiDictionary = {
     ],
     note: "Sürekli tekrar eden başka bir iş mi var? Bize anlatın, hangi elemanın uyduğuna birlikte bakalım.",
   },
+  think: {
+    eyebrow: "Bir AI eleman nasıl çalışır",
+    title: "Görür. Düşünür. Yapar.",
+    intro: "Her AI eleman aynı şekilde çalışır — iyi bir çalışma arkadaşı gibi.",
+    steps: [
+      {
+        id: "01",
+        title: "Görür",
+        text: "Gelen şeyi fark eder: bir mesaj, bir fatura, bir sipariş, beklenmedik bir rakam.",
+      },
+      {
+        id: "02",
+        title: "Düşünür",
+        text: "İşinizi bilir: fiyatlarınızı, müşterilerinizi, anlaşmalarınızı. Ne yapılması gerektiğini buradan çıkarır.",
+      },
+      {
+        id: "03",
+        title: "Yapar",
+        text: "Uygular — işler, yanıtlar, hatırlatır, planlar — ve sizi bilgilendirir.",
+      },
+    ],
+    footnote: "Takip ettiğiniz ekran ek bir yük değil: elemanınızın ne yaptığını gördüğünüz yer.",
+  },
   how: {
     eyebrow: "Nasıl çalışır",
     title: "Dört adımda işe başlayan bir eleman",
@@ -434,6 +484,7 @@ const tr: HomeAiDictionary = {
     ],
     otherCta: "Bize sorun",
   },
+  tech: { badge: "Teknoloji", title: "Güvenilir teknoloji üzerine kurulu" },
   faq: {
     eyebrow: "Sık sorulan sorular",
     title: "Bilmeniz gerekenler",
@@ -549,6 +600,17 @@ const en: HomeAiDictionary = {
     ],
     note: "Other work that keeps coming back? Tell us. We'll look together at which employee fits.",
   },
+  think: {
+    eyebrow: "How an AI employee works",
+    title: "Sees. Thinks. Does.",
+    intro: "Every AI employee works the same way — like a good colleague.",
+    steps: [
+      { id: "01", title: "Sees", text: "It notices what comes in: a message, an invoice, an order, a number that's off." },
+      { id: "02", title: "Thinks", text: "It knows your business: your prices, your customers, your agreements. That tells it what needs to happen." },
+      { id: "03", title: "Does", text: "It gets it done — processing, replying, reminding, planning — and keeps you posted." },
+    ],
+    footnote: "The screen you look at isn't extra work: it's where you see what your employee has done.",
+  },
   how: {
     eyebrow: "How it works",
     title: "An employee on board in four steps",
@@ -633,6 +695,7 @@ const en: HomeAiDictionary = {
     ],
     otherCta: "Ask us",
   },
+  tech: { badge: "Technology", title: "Built on reliable technology" },
   faq: {
     eyebrow: "FAQ",
     title: "Good to know",
