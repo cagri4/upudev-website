@@ -5,7 +5,7 @@ export const homeEn: HomeDictionary = {
   meta: {
     title: "UpuDev | AI Employees — Hire an employee, but make it AI",
     description:
-      "An AI employee that takes over the recurring work in your business. Connects to your existing systems, no new software. Partnership packages from €69 per month, first month free.",
+      "The staffing agency for AI employees. Hire an AI employee that takes over repetitive work: invoices, orders, planning. First month €69, then from €249/mo. Cancel monthly.",
   },
   partners: {
     ...homeTr.partners,
@@ -17,9 +17,10 @@ export const homeEn: HomeDictionary = {
   },
   nav: [
     { href: "#ana-sayfa", label: "Home" },
+    { href: "#team", label: "Our team" },
     { href: "#nasil-calisir", label: "How it works" },
     { href: "#fiyat", label: "Pricing" },
-    { href: "#hakkimizda", label: "Why UPU" },
+    { href: "#referenties", label: "References" },
     { href: "/iletisim", label: "Contact" },
   ],
   hero: {

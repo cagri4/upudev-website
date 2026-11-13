@@ -10,7 +10,7 @@ export const OPEN_MEETING_MODAL_EVENT = "open-meeting-modal";
 /**
  * "Plan een gesprek" modalı — AI Eleman konumlaması (12 Kas 2026).
  * Eski proje-bütçe mantığı (€1K–€15K+) ve yazılım-hizmet listesi kaldırıldı;
- * yerine sade "işletme türü" seçimi + "vanaf €69" paket satırı.
+ * yerine sade "işletme türü" seçimi + "Eerste maand €69 — daarna vanaf €249" fiyat satırı.
  */
 type SectorKey = "supermarket" | "wholesale" | "horeca" | "other";
 
@@ -55,7 +55,7 @@ const labels: Record<Locale, T> = {
     phone: "Telefon",
     phoneOptional: "(opsiyonel)",
     phonePlaceholder: "+31 ...",
-    pricing: "Birlikte çalışma paketleri aylık €69'dan · ilk ay ücretsiz",
+    pricing: "İlk ay €69 — sonra aylık €249'dan · her ay iptal edilebilir · KDV hariç",
     sector: "İşletmeniz",
     sectorChoose: "Seçiniz",
     sectors: {
@@ -86,7 +86,7 @@ const labels: Record<Locale, T> = {
     phone: "Phone",
     phoneOptional: "(optional)",
     phonePlaceholder: "+31 ...",
-    pricing: "Partnership packages from €69 per month · first month free",
+    pricing: "First month €69 — then from €249/mo · cancel monthly · excl. VAT",
     sector: "Your business",
     sectorChoose: "Choose",
     sectors: {
@@ -117,7 +117,7 @@ const labels: Record<Locale, T> = {
     phone: "Telefoon",
     phoneOptional: "(optioneel)",
     phonePlaceholder: "+31 ...",
-    pricing: "Samenwerkingspakketten vanaf €69 p/m · eerste maand gratis",
+    pricing: "Eerste maand €69 — daarna vanaf €249 p/m · maandelijks opzegbaar · excl. btw",
     sector: "Jouw zaak",
     sectorChoose: "Kies",
     sectors: {

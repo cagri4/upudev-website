@@ -90,7 +90,7 @@ export const dijitalEkibinizNl: DijitalEkibinizDictionary = {
       "Aangepaste AI-medewerker-oplossingen",
     ],
     priceLabel: "Prijs",
-    priceBasic: "vanaf €69/mnd",
+    priceBasic: "vanaf €249/mnd",
     priceCustom: "Op maat in overleg",
     ctaLabel: "Overleg via WhatsApp",
     waPrefill: "Ik wil graag informatie over de pakketten",
@@ -209,7 +209,7 @@ export const dijitalEkibinizNl: DijitalEkibinizDictionary = {
     title: "Veelgestelde Vragen",
     items: [
       { q: "Hoe snel kunnen we starten?", a: "Binnen 3-5 werkdagen na het kennismakingsgesprek. Bij urgentie binnen 24 uur." },
-      { q: "Wat zijn de maandkosten?", a: "Onze samenwerkingspakketten starten vanaf €69 per maand, de eerste maand is gratis. Welk pakket bij u past, bepalen we samen tijdens het gratis kennismakingsgesprek." },
+      { q: "Wat zijn de maandkosten?", a: "De eerste maand kost €69. Daarna vanaf €249 per maand, afgestemd op uw werkvolume. Maandelijks opzegbaar, prijzen excl. btw. Welk pakket bij u past, bepalen we samen in het kennismakingsgesprek." },
       { q: "Kan ik Turkse support krijgen?", a: "Ja. Communicatie en rapportage in Turks, Nederlands en Engels." },
       { q: "Werken jullie buiten Nederland?", a: "Onze focus zijn Turkse ondernemingen in Nederland. We werken ook met Turkse ondernemers in België en Duitsland." },
       { q: "Is er een contractduur?", a: "We werken op maandbasis, geen langetermijnverplichting nodig." },

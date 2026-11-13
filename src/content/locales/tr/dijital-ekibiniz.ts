@@ -339,7 +339,7 @@ export const dijitalEkibinizTr: DijitalEkibinizDictionary = {
       "Özel yapay zeka eleman çözümleri",
     ],
     priceLabel: "Fiyat",
-    priceBasic: "aylık €69'dan",
+    priceBasic: "aylık €249'dan",
     priceCustom: "Görüşmede özelleştirilir",
     ctaLabel: "WhatsApp ile görüşelim",
     waPrefill: "Paketler hakkında bilgi almak istiyorum",
@@ -354,7 +354,7 @@ export const dijitalEkibinizTr: DijitalEkibinizDictionary = {
       },
       {
         q: "Aylık ücret ne kadar?",
-        a: "Birlikte çalışma paketlerimiz aylık €69'dan başlıyor, ilk ay ücretsiz. Size hangi paketin uyduğunu ücretsiz tanışma görüşmesinde birlikte belirliyoruz.",
+        a: "İlk ay €69. Sonrası iş hacminize göre aylık €249'dan başlar. Her ay iptal edilebilir, fiyatlar KDV hariçtir. Size hangi paketin uyduğunu tanışma görüşmesinde birlikte belirliyoruz.",
       },
       {
         q: "Türkçe destek alabilir miyim?",

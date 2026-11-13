@@ -83,7 +83,7 @@ export const homeTr: HomeDictionary = {
   meta: {
     title: "UpuDev | AI Eleman — Bir eleman tutun, ama AI olsun",
     description:
-      "İşletmenizde tekrar eden işi devralan AI eleman. Mevcut sistemlerinize bağlanır, yeni program yok. Birlikte çalışma paketleri aylık €69'dan, ilk ay ücretsiz. Türkçe ve Felemenkçe destek.",
+      "AI elemanlar için iş ajansı. Faturalar, siparişler, planlama gibi tekrar eden işleri devralan bir AI eleman tutun. İlk ay €69, sonra aylık €249'dan başlayan fiyatlarla. Her ay iptal edilebilir.",
   },
   partners: {
     title: "Teknoloji Ekosistemimiz ve İş Ortaklarımız",
@@ -106,9 +106,10 @@ export const homeTr: HomeDictionary = {
   },
   nav: [
     { href: "#ana-sayfa", label: "Ana Sayfa" },
+    { href: "#team", label: "Ekibimiz" },
     { href: "#nasil-calisir", label: "Nasıl Çalışır" },
-    { href: "#fiyat", label: "Fiyat" },
-    { href: "#hakkimizda", label: "Neden UPU" },
+    { href: "#fiyat", label: "Fiyatlar" },
+    { href: "#referenties", label: "Referanslar" },
     { href: "/iletisim", label: "İletişim" },
   ],
   hero: {

@@ -5,7 +5,7 @@ export const homeNl: HomeDictionary = {
   meta: {
     title: "UpuDev | AI-medewerkers — Huur een medewerker, maar dan AI",
     description:
-      "Een AI-medewerker die het terugkerende werk in je zaak overneemt. Koppelt aan je bestaande systemen, geen nieuw pakket. Samenwerkingspakketten vanaf €69 p/m, eerste maand gratis.",
+      "Het uitzendbureau voor AI-medewerkers. Huur een AI-medewerker die het terugkerende werk overneemt: facturen, orders, planning. Eerste maand €69, daarna vanaf €249 p/m. Maandelijks opzegbaar.",
   },
   partners: {
     ...homeTr.partners,
@@ -17,9 +17,10 @@ export const homeNl: HomeDictionary = {
   },
   nav: [
     { href: "#ana-sayfa", label: "Home" },
-    { href: "#nasil-calisir", label: "Hoe het werkt" },
-    { href: "#fiyat", label: "Prijs" },
-    { href: "#hakkimizda", label: "Waarom UPU" },
+    { href: "#team", label: "Ons team" },
+    { href: "#nasil-calisir", label: "Zo werkt het" },
+    { href: "#fiyat", label: "Prijzen" },
+    { href: "#referenties", label: "Referenties" },
     { href: "/iletisim", label: "Contact" },
   ],
   hero: {
