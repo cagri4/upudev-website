@@ -199,7 +199,7 @@ export default async function HomeLocalePage({ params }: { params: Promise<{ loc
           </div>
         </section>
 
-        {/* 6. FİYAT — Eerste maand €69 → vanaf €249 / €549 / €999 */}
+        {/* 6. FİYAT — model B: tek 'vanaf' vitrini; kesin fiyat gesprek'te. Paketler yalnız açılır, fiyatsız. */}
         <section className="io-wrap io-section" id="fiyat">
           <div className="io-section-head">
             <p className="io-eyebrow">{dict.pricing.eyebrow}</p>
@@ -209,6 +209,9 @@ export default async function HomeLocalePage({ params }: { params: Promise<{ loc
             <div>
               <p className="text-2xl font-bold tracking-tight md:text-3xl">{dict.pricing.headline}</p>
               <p className="mt-2 text-white/80">{dict.pricing.terms}</p>
+              <WhatsAppLink href={waHref} source="home-pricing" className={`${waBtn} mt-6`}>
+                <WhatsAppIcon /> {dict.pricing.cta}
+              </WhatsAppLink>
             </div>
             <div className="rounded-2xl bg-white/10 p-5">
               <p className="text-sm font-semibold uppercase tracking-wider text-emerald-300">
@@ -224,44 +227,26 @@ export default async function HomeLocalePage({ params }: { params: Promise<{ loc
               </ul>
             </div>
           </div>
-          <div className="mt-6 grid gap-4 md:grid-cols-3">
-            {dict.pricing.tiers.map((tier) => (
-              <article
-                key={tier.name}
-                className={`relative flex flex-col rounded-2xl bg-white p-6 ${
-                  tier.recommended ? "ring-2 ring-[#122d54]" : "ring-1 ring-neutral-200"
-                }`}
-              >
-                {tier.recommended ? (
-                  <span className="absolute -top-3 left-6 rounded-full bg-[#122d54] px-3 py-1 text-xs font-semibold text-white">
-                    {dict.pricing.recommended}
-                  </span>
-                ) : null}
-                <h3 className="text-lg font-semibold text-neutral-900">{tier.name}</h3>
-                <p className="mt-3 text-neutral-500">
-                  <span className="text-sm">{dict.pricing.from} </span>
-                  <span className="text-4xl font-bold tracking-tight text-neutral-900">{tier.price}</span>
-                  <span className="text-sm"> {dict.pricing.perMonth}</span>
-                </p>
-                <p className="mt-3 text-sm font-medium text-neutral-800">{tier.volume}</p>
-                <ul className="mt-3 space-y-1.5 text-sm text-neutral-600">
-                  {tier.points.map((p) => (
-                    <li key={p} className="flex gap-2">
-                      <span aria-hidden className="text-[#122d54]">✓</span>
-                      {p}
-                    </li>
-                  ))}
-                </ul>
-                <p className="mt-auto pt-4 text-xs leading-relaxed text-neutral-500">{dict.pricing.tuned}</p>
-              </article>
-            ))}
-          </div>
-          <div className="mt-6 flex flex-col gap-4 md:flex-row md:items-center md:justify-between">
-            <p className="max-w-2xl text-sm leading-relaxed text-neutral-500">{dict.pricing.footnote}</p>
-            <WhatsAppLink href={waHref} source="home-pricing" className={`${waBtn} shrink-0`}>
-              <WhatsAppIcon /> {dict.pricing.cta}
-            </WhatsAppLink>
-          </div>
+          <p className="mt-5 max-w-3xl text-sm leading-relaxed text-neutral-600">{dict.pricing.footnote}</p>
+          <details className="group mt-4 rounded-2xl border border-neutral-200 bg-white px-5 py-3">
+            <summary className="flex cursor-pointer list-none items-center justify-between gap-4 text-sm font-semibold text-neutral-800">
+              {dict.pricing.detailsToggle}
+              <span aria-hidden className="text-lg text-neutral-400 transition group-open:rotate-45">+</span>
+            </summary>
+            <div className="mt-3 grid gap-4 pb-2 md:grid-cols-3">
+              {dict.pricing.tiers.map((tier) => (
+                <div key={tier.name} className="text-sm">
+                  <p className="font-semibold text-neutral-900">{tier.name}</p>
+                  <p className="mt-1 text-neutral-700">{tier.volume}</p>
+                  <ul className="mt-1.5 space-y-1 text-neutral-500">
+                    {tier.points.map((p) => (
+                      <li key={p}>· {p}</li>
+                    ))}
+                  </ul>
+                </div>
+              ))}
+            </div>
+          </details>
         </section>
 
         {/* 7. REFERENTIES — yalnız gerçek kanıt */}

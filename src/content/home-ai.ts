@@ -55,11 +55,9 @@ export type HomeAiDictionary = {
     headline: string;
     terms: string;
     trial: { label: string; price: string; points: string[] };
-    recommended: string;
-    perMonth: string;
-    from: string;
-    tiers: { name: string; price: string; volume: string; points: string[]; recommended?: boolean }[];
-    tuned: string;
+    /** Açılır, küçük: paketlerin içeriği (fiyatsız — vitrin tek 'vanaf'). */
+    detailsToggle: string;
+    tiers: { name: string; volume: string; points: string[] }[];
     footnote: string;
     cta: string;
   };
@@ -179,40 +177,33 @@ const nl: HomeAiDictionary = {
     eyebrow: "Wat kost een AI-medewerker?",
     title: "Duidelijke prijzen, per maand",
     headline: "Eerste maand €69 — daarna vanaf €249 p/m.",
-    terms: "Maandelijks opzegbaar. Alle prijzen excl. btw.",
+    terms: "Afgestemd op jouw werkvolume. Maandelijks opzegbaar. Excl. btw.",
     trial: {
       label: "Proefmaand",
       price: "€69",
       points: ["1 medewerker, 1 taak", "Werkt met jouw echte data", "Geen opstartkosten", "Overzicht van wat hij deed"],
     },
-    recommended: "Aanbevolen",
-    perMonth: "p/m",
-    from: "vanaf",
+    detailsToggle: "Welke pakketten zijn er? (indicatie)",
     tiers: [
       {
         name: "1 Medewerker",
-        price: "€249",
         volume: "1 medewerker · 1 koppeling · ca. 300 taken per maand",
         points: ["Eén vak, elke dag gedaan", "Jij keurt goed waar je wilt"],
       },
       {
         name: "Team",
-        price: "€549",
         volume: "3 medewerkers · bijvoorbeeld facturen, orders en planning",
         points: ["Voorrang bij support", "Elke maand samen verbeteren"],
-        recommended: true,
       },
       {
         name: "Afdeling",
-        price: "€999",
         volume: "5 of meer medewerkers · op maat",
         points: ["Ingericht op jouw bedrijf", "Vaste contactpersoon"],
       },
     ],
-    tuned: "Afgestemd op jouw werkvolume — we bepalen het samen in het gesprek.",
     footnote:
-      "De prijs hangt af van hoeveel werk er is. Is een diepe koppeling met je systeem nodig, dan kan daar eenmalig een bedrag bij komen. Dat hoor je altijd vooraf.",
-    cta: "Plan een kennismaking",
+      "Elke zaak is anders: een garage met 10 auto's heeft ander werk dan een met 30. Daarom bepalen we de prijs samen in het kennismakingsgesprek, op basis van jouw werk. Is een diepe koppeling met je systeem nodig, dan kan daar eenmalig een bedrag bij komen. Dat hoor je altijd vooraf.",
+    cta: "Plan een gesprek",
   },
   references: {
     eyebrow: "Referenties",
@@ -385,40 +376,33 @@ const tr: HomeAiDictionary = {
     eyebrow: "Bir AI eleman ne kadar?",
     title: "Net fiyatlar, aylık",
     headline: "İlk ay €69 — sonra aylık €249'dan başlayan fiyatlarla.",
-    terms: "Her ay iptal edilebilir. Tüm fiyatlar KDV (btw) hariçtir.",
+    terms: "İş hacminize göre belirlenir. Her ay iptal edilebilir. Fiyatlar KDV (btw) hariçtir.",
     trial: {
       label: "Deneme ayı",
       price: "€69",
       points: ["1 eleman, 1 iş", "Gerçek verinizle çalışır", "Kurulum ücreti yok", "Ne yaptığının özeti"],
     },
-    recommended: "Önerilen",
-    perMonth: "/ay",
-    from: "başlangıç",
+    detailsToggle: "Hangi paketler var? (fikir vermesi için)",
     tiers: [
       {
         name: "1 Eleman",
-        price: "€249",
         volume: "1 eleman · 1 bağlantı · ayda yaklaşık 300 iş",
         points: ["Tek uzmanlık, her gün", "İstediğiniz yerde onay sizde"],
       },
       {
         name: "Ekip",
-        price: "€549",
         volume: "3 eleman · örneğin fatura, sipariş ve planlama",
         points: ["Öncelikli destek", "Her ay birlikte iyileştirme"],
-        recommended: true,
       },
       {
         name: "Departman",
-        price: "€999",
         volume: "5 ve üzeri eleman · size özel",
         points: ["İşletmenize göre kurulur", "Sabit irtibat kişisi"],
       },
     ],
-    tuned: "İş hacminize göre belirlenir — görüşmede birlikte netleştiririz.",
     footnote:
-      "Fiyat iş miktarına göre değişir. Sisteminize derin bir bağlantı gerekirse bir kerelik ek ücret olabilir. Bunu her zaman önceden öğrenirsiniz.",
-    cta: "Tanışma görüşmesi planlayın",
+      "Her işletme farklı: 10 arabalı bir galerinin işi 30 arabalı olanınkiyle aynı değil. Bu yüzden fiyatı tanışma görüşmesinde, sizin işinize göre birlikte belirleriz. Sisteminize derin bir bağlantı gerekirse bir kerelik ek ücret olabilir. Bunu her zaman önceden öğrenirsiniz.",
+    cta: "Görüşme planlayın",
   },
   references: {
     eyebrow: "Referanslar",
@@ -591,40 +575,33 @@ const en: HomeAiDictionary = {
     eyebrow: "What does an AI employee cost?",
     title: "Clear prices, per month",
     headline: "First month €69 — then from €249/mo.",
-    terms: "Cancel monthly. All prices excl. VAT.",
+    terms: "Matched to your workload. Cancel monthly. Excl. VAT.",
     trial: {
       label: "Trial month",
       price: "€69",
       points: ["1 employee, 1 task", "Works with your real data", "No setup fee", "Overview of what they did"],
     },
-    recommended: "Recommended",
-    perMonth: "/mo",
-    from: "from",
+    detailsToggle: "Which packages are there? (indication)",
     tiers: [
       {
         name: "1 Employee",
-        price: "€249",
         volume: "1 employee · 1 connection · about 300 tasks per month",
         points: ["One job, done every day", "You approve where you want"],
       },
       {
         name: "Team",
-        price: "€549",
         volume: "3 employees · for example invoices, orders and planning",
         points: ["Priority support", "Monthly improvements together"],
-        recommended: true,
       },
       {
         name: "Department",
-        price: "€999",
         volume: "5 or more employees · tailored",
         points: ["Set up around your business", "Fixed contact person"],
       },
     ],
-    tuned: "Matched to your workload — we decide together in the call.",
     footnote:
-      "The price depends on how much work there is. If a deep connection to your system is needed, a one-off fee may apply. You always hear this in advance.",
-    cta: "Plan an intro call",
+      "Every business is different: a dealer with 10 cars has different work than one with 30. That's why we set the price together in the intro call, based on your work. If a deep connection to your system is needed, a one-off fee may apply. You always hear this in advance.",
+    cta: "Plan a call",
   },
   references: {
     eyebrow: "References",
