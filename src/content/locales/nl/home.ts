@@ -3,7 +3,7 @@ import { homeTr, type HomeDictionary } from "@/content/locales/tr/home";
 export const homeNl: HomeDictionary = {
   ...homeTr,
   meta: {
-    title: "UpuDev | AI-medewerkers — Huur een medewerker, maar dan AI",
+    title: "UPU Dev | AI-medewerkers — Huur een medewerker, maar dan AI",
     description:
       "Het uitzendbureau voor AI-medewerkers. Huur een AI-medewerker die het terugkerende werk overneemt: facturen, orders, planning. Eerste maand €69, daarna vanaf €249 p/m. Maandelijks opzegbaar.",
   },
@@ -148,7 +148,7 @@ export const homeNl: HomeDictionary = {
   },
   about: {
     ...homeTr.about,
-    title: "Waarom UpuDev?",
+    title: "Waarom UPU Dev?",
     description: "We combineren technische precisie met businessfocus en leveren meetbare resultaten.",
     bullets: [
       "Full-stack expertise: end-to-end levering van database tot interface",
@@ -190,7 +190,7 @@ export const homeNl: HomeDictionary = {
     items: [
       {
         quote:
-          "Het UpuDev-team gaf ons tijdens het hele traject technisch vertrouwen. De performancewinst na livegang was duidelijk meetbaar.",
+          "Het UPU Dev-team gaf ons tijdens het hele traject technisch vertrouwen. De performancewinst na livegang was duidelijk meetbaar.",
         name: "M. Korkmaz",
         role: "Operationeel Directeur",
       },
@@ -219,5 +219,5 @@ export const homeNl: HomeDictionary = {
     title: "Contact",
     intro: "Neem contact op voor nieuwe projecten, revisies of technische ondersteuning.",
   },
-  footer: "© 2026 UpuDev. Alle rechten voorbehouden.",
+  footer: "© 2026 UPU Dev. Alle rechten voorbehouden.",
 };

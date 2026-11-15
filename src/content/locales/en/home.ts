@@ -3,7 +3,7 @@ import { homeTr, type HomeDictionary } from "@/content/locales/tr/home";
 export const homeEn: HomeDictionary = {
   ...homeTr,
   meta: {
-    title: "UpuDev | AI Employees — Hire an employee, but make it AI",
+    title: "UPU Dev | AI Employees — Hire an employee, but make it AI",
     description:
       "The staffing agency for AI employees. Hire an AI employee that takes over repetitive work: invoices, orders, planning. First month €69, then from €249/mo. Cancel monthly.",
   },
@@ -148,7 +148,7 @@ export const homeEn: HomeDictionary = {
   },
   about: {
     ...homeTr.about,
-    title: "Why UpuDev?",
+    title: "Why UPU Dev?",
     description: "We combine technical rigor with business focus and build measurable results, not only visual outcomes.",
     bullets: [
       "Full-stack expertise: end-to-end delivery from database to interface",
@@ -190,7 +190,7 @@ export const homeEn: HomeDictionary = {
     items: [
       {
         quote:
-          "The UpuDev team gave us strong technical confidence throughout the project. Post-launch performance gains were clearly measurable.",
+          "The UPU Dev team gave us strong technical confidence throughout the project. Post-launch performance gains were clearly measurable.",
         name: "M. Korkmaz",
         role: "Operations Director",
       },
@@ -219,5 +219,5 @@ export const homeEn: HomeDictionary = {
     title: "Contact",
     intro: "You can reach us for new projects, revisions, or technical support requests.",
   },
-  footer: "© 2026 UpuDev. All rights reserved.",
+  footer: "© 2026 UPU Dev. All rights reserved.",
 };

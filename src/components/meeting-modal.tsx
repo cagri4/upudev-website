@@ -70,7 +70,7 @@ const labels: Record<Locale, T> = {
     submit: "Talebi Gönder",
     sending: "Gönderiliyor...",
     successTitle: "Talebiniz alındı",
-    successText: "Bir iş günü içinde dönüş yapacağız. — UpuDev Ekibi",
+    successText: "Bir iş günü içinde dönüş yapacağız. — UPU Dev Ekibi",
     errorText: "Bir hata oluştu, lütfen tekrar deneyin veya info@upudev.nl'e mail atın.",
   },
   en: {
@@ -101,7 +101,7 @@ const labels: Record<Locale, T> = {
     submit: "Send Request",
     sending: "Sending...",
     successTitle: "Request received",
-    successText: "We'll get back to you within one business day. — The UpuDev Team",
+    successText: "We'll get back to you within one business day. — The UPU Dev Team",
     errorText: "Something went wrong. Please try again or email info@upudev.nl.",
   },
   nl: {
@@ -132,7 +132,7 @@ const labels: Record<Locale, T> = {
     submit: "Aanvraag Versturen",
     sending: "Bezig met verzenden...",
     successTitle: "Aanvraag ontvangen",
-    successText: "We nemen binnen één werkdag contact op. — Het UpuDev-team",
+    successText: "We nemen binnen één werkdag contact op. — Het UPU Dev-team",
     errorText: "Er is iets misgegaan. Probeer opnieuw of mail info@upudev.nl.",
   },
 };

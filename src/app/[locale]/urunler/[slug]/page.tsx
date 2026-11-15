@@ -103,7 +103,7 @@ export async function generateMetadata({
   const product = getProductBySlug(slug, locale);
   if (!product) return {};
   return {
-    title: `${product.title} | UpuDev`,
+    title: `${product.title} | UPU Dev`,
     description: product.heroSummary,
     alternates: buildAlternates(locale, `urunler/${slug}`),
   };

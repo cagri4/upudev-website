@@ -71,10 +71,10 @@ export default async function DijitalEkibinizPage({
   const dict = dictionaries[locale];
   const copyright =
     locale === "en"
-      ? "© 2026 UpuDev. All rights reserved."
+      ? "© 2026 UPU Dev. All rights reserved."
       : locale === "nl"
-        ? "© 2026 UpuDev. Alle rechten voorbehouden."
-        : "© 2026 UpuDev. Tüm hakları saklıdır.";
+        ? "© 2026 UPU Dev. Alle rechten voorbehouden."
+        : "© 2026 UPU Dev. Tüm hakları saklıdır.";
 
   return (
     <div className="min-h-screen bg-white">

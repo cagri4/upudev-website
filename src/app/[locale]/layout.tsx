@@ -34,7 +34,7 @@ export async function generateMetadata({
       title: dict.meta.title,
       description: dict.meta.description,
       url: canonicalUrl(locale),
-      siteName: "UpuDev",
+      siteName: "UPU Dev",
       type: "website",
       locale,
     },

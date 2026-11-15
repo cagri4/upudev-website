@@ -136,7 +136,7 @@ export async function generateMetadata({
   if (!isLocale(locale)) return {};
   const t = pageText[locale];
   return {
-    title: `${t.title} | UpuDev`,
+    title: `${t.title} | UPU Dev`,
     description: t.intro,
     alternates: buildAlternates(locale, "iletisim"),
   };

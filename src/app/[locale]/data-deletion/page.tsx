@@ -14,7 +14,7 @@ export async function generateMetadata({
   const { locale } = await params;
   if (!isLocale(locale)) return {};
   return {
-    title: `${dataDeletionContent[locale].title} | UpuDev`,
+    title: `${dataDeletionContent[locale].title} | UPU Dev`,
     alternates: buildAlternates(locale, "data-deletion"),
   };
 }

@@ -56,7 +56,7 @@ export type AiElemanDictionary = {
 
 const nl: AiElemanDictionary = {
   meta: {
-    title: "Je AI-medewerker — eerste maand gratis | UpuDev",
+    title: "Je AI-medewerker — eerste maand gratis | UPU Dev",
     description:
       "Jij runt je zaak, je AI-medewerker regelt de rest: berichten, afspraken en facturen 24/7. Social media en website altijd up-to-date. Eerste maand gratis.",
   },
@@ -112,12 +112,12 @@ const nl: AiElemanDictionary = {
     whatsappCta: "Start via WhatsApp",
     formCta: "Demo aanvragen",
   },
-  copyright: "© 2026 UpuDev. Alle rechten voorbehouden.",
+  copyright: "© 2026 UPU Dev. Alle rechten voorbehouden.",
 };
 
 const en: AiElemanDictionary = {
   meta: {
-    title: "Your AI employee — first month free | UpuDev",
+    title: "Your AI employee — first month free | UPU Dev",
     description:
       "You run your business, your AI employee handles the rest: messages, appointments and invoices 24/7. Social media and website always up to date. First month free.",
   },
@@ -172,12 +172,12 @@ const en: AiElemanDictionary = {
     whatsappCta: "Start on WhatsApp",
     formCta: "Request a demo",
   },
-  copyright: "© 2026 UpuDev. All rights reserved.",
+  copyright: "© 2026 UPU Dev. All rights reserved.",
 };
 
 const tr: AiElemanDictionary = {
   meta: {
-    title: "AI Elemanınız — ilk ay ücretsiz | UpuDev",
+    title: "AI Elemanınız — ilk ay ücretsiz | UPU Dev",
     description:
       "Siz işinizi yönetin, AI elemanınız gerisini halletsin: mesajlar, randevular ve faturalar 7/24. Sosyal medya ve web siteniz hep güncel. İlk ay ücretsiz.",
   },
@@ -232,7 +232,7 @@ const tr: AiElemanDictionary = {
     whatsappCta: "WhatsApp'tan başlayın",
     formCta: "Demo talep edin",
   },
-  copyright: "© 2026 UpuDev. Tüm hakları saklıdır.",
+  copyright: "© 2026 UPU Dev. Tüm hakları saklıdır.",
 };
 
 const dictionaries: Record<Locale, AiElemanDictionary> = { nl, en, tr };

@@ -14,7 +14,7 @@ export async function generateMetadata({
   const { locale } = await params;
   if (!isLocale(locale)) return {};
   return {
-    title: `${privacyContent[locale].title} | UpuDev`,
+    title: `${privacyContent[locale].title} | UPU Dev`,
     alternates: buildAlternates(locale, "privacy"),
   };
 }

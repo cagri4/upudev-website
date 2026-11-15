@@ -192,7 +192,7 @@ const marketTr: SaasLandingConfig = {
   },
   ctaPrimary: { label: "Demo Al", href: "/{locale}/iletisim" },
   ctaSecondary: { label: "WhatsApp'tan Yaz", href: WHATSAPP_HREF, external: true },
-  footerNote: "UPU Market — Hollanda'daki Türk marketleri için dijital sadakat, çok dilli AI ve dijital vitrin. UpuDev güvencesiyle.",
+  footerNote: "UPU Market — Hollanda'daki Türk marketleri için dijital sadakat, çok dilli AI ve dijital vitrin. UPU Dev güvencesiyle.",
 };
 
 /** NL / EN slot'ları açık — şimdilik TR'ye düşer (locale-ready iskelet). */

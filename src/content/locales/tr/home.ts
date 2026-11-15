@@ -81,7 +81,7 @@ export type HomeDictionary = {
 
 export const homeTr: HomeDictionary = {
   meta: {
-    title: "UpuDev | AI Eleman — Bir eleman tutun, ama AI olsun",
+    title: "UPU Dev | AI Eleman — Bir eleman tutun, ama AI olsun",
     description:
       "AI elemanlar için iş ajansı. Faturalar, siparişler, planlama gibi tekrar eden işleri devralan bir AI eleman tutun. İlk ay €69, sonra aylık €249'dan başlayan fiyatlarla. Her ay iptal edilebilir.",
   },
@@ -239,7 +239,7 @@ export const homeTr: HomeDictionary = {
     ],
   },
   about: {
-    title: "Neden UpuDev?",
+    title: "Neden UPU Dev?",
     description:
       "Teknik doğrulukla iş odaklı bakışı birleştiriyoruz. Sadece görünüm değil, ölçülebilir sonuç üretiyoruz.",
     bullets: [
@@ -280,7 +280,7 @@ export const homeTr: HomeDictionary = {
     items: [
       {
         quote:
-          "UpuDev ekibi proje boyunca teknik olarak güven verdi. Yayın sonrası performans artışı net şekilde ölçüldü.",
+          "UPU Dev ekibi proje boyunca teknik olarak güven verdi. Yayın sonrası performans artışı net şekilde ölçüldü.",
         name: "M. Korkmaz",
         role: "Operasyon Direktörü",
       },
@@ -314,5 +314,5 @@ export const homeTr: HomeDictionary = {
     iban: "NL59INGB0117119474",
     whatsapp: "https://wa.me/31611352773",
   },
-  footer: "© 2026 UpuDev. Tüm hakları saklıdır.",
+  footer: "© 2026 UPU Dev. Tüm hakları saklıdır.",
 };

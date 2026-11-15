@@ -8,9 +8,9 @@ import { SITE_URL } from "@/lib/seo";
 // only issue redirects and never stream page HTML, so they need no <html> here.
 export const metadata: Metadata = {
   metadataBase: new URL(SITE_URL),
-  title: "UpuDev",
+  title: "UPU Dev",
   description:
-    "UpuDev — Netherlands-based software firm: web, e-commerce, automation and AI-powered digital solutions.",
+    "UPU Dev — Netherlands-based software firm: web, e-commerce, automation and AI-powered digital solutions.",
 };
 
 export const viewport: Viewport = {

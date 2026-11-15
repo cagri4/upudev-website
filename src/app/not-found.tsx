@@ -12,7 +12,7 @@ export default function NotFound() {
             <h1 style={{ fontSize: "2rem", marginBottom: "0.75rem" }}>404</h1>
             <p style={{ marginBottom: "1.5rem", color: "#555" }}>Pagina niet gevonden / Sayfa bulunamadı / Page not found</p>
             <Link href={`/${defaultLocale}`} style={{ textDecoration: "underline" }}>
-              UpuDev
+              UPU Dev
             </Link>
           </div>
         </main>
