@@ -10,8 +10,11 @@ import type { Locale } from "@/lib/i18n";
  * Sistem LOGOLARI: yalnız Çağrı'nın onayladığı liste (15 Kas 2026, rc). Dosyalar public/logos/systems/ (kaynak: KAYNAK.md).
  * Listeye yeni logo eklemeden önce onay al. `items` = logosu olmayan genel sistem türleri ("en ook").
  */
-/** `big`: dosyasında iç boşluk olan logo (WhatsApp) — karoda diğerleriyle aynı görünsün diye büyütülür. */
-export const SYSTEM_LOGOS: { name: string; src: string; big?: boolean }[] = [
+/**
+ * `big`: dosyasında iç boşluk olan logo (WhatsApp) — karoda diğerleriyle aynı görünsün diye büyütülür.
+ * `tone`: gri (monokrom) hâlde ton eşitleme — saf siyah logo "dark" (daha soluk), açık renkli logo "light" (koyulaştırılır).
+ */
+export const SYSTEM_LOGOS: { name: string; src: string; big?: boolean; tone?: "dark" | "light" }[] = [
   { name: "e-Boekhouden", src: "/logos/systems/e-boekhouden.png" },
   { name: "Exact", src: "/logos/systems/exact.svg" },
   { name: "WhatsApp", src: "/logos/systems/whatsapp.svg", big: true },
@@ -23,8 +26,8 @@ export const SYSTEM_LOGOS: { name: string; src: string; big?: boolean }[] = [
   { name: "Instagram", src: "/logos/systems/instagram.svg" },
   { name: "Linux", src: "/logos/systems/linux.svg" },
   { name: "Claude (Anthropic)", src: "/logos/systems/claude.svg" },
-  { name: "Higgsfield", src: "/logos/systems/higgsfield.png" },
-  { name: "Replicate", src: "/logos/systems/replicate.svg" },
+  { name: "Higgsfield", src: "/logos/systems/higgsfield.png", tone: "light" },
+  { name: "Replicate", src: "/logos/systems/replicate.svg", tone: "dark" },
 ];
 export type WorkChainDictionary = {
   eyebrow: string;

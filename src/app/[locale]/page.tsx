@@ -9,7 +9,6 @@ import { SiteHeader } from "@/components/site-header";
 import { SiteContact } from "@/components/site-contact";
 import { SiteFooter } from "@/components/site-footer";
 import { WhatsAppLink } from "@/components/landing/whatsapp-link";
-import { PartnersGrid } from "@/components/partners-grid";
 import { CtaPair } from "@/components/landing/cta-pair";
 import { COPADAM } from "@/content/ai-team-landing";
 import { getWorkChain } from "@/content/work-chain";
@@ -107,11 +106,13 @@ export default async function HomeLocalePage({ params }: { params: Promise<{ loc
             <p className="mt-5 text-sm font-medium text-neutral-600">{dict.hero.priceNote}</p>
           </div>
           <div className="io-hero-media">
+            {/* Çöp adam hero (ajans upu-robots, 15 Kas 2026) — eski 3D hero-illustration-square.jpg yerine. */}
             <Image
-              src="/hero-illustration-square.jpg"
+              src="/robots/copadam/hero-desk.png"
               alt={dict.hero.imageAlt}
               fill
               priority
+              sizes="(min-width: 900px) 600px, 92vw"
               className="io-image"
               style={{ objectFit: "contain" }}
             />
@@ -338,8 +339,6 @@ export default async function HomeLocalePage({ params }: { params: Promise<{ loc
             ) : null}
           </div>
         </section>
-
-        <PartnersGrid title={dict.tech.title} badgeText={dict.tech.badge} partners={base.partners.items} />
 
         {/* 8. KIES JE SECTOR — gıda ilk, diğerleri op aanvraag */}
         <section className="io-wrap io-section" id="sector">

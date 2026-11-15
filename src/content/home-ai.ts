@@ -84,7 +84,6 @@ export type HomeAiDictionary = {
     others: { name: string; whatsappText: string }[];
     otherCta: string;
   };
-  tech: { badge: string; title: string };
   faq: { eyebrow: string; title: string; items: { q: string; a: string }[] };
   closing: { title: string; text: string };
   cta: { title: string; text: string; button: string };
@@ -266,7 +265,6 @@ const nl: HomeAiDictionary = {
     ],
     otherCta: "Vraag het ons",
   },
-  tech: { badge: "Technologie", title: "Gebouwd op betrouwbare technologie" },
   faq: {
     eyebrow: "Veelgestelde vragen",
     title: "Goed om te weten",
@@ -488,7 +486,6 @@ const tr: HomeAiDictionary = {
     ],
     otherCta: "Bize sorun",
   },
-  tech: { badge: "Teknoloji", title: "Güvenilir teknoloji üzerine kurulu" },
   faq: {
     eyebrow: "Sık sorulan sorular",
     title: "Bilmeniz gerekenler",
@@ -698,7 +695,6 @@ const en: HomeAiDictionary = {
     ],
     otherCta: "Ask us",
   },
-  tech: { badge: "Technology", title: "Built on reliable technology" },
   faq: {
     eyebrow: "FAQ",
     title: "Good to know",

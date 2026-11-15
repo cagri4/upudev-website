@@ -58,7 +58,7 @@ export function WorkChain({
         </div>
       </div>
 
-      {/* Mevcut sistemler — yalnız onaylı logolar (SYSTEM_LOGOS). Tek tip karo: işaret + isim. */}
+      {/* Mevcut sistemler — yalnız onaylı logolar (SYSTEM_LOGOS). Tek tip karo: işaret + isim. Gri/monokrom; hover'da renk (Çağrı 15 Kas). Sitedeki TEK logo bölümü. */}
       <div className="mt-6 rounded-2xl border border-neutral-200 bg-white p-5 md:p-7">
         <p className="text-lg font-bold text-neutral-900">{dict.systems.title}</p>
         <p className="mt-1 text-sm leading-relaxed text-neutral-600">{dict.systems.text}</p>
@@ -66,11 +66,11 @@ export function WorkChain({
           {SYSTEM_LOGOS.map((l) => (
             <li
               key={l.name}
-              className="flex h-[92px] basis-[calc((100%-1rem)/3)] flex-col items-center justify-center gap-2 rounded-xl border border-neutral-200 bg-neutral-50 px-2 text-center sm:basis-[calc((100%-2.25rem)/4)] lg:basis-[calc((100%-4.5rem)/7)]"
+              className="group flex h-[92px] basis-[calc((100%-1rem)/3)] flex-col items-center justify-center gap-2 rounded-xl border border-neutral-200 bg-neutral-50 px-2 text-center sm:basis-[calc((100%-2.25rem)/4)] lg:basis-[calc((100%-4.5rem)/7)]"
             >
               {/* eslint-disable-next-line @next/next/no-img-element */}
-              <img src={l.src} alt={`${l.name} logo`} width={32} height={32} loading="lazy" className={`h-8 w-8 object-contain ${l.big ? "scale-[1.35]" : ""}`} />
-              <span className="text-[11px] font-semibold leading-tight text-neutral-700 sm:text-xs">{l.name}</span>
+              <img src={l.src} alt={`${l.name} logo`} width={32} height={32} loading="lazy" className={`h-8 w-8 object-contain grayscale transition duration-200 group-hover:opacity-100 group-hover:grayscale-0 group-hover:brightness-100 ${l.big ? "scale-[1.35]" : ""} ${l.tone === "dark" ? "opacity-40" : l.tone === "light" ? "opacity-70 brightness-75" : "opacity-60"}`} />
+              <span className="text-[11px] font-semibold leading-tight text-neutral-500 transition group-hover:text-neutral-800 sm:text-xs">{l.name}</span>
             </li>
           ))}
         </ul>
