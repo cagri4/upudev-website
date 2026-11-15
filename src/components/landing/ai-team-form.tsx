@@ -1,37 +1,41 @@
 "use client";
 
 /**
- * /[locale]/ai-eleman YEDEK form (WhatsApp istemeyenler için).
+ * AI-team landing formu — /[locale]/ai-eleman ve /[locale]/ai-medewerkers/groothandel.
+ * "Plan een gesprek" ana CTA'sı bu forma gelir (15 Kas 2026, Çağrı kararı D).
  *
- * Backend = mevcut iletişim formuyla AYNI yol: POST /api/contact
- * → nodemailer SMTP → MAIL_TO (info@upudev.nl). Konu sabit:
- * "[UpuDev] AI Eleman — gratis maand". Backend değiştirilmedi;
- * /api/contact message zorunlu olduğu için boş Bericht → varsayılan metin.
+ * Backend = iletişim formuyla AYNI yol: POST /api/contact → nodemailer SMTP →
+ * MAIL_TO (info@upudev.nl). Mail konusu "[UpuDev] <subject>".
+ * Başarıda: GTM quote_form_submit (form_location) + Meta Pixel Lead.
  */
 
 import { FormEvent, useState } from "react";
 import type { Locale } from "@/lib/i18n";
 import { pushEvent } from "@/lib/analytics";
-import { WhatsAppLink } from "@/components/landing/whatsapp-link";
-import {
-  AI_ELEMAN_SUBJECT,
-  aiElemanWhatsAppHref,
-  type AiElemanDictionary,
-} from "@/content/ai-eleman";
+import { WhatsAppLink, type WhatsAppSource } from "@/components/landing/whatsapp-link";
+import { aiTeamWhatsAppHref, type AiTeamLandingDictionary } from "@/content/ai-team-landing";
 
 type Status = "idle" | "sending" | "success" | "error";
 
 const inputClass =
   "w-full rounded-xl border border-neutral-300 bg-white px-3 py-3 text-base outline-none transition focus:border-emerald-500 focus:ring-2 focus:ring-emerald-100";
 
-export function AiElemanForm({
+export function AiTeamForm({
   locale,
   labels,
   whatsappText,
+  subject,
+  formLocation,
+  pagePath,
+  waSource,
 }: {
   locale: Locale;
-  labels: AiElemanDictionary["form"];
+  labels: AiTeamLandingDictionary["form"];
   whatsappText: string;
+  subject: string;
+  formLocation: string;
+  pagePath: string;
+  waSource: WhatsAppSource;
 }) {
   const [status, setStatus] = useState<Status>("idle");
   const [error, setError] = useState("");
@@ -66,8 +70,8 @@ export function AiElemanForm({
           phone,
           email,
           company,
-          subject: AI_ELEMAN_SUBJECT,
-          message: `${message}\n\n— via upudev.nl/${locale}/ai-eleman (advertentie)`,
+          subject,
+          message: `${message}\n\n— via upudev.nl/${locale}/${pagePath}`,
           website: get("website"),
           locale,
         }),
@@ -81,13 +85,13 @@ export function AiElemanForm({
 
       pushEvent({
         event: "quote_form_submit",
-        form_location: "ai_eleman_form",
-        form_subject: AI_ELEMAN_SUBJECT,
+        form_location: formLocation,
+        form_subject: subject,
         locale,
       });
       if (typeof window !== "undefined" && typeof window.fbq === "function") {
         window.fbq("track", "Lead", {
-          content_name: "ai-eleman-form",
+          content_name: formLocation,
           value: 50,
           currency: "EUR",
         });
@@ -111,8 +115,8 @@ export function AiElemanForm({
         <h3 className="mt-5 text-xl font-semibold text-emerald-950 md:text-2xl">{labels.successTitle}</h3>
         <p className="mx-auto mt-3 max-w-md text-sm leading-relaxed text-emerald-900 md:text-base">{labels.successText}</p>
         <WhatsAppLink
-          href={aiElemanWhatsAppHref(whatsappText)}
-          source="ai-eleman-success"
+          href={aiTeamWhatsAppHref(whatsappText)}
+          source={waSource}
           className="mt-6 inline-flex items-center justify-center gap-2 rounded-full bg-[#25D366] px-6 py-3.5 text-base font-semibold text-white shadow-sm transition hover:bg-[#20bd5a]"
         >
           {labels.successWa}

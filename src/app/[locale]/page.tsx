@@ -10,6 +10,7 @@ import { SiteContact } from "@/components/site-contact";
 import { SiteFooter } from "@/components/site-footer";
 import { WhatsAppLink } from "@/components/landing/whatsapp-link";
 import { PartnersGrid } from "@/components/partners-grid";
+import { CtaPair } from "@/components/landing/cta-pair";
 
 /**
  * Ana sayfa v2 — "het uitzendbureau voor AI-medewerkers" (13 Kas 2026).
@@ -84,12 +85,12 @@ export default async function HomeLocalePage({ params }: { params: Promise<{ loc
             <h1>{dict.hero.title}</h1>
             <p className="io-lead">{dict.hero.subtitle}</p>
             <div className="io-hero-actions">
-              <WhatsAppLink href={waHref} source="home-hero" className={waBtn}>
-                <WhatsAppIcon /> {dict.hero.whatsappCta}
-              </WhatsAppLink>
-              <a className="self-center px-2 text-base font-semibold text-[#122d54] underline underline-offset-4" href="#team">
-                {dict.hero.teamCta} →
-              </a>
+              <CtaPair
+                primaryLabel={dict.hero.primaryCta}
+                waHref={waHref}
+                waLabel={dict.hero.whatsappCta}
+                waSource="home-hero"
+              />
             </div>
             <p className="mt-5 text-sm font-medium text-neutral-600">{dict.hero.priceNote}</p>
           </div>
@@ -160,9 +161,13 @@ export default async function HomeLocalePage({ params }: { params: Promise<{ loc
             ))}
             <article className="flex flex-col justify-center rounded-2xl border border-dashed border-neutral-300 p-6">
               <p className="text-base leading-relaxed text-neutral-700">{dict.team.note}</p>
-              <WhatsAppLink href={waHref} source="home-sector" className="mt-4 text-sm font-semibold text-[#122d54] underline underline-offset-4">
-                {dict.hero.whatsappCta} →
-              </WhatsAppLink>
+              <CtaPair
+                className="mt-4"
+                primaryLabel={dict.hero.primaryCta}
+                waHref={waHref}
+                waLabel={dict.hero.whatsappCta}
+                waSource="home-team"
+              />
             </article>
           </div>
         </section>
@@ -228,9 +233,14 @@ export default async function HomeLocalePage({ params }: { params: Promise<{ loc
             <div>
               <p className="text-2xl font-bold tracking-tight md:text-3xl">{dict.pricing.headline}</p>
               <p className="mt-2 text-white/80">{dict.pricing.terms}</p>
-              <WhatsAppLink href={waHref} source="home-pricing" className={`${waBtn} mt-6`}>
-                <WhatsAppIcon /> {dict.pricing.cta}
-              </WhatsAppLink>
+              <CtaPair
+                className="mt-6"
+                tone="dark"
+                primaryLabel={dict.hero.primaryCta}
+                waHref={waHref}
+                waLabel={dict.hero.whatsappCta}
+                waSource="home-pricing"
+              />
             </div>
             <div className="rounded-2xl bg-white/10 p-5">
               <p className="text-sm font-semibold uppercase tracking-wider text-emerald-300">
@@ -366,9 +376,15 @@ export default async function HomeLocalePage({ params }: { params: Promise<{ loc
           <div className="rounded-3xl bg-[#122d54] p-8 text-center text-white md:p-14">
             <h2 className="text-3xl font-bold tracking-tight md:text-4xl">{dict.closing.title}</h2>
             <p className="mx-auto mt-3 max-w-xl text-white/80">{dict.closing.text}</p>
-            <WhatsAppLink href={waHref} source="home-closing" className={`${waBtn} mt-7`}>
-              <WhatsAppIcon /> {dict.closing.cta}
-            </WhatsAppLink>
+            <CtaPair
+              className="mt-7"
+              tone="dark"
+              align="center"
+              primaryLabel={dict.hero.primaryCta}
+              waHref={waHref}
+              waLabel={dict.hero.whatsappCta}
+              waSource="home-closing"
+            />
             <p className="mt-4 text-sm text-white/70">{dict.hero.priceNote}</p>
           </div>
         </section>

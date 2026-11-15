@@ -21,8 +21,10 @@ export type HomeAiDictionary = {
     badge: string;
     title: string;
     subtitle: string;
+    /** Ana CTA → "Plan een gesprek" modal formu (quote_form_submit). */
+    primaryCta: string;
+    /** İkincil link → WhatsApp (WhatsAppClick). */
     whatsappCta: string;
-    teamCta: string;
     priceNote: string;
     imageAlt: string;
   };
@@ -61,7 +63,6 @@ export type HomeAiDictionary = {
     detailsToggle: string;
     tiers: { name: string; volume: string; points: string[] }[];
     footnote: string;
-    cta: string;
   };
   references: {
     eyebrow: string;
@@ -81,7 +82,7 @@ export type HomeAiDictionary = {
   };
   tech: { badge: string; title: string };
   faq: { eyebrow: string; title: string; items: { q: string; a: string }[] };
-  closing: { title: string; text: string; cta: string };
+  closing: { title: string; text: string };
   cta: { title: string; text: string; button: string };
 };
 
@@ -91,8 +92,8 @@ const nl: HomeAiDictionary = {
     title: "Huur een medewerker. Maar dan AI.",
     subtitle:
       "Wij leveren AI-medewerkers die het werk overnemen dat elke dag terugkomt: facturen, orders, planning. Ze werken naast jouw team, in de systemen die je al hebt. Jij huurt ze per maand, net als een uitzendkracht.",
-    whatsappCta: "Plan een kennismaking",
-    teamCta: "Bekijk het team",
+    primaryCta: "Plan een gesprek",
+    whatsappCta: "of stuur ons een WhatsApp",
     priceNote: "Eerste maand €69 — daarna vanaf €249 p/m. Maandelijks opzegbaar.",
     imageAlt: "AI-medewerker aan het werk",
   },
@@ -117,18 +118,18 @@ const nl: HomeAiDictionary = {
     labels: { does: "Wat hij doet", connects: "Werkt met", asks: "Vraagt jou als" },
     members: [
       {
-        title: "Factuurcontroleur",
-        role: "Administratie",
-        does: "Leest elke inkoopfactuur en vergelijkt die met je vorige prijzen. Hij ziet prijsstijgingen en fouten.",
-        connects: "Je mail, pdf-facturen, WhatsApp en je kassa- of boekhoudsysteem.",
-        asks: "Een prijs ineens hoger is of een factuur niet klopt.",
-      },
-      {
-        title: "Orderverwerker",
+        title: "Order-medewerker",
         role: "Verkoop",
         does: "Leest bestellingen uit WhatsApp, mail en telefoon. Hij zet ze in je systeem en stuurt een bevestiging.",
         connects: "WhatsApp, mail en je order- of ERP-systeem.",
         asks: "Een product of klant niet duidelijk is.",
+      },
+      {
+        title: "Boekhoud-medewerker",
+        role: "Administratie",
+        does: "Leest elke inkoopfactuur en vergelijkt die met je vorige prijzen. Hij ziet prijsstijgingen en fouten.",
+        connects: "Je mail, pdf-facturen, WhatsApp en je kassa- of boekhoudsysteem.",
+        asks: "Een prijs ineens hoger is of een factuur niet klopt.",
       },
       {
         title: "Planner",
@@ -182,7 +183,7 @@ const nl: HomeAiDictionary = {
     title: "In vier stappen een medewerker in dienst",
     intro: "Geen groot project. Je ziet eerst wat hij doet, daarna beslis je.",
     steps: [
-      { id: "01", title: "Kennismaking", text: "Je stuurt ons een WhatsApp. We vragen: welk werk kost jou elke dag tijd?" },
+      { id: "01", title: "Kennismaking", text: "Je plant een gesprek of stuurt ons een WhatsApp. We vragen: welk werk kost jou elke dag tijd?" },
       { id: "02", title: "Demo met jouw data", text: "Je ziet de medewerker werken op jouw eigen facturen of orders." },
       { id: "03", title: "Proefmaand €69", text: "Hij werkt een maand mee. Jij keurt goed. Aan het eind krijg je een overzicht van wat hij deed." },
       { id: "04", title: "In dienst", text: "Tevreden? Dan blijft hij. Vanaf €249 p/m, maandelijks opzegbaar." },
@@ -229,7 +230,6 @@ const nl: HomeAiDictionary = {
     ],
     footnote:
       "Elke zaak is anders: een garage met 10 auto's heeft ander werk dan een met 30. Daarom bepalen we de prijs samen in het kennismakingsgesprek, op basis van jouw werk. Is een diepe koppeling met je systeem nodig, dan kan daar eenmalig een bedrag bij komen. Dat hoor je altijd vooraf.",
-    cta: "Plan een gesprek",
   },
   references: {
     eyebrow: "Referenties",
@@ -298,8 +298,7 @@ const nl: HomeAiDictionary = {
   },
   closing: {
     title: "Welk werk mag hij van je overnemen?",
-    text: "Stuur ons een WhatsApp. We denken mee en laten je zien wat een AI-medewerker voor jouw zaak kan doen.",
-    cta: "Plan een kennismaking",
+    text: "Plan een gesprek of stuur ons een WhatsApp. We denken mee en laten je zien wat een AI-medewerker voor jouw zaak kan doen.",
   },
   cta: {
     title: "Liever bellen of mailen?",
@@ -314,8 +313,8 @@ const tr: HomeAiDictionary = {
     title: "Bir eleman tutun. Ama AI olsun.",
     subtitle:
       "Her gün tekrar eden işleri devralan AI elemanlar sağlıyoruz: faturalar, siparişler, planlama. Ekibinizin yanında, zaten kullandığınız sistemlerde çalışırlar. Onları aylık tutarsınız, tıpkı geçici bir eleman gibi.",
-    whatsappCta: "Tanışma görüşmesi planlayın",
-    teamCta: "Ekibi görün",
+    primaryCta: "Görüşme planlayın",
+    whatsappCta: "ya da bize WhatsApp'tan yazın",
     priceNote: "İlk ay €69 — sonra aylık €249'dan başlayan fiyatlarla. Her ay iptal edilebilir.",
     imageAlt: "Çalışan bir AI eleman",
   },
@@ -340,18 +339,18 @@ const tr: HomeAiDictionary = {
     labels: { does: "Ne yapar", connects: "Neyle çalışır", asks: "Size ne zaman sorar" },
     members: [
       {
-        title: "Fatura Kontrolcüsü",
-        role: "İdari işler",
-        does: "Gelen her alış faturasını okur ve önceki fiyatlarla karşılaştırır. Zamları ve hataları yakalar.",
-        connects: "E-postanız, PDF faturalar, WhatsApp ve kasa ya da muhasebe sisteminiz.",
-        asks: "Bir fiyat birden yükseldiğinde ya da fatura tutmadığında.",
-      },
-      {
-        title: "Sipariş Elemanı",
+        title: "Order-medewerker (Sipariş Elemanı)",
         role: "Satış",
         does: "WhatsApp, e-posta ve telefondan gelen siparişleri okur, sisteme girer ve onay gönderir.",
         connects: "WhatsApp, e-posta ve sipariş ya da ERP sisteminiz.",
         asks: "Bir ürün ya da müşteri net olmadığında.",
+      },
+      {
+        title: "Boekhoud-medewerker (Muhasebe Elemanı)",
+        role: "İdari işler",
+        does: "Gelen her alış faturasını okur ve önceki fiyatlarla karşılaştırır. Zamları ve hataları yakalar.",
+        connects: "E-postanız, PDF faturalar, WhatsApp ve kasa ya da muhasebe sisteminiz.",
+        asks: "Bir fiyat birden yükseldiğinde ya da fatura tutmadığında.",
       },
       {
         title: "Planlamacı",
@@ -405,7 +404,7 @@ const tr: HomeAiDictionary = {
     title: "Dört adımda işe başlayan bir eleman",
     intro: "Büyük bir proje yok. Önce ne yaptığını görürsünüz, sonra karar verirsiniz.",
     steps: [
-      { id: "01", title: "Tanışma", text: "Bize WhatsApp'tan yazarsınız. Soruyoruz: her gün en çok hangi iş zamanınızı alıyor?" },
+      { id: "01", title: "Tanışma", text: "Görüşme planlarsınız ya da WhatsApp'tan yazarsınız. Soruyoruz: her gün en çok hangi iş zamanınızı alıyor?" },
       { id: "02", title: "Kendi verinizle demo", text: "Elemanın kendi faturalarınız ya da siparişleriniz üzerinde çalıştığını görürsünüz." },
       { id: "03", title: "Deneme ayı €69", text: "Bir ay sizinle çalışır. Siz onaylarsınız. Ay sonunda ne yaptığının özetini alırsınız." },
       { id: "04", title: "İşe alım", text: "Memnun musunuz? O zaman kalır. Aylık €249'dan başlayan fiyatlarla, her ay iptal edilebilir." },
@@ -452,7 +451,6 @@ const tr: HomeAiDictionary = {
     ],
     footnote:
       "Her işletme farklı: 10 arabalı bir galerinin işi 30 arabalı olanınkiyle aynı değil. Bu yüzden fiyatı tanışma görüşmesinde, sizin işinize göre birlikte belirleriz. Sisteminize derin bir bağlantı gerekirse bir kerelik ek ücret olabilir. Bunu her zaman önceden öğrenirsiniz.",
-    cta: "Görüşme planlayın",
   },
   references: {
     eyebrow: "Referanslar",
@@ -521,8 +519,7 @@ const tr: HomeAiDictionary = {
   },
   closing: {
     title: "Hangi işi sizden devralsın?",
-    text: "Bize WhatsApp'tan yazın. Birlikte düşünelim ve bir AI elemanın işletmeniz için neler yapabileceğini gösterelim.",
-    cta: "Tanışma görüşmesi planlayın",
+    text: "Bir görüşme planlayın ya da bize WhatsApp'tan yazın. Birlikte düşünelim ve bir AI elemanın işletmeniz için neler yapabileceğini gösterelim.",
   },
   cta: {
     title: "Aramayı ya da e-postayı mı tercih edersiniz?",
@@ -537,8 +534,8 @@ const en: HomeAiDictionary = {
     title: "Hire an employee. But make it AI.",
     subtitle:
       "We supply AI employees that take over the work that comes back every day: invoices, orders, planning. They work alongside your team, in the systems you already use. You hire them per month, like a temp.",
-    whatsappCta: "Plan an intro call",
-    teamCta: "Meet the team",
+    primaryCta: "Plan a call",
+    whatsappCta: "or send us a WhatsApp",
     priceNote: "First month €69 — then from €249/mo. Cancel monthly.",
     imageAlt: "AI employee at work",
   },
@@ -563,18 +560,18 @@ const en: HomeAiDictionary = {
     labels: { does: "What they do", connects: "Works with", asks: "Asks you when" },
     members: [
       {
-        title: "Invoice checker",
-        role: "Admin",
-        does: "Reads every purchase invoice and compares it with your previous prices. Spots price rises and mistakes.",
-        connects: "Your email, PDF invoices, WhatsApp and your till or accounting system.",
-        asks: "A price suddenly goes up or an invoice doesn't add up.",
-      },
-      {
-        title: "Order processor",
+        title: "Order-medewerker (Order employee)",
         role: "Sales",
         does: "Reads orders from WhatsApp, email and phone, enters them in your system and sends a confirmation.",
         connects: "WhatsApp, email and your order or ERP system.",
         asks: "A product or customer isn't clear.",
+      },
+      {
+        title: "Boekhoud-medewerker (Bookkeeping employee)",
+        role: "Admin",
+        does: "Reads every purchase invoice and compares it with your previous prices. Spots price rises and mistakes.",
+        connects: "Your email, PDF invoices, WhatsApp and your till or accounting system.",
+        asks: "A price suddenly goes up or an invoice doesn't add up.",
       },
       {
         title: "Planner",
@@ -616,7 +613,7 @@ const en: HomeAiDictionary = {
     title: "An employee on board in four steps",
     intro: "No big project. You see what they do first, then you decide.",
     steps: [
-      { id: "01", title: "Intro", text: "You send us a WhatsApp. We ask: what work takes up your time every day?" },
+      { id: "01", title: "Intro", text: "You plan a call or send us a WhatsApp. We ask: what work takes up your time every day?" },
       { id: "02", title: "Demo with your data", text: "You see the employee work on your own invoices or orders." },
       { id: "03", title: "Trial month €69", text: "They work with you for a month. You approve. At the end you get an overview of what they did." },
       { id: "04", title: "Hired", text: "Happy? Then they stay. From €249/mo, cancel monthly." },
@@ -663,7 +660,6 @@ const en: HomeAiDictionary = {
     ],
     footnote:
       "Every business is different: a dealer with 10 cars has different work than one with 30. That's why we set the price together in the intro call, based on your work. If a deep connection to your system is needed, a one-off fee may apply. You always hear this in advance.",
-    cta: "Plan a call",
   },
   references: {
     eyebrow: "References",
@@ -732,8 +728,7 @@ const en: HomeAiDictionary = {
   },
   closing: {
     title: "What work can they take off your hands?",
-    text: "Send us a WhatsApp. We'll think along and show you what an AI employee can do for your business.",
-    cta: "Plan an intro call",
+    text: "Plan a call or send us a WhatsApp. We'll think along and show you what an AI employee can do for your business.",
   },
   cta: {
     title: "Rather call or email?",

@@ -2,7 +2,7 @@
 
 import type { ReactNode } from "react";
 
-type Source =
+export type WhatsAppSource =
   | "header"
   | "hero"
   | "success"
@@ -15,7 +15,14 @@ type Source =
   | "home-hero"
   | "home-pricing"
   | "home-sector"
-  | "home-closing";
+  | "home-closing"
+  | "home-team"
+  | "groothandel-header"
+  | "groothandel-hero"
+  | "groothandel-pricing"
+  | "groothandel-closing"
+  | "groothandel-success"
+  | "ai-eleman-pricing";
 
 /**
  * WhatsApp deep-link + Meta Pixel tracking.
@@ -31,7 +38,7 @@ export function WhatsAppLink({
   children,
 }: {
   href: string;
-  source: Source;
+  source: WhatsAppSource;
   className?: string;
   children: ReactNode;
 }) {
