@@ -81,7 +81,7 @@ export type HomeDictionary = {
 
 export const homeTr: HomeDictionary = {
   meta: {
-    title: "UPU Dev | AI uygulama ortağı — O hazırlar, siz onaylarsınız",
+    title: "UPU Dev | AI uygulama ortağı — Biz hazırlarız, siz onaylarsınız",
     description:
       "AI elemanları mevcut sistemlerinizin içinde kurar ve abonelikle yönetiriz. Tekrar eden işler için kapasite: faturalar, siparişler, planlama. İlk ay €69, sonra aylık €249'dan başlayan fiyatlarla. Her ay iptal edilebilir.",
   },

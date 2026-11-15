@@ -14,7 +14,7 @@ import { WorkChain } from "@/components/landing/work-chain";
 import { getWorkChain } from "@/content/work-chain";
 
 /**
- * Ortak reklam landing'i — "AI-implementatiepartner": hij zet klaar, jij keurt goed.
+ * Ortak reklam landing'i — "AI-implementatiepartner": wij zetten klaar, jij keurt goed.
  * Kullananlar: /[locale]/ai-eleman (variant "ai-eleman") ve /[locale]/ai-medewerkers/groothandel (variant "groothandel").
  * Robot görselleri: reklamın A versiyonundaki çöp adamlar (ajans upu-robots/out/web-copadam → public/robots/copadam/).
  * Order = teal, Boekhoud = paars. "…en elk ander terugkerend werk" bölümü reklamın kapanış karesiyle aynı kompozisyon.

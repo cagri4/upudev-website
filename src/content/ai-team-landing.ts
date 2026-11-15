@@ -212,11 +212,11 @@ const aiElemanNl: AiTeamLandingDictionary = {
   meta: {
     title: "AI-medewerkers in je eigen systemen — je AI-implementatiepartner | UPU Dev",
     description:
-      "Wij richten AI-medewerkers in binnen je bestaande systemen en beheren ze op abonnementsbasis. Hij zet klaar, jij keurt goed: orders, facturen, planning. Eerste maand €69, daarna vanaf €249 p/m. Maandelijks opzegbaar.",
+      "Wij richten AI-medewerkers in binnen je bestaande systemen en beheren ze op abonnementsbasis. Wij zetten klaar, jij keurt goed: orders, facturen, planning. Eerste maand €69, daarna vanaf €249 p/m. Maandelijks opzegbaar.",
   },
   hero: {
     badge: "Je AI-implementatiepartner",
-    title: "Hij zet klaar. Jij keurt goed.",
+    title: "Wij zetten klaar. Jij keurt goed.",
     subtitle:
       "Wij richten AI-medewerkers in binnen je bestaande systemen en beheren ze op abonnementsbasis. Zo heb je capaciteit voor het werk dat elke dag terugkomt: orders, facturen, planning.",
     priceNote: "Eerste maand €69 — daarna vanaf €249 p/m. Afgestemd op jouw werkvolume.",
@@ -366,11 +366,11 @@ const aiElemanTr: AiTeamLandingDictionary = {
   meta: {
     title: "Mevcut sistemlerinizde AI elemanlar — AI uygulama ortağınız | UPU Dev",
     description:
-      "AI elemanları mevcut sistemlerinizin içinde kurar ve abonelikle yönetiriz. O hazırlar, siz onaylarsınız: sipariş, fatura, planlama. İlk ay €69, sonra aylık €249'dan başlayan fiyatlarla. Her ay iptal edilebilir.",
+      "AI elemanları mevcut sistemlerinizin içinde kurar ve abonelikle yönetiriz. Biz hazırlarız, siz onaylarsınız: sipariş, fatura, planlama. İlk ay €69, sonra aylık €249'dan başlayan fiyatlarla. Her ay iptal edilebilir.",
   },
   hero: {
     badge: "AI uygulama ortağınız",
-    title: "O hazırlar. Siz onaylarsınız.",
+    title: "Biz hazırlarız. Siz onaylarsınız.",
     subtitle:
       "AI elemanları mevcut sistemlerinizin içinde kurar ve abonelikle yönetiriz. Böylece her gün tekrar eden işler için kapasiteniz olur: siparişler, faturalar, planlama.",
     priceNote: "İlk ay €69 — sonra aylık €249'dan başlayan fiyatlarla. İş hacminize göre.",
@@ -520,11 +520,11 @@ const aiElemanEn: AiTeamLandingDictionary = {
   meta: {
     title: "AI employees in your own systems — your AI implementation partner | UPU Dev",
     description:
-      "We set up AI employees inside your existing systems and manage them on a subscription basis. It prepares, you approve: orders, invoices, planning. First month €69, then from €249 per month. Cancel monthly.",
+      "We set up AI employees inside your existing systems and manage them on a subscription basis. We prepare, you approve: orders, invoices, planning. First month €69, then from €249 per month. Cancel monthly.",
   },
   hero: {
     badge: "Your AI implementation partner",
-    title: "It prepares. You approve.",
+    title: "We prepare. You approve.",
     subtitle:
       "We set up AI employees inside your existing systems and manage them on a subscription basis. That gives you capacity for the work that comes back every day: orders, invoices, planning.",
     priceNote: "First month €69 — then from €249 per month. Based on your workload.",

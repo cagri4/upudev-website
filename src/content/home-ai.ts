@@ -93,7 +93,7 @@ export type HomeAiDictionary = {
 const nl: HomeAiDictionary = {
   hero: {
     badge: "Je AI-implementatiepartner",
-    title: "Hij zet klaar. Jij keurt goed.",
+    title: "Wij zetten klaar. Jij keurt goed.",
     subtitle:
       "Wij richten AI-medewerkers in binnen je bestaande systemen en beheren ze op abonnementsbasis. Zo heb je capaciteit voor het werk dat elke dag terugkomt: facturen, orders, planning.",
     primaryCta: "Plan een gesprek",
@@ -113,7 +113,7 @@ const nl: HomeAiDictionary = {
       { title: "Tellen", text: "Voorraad tellen en daarna alles in de kassa bijwerken." },
       { title: "Afspraken", text: "Afspraken maken, verzetten en klanten eraan herinneren." },
     ],
-    outro: "Voor dit soort werk richten wij een AI-medewerker in. Hij zet het klaar, jij keurt goed — en jij houdt tijd over voor je klanten en je zaak.",
+    outro: "Voor dit soort werk richten wij een AI-medewerker in. Wij zetten het klaar, jij keurt goed — en jij houdt tijd over voor je klanten en je zaak.",
   },
   team: {
     eyebrow: "AI-medewerkers",
@@ -315,7 +315,7 @@ const nl: HomeAiDictionary = {
 const tr: HomeAiDictionary = {
   hero: {
     badge: "AI uygulama ortağınız",
-    title: "O hazırlar. Siz onaylarsınız.",
+    title: "Biz hazırlarız. Siz onaylarsınız.",
     subtitle:
       "AI elemanları mevcut sistemlerinizin içinde kurar ve abonelikle yönetiriz. Böylece her gün tekrar eden işler için kapasiteniz olur: faturalar, siparişler, planlama.",
     primaryCta: "Görüşme planlayın",
@@ -335,7 +335,7 @@ const tr: HomeAiDictionary = {
       { title: "Sayım", text: "Stok saymak, sonra her şeyi kasaya işlemek." },
       { title: "Randevular", text: "Randevu almak, ertelemek ve müşterilere hatırlatmak." },
     ],
-    outro: "Bu tür işler için bir AI eleman kurarız. O hazırlar, siz onaylarsınız — size müşterileriniz ve işiniz için zaman kalır.",
+    outro: "Bu tür işler için bir AI eleman kurarız. Biz hazırlarız, siz onaylarsınız — size müşterileriniz ve işiniz için zaman kalır.",
   },
   team: {
     eyebrow: "AI elemanlar",
@@ -537,7 +537,7 @@ const tr: HomeAiDictionary = {
 const en: HomeAiDictionary = {
   hero: {
     badge: "Your AI implementation partner",
-    title: "It prepares. You approve.",
+    title: "We prepare. You approve.",
     subtitle:
       "We set up AI employees inside your existing systems and manage them on a subscription basis. That gives you capacity for the work that comes back every day: invoices, orders, planning.",
     primaryCta: "Plan a call",
@@ -557,7 +557,7 @@ const en: HomeAiDictionary = {
       { title: "Counting", text: "Counting stock and then updating everything in the till." },
       { title: "Appointments", text: "Booking, moving and reminding customers of appointments." },
     ],
-    outro: "For this kind of work we set up an AI employee. It prepares, you approve — and you get time back for your customers and your business.",
+    outro: "For this kind of work we set up an AI employee. We prepare, you approve — and you get time back for your customers and your business.",
   },
   team: {
     eyebrow: "AI employees",

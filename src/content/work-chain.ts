@@ -1,15 +1,31 @@
 import type { Locale } from "@/lib/i18n";
 
 /**
- * "Hij zet klaar, jij keurt goed" — uçtan uca iş zinciri + güvence + mevcut sistemler (15 Kas 2026, Çağrı onayı).
+ * "Wij zetten klaar, jij keurt goed" — uçtan uca iş zinciri + güvence + mevcut sistemler (15 Kas 2026, Çağrı onayı).
  * Konsept referansı Repetive (ilham, klon değil): süreç zinciri · "hiçbir şeyi değiştirmen gerekmez" · emin değilse durur.
  *
  * DİL KURALI (IND iş planı G.5 "geen uitzendconstructie, geen detachering"): AI "işi/insanın işini devralmaz";
  * hazırlar, insan onaylar. "uitzendbureau", "huren", "neemt werk over", "in dienst" KULLANMA.
  *
- * Sistemler: yalnız sitede zaten söylenen sistem TÜRLERİ (metin). Marka LOGOSU yok — hangi sistemlere gerçekten
- * bağlandığımız rc/Çağrı'dan onaylanınca `logos` doldurulur. Onaysız logo koyma.
+ * Sistem LOGOLARI: yalnız Çağrı'nın onayladığı liste (15 Kas 2026, rc). Dosyalar public/logos/systems/ (kaynak: KAYNAK.md).
+ * Listeye yeni logo eklemeden önce onay al. `items` = logosu olmayan genel sistem türleri ("en ook").
  */
+/** `big`: dosyasında iç boşluk olan logo (WhatsApp) — karoda diğerleriyle aynı görünsün diye büyütülür. */
+export const SYSTEM_LOGOS: { name: string; src: string; big?: boolean }[] = [
+  { name: "e-Boekhouden", src: "/logos/systems/e-boekhouden.png" },
+  { name: "Exact", src: "/logos/systems/exact.svg" },
+  { name: "WhatsApp", src: "/logos/systems/whatsapp.svg", big: true },
+  { name: "Gmail", src: "/logos/systems/gmail.svg" },
+  { name: "Outlook", src: "/logos/systems/outlook.svg" },
+  { name: "Microsoft", src: "/logos/systems/microsoft.svg" },
+  { name: "Meta", src: "/logos/systems/meta.svg" },
+  { name: "Facebook", src: "/logos/systems/facebook.svg" },
+  { name: "Instagram", src: "/logos/systems/instagram.svg" },
+  { name: "Linux", src: "/logos/systems/linux.svg" },
+  { name: "Claude (Anthropic)", src: "/logos/systems/claude.svg" },
+  { name: "Higgsfield", src: "/logos/systems/higgsfield.png" },
+  { name: "Replicate", src: "/logos/systems/replicate.svg" },
+];
 export type WorkChainDictionary = {
   eyebrow: string;
   title: string;
@@ -18,12 +34,12 @@ export type WorkChainDictionary = {
   intro: string;
   steps: { label: string; title: string; text: string; human?: boolean }[];
   doubt: { title: string; text: string };
-  systems: { title: string; text: string; items: string[] };
+  systems: { title: string; text: string; alsoLabel: string; items: string[] };
 };
 
 const nl: WorkChainDictionary = {
   eyebrow: "Zo werkt een AI-medewerker",
-  title: "Hij zet klaar, jij keurt goed.",
+  title: "Wij zetten klaar. Jij keurt goed.",
   altTitle: "Van binnenkomst tot verzonden of geboekt",
   intro: "De AI-medewerker doet het voorwerk, jij houdt de beslissing. Jij bepaalt wat hij zelf mag afronden.",
   steps: [
@@ -39,13 +55,14 @@ const nl: WorkChainDictionary = {
   systems: {
     title: "Werkt in je bestaande systemen — je hoeft niets te veranderen.",
     text: "Wij richten de AI-medewerker in binnen de software die je al gebruikt en beheren hem op abonnementsbasis.",
-    items: ["WhatsApp", "E-mail", "Pdf-facturen", "Je boekhoudpakket", "Je kassasysteem", "Je order- of ERP-systeem"],
+    alsoLabel: "En ook:",
+    items: ["pdf-facturen", "je kassasysteem", "je order- of ERP-systeem"],
   },
 };
 
 const tr: WorkChainDictionary = {
   eyebrow: "Bir AI eleman nasıl çalışır",
-  title: "O hazırlar, siz onaylarsınız.",
+  title: "Biz hazırlarız. Siz onaylarsınız.",
   altTitle: "İşin gelişinden gönderilmesine kadar",
   intro: "Ön hazırlığı AI eleman yapar, karar sizde kalır. Neyi kendisinin tamamlayabileceğine siz karar verirsiniz.",
   steps: [
@@ -61,13 +78,14 @@ const tr: WorkChainDictionary = {
   systems: {
     title: "Mevcut sistemlerinizde çalışır — hiçbir şeyi değiştirmeniz gerekmez.",
     text: "AI elemanı zaten kullandığınız yazılımın içinde kurarız ve abonelikle yönetiriz.",
-    items: ["WhatsApp", "E-posta", "PDF faturalar", "Muhasebe programınız", "Kasa sisteminiz", "Sipariş / ERP sisteminiz"],
+    alsoLabel: "Ayrıca:",
+    items: ["PDF faturalar", "kasa sisteminiz", "sipariş / ERP sisteminiz"],
   },
 };
 
 const en: WorkChainDictionary = {
   eyebrow: "How an AI employee works",
-  title: "It prepares, you approve.",
+  title: "We prepare. You approve.",
   altTitle: "From incoming to sent or booked",
   intro: "The AI employee does the groundwork, you keep the decision. You decide what it may finish on its own.",
   steps: [
@@ -83,7 +101,8 @@ const en: WorkChainDictionary = {
   systems: {
     title: "Works in your existing systems — you don't have to change anything.",
     text: "We set up the AI employee inside the software you already use and manage it on a subscription basis.",
-    items: ["WhatsApp", "Email", "PDF invoices", "Your accounting software", "Your POS", "Your order or ERP system"],
+    alsoLabel: "And also:",
+    items: ["PDF invoices", "your POS", "your order or ERP system"],
   },
 };
 

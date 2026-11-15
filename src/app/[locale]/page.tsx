@@ -25,7 +25,7 @@ function teamRobot(index: number) {
 }
 
 /**
- * Ana sayfa v2 (13 Kas 2026) — 15 Kas: "AI-implementatiepartner" dili + "Hij zet klaar, jij keurt goed" iş zinciri.
+ * Ana sayfa v2 (13 Kas 2026) — 15 Kas: "AI-implementatiepartner" dili + "Wij zetten klaar, jij keurt goed" iş zinciri.
  * Akış: SITE-REFERANS-ARTISAN.md önerilen akış (hero → tekrar eden iş → kadro →
  * zo werkt het → controle → fiyat → referenties → sector → FAQ/CTA).
  * Metin: src/content/home-ai.ts. Nav/meta/iletişim: locales/{l}/home.ts.

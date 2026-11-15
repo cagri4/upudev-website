@@ -1,4 +1,4 @@
-import type { WorkChainDictionary } from "@/content/work-chain";
+import { SYSTEM_LOGOS, type WorkChainDictionary } from "@/content/work-chain";
 
 /**
  * Uçtan uca iş zinciri: binnenkomst → AI zet klaar → jij keurt goed → verzonden/geboekt
@@ -48,27 +48,35 @@ export function WorkChain({
         ))}
       </ol>
 
-      <div className="mt-6 grid gap-4 md:grid-cols-2">
-        <div className="flex gap-4 rounded-2xl border-2 border-[#8A62B8] bg-[#F3EDFA] p-5">
-          <span aria-hidden className="flex h-10 w-10 shrink-0 items-center justify-center rounded-full bg-[#8A62B8] text-lg font-bold text-white">
-            ?
-          </span>
-          <div>
-            <p className="text-base font-bold text-[#3F2A57]">{dict.doubt.title}</p>
-            <p className="mt-1 text-sm leading-relaxed text-[#3F2A57]">{dict.doubt.text}</p>
-          </div>
+      <div className="mt-6 flex gap-4 rounded-2xl border-2 border-[#8A62B8] bg-[#F3EDFA] p-5">
+        <span aria-hidden className="flex h-10 w-10 shrink-0 items-center justify-center rounded-full bg-[#8A62B8] text-lg font-bold text-white">
+          ?
+        </span>
+        <div>
+          <p className="text-base font-bold text-[#3F2A57]">{dict.doubt.title}</p>
+          <p className="mt-1 text-sm leading-relaxed text-[#3F2A57]">{dict.doubt.text}</p>
         </div>
-        <div className="rounded-2xl border border-neutral-200 bg-white p-5">
-          <p className="text-base font-bold text-neutral-900">{dict.systems.title}</p>
-          <p className="mt-1 text-sm leading-relaxed text-neutral-600">{dict.systems.text}</p>
-          <ul className="mt-3 flex flex-wrap gap-2">
-            {dict.systems.items.map((it) => (
-              <li key={it} className="rounded-full border border-neutral-300 bg-neutral-50 px-3 py-1 text-sm font-medium text-neutral-700">
-                {it}
-              </li>
-            ))}
-          </ul>
-        </div>
+      </div>
+
+      {/* Mevcut sistemler — yalnız onaylı logolar (SYSTEM_LOGOS). Tek tip karo: işaret + isim. */}
+      <div className="mt-6 rounded-2xl border border-neutral-200 bg-white p-5 md:p-7">
+        <p className="text-lg font-bold text-neutral-900">{dict.systems.title}</p>
+        <p className="mt-1 text-sm leading-relaxed text-neutral-600">{dict.systems.text}</p>
+        <ul className="mt-5 flex flex-wrap justify-center gap-2 sm:gap-3">
+          {SYSTEM_LOGOS.map((l) => (
+            <li
+              key={l.name}
+              className="flex h-[92px] basis-[calc((100%-1rem)/3)] flex-col items-center justify-center gap-2 rounded-xl border border-neutral-200 bg-neutral-50 px-2 text-center sm:basis-[calc((100%-2.25rem)/4)] lg:basis-[calc((100%-4.5rem)/7)]"
+            >
+              {/* eslint-disable-next-line @next/next/no-img-element */}
+              <img src={l.src} alt={`${l.name} logo`} width={32} height={32} loading="lazy" className={`h-8 w-8 object-contain ${l.big ? "scale-[1.35]" : ""}`} />
+              <span className="text-[11px] font-semibold leading-tight text-neutral-700 sm:text-xs">{l.name}</span>
+            </li>
+          ))}
+        </ul>
+        <p className="mt-4 text-sm text-neutral-600">
+          <span className="font-semibold text-neutral-800">{dict.systems.alsoLabel}</span> {dict.systems.items.join(" · ")}
+        </p>
       </div>
     </section>
   );
