@@ -3,9 +3,9 @@ import { homeTr, type HomeDictionary } from "@/content/locales/tr/home";
 export const homeEn: HomeDictionary = {
   ...homeTr,
   meta: {
-    title: "UPU Dev | AI Employees — Hire an employee, but make it AI",
+    title: "UPU Dev | AI implementation partner — It prepares, you approve",
     description:
-      "The staffing agency for AI employees. Hire an AI employee that takes over repetitive work: invoices, orders, planning. First month €69, then from €249/mo. Cancel monthly.",
+      "We set up AI employees inside your existing systems and manage them on a subscription basis. Capacity for recurring work: invoices, orders, planning. First month €69, then from €249/mo. Cancel monthly.",
   },
   partners: {
     ...homeTr.partners,

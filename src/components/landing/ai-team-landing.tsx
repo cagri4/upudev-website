@@ -10,9 +10,11 @@ import { AiTeamForm } from "@/components/landing/ai-team-form";
 import { CtaPair, WhatsAppGlyph } from "@/components/landing/cta-pair";
 import { WhatsAppLink } from "@/components/landing/whatsapp-link";
 import { SiteFooter } from "@/components/site-footer";
+import { WorkChain } from "@/components/landing/work-chain";
+import { getWorkChain } from "@/content/work-chain";
 
 /**
- * Ortak reklam landing'i — "het uitzendbureau voor AI-medewerkers".
+ * Ortak reklam landing'i — "AI-implementatiepartner": hij zet klaar, jij keurt goed.
  * Kullananlar: /[locale]/ai-eleman (variant "ai-eleman") ve /[locale]/ai-medewerkers/groothandel (variant "groothandel").
  * Robot görselleri: reklamın A versiyonundaki çöp adamlar (ajans upu-robots/out/web-copadam → public/robots/copadam/).
  * Order = teal, Boekhoud = paars. "…en elk ander terugkerend werk" bölümü reklamın kapanış karesiyle aynı kompozisyon.
@@ -172,6 +174,11 @@ export function AiTeamLanding({
             </div>
           </section>
         ) : null}
+
+        {/* HIJ ZET KLAAR, JIJ KEURT GOED */}
+        <div className="border-b border-neutral-100 py-14 md:py-20">
+          <WorkChain dict={getWorkChain(locale)} id="keten" sloganInHero={variant === "ai-eleman"} className="mx-auto max-w-6xl px-4 md:px-6" />
+        </div>
 
         {/* ONS AI-TEAM */}
         <section className="py-14 md:py-20" id="team">

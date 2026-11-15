@@ -12,6 +12,8 @@ import { WhatsAppLink } from "@/components/landing/whatsapp-link";
 import { PartnersGrid } from "@/components/partners-grid";
 import { CtaPair } from "@/components/landing/cta-pair";
 import { COPADAM } from "@/content/ai-team-landing";
+import { getWorkChain } from "@/content/work-chain";
+import { WorkChain } from "@/components/landing/work-chain";
 
 /**
  * Ons team kartları: reklamdaki çöp adamlar, home-ai.ts'deki üye sırasıyla (her dilde aynı sıra):
@@ -23,7 +25,7 @@ function teamRobot(index: number) {
 }
 
 /**
- * Ana sayfa v2 — "het uitzendbureau voor AI-medewerkers" (13 Kas 2026).
+ * Ana sayfa v2 (13 Kas 2026) — 15 Kas: "AI-implementatiepartner" dili + "Hij zet klaar, jij keurt goed" iş zinciri.
  * Akış: SITE-REFERANS-ARTISAN.md önerilen akış (hero → tekrar eden iş → kadro →
  * zo werkt het → controle → fiyat → referenties → sector → FAQ/CTA).
  * Metin: src/content/home-ai.ts. Nav/meta/iletişim: locales/{l}/home.ts.
@@ -88,7 +90,7 @@ export default async function HomeLocalePage({ params }: { params: Promise<{ loc
       />
 
       <main>
-        {/* 1. HERO — uitzendbureau tanımı + tek birincil CTA */}
+        {/* 1. HERO — implementatiepartner tanımı + slogan + tek birincil CTA */}
         <section className="io-hero io-wrap" id="ana-sayfa">
           <div className="io-hero-text">
             <p className="io-eyebrow">{dict.hero.badge}</p>
@@ -134,6 +136,11 @@ export default async function HomeLocalePage({ params }: { params: Promise<{ loc
           <p className="mt-6 max-w-2xl text-base font-medium text-neutral-800">{dict.work.outro}</p>
         </section>
 
+        {/* 2b. HIJ ZET KLAAR, JIJ KEURT GOED — uçtan uca zincir + güvence + mevcut sistemler */}
+        <div className="io-wrap io-section">
+          <WorkChain dict={getWorkChain(locale)} id="zo-werkt-het" sloganInHero />
+        </div>
+
         {/* 3. ONS TEAM — kadro vitrini (unvan, isim yok) */}
         <section className="io-wrap io-section" id="team">
           <div className="io-section-head">
@@ -174,8 +181,12 @@ export default async function HomeLocalePage({ params }: { params: Promise<{ loc
                 </dl>
               </article>
             ))}
-            <article className="flex flex-col justify-center rounded-2xl border border-dashed border-neutral-300 p-6">
-              <p className="text-base leading-relaxed text-neutral-700">{dict.team.note}</p>
+            <article className="flex flex-col rounded-2xl border border-dashed border-neutral-300 p-6">
+              <div className="flex justify-center">
+                <Image src={COPADAM.vraag.src} alt="" width={COPADAM.vraag.w} height={COPADAM.vraag.h} sizes="160px" className="h-[260px] w-auto" />
+              </div>
+              <h3 className="mt-4 text-xl font-bold tracking-tight text-[#122d54]">{dict.team.noteTitle}</h3>
+              <p className="mt-2 text-base leading-relaxed text-neutral-700">{dict.team.note}</p>
               <CtaPair
                 className="mt-4"
                 primaryLabel={dict.hero.primaryCta}

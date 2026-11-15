@@ -1,7 +1,8 @@
 import type { Locale } from "@/lib/i18n";
 
 /**
- * Reklam landing'leri — "het uitzendbureau voor AI-medewerkers" (15 Kas 2026, Çağrı onayı).
+ * Reklam landing'leri (15 Kas 2026, Çağrı onayı). Dil: "AI-implementatiepartner" — IND iş planı G.5
+ * "geen uitzendconstructie, geen detachering": "uitzendbureau", "huren", "in dienst", "neemt werk over" KULLANMA.
  *
  *  - /[locale]/ai-eleman              → genel AI-medewerker landing'i (eski reklam bu URL'ye gidiyor; URL aynı kaldı)
  *  - /[locale]/ai-medewerkers/groothandel → "Maandag 08:00" reklamının hedef sayfası (toptancı hikâyesi)
@@ -122,7 +123,7 @@ const commonNl: Common = {
   cta: { primary: "Plan een gesprek", whatsapp: "of stuur ons een WhatsApp" },
   team: {
     eyebrow: "Ons AI-team",
-    title: "Maak kennis met je nieuwe collega's",
+    title: "Zo kan jouw team eruitzien",
     intro: "Elke AI-medewerker heeft één vak. Hij werkt in de systemen die je al hebt en vraagt het jou als iets niet klopt.",
     asksLabel: "Vraagt jou als",
     members: [
@@ -143,18 +144,18 @@ const commonNl: Common = {
     ],
     more: {
       title: "…en elk ander terugkerend werk",
-      text: "Wij bouwen je volgende AI-medewerker. Vertel ons welk werk elke dag terugkomt. Wij maken er een medewerker voor.",
+      text: "Jouw werk? Wij bouwen de collega. Vertel ons welk werk elke dag terugkomt, dan richten wij er een AI-medewerker voor in.",
       examples: ["Planning?", "Voorraad?", "Jouw werk?"],
     },
   },
   how: {
     eyebrow: "Zo werkt het",
-    title: "In vier stappen een medewerker in dienst",
+    title: "In vier stappen ingericht",
     steps: [
       { title: "Kennismaking", text: "Een kort gesprek: welk werk kost jou elke dag tijd?" },
       { title: "Demo met jouw data", text: "Je ziet de medewerker werken op jouw eigen orders of facturen." },
       { title: "Proefmaand €69", text: "Hij werkt een maand mee. Jij keurt goed en kijkt mee." },
-      { title: "In dienst", text: "Tevreden? Dan blijft hij. Maandelijks opzegbaar." },
+      { title: "Abonnement", text: "Tevreden? Wij beheren hem verder. Maandelijks opzegbaar." },
     ],
   },
   control: {
@@ -162,7 +163,7 @@ const commonNl: Common = {
     title: "Eerst keur jij alles goed",
     items: [
       "In het begin legt hij alles aan jou voor.",
-      "Twijfelt hij? Dan stuurt hij jou een bericht.",
+      "Twijfelt hij? Dan stopt hij en vraagt het jou.",
       "Hij werkt alleen met de toegang die jij geeft.",
       "Je data blijft van jou en we volgen de AVG.",
     ],
@@ -199,7 +200,7 @@ const commonNl: Common = {
     successWa: "Stuur ons een WhatsApp",
   },
   closing: {
-    title: "Welk werk geef jij als eerste uit handen?",
+    title: "Welk werk wil jij als eerste laten klaarzetten?",
     text: "In een kort gesprek kijken we samen welke AI-medewerker bij jou past.",
   },
   homeLabel: "Naar de homepage",
@@ -209,15 +210,15 @@ const commonNl: Common = {
 const aiElemanNl: AiTeamLandingDictionary = {
   ...commonNl,
   meta: {
-    title: "Huur een AI-medewerker — het uitzendbureau voor AI | UPU Dev",
+    title: "AI-medewerkers in je eigen systemen — je AI-implementatiepartner | UPU Dev",
     description:
-      "Het uitzendbureau voor AI-medewerkers. Huur een AI-medewerker die terugkerend werk overneemt: orders, facturen, planning. Eerste maand €69, daarna vanaf €249 p/m. Maandelijks opzegbaar.",
+      "Wij richten AI-medewerkers in binnen je bestaande systemen en beheren ze op abonnementsbasis. Hij zet klaar, jij keurt goed: orders, facturen, planning. Eerste maand €69, daarna vanaf €249 p/m. Maandelijks opzegbaar.",
   },
   hero: {
-    badge: "Het uitzendbureau voor AI-medewerkers",
-    title: "Huur een medewerker. Maar dan AI.",
+    badge: "Je AI-implementatiepartner",
+    title: "Hij zet klaar. Jij keurt goed.",
     subtitle:
-      "Een AI-medewerker neemt het werk over dat elke dag terugkomt: orders, facturen, planning. Hij werkt in de systemen die je al hebt. Je huurt hem per maand, net als een uitzendkracht.",
+      "Wij richten AI-medewerkers in binnen je bestaande systemen en beheren ze op abonnementsbasis. Zo heb je capaciteit voor het werk dat elke dag terugkomt: orders, facturen, planning.",
     priceNote: "Eerste maand €69 — daarna vanaf €249 p/m. Afgestemd op jouw werkvolume.",
   },
   whatsappText: "Hoi, ik wil meer weten over een AI-medewerker.",
@@ -254,8 +255,8 @@ const groothandelNl: AiTeamLandingDictionary = {
         { channel: "Voicemail", text: "Een klant spreekt een bestelling in." },
         { channel: "Mail", text: "Een foto van een handgeschreven lijst." },
       ],
-      afterLabel: "Klaar in je systeem",
-      after: ["Klant herkend", "Artikelen gekoppeld", "Aantallen nagekeken", "Bevestiging verstuurd"],
+      afterLabel: "Klaargezet in je systeem",
+      after: ["Klant herkend", "Artikelen gekoppeld", "Aantallen nagekeken", "Bevestiging klaar voor jouw akkoord"],
       upsell: "Tip: deze klant bestelt meestal ook olijfolie. Zal ik het voorstellen?",
     },
     boekhoud: {
@@ -276,7 +277,7 @@ const commonTr: Common = {
   cta: { primary: "Görüşme planlayın", whatsapp: "ya da bize WhatsApp'tan yazın" },
   team: {
     eyebrow: "AI ekibimiz",
-    title: "Yeni çalışma arkadaşlarınızla tanışın",
+    title: "Ekibiniz böyle görünebilir",
     intro: "Her AI elemanın tek bir işi vardır. Zaten kullandığınız sistemlerde çalışır ve bir şey tutmazsa size sorar.",
     asksLabel: "Size sorar, eğer",
     members: [
@@ -297,18 +298,18 @@ const commonTr: Common = {
     ],
     more: {
       title: "…ve tekrar eden her iş için",
-      text: "Sıradaki AI elemanınızı biz geliştiririz. Her gün tekrar eden işi bize anlatın, onun için bir eleman yapalım.",
+      text: "Sizin işiniz mi? Elemanını biz kurarız. Her gün tekrar eden işi bize anlatın, onun için bir AI eleman kuralım.",
       examples: ["Planlama?", "Stok?", "Sizin işiniz?"],
     },
   },
   how: {
     eyebrow: "Nasıl çalışır",
-    title: "Dört adımda işe başlayan bir eleman",
+    title: "Dört adımda kurulum",
     steps: [
       { title: "Tanışma", text: "Kısa bir görüşme: her gün hangi iş zamanınızı alıyor?" },
       { title: "Kendi verinizle demo", text: "Elemanın kendi siparişleriniz ya da faturalarınız üzerinde çalıştığını görürsünüz." },
       { title: "Deneme ayı €69", text: "Bir ay sizinle çalışır. Siz onaylar, takip edersiniz." },
-      { title: "İşe alım", text: "Memnun musunuz? O zaman kalır. Her ay iptal edilebilir." },
+      { title: "Abonelik", text: "Memnun musunuz? Yönetimini biz sürdürürüz. Her ay iptal edilebilir." },
     ],
   },
   control: {
@@ -316,7 +317,7 @@ const commonTr: Common = {
     title: "Önce her şeyi siz onaylarsınız",
     items: [
       "Başta her şeyi size sorar.",
-      "Emin değilse size mesaj atar.",
+      "Emin değilse durur ve size sorar.",
       "Yalnızca sizin verdiğiniz erişimle çalışır.",
       "Verileriniz sizindir; AVG (GDPR) kurallarına uyarız.",
     ],
@@ -353,7 +354,7 @@ const commonTr: Common = {
     successWa: "WhatsApp'tan yazın",
   },
   closing: {
-    title: "İlk hangi işi devretmek istersiniz?",
+    title: "İlk hangi işin hazırlanmasını istersiniz?",
     text: "Kısa bir görüşmede size hangi AI elemanın uyduğuna birlikte bakalım.",
   },
   homeLabel: "Ana sayfaya git",
@@ -363,15 +364,15 @@ const commonTr: Common = {
 const aiElemanTr: AiTeamLandingDictionary = {
   ...commonTr,
   meta: {
-    title: "Bir AI eleman tutun — AI elemanlar için iş ajansı | UPU Dev",
+    title: "Mevcut sistemlerinizde AI elemanlar — AI uygulama ortağınız | UPU Dev",
     description:
-      "AI elemanlar için iş ajansı. Sipariş, fatura, planlama gibi tekrar eden işleri devralan bir AI eleman tutun. İlk ay €69, sonra aylık €249'dan başlayan fiyatlarla. Her ay iptal edilebilir.",
+      "AI elemanları mevcut sistemlerinizin içinde kurar ve abonelikle yönetiriz. O hazırlar, siz onaylarsınız: sipariş, fatura, planlama. İlk ay €69, sonra aylık €249'dan başlayan fiyatlarla. Her ay iptal edilebilir.",
   },
   hero: {
-    badge: "AI elemanlar için iş ajansı",
-    title: "Bir eleman tutun. Ama AI olsun.",
+    badge: "AI uygulama ortağınız",
+    title: "O hazırlar. Siz onaylarsınız.",
     subtitle:
-      "AI eleman her gün tekrar eden işi devralır: siparişler, faturalar, planlama. Zaten kullandığınız sistemlerde çalışır. Onu aylık tutarsınız, tıpkı geçici bir eleman gibi.",
+      "AI elemanları mevcut sistemlerinizin içinde kurar ve abonelikle yönetiriz. Böylece her gün tekrar eden işler için kapasiteniz olur: siparişler, faturalar, planlama.",
     priceNote: "İlk ay €69 — sonra aylık €249'dan başlayan fiyatlarla. İş hacminize göre.",
   },
   whatsappText: "Merhaba, AI eleman hakkında bilgi almak istiyorum.",
@@ -408,8 +409,8 @@ const groothandelTr: AiTeamLandingDictionary = {
         { channel: "Sesli mesaj", text: "Bir müşteri siparişini sesli bırakıyor." },
         { channel: "E-posta", text: "Elle yazılmış bir listenin fotoğrafı." },
       ],
-      afterLabel: "Sisteminizde hazır",
-      after: ["Müşteri tanındı", "Ürünler eşleşti", "Adetler kontrol edildi", "Onay gönderildi"],
+      afterLabel: "Sisteminizde hazırlandı",
+      after: ["Müşteri tanındı", "Ürünler eşleşti", "Adetler kontrol edildi", "Onay mesajı onayınızı bekliyor"],
       upsell: "İpucu: bu müşteri genelde zeytinyağı da alıyor. Önereyim mi?",
     },
     boekhoud: {
@@ -430,7 +431,7 @@ const commonEn: Common = {
   cta: { primary: "Plan a call", whatsapp: "or send us a WhatsApp" },
   team: {
     eyebrow: "Our AI team",
-    title: "Meet your new colleagues",
+    title: "This is what your team could look like",
     intro: "Every AI employee has one job. It works in the systems you already use and asks you when something is off.",
     asksLabel: "Asks you when",
     members: [
@@ -451,18 +452,18 @@ const commonEn: Common = {
     ],
     more: {
       title: "…and any other recurring work",
-      text: "We build your next AI employee. Tell us which work comes back every day and we make an employee for it.",
+      text: "Your work? We build the colleague. Tell us which work comes back every day and we set up an AI employee for it.",
       examples: ["Planning?", "Stock?", "Your work?"],
     },
   },
   how: {
     eyebrow: "How it works",
-    title: "An employee at work in four steps",
+    title: "Set up in four steps",
     steps: [
       { title: "Intro call", text: "A short call: which work takes up your time every day?" },
       { title: "Demo with your data", text: "You see the employee work on your own orders or invoices." },
       { title: "Trial month €69", text: "It works with you for a month. You approve and follow along." },
-      { title: "Hired", text: "Happy? Then it stays. Cancel monthly." },
+      { title: "Subscription", text: "Happy? We keep managing it. Cancel monthly." },
     ],
   },
   control: {
@@ -470,7 +471,7 @@ const commonEn: Common = {
     title: "You approve everything first",
     items: [
       "At the start it checks everything with you.",
-      "In doubt? It sends you a message.",
+      "In doubt? It stops and asks you.",
       "It only works with the access you give it.",
       "Your data stays yours and we follow the GDPR.",
     ],
@@ -507,7 +508,7 @@ const commonEn: Common = {
     successWa: "Send us a WhatsApp",
   },
   closing: {
-    title: "Which work do you hand over first?",
+    title: "Which work should be prepared for you first?",
     text: "In a short call we look together at which AI employee fits you.",
   },
   homeLabel: "Go to the homepage",
@@ -517,15 +518,15 @@ const commonEn: Common = {
 const aiElemanEn: AiTeamLandingDictionary = {
   ...commonEn,
   meta: {
-    title: "Hire an AI employee — the staffing agency for AI | UPU Dev",
+    title: "AI employees in your own systems — your AI implementation partner | UPU Dev",
     description:
-      "The staffing agency for AI employees. Hire an AI employee that takes over recurring work: orders, invoices, planning. First month €69, then from €249 per month. Cancel monthly.",
+      "We set up AI employees inside your existing systems and manage them on a subscription basis. It prepares, you approve: orders, invoices, planning. First month €69, then from €249 per month. Cancel monthly.",
   },
   hero: {
-    badge: "The staffing agency for AI employees",
-    title: "Hire an employee. But make it AI.",
+    badge: "Your AI implementation partner",
+    title: "It prepares. You approve.",
     subtitle:
-      "An AI employee takes over the work that comes back every day: orders, invoices, planning. It works in the systems you already use. You hire it per month, just like a temp.",
+      "We set up AI employees inside your existing systems and manage them on a subscription basis. That gives you capacity for the work that comes back every day: orders, invoices, planning.",
     priceNote: "First month €69 — then from €249 per month. Based on your workload.",
   },
   whatsappText: "Hi, I would like to know more about an AI employee.",
@@ -562,8 +563,8 @@ const groothandelEn: AiTeamLandingDictionary = {
         { channel: "Voicemail", text: "A customer leaves an order by voice." },
         { channel: "Email", text: "A photo of a handwritten list." },
       ],
-      afterLabel: "Ready in your system",
-      after: ["Customer recognised", "Products matched", "Quantities checked", "Confirmation sent"],
+      afterLabel: "Prepared in your system",
+      after: ["Customer recognised", "Products matched", "Quantities checked", "Confirmation ready for your OK"],
       upsell: "Tip: this customer usually orders olive oil too. Shall I suggest it?",
     },
     boekhoud: {

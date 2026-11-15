@@ -7,7 +7,7 @@ import { AiTeamLanding } from "@/components/landing/ai-team-landing";
 
 /**
  * Reklam landing'i — genel AI-medewerker (eski reklamlar bu URL'ye gidiyor; URL değişmez).
- * 15 Kas 2026: yeni konsept ("het uitzendbureau voor AI-medewerkers") + model B fiyat; "gratis" yok.
+ * 15 Kas 2026: "AI-implementatiepartner" dili (uitzendbureau/huren YOK) + model B fiyat; "gratis" yok.
  * İnce, reklam-eşleşmeli içerik → noindex,follow + sitemap'te YOK.
  */
 const PATH = "ai-eleman";

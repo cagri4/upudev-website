@@ -1,7 +1,9 @@
 import type { Locale } from "@/lib/i18n";
 
 /**
- * Ana sayfa v2 — "het uitzendbureau voor AI-medewerkers" (13 Kas 2026).
+ * Ana sayfa v2 (13 Kas 2026) — 15 Kas 2026 dil düzeltmesi: "AI-implementatiepartner".
+ * IND iş planı G.5 "geen uitzendconstructie, geen detachering": "uitzendbureau", "huren", "in dienst",
+ * "neemt werk over / devralır / takes over" KULLANMA. AI hazırlar (zet klaar), insan onaylar (keurt goed).
  * Kaynak: ajans/musteriler/upu-dev/UPU-CATI-FRAMEWORK.md + SITE-REFERANS-ARTISAN.md
  *
  * Kurallar:
@@ -42,6 +44,8 @@ export type HomeAiDictionary = {
     intro: string;
     labels: { does: string; connects: string; asks: string };
     members: { title: string; role: string; does: string; connects: string; asks: string }[];
+    /** Son kart: "Jouw werk? Wij bouwen de collega." */
+    noteTitle: string;
     note: string;
   };
   /** 'Ziet. Denkt. Doet.' — AI'ın iç çalışması (12 Kas içeriği). 'how' = müşteri süreci, ayrı. */
@@ -88,10 +92,10 @@ export type HomeAiDictionary = {
 
 const nl: HomeAiDictionary = {
   hero: {
-    badge: "Het uitzendbureau voor AI-medewerkers",
-    title: "Huur een medewerker. Maar dan AI.",
+    badge: "Je AI-implementatiepartner",
+    title: "Hij zet klaar. Jij keurt goed.",
     subtitle:
-      "Wij leveren AI-medewerkers die het werk overnemen dat elke dag terugkomt: facturen, orders, planning. Ze werken naast jouw team, in de systemen die je al hebt. Jij huurt ze per maand, net als een uitzendkracht.",
+      "Wij richten AI-medewerkers in binnen je bestaande systemen en beheren ze op abonnementsbasis. Zo heb je capaciteit voor het werk dat elke dag terugkomt: facturen, orders, planning.",
     primaryCta: "Plan een gesprek",
     whatsappCta: "of stuur ons een WhatsApp",
     priceNote: "Eerste maand €69 — daarna vanaf €249 p/m. Maandelijks opzegbaar.",
@@ -109,18 +113,18 @@ const nl: HomeAiDictionary = {
       { title: "Tellen", text: "Voorraad tellen en daarna alles in de kassa bijwerken." },
       { title: "Afspraken", text: "Afspraken maken, verzetten en klanten eraan herinneren." },
     ],
-    outro: "Dit soort werk neemt een AI-medewerker van je over. Jij houdt tijd over voor je klanten en je zaak.",
+    outro: "Voor dit soort werk richten wij een AI-medewerker in. Hij zet het klaar, jij keurt goed — en jij houdt tijd over voor je klanten en je zaak.",
   },
   team: {
-    eyebrow: "Ons team",
-    title: "Kies je medewerker",
+    eyebrow: "AI-medewerkers",
+    title: "Zo kan jouw team eruitzien",
     intro: "Elke AI-medewerker heeft één vak. Hij doet dat werk elke dag, ook als het druk is.",
     labels: { does: "Wat hij doet", connects: "Werkt met", asks: "Vraagt jou als" },
     members: [
       {
         title: "Order-medewerker",
         role: "Verkoop",
-        does: "Leest bestellingen uit WhatsApp, mail en telefoon. Hij zet ze in je systeem en stuurt een bevestiging.",
+        does: "Leest bestellingen uit WhatsApp, mail en telefoon. Hij zet ze klaar in je systeem, met een bevestiging voor jouw akkoord.",
         connects: "WhatsApp, mail en je order- of ERP-systeem.",
         asks: "Een product of klant niet duidelijk is.",
       },
@@ -153,7 +157,8 @@ const nl: HomeAiDictionary = {
         asks: "Een prijswijziging groot is of een label niet reageert.",
       },
     ],
-    note: "Ander werk dat steeds terugkomt? Vertel het ons. We kijken samen welke medewerker past.",
+    noteTitle: "Jouw werk? Wij bouwen de collega.",
+    note: "Ander werk dat steeds terugkomt? Vertel het ons. Wij richten er een AI-medewerker voor in.",
   },
   think: {
     eyebrow: "Hoe een AI-medewerker werkt",
@@ -180,13 +185,13 @@ const nl: HomeAiDictionary = {
   },
   how: {
     eyebrow: "Zo werkt het",
-    title: "In vier stappen een medewerker in dienst",
+    title: "In vier stappen ingericht",
     intro: "Geen groot project. Je ziet eerst wat hij doet, daarna beslis je.",
     steps: [
       { id: "01", title: "Kennismaking", text: "Je plant een gesprek of stuurt ons een WhatsApp. We vragen: welk werk kost jou elke dag tijd?" },
       { id: "02", title: "Demo met jouw data", text: "Je ziet de medewerker werken op jouw eigen facturen of orders." },
       { id: "03", title: "Proefmaand €69", text: "Hij werkt een maand mee. Jij keurt goed. Aan het eind krijg je een overzicht van wat hij deed." },
-      { id: "04", title: "In dienst", text: "Tevreden? Dan blijft hij. Vanaf €249 p/m, maandelijks opzegbaar." },
+      { id: "04", title: "Abonnement", text: "Tevreden? Wij beheren hem verder. Vanaf €249 p/m, maandelijks opzegbaar." },
     ],
   },
   control: {
@@ -195,7 +200,7 @@ const nl: HomeAiDictionary = {
     intro: "Een nieuwe medewerker moet eerst je vertrouwen verdienen. Een AI-medewerker ook.",
     items: [
       { title: "Eerst goedkeuren", text: "In het begin legt hij alles aan jou voor. Pas als jij het goed vindt, doet hij meer zelf." },
-      { title: "Twijfel? Hij vraagt het", text: "Klopt iets niet of weet hij het niet zeker? Dan stuurt hij jou of je collega een bericht." },
+      { title: "Twijfelt hij? Dan stopt hij", text: "Klopt iets niet of weet hij het niet zeker? Dan stopt hij en vraagt het jou of je collega." },
       { title: "Jij bepaalt wat hij mag", text: "Hij werkt alleen met de toegang die jij hem geeft. Je kunt dat altijd aanpassen of stoppen." },
       { title: "Jouw data blijft van jou", text: "We gebruiken je gegevens alleen voor jouw werk en gaan ermee om volgens de AVG." },
     ],
@@ -271,8 +276,8 @@ const nl: HomeAiDictionary = {
         a: "De eerste maand kost €69. Daarna betaal je vanaf €249 per maand, afhankelijk van hoeveel werk er is. Je kunt elke maand opzeggen. Alle prijzen zijn excl. btw.",
       },
       {
-        q: "Neemt hij de baan van mijn personeel over?",
-        a: "Nee. Hij werkt naast je team en neemt het saaie, herhalende werk over. Zo houden jij en je mensen tijd over voor klanten.",
+        q: "Is dit een vervanging van personeel?",
+        a: "Nee. Wij leveren geen personeel en detacheren niemand. Wij richten software in die terugkerend werk klaarzet in je bestaande systemen. Jij en je mensen keuren goed en beslissen.",
       },
       {
         q: "Moet ik nieuwe software leren?",
@@ -297,7 +302,7 @@ const nl: HomeAiDictionary = {
     ],
   },
   closing: {
-    title: "Welk werk mag hij van je overnemen?",
+    title: "Welk werk komt bij jou elke dag terug?",
     text: "Plan een gesprek of stuur ons een WhatsApp. We denken mee en laten je zien wat een AI-medewerker voor jouw zaak kan doen.",
   },
   cta: {
@@ -309,10 +314,10 @@ const nl: HomeAiDictionary = {
 
 const tr: HomeAiDictionary = {
   hero: {
-    badge: "AI elemanlar için iş ajansı",
-    title: "Bir eleman tutun. Ama AI olsun.",
+    badge: "AI uygulama ortağınız",
+    title: "O hazırlar. Siz onaylarsınız.",
     subtitle:
-      "Her gün tekrar eden işleri devralan AI elemanlar sağlıyoruz: faturalar, siparişler, planlama. Ekibinizin yanında, zaten kullandığınız sistemlerde çalışırlar. Onları aylık tutarsınız, tıpkı geçici bir eleman gibi.",
+      "AI elemanları mevcut sistemlerinizin içinde kurar ve abonelikle yönetiriz. Böylece her gün tekrar eden işler için kapasiteniz olur: faturalar, siparişler, planlama.",
     primaryCta: "Görüşme planlayın",
     whatsappCta: "ya da bize WhatsApp'tan yazın",
     priceNote: "İlk ay €69 — sonra aylık €249'dan başlayan fiyatlarla. Her ay iptal edilebilir.",
@@ -330,18 +335,18 @@ const tr: HomeAiDictionary = {
       { title: "Sayım", text: "Stok saymak, sonra her şeyi kasaya işlemek." },
       { title: "Randevular", text: "Randevu almak, ertelemek ve müşterilere hatırlatmak." },
     ],
-    outro: "Bu tür işleri bir AI eleman sizden devralır. Size müşterileriniz ve işiniz için zaman kalır.",
+    outro: "Bu tür işler için bir AI eleman kurarız. O hazırlar, siz onaylarsınız — size müşterileriniz ve işiniz için zaman kalır.",
   },
   team: {
-    eyebrow: "Ekibimiz",
-    title: "Elemanınızı seçin",
+    eyebrow: "AI elemanlar",
+    title: "Ekibiniz böyle görünebilir",
     intro: "Her AI elemanın tek bir uzmanlığı var. O işi her gün yapar, yoğun günlerde de.",
     labels: { does: "Ne yapar", connects: "Neyle çalışır", asks: "Size ne zaman sorar" },
     members: [
       {
         title: "Order-medewerker (Sipariş Elemanı)",
         role: "Satış",
-        does: "WhatsApp, e-posta ve telefondan gelen siparişleri okur, sisteme girer ve onay gönderir.",
+        does: "WhatsApp, e-posta ve telefondan gelen siparişleri okur ve sisteminizde hazırlar; müşteriye gidecek onay mesajı da onayınızı bekler.",
         connects: "WhatsApp, e-posta ve sipariş ya da ERP sisteminiz.",
         asks: "Bir ürün ya da müşteri net olmadığında.",
       },
@@ -374,7 +379,8 @@ const tr: HomeAiDictionary = {
         asks: "Fiyat değişikliği büyük olduğunda ya da bir etiket yanıt vermediğinde.",
       },
     ],
-    note: "Sürekli tekrar eden başka bir iş mi var? Bize anlatın, hangi elemanın uyduğuna birlikte bakalım.",
+    noteTitle: "Sizin işiniz mi? Elemanını biz kurarız.",
+    note: "Sürekli tekrar eden başka bir iş mi var? Bize anlatın, onun için bir AI eleman kuralım.",
   },
   think: {
     eyebrow: "Bir AI eleman nasıl çalışır",
@@ -401,13 +407,13 @@ const tr: HomeAiDictionary = {
   },
   how: {
     eyebrow: "Nasıl çalışır",
-    title: "Dört adımda işe başlayan bir eleman",
+    title: "Dört adımda kurulum",
     intro: "Büyük bir proje yok. Önce ne yaptığını görürsünüz, sonra karar verirsiniz.",
     steps: [
       { id: "01", title: "Tanışma", text: "Görüşme planlarsınız ya da WhatsApp'tan yazarsınız. Soruyoruz: her gün en çok hangi iş zamanınızı alıyor?" },
       { id: "02", title: "Kendi verinizle demo", text: "Elemanın kendi faturalarınız ya da siparişleriniz üzerinde çalıştığını görürsünüz." },
       { id: "03", title: "Deneme ayı €69", text: "Bir ay sizinle çalışır. Siz onaylarsınız. Ay sonunda ne yaptığının özetini alırsınız." },
-      { id: "04", title: "İşe alım", text: "Memnun musunuz? O zaman kalır. Aylık €249'dan başlayan fiyatlarla, her ay iptal edilebilir." },
+      { id: "04", title: "Abonelik", text: "Memnun musunuz? Yönetimini biz sürdürürüz. Aylık €249'dan başlayan fiyatlarla, her ay iptal edilebilir." },
     ],
   },
   control: {
@@ -416,7 +422,7 @@ const tr: HomeAiDictionary = {
     intro: "Yeni bir eleman önce güveninizi kazanmalı. AI eleman da öyle.",
     items: [
       { title: "Önce onay", text: "Başta her şeyi size sorar. Siz uygun gördükçe daha fazlasını kendisi yapar." },
-      { title: "Emin değilse sorar", text: "Bir şey tutmuyorsa ya da emin değilse size veya çalışanınıza mesaj atar." },
+      { title: "Emin değilse durur", text: "Bir şey tutmuyorsa ya da emin değilse durur ve size veya çalışanınıza sorar." },
       { title: "Neye erişeceğine siz karar verirsiniz", text: "Yalnızca sizin verdiğiniz erişimle çalışır. Bunu her zaman değiştirebilir ya da durdurabilirsiniz." },
       { title: "Veriniz sizindir", text: "Verilerinizi yalnızca sizin işiniz için kullanırız ve AVG'ye (GDPR) uygun davranırız." },
     ],
@@ -492,8 +498,8 @@ const tr: HomeAiDictionary = {
         a: "İlk ay €69. Sonrası iş miktarına göre aylık €249'dan başlar. Her ay iptal edebilirsiniz. Tüm fiyatlar KDV (btw) hariçtir.",
       },
       {
-        q: "Çalışanlarımın işini mi alacak?",
-        a: "Hayır. Ekibinizin yanında çalışır ve sıkıcı, tekrar eden işleri devralır. Size ve çalışanlarınıza müşteriler için zaman kalır.",
+        q: "Bu, personelin yerine mi geçiyor?",
+        a: "Hayır. Personel sağlamıyor, kimseyi geçici olarak çalıştırmıyoruz. Tekrar eden işi mevcut sistemlerinizde hazırlayan bir yazılım kuruyoruz. Onayı ve kararı siz ve çalışanlarınız verirsiniz.",
       },
       {
         q: "Yeni bir program öğrenmem gerekiyor mu?",
@@ -518,7 +524,7 @@ const tr: HomeAiDictionary = {
     ],
   },
   closing: {
-    title: "Hangi işi sizden devralsın?",
+    title: "Sizde her gün hangi iş tekrar ediyor?",
     text: "Bir görüşme planlayın ya da bize WhatsApp'tan yazın. Birlikte düşünelim ve bir AI elemanın işletmeniz için neler yapabileceğini gösterelim.",
   },
   cta: {
@@ -530,10 +536,10 @@ const tr: HomeAiDictionary = {
 
 const en: HomeAiDictionary = {
   hero: {
-    badge: "The staffing agency for AI employees",
-    title: "Hire an employee. But make it AI.",
+    badge: "Your AI implementation partner",
+    title: "It prepares. You approve.",
     subtitle:
-      "We supply AI employees that take over the work that comes back every day: invoices, orders, planning. They work alongside your team, in the systems you already use. You hire them per month, like a temp.",
+      "We set up AI employees inside your existing systems and manage them on a subscription basis. That gives you capacity for the work that comes back every day: invoices, orders, planning.",
     primaryCta: "Plan a call",
     whatsappCta: "or send us a WhatsApp",
     priceNote: "First month €69 — then from €249/mo. Cancel monthly.",
@@ -551,18 +557,18 @@ const en: HomeAiDictionary = {
       { title: "Counting", text: "Counting stock and then updating everything in the till." },
       { title: "Appointments", text: "Booking, moving and reminding customers of appointments." },
     ],
-    outro: "An AI employee takes this kind of work off your hands. You get time back for your customers and your business.",
+    outro: "For this kind of work we set up an AI employee. It prepares, you approve — and you get time back for your customers and your business.",
   },
   team: {
-    eyebrow: "Our team",
-    title: "Choose your employee",
+    eyebrow: "AI employees",
+    title: "This is what your team could look like",
     intro: "Each AI employee has one job. They do it every day, also when it's busy.",
     labels: { does: "What they do", connects: "Works with", asks: "Asks you when" },
     members: [
       {
         title: "Order-medewerker (Order employee)",
         role: "Sales",
-        does: "Reads orders from WhatsApp, email and phone, enters them in your system and sends a confirmation.",
+        does: "Reads orders from WhatsApp, email and phone, prepares them in your system, with a confirmation ready for your OK.",
         connects: "WhatsApp, email and your order or ERP system.",
         asks: "A product or customer isn't clear.",
       },
@@ -595,7 +601,8 @@ const en: HomeAiDictionary = {
         asks: "A price change is large or a label doesn't respond.",
       },
     ],
-    note: "Other work that keeps coming back? Tell us. We'll look together at which employee fits.",
+    noteTitle: "Your work? We build the colleague.",
+    note: "Other work that keeps coming back? Tell us. We'll set up an AI employee for it.",
   },
   think: {
     eyebrow: "How an AI employee works",
@@ -610,13 +617,13 @@ const en: HomeAiDictionary = {
   },
   how: {
     eyebrow: "How it works",
-    title: "An employee on board in four steps",
+    title: "Set up in four steps",
     intro: "No big project. You see what they do first, then you decide.",
     steps: [
       { id: "01", title: "Intro", text: "You plan a call or send us a WhatsApp. We ask: what work takes up your time every day?" },
       { id: "02", title: "Demo with your data", text: "You see the employee work on your own invoices or orders." },
       { id: "03", title: "Trial month €69", text: "They work with you for a month. You approve. At the end you get an overview of what they did." },
-      { id: "04", title: "Hired", text: "Happy? Then they stay. From €249/mo, cancel monthly." },
+      { id: "04", title: "Subscription", text: "Happy? We keep managing it. From €249/mo, cancel monthly." },
     ],
   },
   control: {
@@ -625,7 +632,7 @@ const en: HomeAiDictionary = {
     intro: "A new employee has to earn your trust first. An AI employee too.",
     items: [
       { title: "Approve first", text: "At the start they check everything with you. Only when you're happy do they do more on their own." },
-      { title: "In doubt? They ask", text: "Something doesn't add up or they're not sure? They send you or your colleague a message." },
+      { title: "In doubt? It stops", text: "Something doesn't add up or it's not sure? It stops and asks you or your colleague." },
       { title: "You decide what they can do", text: "They only work with the access you give them. You can change or stop that any time." },
       { title: "Your data stays yours", text: "We only use your data for your work and handle it in line with the GDPR." },
     ],
@@ -701,8 +708,8 @@ const en: HomeAiDictionary = {
         a: "The first month costs €69. After that it's from €249 per month, depending on how much work there is. You can cancel every month. All prices are excl. VAT.",
       },
       {
-        q: "Will it take my staff's jobs?",
-        a: "No. It works alongside your team and takes over the dull, repetitive work. You and your people get time back for customers.",
+        q: "Is this a replacement for staff?",
+        a: "No. We don't supply staff or second anyone. We set up software that prepares recurring work in your existing systems. You and your people approve and decide.",
       },
       {
         q: "Do I need to learn new software?",
@@ -727,7 +734,7 @@ const en: HomeAiDictionary = {
     ],
   },
   closing: {
-    title: "What work can they take off your hands?",
+    title: "What work comes back every day for you?",
     text: "Plan a call or send us a WhatsApp. We'll think along and show you what an AI employee can do for your business.",
   },
   cta: {

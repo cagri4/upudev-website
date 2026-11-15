@@ -3,9 +3,9 @@ import { homeTr, type HomeDictionary } from "@/content/locales/tr/home";
 export const homeNl: HomeDictionary = {
   ...homeTr,
   meta: {
-    title: "UPU Dev | AI-medewerkers — Huur een medewerker, maar dan AI",
+    title: "UPU Dev | AI-implementatiepartner — Hij zet klaar, jij keurt goed",
     description:
-      "Het uitzendbureau voor AI-medewerkers. Huur een AI-medewerker die het terugkerende werk overneemt: facturen, orders, planning. Eerste maand €69, daarna vanaf €249 p/m. Maandelijks opzegbaar.",
+      "Wij richten AI-medewerkers in binnen je bestaande systemen en beheren ze op abonnementsbasis. Capaciteit voor terugkerend werk: facturen, orders, planning. Eerste maand €69, daarna vanaf €249 p/m. Maandelijks opzegbaar.",
   },
   partners: {
     ...homeTr.partners,
