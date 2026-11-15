@@ -13,11 +13,13 @@ import { PartnersGrid } from "@/components/partners-grid";
 import { CtaPair } from "@/components/landing/cta-pair";
 import { COPADAM } from "@/content/ai-team-landing";
 
-/** Ons team kartları: reklamdaki çöp adamlar. Order/Boekhoud kendi robotu; henüz görseli olmayan roller soluk '?' robot. */
-function teamRobot(title: string) {
-  if (title.startsWith("Order")) return COPADAM.order;
-  if (title.startsWith("Boekhoud")) return COPADAM.boekhoud;
-  return COPADAM.vraag;
+/**
+ * Ons team kartları: reklamdaki çöp adamlar, home-ai.ts'deki üye sırasıyla (her dilde aynı sıra):
+ * Order · Boekhoud · Planner · Teller · Etiketbeheerder. Listede robotu olmayan yeni rol → soluk '?' robot.
+ */
+const TEAM_ROBOTS = [COPADAM.order, COPADAM.boekhoud, COPADAM.planner, COPADAM.teller, COPADAM.etiketbeheerder];
+function teamRobot(index: number) {
+  return TEAM_ROBOTS[index] ?? COPADAM.vraag;
 }
 
 /**
@@ -140,7 +142,7 @@ export default async function HomeLocalePage({ params }: { params: Promise<{ loc
             <p className="io-lead-small">{dict.team.intro}</p>
           </div>
           <div className="mt-8 grid gap-4 md:grid-cols-2 lg:grid-cols-3">
-            {dict.team.members.map((m) => (
+            {dict.team.members.map((m, i) => (
               <article key={m.title} className="flex flex-col rounded-2xl border border-neutral-200 bg-white p-6">
                 <div className="flex justify-end">
                   <span className="rounded-full bg-slate-100 px-2.5 py-1 text-xs font-semibold uppercase tracking-wider text-slate-600">
@@ -148,7 +150,7 @@ export default async function HomeLocalePage({ params }: { params: Promise<{ loc
                   </span>
                 </div>
                 {(() => {
-                  const robot = teamRobot(m.title);
+                  const robot = teamRobot(i);
                   return (
                     <div className="mt-2 flex justify-center">
                       <Image src={robot.src} alt="" width={robot.w} height={robot.h} sizes="160px" className="h-[260px] w-auto" />
