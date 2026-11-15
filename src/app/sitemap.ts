@@ -67,5 +67,22 @@ export default function sitemap(): MetadataRoute.Sitemap {
     }
   }
 
+  // Groothandel reklam hedef sayfası — yalnız NL + TR Google'a açık (Çağrı 15 Kas 2026).
+  const groothandelPath = "ai-medewerkers/groothandel";
+  const groothandelLanguages = {
+    nl: localeUrl("nl", groothandelPath),
+    tr: localeUrl("tr", groothandelPath),
+    "x-default": localeUrl("nl", groothandelPath),
+  };
+  for (const locale of ["nl", "tr"] as const) {
+    entries.push({
+      url: localeUrl(locale, groothandelPath),
+      lastModified: now,
+      changeFrequency: "monthly",
+      priority: 0.8,
+      alternates: { languages: groothandelLanguages },
+    });
+  }
+
   return entries;
 }

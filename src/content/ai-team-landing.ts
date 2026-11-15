@@ -247,7 +247,7 @@ const groothandelNl: AiTeamLandingDictionary = {
       name: "Order-medewerker",
       beforeLabel: "Binnengekomen",
       before: [
-        { channel: "WhatsApp", text: "“Zelfde als vorige week, maar 2 dozen extra.”" },
+        { channel: "WhatsApp", text: "“Zelfde als vorige week, maar 2 dozen minder.”" },
         { channel: "Voicemail", text: "Een klant spreekt een bestelling in." },
         { channel: "Mail", text: "Een foto van een handgeschreven lijst." },
       ],
@@ -401,7 +401,7 @@ const groothandelTr: AiTeamLandingDictionary = {
       name: "Order-medewerker",
       beforeLabel: "Gelenler",
       before: [
-        { channel: "WhatsApp", text: "“Geçen haftanın aynısı, ama 2 koli fazla.”" },
+        { channel: "WhatsApp", text: "“Geçen haftanın aynısı, ama 2 koli eksik.”" },
         { channel: "Sesli mesaj", text: "Bir müşteri siparişini sesli bırakıyor." },
         { channel: "E-posta", text: "Elle yazılmış bir listenin fotoğrafı." },
       ],
@@ -555,7 +555,7 @@ const groothandelEn: AiTeamLandingDictionary = {
       name: "Order-medewerker",
       beforeLabel: "Received",
       before: [
-        { channel: "WhatsApp", text: "“Same as last week, but 2 extra boxes.”" },
+        { channel: "WhatsApp", text: "“Same as last week, but 2 boxes fewer.”" },
         { channel: "Voicemail", text: "A customer leaves an order by voice." },
         { channel: "Email", text: "A photo of a handwritten list." },
       ],
