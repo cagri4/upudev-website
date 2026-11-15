@@ -31,7 +31,7 @@ export async function generateMetadata({ params }: { params: Promise<{ locale: s
       siteName: "UPU Dev",
       type: "website",
       locale,
-      images: [{ url: "/robots/order-medewerker.webp", width: 564, height: 786 }],
+      images: [{ url: "/robots/copadam/og-team.jpg", width: 1200, height: 630 }],
     },
     robots: { index: false, follow: true },
   };

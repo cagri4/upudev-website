@@ -2,7 +2,7 @@ import Image from "next/image";
 import Link from "next/link";
 import type { Locale } from "@/lib/i18n";
 import {
-  ROBOT_IMAGES,
+  COPADAM,
   aiTeamWhatsAppHref,
   type AiTeamLandingDictionary,
 } from "@/content/ai-team-landing";
@@ -14,7 +14,8 @@ import { SiteFooter } from "@/components/site-footer";
 /**
  * Ortak reklam landing'i — "het uitzendbureau voor AI-medewerkers".
  * Kullananlar: /[locale]/ai-eleman (variant "ai-eleman") ve /[locale]/ai-medewerkers/groothandel (variant "groothandel").
- * Robot görselleri: ajans upu-robots/out (A · Scherm; Order = teal, Boekhoud = paars) → public/robots/.
+ * Robot görselleri: reklamın A versiyonundaki çöp adamlar (ajans upu-robots/out/web-copadam → public/robots/copadam/).
+ * Order = teal, Boekhoud = paars. "…en elk ander terugkerend werk" bölümü reklamın kapanış karesiyle aynı kompozisyon.
  */
 
 type Variant = "ai-eleman" | "groothandel";
@@ -94,13 +95,16 @@ export function AiTeamLanding({
               />
               <p className="mt-5 text-sm font-medium text-neutral-600">{dict.hero.priceNote}</p>
             </div>
-            <div className="relative mx-auto flex w-full max-w-md items-end justify-center">
-              <div className="relative w-1/2 -rotate-2 overflow-hidden rounded-3xl border-[3px] border-[#1C1612] shadow-[6px_6px_0_#1C1612]">
-                <Image src={ROBOT_IMAGES.order} alt={orderMember.name} width={564} height={786} priority className="h-auto w-full" />
-              </div>
-              <div className="relative -ml-4 mt-10 w-1/2 rotate-2 overflow-hidden rounded-3xl border-[3px] border-[#1C1612] shadow-[6px_6px_0_#1C1612]">
-                <Image src={ROBOT_IMAGES.boekhoud} alt={boekhoudMember.name} width={564} height={786} priority className="h-auto w-full" />
-              </div>
+            <div className="mx-auto w-full max-w-[420px] md:max-w-[500px]">
+              <Image
+                src={COPADAM.team.src}
+                alt={`${orderMember.name} & ${boekhoudMember.name}`}
+                width={COPADAM.team.w}
+                height={COPADAM.team.h}
+                priority
+                sizes="(min-width: 768px) 500px, 92vw"
+                className="h-auto w-full"
+              />
             </div>
           </div>
         </section>
@@ -116,9 +120,9 @@ export function AiTeamLanding({
               <div className="mt-10 grid gap-6 lg:grid-cols-2">
                 {/* Order-medewerker */}
                 <article className="rounded-3xl border border-neutral-200 p-5 md:p-7">
-                  <div className="flex items-center gap-3">
-                    <Image src={ROBOT_IMAGES.order} alt="" width={56} height={78} className="h-14 w-auto rounded-xl border-2 border-[#1C1612]" />
-                    <h3 className="text-xl font-bold text-[#1D7F75]">{story.order.name}</h3>
+                  <h3 className="text-xl font-bold text-[#1D7F75]">{story.order.name}</h3>
+                  <div className="mx-auto mt-4 max-w-[300px]">
+                    <Image src={COPADAM.orders.src} alt="" width={COPADAM.orders.w} height={COPADAM.orders.h} sizes="300px" className="h-auto w-full" />
                   </div>
                   <p className="mt-6 text-xs font-semibold uppercase tracking-wider text-neutral-500">{story.order.beforeLabel}</p>
                   <ul className="mt-2 space-y-2">
@@ -148,9 +152,9 @@ export function AiTeamLanding({
 
                 {/* Boekhoud-medewerker */}
                 <article className="rounded-3xl border border-neutral-200 p-5 md:p-7">
-                  <div className="flex items-center gap-3">
-                    <Image src={ROBOT_IMAGES.boekhoud} alt="" width={56} height={78} className="h-14 w-auto rounded-xl border-2 border-[#1C1612]" />
-                    <h3 className="text-xl font-bold text-[#634287]">{story.boekhoud.name}</h3>
+                  <h3 className="text-xl font-bold text-[#634287]">{story.boekhoud.name}</h3>
+                  <div className="mt-4">
+                    <Image src={COPADAM.prijsverschil.src} alt="" width={COPADAM.prijsverschil.w} height={COPADAM.prijsverschil.h} sizes="(min-width: 1024px) 520px, 92vw" className="h-auto w-full" />
                   </div>
                   <p className="mt-6 text-xs font-semibold uppercase tracking-wider text-neutral-500">{story.boekhoud.beforeLabel}</p>
                   <div className="mt-2 rounded-xl border border-neutral-200 bg-neutral-50 px-4 py-3 font-mono text-sm text-neutral-700">
@@ -178,9 +182,16 @@ export function AiTeamLanding({
 
             <div className="mt-10 grid gap-6 md:grid-cols-2">
               {dict.team.members.map((m) => (
-                <article key={m.name} className="grid grid-cols-[110px_1fr] gap-5 rounded-3xl border border-neutral-200 p-5 md:grid-cols-[150px_1fr] md:p-6">
-                  <div className="overflow-hidden rounded-2xl border-[3px] border-[#1C1612]">
-                    <Image src={ROBOT_IMAGES[m.robot]} alt={m.name} width={564} height={786} className="h-auto w-full" />
+                <article key={m.name} className="grid gap-5 rounded-3xl border border-neutral-200 p-5 sm:grid-cols-[160px_1fr] sm:items-center md:p-6">
+                  <div className="flex justify-center">
+                    <Image
+                      src={COPADAM[m.robot].src}
+                      alt={m.name}
+                      width={COPADAM[m.robot].w}
+                      height={COPADAM[m.robot].h}
+                      sizes="160px"
+                      className="h-[260px] w-auto"
+                    />
                   </div>
                   <div>
                     <p className="text-xs font-semibold uppercase tracking-wider text-neutral-500">{m.role}</p>
@@ -194,30 +205,37 @@ export function AiTeamLanding({
               ))}
             </div>
 
-            {/* …en elk ander terugkerend werk — soluk '?' robotlar */}
-            <div className="mt-6 grid items-center gap-8 rounded-3xl border-2 border-dashed border-neutral-300 bg-neutral-50 p-6 md:grid-cols-[1fr_1.1fr] md:p-10">
-              <div className="flex justify-center gap-3" aria-hidden>
-                {dict.team.more.examples.map((ex, i) => (
-                  <figure key={ex} className={`w-1/3 max-w-[130px] opacity-80 ${i === 1 ? "-translate-y-3" : ""}`}>
-                    <div className="overflow-hidden rounded-2xl border-2 border-neutral-300">
-                      <Image src={ROBOT_IMAGES.vraag} alt="" width={564} height={786} className="h-auto w-full" />
-                    </div>
-                    <figcaption className="mt-2 text-center text-sm font-semibold text-neutral-500">{ex}</figcaption>
-                  </figure>
-                ))}
-              </div>
-              <div>
-                <h3 className="text-2xl font-bold tracking-tight text-[#122d54] md:text-3xl">{dict.team.more.title}</h3>
-                <p className="mt-3 text-lg leading-relaxed text-neutral-700">{dict.team.more.text}</p>
-                <CtaPair
-                  className="mt-6"
-                  primaryLabel={dict.cta.primary}
-                  primaryHref={formHref}
-                  waHref={waHref}
-                  waLabel={dict.cta.whatsapp}
-                  waSource={src.hero}
+            {/* …en elk ander terugkerend werk — reklamın kapanış karesiyle aynı kompozisyon:
+                ortada el ele Order + Boekhoud, iki yanda soluk '?' robotlar, altında satır ve "Plan een gesprek". */}
+            <div className={`mt-6 rounded-3xl ${CREAM} px-5 py-10 text-center md:px-10 md:py-14`}>
+              <div className="mx-auto w-full max-w-[560px]">
+                <Image
+                  src={COPADAM.teamPlusVraag.src}
+                  alt=""
+                  width={COPADAM.teamPlusVraag.w}
+                  height={COPADAM.teamPlusVraag.h}
+                  sizes="(min-width: 768px) 560px, 92vw"
+                  className="h-auto w-full"
                 />
               </div>
+              <h3 className="mt-6 text-2xl font-bold tracking-tight text-[#122d54] md:text-3xl">{dict.team.more.title}</h3>
+              <p className="mx-auto mt-3 max-w-xl text-lg leading-relaxed text-neutral-700">{dict.team.more.text}</p>
+              <ul className="mt-5 flex flex-wrap justify-center gap-2" aria-label={dict.team.more.title}>
+                {dict.team.more.examples.map((ex) => (
+                  <li key={ex} className="rounded-full border border-dashed border-neutral-400 bg-white/60 px-3 py-1 text-sm font-semibold text-neutral-500">
+                    {ex}
+                  </li>
+                ))}
+              </ul>
+              <CtaPair
+                className="mt-7"
+                align="center"
+                primaryLabel={dict.cta.primary}
+                primaryHref={formHref}
+                waHref={waHref}
+                waLabel={dict.cta.whatsapp}
+                waSource={src.hero}
+              />
             </div>
           </div>
         </section>

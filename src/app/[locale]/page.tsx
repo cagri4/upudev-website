@@ -11,6 +11,14 @@ import { SiteFooter } from "@/components/site-footer";
 import { WhatsAppLink } from "@/components/landing/whatsapp-link";
 import { PartnersGrid } from "@/components/partners-grid";
 import { CtaPair } from "@/components/landing/cta-pair";
+import { COPADAM } from "@/content/ai-team-landing";
+
+/** Ons team kartları: reklamdaki çöp adamlar. Order/Boekhoud kendi robotu; henüz görseli olmayan roller soluk '?' robot. */
+function teamRobot(title: string) {
+  if (title.startsWith("Order")) return COPADAM.order;
+  if (title.startsWith("Boekhoud")) return COPADAM.boekhoud;
+  return COPADAM.vraag;
+}
 
 /**
  * Ana sayfa v2 — "het uitzendbureau voor AI-medewerkers" (13 Kas 2026).
@@ -134,14 +142,19 @@ export default async function HomeLocalePage({ params }: { params: Promise<{ loc
           <div className="mt-8 grid gap-4 md:grid-cols-2 lg:grid-cols-3">
             {dict.team.members.map((m) => (
               <article key={m.title} className="flex flex-col rounded-2xl border border-neutral-200 bg-white p-6">
-                <div className="flex items-start justify-between gap-3">
-                  <div className="flex h-11 w-11 shrink-0 items-center justify-center rounded-full bg-[#122d54] text-sm font-bold text-white">
-                    AI
-                  </div>
+                <div className="flex justify-end">
                   <span className="rounded-full bg-slate-100 px-2.5 py-1 text-xs font-semibold uppercase tracking-wider text-slate-600">
                     {m.role}
                   </span>
                 </div>
+                {(() => {
+                  const robot = teamRobot(m.title);
+                  return (
+                    <div className="mt-2 flex justify-center">
+                      <Image src={robot.src} alt="" width={robot.w} height={robot.h} sizes="160px" className="h-[260px] w-auto" />
+                    </div>
+                  );
+                })()}
                 <h3 className="mt-4 text-xl font-bold tracking-tight text-neutral-900">{m.title}</h3>
                 <dl className="mt-3 space-y-3 text-sm leading-relaxed">
                   <div>
