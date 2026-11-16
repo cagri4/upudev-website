@@ -25,23 +25,6 @@ export type HomeDictionary = {
     ctaSecondary: string;
     stats: { value: string; label: string; note: string }[];
   };
-  ongoing: {
-    badge: string;
-    openLabel: string;
-    soonLabel: string;
-    title: string;
-    subtitle: string;
-    items: {
-      slug?: string;
-      href?: string;
-      name: string;
-      category: string;
-      summary: string;
-      image: string;
-      featured?: boolean;
-      featuredBadge?: string;
-    }[];
-  };
   services: {
     title: string;
     intro: string;
@@ -123,78 +106,6 @@ export const homeTr: HomeDictionary = {
       { value: "50+", label: "Tamamlanan Proje", note: "Farklı sektörlerde hayata geçirilen çözümler" },
       { value: "15+", label: "Yıllık Deneyim", note: "Yazılım ve dijital ürün geliştirme tecrübesi" },
       { value: "24/7", label: "Aktif Destek", note: "Canlı sistemler için kesintisiz takip" },
-    ],
-  },
-  ongoing: {
-    badge: "Portföy",
-    openLabel: "Detay sayfasını aç",
-    soonLabel: "Detay sayfası yakında",
-    title: "SaaS Projeleri ve Çalışmalar",
-    subtitle: "Şu an aktif geliştirmede olan ürün ve çözüm hatlarımızı paylaşıyoruz.",
-    items: [
-      {
-        href: "/dijital-ekibiniz",
-        name: "UPU Dijital Ekibiniz",
-        category: "Tek Pakette Dijital Ekip",
-        summary:
-          "Yapay zeka destekli satış, sosyal medya, web ve içerik — tek pakette ekip. Google, Facebook, Instagram reklam yönetimi dahil. Hollanda'daki işletmeniz için B2B portal, e-ticaret kurulum ve sektörel SaaS çözümleri tek partner ile.",
-        image:
-          "https://images.unsplash.com/photo-1556761175-5973dc0f32e7?auto=format&fit=crop&w=1200&q=80",
-      },
-      {
-        slug: "bayi-yonetimi",
-        name: "Bayi Yönetimi",
-        category: "Dealer / Distributor SaaS",
-        summary:
-          "Bayi onboarding, sipariş, stok, komisyon ve performans analitiğini tek panelde toplayan kapsamlı bir yönetim altyapısıdır. Üretici ve toptancı ekiplerinin operasyon takibini sadeleştirir, manuel süreçleri azaltır ve karar alma hızını artırır.",
-        image:
-          "https://images.unsplash.com/photo-1556740749-887f6717d7e4?auto=format&fit=crop&w=1200&q=80",
-      },
-      {
-        slug: "muhasebe-asistani",
-        name: "Muhasebe Asistanı",
-        category: "AI Destekli Finans Operasyonları",
-        summary:
-          "Belge işleme, gider sınıflandırma, özet raporlama ve temel muhasebe operasyonlarını AI desteğiyle hızlandırır. Özellikle KOBİ ekiplerinde tekrar eden finans işlerini azaltmayı, veri doğruluğunu artırmayı ve günlük takibi kolaylaştırmayı hedefler.",
-        image:
-          "https://images.unsplash.com/photo-1554224154-26032ffc0d07?auto=format&fit=crop&w=1200&q=80",
-      },
-      {
-        slug: "emlak-danismani-yardimcisi",
-        name: "Emlak Danışmanı Yardımcısı",
-        category: "Emlak Operasyon SaaS",
-        summary:
-          "İlan yönetimi, müşteri takibi, randevu planlama, doküman kontrolü ve otomatik iletişim akışlarını tek bir sistemde birleştirir. Danışmanların saha ve ofis tarafındaki süreçlerini görünür hale getirerek daha düzenli ve izlenebilir bir çalışma modeli sunar.",
-        image:
-          "https://images.unsplash.com/photo-1560518883-ce09059eeffa?auto=format&fit=crop&w=1200&q=80",
-      },
-      {
-        slug: "restoran-asistani",
-        name: "Restoran Asistanı",
-        category: "Restoran & Catering SaaS",
-        summary:
-          "Restoran, cafe ve catering işletmelerinin sipariş, rezervasyon, masa, stok ve menü süreçlerini tek panelde birleştiren AI destekli operasyon platformudur. WhatsApp ve web üzerinden çoklu dil müşteri asistanıyla rezervasyon ve sipariş akışını otomatize eder.",
-        image:
-          "https://images.unsplash.com/photo-1517248135467-4c7edcad34c4?auto=format&fit=crop&w=1200&q=80",
-      },
-      {
-        slug: "agent-ai-calismalari",
-        name: "Agent AI Çalışmaları",
-        category: "AI Agent Implementasyonu",
-        summary:
-          "HR, onboarding, müşteri hizmetleri ve süreç otomasyonu için görev odaklı agent mimarileri geliştiriyoruz. Amaç, işletmelerin yüksek hacimli operasyonlarında insan ekibin yükünü düşürmek, yanıt hızını artırmak ve standart bir hizmet kalitesi sağlamaktır.",
-        image:
-          "https://images.unsplash.com/photo-1485827404703-89b55fcc595e?auto=format&fit=crop&w=1200&q=80",
-      },
-      {
-        slug: "e-ticaret-web-uygulamalari",
-        name: "E-Ticaret Web Uygulamaları",
-        category: "Commerce Platformları",
-        summary:
-          "Ödeme, stok, sipariş ve müşteri paneli entegrasyonlarıyla ölçeklenebilir e-ticaret altyapıları geliştiriyoruz. Hızlı satın alma akışı, operasyonel verimlilik ve sürdürülebilir büyüme hedefiyle modern web uygulamaları olarak kurgulanır.",
-        image:
-          "https://images.unsplash.com/photo-1555529669-e69e7aa0ba9a?auto=format&fit=crop&w=1200&q=80",
-      },
     ],
   },
   services: {

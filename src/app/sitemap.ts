@@ -3,15 +3,6 @@ import { defaultLocale, locales, type Locale } from "@/lib/i18n";
 
 const BASE_URL = "https://upudev.nl";
 
-const PRODUCT_SLUGS = [
-  "bayi-yonetimi",
-  "muhasebe-asistani",
-  "emlak-danismani-yardimcisi",
-  "restoran-asistani",
-  "agent-ai-calismalari",
-  "e-ticaret-web-uygulamalari",
-] as const;
-
 type PagePath = string;
 type PageMeta = {
   priority: number;
@@ -49,19 +40,6 @@ export default function sitemap(): MetadataRoute.Sitemap {
         changeFrequency: meta.changeFrequency,
         priority: meta.priority,
         alternates: { languages: languagesFor(path) },
-      });
-    }
-  }
-
-  for (const slug of PRODUCT_SLUGS) {
-    const productPath = `urunler/${slug}`;
-    for (const locale of locales) {
-      entries.push({
-        url: localeUrl(locale, productPath),
-        lastModified: now,
-        changeFrequency: "monthly",
-        priority: 0.8,
-        alternates: { languages: languagesFor(productPath) },
       });
     }
   }

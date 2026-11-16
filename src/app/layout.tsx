@@ -4,7 +4,7 @@ import { SITE_URL } from "@/lib/seo";
 
 // Root layout is a pass-through: the localized <html lang> / <head> / <body>
 // shell lives in src/app/[locale]/layout.tsx so lang + metadata can derive from
-// the active locale. Non-locale routes under app/ (page.tsx, iletisim, urunler)
+// the active locale. Non-locale routes under app/ (page.tsx, iletisim)
 // only issue redirects and never stream page HTML, so they need no <html> here.
 export const metadata: Metadata = {
   metadataBase: new URL(SITE_URL),

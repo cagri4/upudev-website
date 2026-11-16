@@ -17,6 +17,17 @@ const nextConfig: NextConfig = {
         destination: "/:locale",
         statusCode: 301,
       },
+      // Eski ürün/portföy sayfaları kaldırıldı (Çağrı 16 Kas 2026): doğrulanmamış vaka/rakam + yöntem detayı → ilgili dilin ana sayfası.
+      {
+        source: "/:locale(tr|en|nl)/urunler/:path*",
+        destination: "/:locale",
+        statusCode: 301,
+      },
+      {
+        source: "/urunler/:path*",
+        destination: "/nl",
+        statusCode: 301,
+      },
     ];
   },
 };

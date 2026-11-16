@@ -1,6 +1,5 @@
 import type { Metadata } from "next";
 import Image from "next/image";
-import Link from "next/link";
 import { notFound } from "next/navigation";
 import { getHomeDictionary, isLocale, locales } from "@/lib/i18n";
 import { buildAlternates } from "@/lib/seo";
@@ -64,7 +63,6 @@ export default async function HomeLocalePage({ params }: { params: Promise<{ loc
   const dict = getHomeAiDictionary(locale);
   const waHref = homeWhatsAppHref(dict.whatsappText);
   const contactLabel = base.nav.find((x) => x.href === "/iletisim")?.label ?? "Contact";
-  const previousWork = base.ongoing.items.filter((item) => item.slug);
 
   const faqJsonLd = {
     "@context": "https://schema.org",
@@ -308,23 +306,6 @@ export default async function HomeLocalePage({ params }: { params: Promise<{ loc
                 </div>
               ))}
             </dl>
-            {previousWork.length ? (
-              <div className="mt-8">
-                <p className="text-sm font-semibold text-neutral-700">{dict.references.previousTitle}</p>
-                <ul className="mt-3 flex flex-wrap gap-2">
-                  {previousWork.map((item) => (
-                    <li key={item.slug}>
-                      <Link
-                        href={`/${locale}/urunler/${item.slug}`}
-                        className="inline-flex rounded-full border border-neutral-300 bg-white px-3 py-1.5 text-sm text-neutral-700 transition hover:border-neutral-500"
-                      >
-                        {item.name}
-                      </Link>
-                    </li>
-                  ))}
-                </ul>
-              </div>
-            ) : null}
           </div>
         </section>
 

@@ -73,7 +73,6 @@ export type HomeAiDictionary = {
     title: string;
     text: string;
     stats: { value: string; label: string }[];
-    previousTitle: string;
   };
   sectors: {
     eyebrow: string;
@@ -202,7 +201,6 @@ const nl: HomeAiDictionary = {
       { value: "15+", label: "Jaar ervaring" },
       { value: "3", label: "Talen: NL · TR · EN" },
     ],
-    previousTitle: "Eerder door ons gebouwd",
   },
   sectors: {
     eyebrow: "Kies je sector",
@@ -381,7 +379,6 @@ const tr: HomeAiDictionary = {
       { value: "15+", label: "Yıllık deneyim" },
       { value: "3", label: "Dil: TR · NL · EN" },
     ],
-    previousTitle: "Daha önce geliştirdiklerimiz",
   },
   sectors: {
     eyebrow: "Sektörünüzü seçin",
@@ -560,7 +557,6 @@ const en: HomeAiDictionary = {
       { value: "15+", label: "Years of experience" },
       { value: "3", label: "Languages: NL · TR · EN" },
     ],
-    previousTitle: "Previously built by us",
   },
   sectors: {
     eyebrow: "Choose your sector",

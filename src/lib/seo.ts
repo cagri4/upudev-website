@@ -18,7 +18,7 @@ export function canonicalUrl(locale: Locale, path = ""): string {
 /**
  * Self-referencing canonical + hreflang alternates for a page.
  * `path` is the shared route without the locale prefix ("" for home,
- * "urunler/bayi-yonetimi" for a product, etc.).
+ * "ai-medewerkers/groothandel" for a landing, etc.).
  */
 export function buildAlternates(locale: Locale, path = ""): NonNullable<Metadata["alternates"]> {
   const languages: Record<string, string> = {};
