@@ -44,16 +44,16 @@ const nl: WorkChainDictionary = {
   eyebrow: "Zo werkt een AI-medewerker",
   title: "Wij zetten klaar. Jij keurt goed.",
   altTitle: "Van binnenkomst tot verzonden of geboekt",
-  intro: "De AI-medewerker doet het voorwerk, jij houdt de beslissing. Jij bepaalt wat hij zelf mag afronden.",
+  intro: "Ingericht op jouw proces. De AI-medewerker doet het voorwerk, jij houdt de beslissing.",
   steps: [
-    { label: "01", title: "Binnenkomst", text: "Een bestelling via WhatsApp, een factuur in je mail, een voicemail." },
-    { label: "02", title: "AI zet klaar", text: "Hij leest het en zet een orderregel of boeking klaar in je eigen systeem." },
+    { label: "01", title: "Binnenkomst", text: "Het werk komt binnen zoals altijd: een bestelling, een factuur, een bericht." },
+    { label: "02", title: "AI zet klaar", text: "Hij zet het klaar in je eigen systeem, zoals jij het gewend bent." },
     { label: "03", title: "Jij keurt goed", text: "Je kijkt het na en keurt goed. Klopt iets niet, dan pas je het aan.", human: true },
     { label: "04", title: "Verzonden of geboekt", text: "De bevestiging gaat naar je klant, de factuur staat in je boekhouding." },
   ],
   doubt: {
     title: "Twijfelt hij? Dan stopt hij en vraagt het jou.",
-    text: "Een onbekend product, een prijs die afwijkt, een klant die hij niet kent: hij gaat niet gokken. Hij legt het aan jou voor.",
+    text: "Is iets anders dan normaal? Hij gaat niet gokken. Hij legt het aan jou voor.",
   },
   systems: {
     title: "Werkt in je bestaande systemen — je hoeft niets te veranderen.",
@@ -67,16 +67,16 @@ const tr: WorkChainDictionary = {
   eyebrow: "Bir AI eleman nasıl çalışır",
   title: "Biz hazırlarız. Siz onaylarsınız.",
   altTitle: "İşin gelişinden gönderilmesine kadar",
-  intro: "Ön hazırlığı AI eleman yapar, karar sizde kalır. Neyi kendisinin tamamlayabileceğine siz karar verirsiniz.",
+  intro: "Sizin sürecinize göre kurulur. Ön hazırlığı AI eleman yapar, karar sizde kalır.",
   steps: [
-    { label: "01", title: "İş gelir", text: "WhatsApp'tan bir sipariş, mailde bir fatura, bir sesli mesaj." },
-    { label: "02", title: "AI hazırlar", text: "Okur ve sipariş satırını ya da kaydı kendi sisteminizde hazırlar." },
+    { label: "01", title: "İş gelir", text: "İş her zamanki gibi gelir: bir sipariş, bir fatura, bir mesaj." },
+    { label: "02", title: "AI hazırlar", text: "Kendi sisteminizde, alıştığınız şekilde hazırlar." },
     { label: "03", title: "Siz onaylarsınız", text: "Kontrol edip onaylarsınız. Bir şey yanlışsa düzeltirsiniz.", human: true },
     { label: "04", title: "Gönderildi / işlendi", text: "Onay müşterinize gider, fatura muhasebenize işlenir." },
   ],
   doubt: {
     title: "Emin değil mi? Durur ve size sorar.",
-    text: "Tanımadığı bir ürün, farklı bir fiyat, bilmediği bir müşteri: tahmin yürütmez. Size sorar.",
+    text: "Bir şey her zamankinden farklı mı? Tahmin yürütmez. Size sorar.",
   },
   systems: {
     title: "Mevcut sistemlerinizde çalışır — hiçbir şeyi değiştirmeniz gerekmez.",
@@ -90,16 +90,16 @@ const en: WorkChainDictionary = {
   eyebrow: "How an AI employee works",
   title: "We prepare. You approve.",
   altTitle: "From incoming to sent or booked",
-  intro: "The AI employee does the groundwork, you keep the decision. You decide what it may finish on its own.",
+  intro: "Set up around your process. The AI employee does the groundwork, you keep the decision.",
   steps: [
-    { label: "01", title: "Incoming", text: "An order via WhatsApp, an invoice in your mail, a voicemail." },
-    { label: "02", title: "AI prepares", text: "It reads it and prepares an order line or booking in your own system." },
+    { label: "01", title: "Incoming", text: "Work comes in as always: an order, an invoice, a message." },
+    { label: "02", title: "AI prepares", text: "It prepares it in your own system, the way you are used to." },
     { label: "03", title: "You approve", text: "You check and approve. Something off? You adjust it.", human: true },
     { label: "04", title: "Sent or booked", text: "The confirmation goes to your customer, the invoice is in your books." },
   ],
   doubt: {
     title: "In doubt? It stops and asks you.",
-    text: "An unknown product, a price that differs, a customer it doesn't know: it doesn't guess. It asks you.",
+    text: "Something different from normal? It doesn't guess. It asks you.",
   },
   systems: {
     title: "Works in your existing systems — you don't have to change anything.",

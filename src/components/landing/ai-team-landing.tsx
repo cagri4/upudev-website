@@ -147,9 +147,11 @@ export function AiTeamLanding({
                       </li>
                     ))}
                   </ul>
-                  <p className="mt-4 rounded-2xl border-2 border-[#2AA79A] bg-white px-4 py-3 text-sm font-semibold text-[#14544E]">
-                    💡 {story.order.upsell}
-                  </p>
+                  {story.order.upsell ? (
+                    <p className="mt-4 rounded-2xl border-2 border-[#2AA79A] bg-white px-4 py-3 text-sm font-semibold text-[#14544E]">
+                      💡 {story.order.upsell}
+                    </p>
+                  ) : null}
                 </article>
 
                 {/* Boekhoud-medewerker */}
@@ -201,12 +203,9 @@ export function AiTeamLanding({
                     />
                   </div>
                   <div>
-                    <p className="text-xs font-semibold uppercase tracking-wider text-neutral-500">{m.role}</p>
+                    <p className="text-xs font-semibold uppercase tracking-wider text-neutral-500">{m.context}</p>
                     <h3 className={`mt-1 text-xl font-bold ${m.robot === "order" ? "text-[#1D7F75]" : "text-[#634287]"}`}>{m.name}</h3>
-                    <p className="mt-2 text-sm leading-relaxed text-neutral-700 md:text-base">{m.text}</p>
-                    <p className="mt-3 text-sm text-neutral-600">
-                      <span className="font-semibold text-neutral-800">{dict.team.asksLabel}</span> {m.asks}
-                    </p>
+                    <p className="mt-2 text-base font-medium leading-relaxed text-neutral-800 md:text-lg">{m.outcome}</p>
                   </div>
                 </article>
               ))}

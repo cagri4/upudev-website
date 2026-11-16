@@ -7,7 +7,7 @@ import { AiTeamLanding } from "@/components/landing/ai-team-landing";
 
 /**
  * Reklam hedef sayfası — "Maandag 08:00" reeli (A/B, 15 Kas 2026): toptancı/groothandel.
- * Order-medewerker (dağınık sipariş → temiz satır + upsell) · Boekhoud-medewerker (fatura kontrolü / prijsverschil).
+ * Order-medewerker · Boekhoud-medewerker — yalnız SONUÇ düzeyinde (16 Kas 2026: yöntem detayı/upsell kaldırıldı).
  * Google'a AÇIK (Çağrı 15 Kas): NL + TR index + sitemap'te. EN sürümü noindex kalır (onaylanmadı) ve hreflang'de yok.
  */
 const PATH = "ai-medewerkers/groothandel";

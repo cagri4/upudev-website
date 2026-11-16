@@ -137,12 +137,31 @@ export default async function HomeLocalePage({ params }: { params: Promise<{ loc
           <p className="mt-6 max-w-2xl text-base font-medium text-neutral-800">{dict.work.outro}</p>
         </section>
 
+        {/* 2a. ZO WERKEN WE SAMEN — yöntem değil yaklaşım (16 Kas 2026, Çağrı): dinleriz → bir iş gününe bakarız → senin sürecine göre kurarız → karar sende */}
+        <section className="io-wrap io-section" id="samen">
+          <div className="rounded-3xl border border-neutral-200 bg-white p-6 md:p-10">
+            <p className="io-eyebrow">{dict.approach.eyebrow}</p>
+            <h2 className="mt-2 text-3xl font-bold tracking-tight text-[#122d54] md:text-4xl">{dict.approach.title}</h2>
+            <p className="mt-2 max-w-2xl text-lg text-neutral-600">{dict.approach.intro}</p>
+            <ol className="mt-8 grid gap-5 sm:grid-cols-2 lg:grid-cols-4">
+              {dict.approach.steps.map((step) => (
+                <li key={step.id} className="border-l-2 border-[#122d54] pl-4">
+                  <span className="font-mono text-sm font-bold text-[#1D7F75]">{step.id}</span>
+                  <p className="mt-1 text-lg font-bold text-neutral-900">{step.title}</p>
+                  <p className="mt-1 text-sm leading-relaxed text-neutral-600">{step.text}</p>
+                </li>
+              ))}
+            </ol>
+            <p className="mt-6 text-sm leading-relaxed text-neutral-500">{dict.approach.footnote}</p>
+          </div>
+        </section>
+
         {/* 2b. HIJ ZET KLAAR, JIJ KEURT GOED — uçtan uca zincir + güvence + mevcut sistemler */}
         <div className="io-wrap io-section">
           <WorkChain dict={getWorkChain(locale)} id="zo-werkt-het" sloganInHero />
         </div>
 
-        {/* 3. ONS TEAM — kadro vitrini (unvan, isim yok) */}
+        {/* 3. ZO KAN JOUW TEAM ERUITZIEN — yalnız SONUÇ örnekleri; rol kataloğu / 'Wat hij doet · Vraagt jou als' YOK (16 Kas 2026, Çağrı) */}
         <section className="io-wrap io-section" id="team">
           <div className="io-section-head">
             <p className="io-eyebrow">{dict.team.eyebrow}</p>
@@ -151,10 +170,10 @@ export default async function HomeLocalePage({ params }: { params: Promise<{ loc
           </div>
           <div className="mt-8 grid gap-4 md:grid-cols-2 lg:grid-cols-3">
             {dict.team.members.map((m, i) => (
-              <article key={m.title} className="flex flex-col rounded-2xl border border-neutral-200 bg-white p-6">
+              <article key={m.context} className="flex flex-col rounded-2xl border border-neutral-200 bg-white p-6">
                 <div className="flex justify-end">
                   <span className="rounded-full bg-slate-100 px-2.5 py-1 text-xs font-semibold uppercase tracking-wider text-slate-600">
-                    {m.role}
+                    {m.context}
                   </span>
                 </div>
                 {(() => {
@@ -165,21 +184,7 @@ export default async function HomeLocalePage({ params }: { params: Promise<{ loc
                     </div>
                   );
                 })()}
-                <h3 className="mt-4 text-xl font-bold tracking-tight text-neutral-900">{m.title}</h3>
-                <dl className="mt-3 space-y-3 text-sm leading-relaxed">
-                  <div>
-                    <dt className="text-xs font-semibold uppercase tracking-wider text-neutral-500">{dict.team.labels.does}</dt>
-                    <dd className="mt-0.5 text-neutral-800">{m.does}</dd>
-                  </div>
-                  <div>
-                    <dt className="text-xs font-semibold uppercase tracking-wider text-neutral-500">{dict.team.labels.connects}</dt>
-                    <dd className="mt-0.5 text-neutral-700">{m.connects}</dd>
-                  </div>
-                  <div>
-                    <dt className="text-xs font-semibold uppercase tracking-wider text-neutral-500">{dict.team.labels.asks}</dt>
-                    <dd className="mt-0.5 text-neutral-700">{m.asks}</dd>
-                  </div>
-                </dl>
+                <p className="mt-4 text-lg font-bold leading-snug tracking-tight text-neutral-900">{m.outcome}</p>
               </article>
             ))}
             <article className="flex flex-col rounded-2xl border border-dashed border-neutral-300 p-6">
@@ -199,23 +204,6 @@ export default async function HomeLocalePage({ params }: { params: Promise<{ loc
           </div>
         </section>
 
-        {/* ZIET → DENKT → DOET — AI'ın iç çalışması (küçük üçlü). "Zo werkt het" = müşteri süreci, ayrı. */}
-        <section className="io-wrap io-section" id="ziet-denkt-doet">
-          <div className="rounded-3xl border border-neutral-200 bg-white p-6 md:p-10">
-            <p className="io-eyebrow">{dict.think.eyebrow}</p>
-            <h2 className="mt-2 text-3xl font-bold tracking-tight text-[#122d54] md:text-4xl">{dict.think.title}</h2>
-            <p className="mt-2 text-neutral-600">{dict.think.intro}</p>
-            <ol className="mt-6 grid gap-5 md:grid-cols-3">
-              {dict.think.steps.map((step) => (
-                <li key={step.id} className="border-l-2 border-[#122d54] pl-4">
-                  <p className="text-xl font-bold text-neutral-900">{step.title}</p>
-                  <p className="mt-1 text-sm leading-relaxed text-neutral-600">{step.text}</p>
-                </li>
-              ))}
-            </ol>
-            <p className="mt-6 text-xs leading-relaxed text-neutral-500">{dict.think.footnote}</p>
-          </div>
-        </section>
 
         {/* 4. ZO WERKT HET — funnel 4 adım */}
         <section className="io-wrap io-section" id="nasil-calisir">

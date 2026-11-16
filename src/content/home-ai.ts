@@ -42,14 +42,14 @@ export type HomeAiDictionary = {
     eyebrow: string;
     title: string;
     intro: string;
-    labels: { does: string; connects: string; asks: string };
-    members: { title: string; role: string; does: string; connects: string; asks: string }[];
+    /** 16 Kas 2026 (Çağrı): sabit rol kataloğu / "Wat hij doet · Vraagt jou als" YOK — yalnız SONUÇ düzeyinde örnek. */
+    members: { context: string; outcome: string }[];
     /** Son kart: "Jouw werk? Wij bouwen de collega." */
     noteTitle: string;
     note: string;
   };
-  /** 'Ziet. Denkt. Doet.' — AI'ın iç çalışması (12 Kas içeriği). 'how' = müşteri süreci, ayrı. */
-  think: { eyebrow: string; title: string; intro: string; steps: Step[]; footnote: string };
+  /** "Seninle nasıl çalışırız" (16 Kas 2026, Çağrı): yöntem/mekanik YOK — dinleriz, işinin bir gününe bakarız, senin sürecine göre kurarız. */
+  approach: { eyebrow: string; title: string; intro: string; steps: Step[]; footnote: string };
   how: { eyebrow: string; title: string; intro: string; steps: Step[] };
   control: {
     eyebrow: string;
@@ -117,80 +117,38 @@ const nl: HomeAiDictionary = {
   team: {
     eyebrow: "AI-medewerkers",
     title: "Zo kan jouw team eruitzien",
-    intro: "Elke AI-medewerker heeft één vak. Hij doet dat werk elke dag, ook als het druk is.",
-    labels: { does: "Wat hij doet", connects: "Werkt met", asks: "Vraagt jou als" },
+    intro: "Geen kant-en-klare rollen uit een catalogus. Elke AI-medewerker richten we in op jouw werk en jouw manier van werken. Wat dat kan opleveren, bijvoorbeeld:",
     members: [
-      {
-        title: "Order-medewerker",
-        role: "Verkoop",
-        does: "Leest bestellingen uit WhatsApp, mail en telefoon. Hij zet ze klaar in je systeem, met een bevestiging voor jouw akkoord.",
-        connects: "WhatsApp, mail en je order- of ERP-systeem.",
-        asks: "Een product of klant niet duidelijk is.",
-      },
-      {
-        title: "Boekhoud-medewerker",
-        role: "Administratie",
-        does: "Leest elke inkoopfactuur en vergelijkt die met je vorige prijzen. Hij ziet prijsstijgingen en fouten.",
-        connects: "Je mail, pdf-facturen, WhatsApp en je kassa- of boekhoudsysteem.",
-        asks: "Een prijs ineens hoger is of een factuur niet klopt.",
-      },
-      {
-        title: "Planner",
-        role: "Levering",
-        does: "Maakt elke dag de ritten voor je leveringen. Zo min mogelijk kilometers, koelwaren eerst.",
-        connects: "Je orders, je adressen en je wagens.",
-        asks: "Een rit niet past of een levering haast heeft.",
-      },
-      {
-        title: "Teller",
-        role: "Voorraad",
-        does: "Helpt bij het tellen van je voorraad en zet de aantallen direct in je kassasysteem.",
-        connects: "Je kassasysteem (POS).",
-        asks: "Een telling veel afwijkt van wat er zou moeten zijn.",
-      },
-      {
-        title: "Etiketbeheerder",
-        role: "Winkel",
-        does: "Houdt je elektronische schaplabels gelijk met je kassaprijzen. Een nieuwe prijs staat meteen goed in het schap.",
-        connects: "Je kassasysteem en je elektronische labels (ESL).",
-        asks: "Een prijswijziging groot is of een label niet reageert.",
-      },
+      { context: "Groothandel", outcome: "Maandag 8 uur: de bestellingen staan klaar voor jouw akkoord." },
+      { context: "Administratie", outcome: "Je facturen zijn nagekeken. Jij ziet alleen wat aandacht nodig heeft." },
+      { context: "Bezorging", outcome: "De ritten voor morgen liggen klaar voordat je naar huis gaat." },
+      { context: "Voorraad", outcome: "Na het tellen staan de aantallen al in je kassa." },
+      { context: "Winkel", outcome: "Een nieuwe prijs staat meteen goed in het schap." },
     ],
     noteTitle: "Jouw werk? Wij bouwen de collega.",
-    note: "Ander werk dat steeds terugkomt? Vertel het ons. Wij richten er een AI-medewerker voor in.",
+    note: "Ander werk dat steeds terugkomt? Vertel het ons. We kijken hoe jij het nu doet en richten er een AI-medewerker voor in.",
   },
-  think: {
-    eyebrow: "Hoe een AI-medewerker werkt",
-    title: "Ziet. Denkt. Doet.",
-    intro: "Elke AI-medewerker werkt op dezelfde manier — net als een goede collega.",
+  approach: {
+    eyebrow: "Zo werken we samen",
+    title: "Eerst luisteren. Dan pas bouwen.",
+    intro: "Elke zaak werkt anders. Daarom beginnen we niet met een pakket, maar met jouw werk.",
     steps: [
-      {
-        id: "01",
-        title: "Ziet",
-        text: "Hij merkt op wat er binnenkomt: een bericht, een factuur, een bestelling, een cijfer dat afwijkt.",
-      },
-      {
-        id: "02",
-        title: "Denkt",
-        text: "Hij kent jouw zaak: je prijzen, je klanten, je afspraken. Daarmee weet hij wat er moet gebeuren.",
-      },
-      {
-        id: "03",
-        title: "Doet",
-        text: "Hij voert het uit — verwerken, beantwoorden, herinneren, plannen — en houdt jou op de hoogte.",
-      },
+      { id: "01", title: "We luisteren", text: "Welk werk komt bij jou elke dag terug? En wat kost je de meeste tijd?" },
+      { id: "02", title: "We kijken samen naar een werkdag", text: "We lopen een gewone dag met je door: hoe het werk binnenkomt en hoe jij het nu doet." },
+      { id: "03", title: "We richten in op jouw proces", text: "De AI-medewerker volgt jouw manier van werken, in de systemen die je al hebt." },
+      { id: "04", title: "Jij houdt de beslissing", text: "Zonder jouw akkoord gaat er niets de deur uit. Jij bepaalt wat hij zelf mag afronden." },
     ],
-    footnote: "Het scherm waar je meekijkt is geen extra werk: het is de plek waar je ziet wat je medewerker gedaan heeft.",
+    footnote: "Wat we inrichten, hangt af van jouw proces. Daarom bespreken we het altijd eerst met jou.",
   },
   how: {
-    eyebrow: "Zo werkt het",
+    eyebrow: "Van gesprek tot abonnement",
     title: "In vier stappen ingericht",
-    intro: "Geen groot project. Je ziet eerst wat hij doet, daarna beslis je.",
+    intro: "Geen groot project. Je ziet eerst wat het oplevert, daarna beslis je.",
     steps: [
       { id: "01", title: "Kennismaking", text: "Je plant een gesprek of stuurt ons een WhatsApp. We vragen: welk werk kost jou elke dag tijd?" },
-      { id: "02", title: "Demo met jouw data", text: "Je ziet de medewerker werken op jouw eigen facturen of orders." },
-      { id: "03", title: "Proefmaand €69", text: "Hij werkt een maand mee. Jij keurt goed. Aan het eind krijg je een overzicht van wat hij deed." },
-      { id: "04", title: "Abonnement", text: "Tevreden? Wij beheren hem verder. Vanaf €249 p/m, maandelijks opzegbaar." },
+      { id: "02", title: "Voorstel op maat", text: "Op basis van jouw werkdag laten we zien wat een AI-medewerker voor jou klaar kan zetten." },
+      { id: "03", title: "Proefmaand €69", text: "Hij werkt een maand mee in jouw proces. Jij keurt goed. Aan het eind krijg je een overzicht." },
+      { id: "04", title: "Abonnement", text: "Tevreden? Wij beheren hem verder en stemmen hem af als jouw werk verandert. Vanaf €249 p/m, maandelijks opzegbaar." },
     ],
   },
   control: {
@@ -206,29 +164,29 @@ const nl: HomeAiDictionary = {
   },
   pricing: {
     eyebrow: "Wat kost een AI-medewerker?",
-    title: "Duidelijke prijzen, per maand",
+    title: "Op maat, met een duidelijke maandprijs",
     headline: "Eerste maand €69 — daarna vanaf €249 p/m.",
-    terms: "Afgestemd op jouw werkvolume. Maandelijks opzegbaar. Excl. btw.",
+    terms: "Afgestemd op jouw proces en werkvolume. Maandelijks opzegbaar. Excl. btw.",
     trial: {
       label: "Proefmaand",
       price: "€69",
-      points: ["1 medewerker, 1 taak", "Werkt met jouw echte data", "Geen opstartkosten", "Overzicht van wat hij deed"],
+      points: ["Ingericht op één taak uit jouw werk", "Werkt in jouw proces, met jouw echte data", "Geen opstartkosten", "Overzicht van wat hij deed"],
     },
-    detailsToggle: "Welke pakketten zijn er? (indicatie)",
+    detailsToggle: "Hoe het kan groeien (indicatie)",
     tiers: [
       {
-        name: "1 Medewerker",
-        volume: "1 medewerker · 1 koppeling · ca. 300 taken per maand",
-        points: ["Eén vak, elke dag gedaan", "Jij keurt goed waar je wilt"],
+        name: "Eén taak",
+        volume: "Eén terugkerende taak, ingericht op jouw proces",
+        points: ["Elke dag gedaan", "Jij keurt goed waar je wilt"],
       },
       {
-        name: "Team",
-        volume: "3 medewerkers · bijvoorbeeld facturen, orders en planning",
+        name: "Meerdere taken",
+        volume: "Een paar taken die in jouw zaak samenhangen",
         points: ["Voorrang bij support", "Elke maand samen verbeteren"],
       },
       {
-        name: "Afdeling",
-        volume: "5 of meer medewerkers · op maat",
+        name: "Hele afdeling",
+        volume: "Meerdere processen · samen uitgewerkt",
         points: ["Ingericht op jouw bedrijf", "Vaste contactpersoon"],
       },
     ],
@@ -252,7 +210,7 @@ const nl: HomeAiDictionary = {
     intro: "Terugkerend werk zit in elke sector. We beginnen met de sector die we het beste kennen.",
     first: {
       name: "Supermarkt, groothandel & food",
-      text: "Facturen, orders, ritten, tellen en schaplabels. Hier werken onze eerste medewerkers.",
+      text: "Het werk in food kennen we het beste: van bestellingen tot facturen en schaplabels.",
       cta: "Vraag naar food",
       whatsappText: "Hoi, ik heb een zaak in food (supermarkt/groothandel) en wil meer weten over een AI-medewerker.",
     },
@@ -338,80 +296,38 @@ const tr: HomeAiDictionary = {
   team: {
     eyebrow: "AI elemanlar",
     title: "Ekibiniz böyle görünebilir",
-    intro: "Her AI elemanın tek bir uzmanlığı var. O işi her gün yapar, yoğun günlerde de.",
-    labels: { does: "Ne yapar", connects: "Neyle çalışır", asks: "Size ne zaman sorar" },
+    intro: "Katalogdan seçilen hazır roller yok. Her AI elemanı sizin işinize ve çalışma şeklinize göre kurarız. Ortaya çıkabilecek sonuçlardan örnekler:",
     members: [
-      {
-        title: "Order-medewerker (Sipariş Elemanı)",
-        role: "Satış",
-        does: "WhatsApp, e-posta ve telefondan gelen siparişleri okur ve sisteminizde hazırlar; müşteriye gidecek onay mesajı da onayınızı bekler.",
-        connects: "WhatsApp, e-posta ve sipariş ya da ERP sisteminiz.",
-        asks: "Bir ürün ya da müşteri net olmadığında.",
-      },
-      {
-        title: "Boekhoud-medewerker (Muhasebe Elemanı)",
-        role: "İdari işler",
-        does: "Gelen her alış faturasını okur ve önceki fiyatlarla karşılaştırır. Zamları ve hataları yakalar.",
-        connects: "E-postanız, PDF faturalar, WhatsApp ve kasa ya da muhasebe sisteminiz.",
-        asks: "Bir fiyat birden yükseldiğinde ya da fatura tutmadığında.",
-      },
-      {
-        title: "Planlamacı",
-        role: "Teslimat",
-        does: "Her gün teslimat rotalarını kurar. En az kilometre, soğuk ürünler önce.",
-        connects: "Siparişleriniz, adresleriniz ve araçlarınız.",
-        asks: "Bir rota sığmadığında ya da teslimat acil olduğunda.",
-      },
-      {
-        title: "Sayım Elemanı",
-        role: "Stok",
-        does: "Stok sayımına yardım eder ve sayıları hemen kasa sisteminize işler.",
-        connects: "Kasa sisteminiz (POS).",
-        asks: "Sayım olması gerekenden çok farklı çıktığında.",
-      },
-      {
-        title: "Etiket Sorumlusu",
-        role: "Mağaza",
-        does: "Elektronik raf etiketlerinizi kasa fiyatlarıyla eşit tutar. Yeni fiyat rafta hemen doğru görünür.",
-        connects: "Kasa sisteminiz ve elektronik etiketleriniz (ESL).",
-        asks: "Fiyat değişikliği büyük olduğunda ya da bir etiket yanıt vermediğinde.",
-      },
+      { context: "Toptancı", outcome: "Pazartesi 08:00: siparişler onayınız için hazır." },
+      { context: "İdari işler", outcome: "Faturalarınız kontrol edilmiş. Siz yalnız dikkat isteyenleri görürsünüz." },
+      { context: "Teslimat", outcome: "Yarının rotaları siz eve gitmeden hazır." },
+      { context: "Stok", outcome: "Sayım biter bitmez rakamlar kasanızda." },
+      { context: "Mağaza", outcome: "Yeni fiyat rafta da hemen doğru." },
     ],
     noteTitle: "Sizin işiniz mi? Elemanını biz kurarız.",
-    note: "Sürekli tekrar eden başka bir iş mi var? Bize anlatın, onun için bir AI eleman kuralım.",
+    note: "Sürekli tekrar eden başka bir iş mi var? Bize anlatın. Şu an nasıl yaptığınıza bakar, onun için bir AI eleman kurarız.",
   },
-  think: {
-    eyebrow: "Bir AI eleman nasıl çalışır",
-    title: "Görür. Düşünür. Yapar.",
-    intro: "Her AI eleman aynı şekilde çalışır — iyi bir çalışma arkadaşı gibi.",
+  approach: {
+    eyebrow: "Sizinle nasıl çalışırız",
+    title: "Önce dinleriz. Sonra kurarız.",
+    intro: "Her işletme farklı çalışır. Bu yüzden bir paketle değil, sizin işinizle başlarız.",
     steps: [
-      {
-        id: "01",
-        title: "Görür",
-        text: "Gelen şeyi fark eder: bir mesaj, bir fatura, bir sipariş, beklenmedik bir rakam.",
-      },
-      {
-        id: "02",
-        title: "Düşünür",
-        text: "İşinizi bilir: fiyatlarınızı, müşterilerinizi, anlaşmalarınızı. Ne yapılması gerektiğini buradan çıkarır.",
-      },
-      {
-        id: "03",
-        title: "Yapar",
-        text: "Uygular — işler, yanıtlar, hatırlatır, planlar — ve sizi bilgilendirir.",
-      },
+      { id: "01", title: "Dinleriz", text: "Her gün hangi iş tekrar ediyor? En çok zamanınızı ne alıyor?" },
+      { id: "02", title: "Bir iş gününe birlikte bakarız", text: "Sıradan bir gününüzü birlikte geçeriz: iş nasıl geliyor, siz şu an nasıl yapıyorsunuz." },
+      { id: "03", title: "Sizin sürecinize göre kurarız", text: "AI eleman sizin çalışma şeklinizi izler, zaten kullandığınız sistemlerde." },
+      { id: "04", title: "Karar sizde kalır", text: "Onayınız olmadan hiçbir şey dışarı çıkmaz. Neyi kendisinin tamamlayacağına siz karar verirsiniz." },
     ],
-    footnote: "Takip ettiğiniz ekran ek bir yük değil: elemanınızın ne yaptığını gördüğünüz yer.",
+    footnote: "Neyi kuracağımız sizin sürecinize bağlıdır. Bu yüzden her zaman önce sizinle konuşuruz.",
   },
   how: {
-    eyebrow: "Nasıl çalışır",
+    eyebrow: "Görüşmeden aboneliğe",
     title: "Dört adımda kurulum",
-    intro: "Büyük bir proje yok. Önce ne yaptığını görürsünüz, sonra karar verirsiniz.",
+    intro: "Büyük bir proje yok. Önce ne kazandırdığını görürsünüz, sonra karar verirsiniz.",
     steps: [
       { id: "01", title: "Tanışma", text: "Görüşme planlarsınız ya da WhatsApp'tan yazarsınız. Soruyoruz: her gün en çok hangi iş zamanınızı alıyor?" },
-      { id: "02", title: "Kendi verinizle demo", text: "Elemanın kendi faturalarınız ya da siparişleriniz üzerinde çalıştığını görürsünüz." },
-      { id: "03", title: "Deneme ayı €69", text: "Bir ay sizinle çalışır. Siz onaylarsınız. Ay sonunda ne yaptığının özetini alırsınız." },
-      { id: "04", title: "Abonelik", text: "Memnun musunuz? Yönetimini biz sürdürürüz. Aylık €249'dan başlayan fiyatlarla, her ay iptal edilebilir." },
+      { id: "02", title: "Size özel öneri", text: "İş gününüze bakarak bir AI elemanın sizin için neyi hazırlayabileceğini gösteririz." },
+      { id: "03", title: "Deneme ayı €69", text: "Bir ay sizin sürecinizde çalışır. Siz onaylarsınız. Ay sonunda bir özet alırsınız." },
+      { id: "04", title: "Abonelik", text: "Memnun musunuz? Yönetimini biz sürdürür, işiniz değiştikçe ayarlarız. Aylık €249'dan başlayan fiyatlarla, her ay iptal edilebilir." },
     ],
   },
   control: {
@@ -427,29 +343,29 @@ const tr: HomeAiDictionary = {
   },
   pricing: {
     eyebrow: "Bir AI eleman ne kadar?",
-    title: "Net fiyatlar, aylık",
+    title: "Size özel, net bir aylık fiyatla",
     headline: "İlk ay €69 — sonra aylık €249'dan başlayan fiyatlarla.",
-    terms: "İş hacminize göre belirlenir. Her ay iptal edilebilir. Fiyatlar KDV (btw) hariçtir.",
+    terms: "Sürecinize ve iş hacminize göre belirlenir. Her ay iptal edilebilir. Fiyatlar KDV (btw) hariçtir.",
     trial: {
       label: "Deneme ayı",
       price: "€69",
-      points: ["1 eleman, 1 iş", "Gerçek verinizle çalışır", "Kurulum ücreti yok", "Ne yaptığının özeti"],
+      points: ["İşinizden tek bir göreve göre kurulur", "Sizin sürecinizde, gerçek verinizle çalışır", "Kurulum ücreti yok", "Ne yaptığının özeti"],
     },
-    detailsToggle: "Hangi paketler var? (fikir vermesi için)",
+    detailsToggle: "Nasıl büyüyebilir (fikir vermesi için)",
     tiers: [
       {
-        name: "1 Eleman",
-        volume: "1 eleman · 1 bağlantı · ayda yaklaşık 300 iş",
-        points: ["Tek uzmanlık, her gün", "İstediğiniz yerde onay sizde"],
+        name: "Tek görev",
+        volume: "Tekrar eden tek bir iş, sizin sürecinize göre kurulur",
+        points: ["Her gün yapılır", "İstediğiniz yerde onay sizde"],
       },
       {
-        name: "Ekip",
-        volume: "3 eleman · örneğin fatura, sipariş ve planlama",
+        name: "Birkaç görev",
+        volume: "İşletmenizde birbirine bağlı birkaç iş",
         points: ["Öncelikli destek", "Her ay birlikte iyileştirme"],
       },
       {
-        name: "Departman",
-        volume: "5 ve üzeri eleman · size özel",
+        name: "Tüm departman",
+        volume: "Birden çok süreç · birlikte çalışılır",
         points: ["İşletmenize göre kurulur", "Sabit irtibat kişisi"],
       },
     ],
@@ -473,7 +389,7 @@ const tr: HomeAiDictionary = {
     intro: "Tekrar eden işler her sektörde var. En iyi bildiğimiz sektörle başlıyoruz.",
     first: {
       name: "Market, toptancı ve gıda",
-      text: "Faturalar, siparişler, rotalar, sayım ve raf etiketleri. İlk elemanlarımız burada çalışıyor.",
+      text: "En iyi tanıdığımız iş gıda: siparişten faturaya, raf etiketine kadar.",
       cta: "Gıda için sorun",
       whatsappText: "Merhaba, gıda sektöründe (market/toptancı) işletmem var, AI eleman hakkında bilgi almak istiyorum.",
     },
@@ -559,68 +475,38 @@ const en: HomeAiDictionary = {
   team: {
     eyebrow: "AI employees",
     title: "This is what your team could look like",
-    intro: "Each AI employee has one job. They do it every day, also when it's busy.",
-    labels: { does: "What they do", connects: "Works with", asks: "Asks you when" },
+    intro: "No ready-made roles from a catalogue. We set up every AI employee around your work and the way you work. What that can bring, for example:",
     members: [
-      {
-        title: "Order-medewerker (Order employee)",
-        role: "Sales",
-        does: "Reads orders from WhatsApp, email and phone, prepares them in your system, with a confirmation ready for your OK.",
-        connects: "WhatsApp, email and your order or ERP system.",
-        asks: "A product or customer isn't clear.",
-      },
-      {
-        title: "Boekhoud-medewerker (Bookkeeping employee)",
-        role: "Admin",
-        does: "Reads every purchase invoice and compares it with your previous prices. Spots price rises and mistakes.",
-        connects: "Your email, PDF invoices, WhatsApp and your till or accounting system.",
-        asks: "A price suddenly goes up or an invoice doesn't add up.",
-      },
-      {
-        title: "Planner",
-        role: "Delivery",
-        does: "Plans your delivery routes every day. As few kilometres as possible, chilled goods first.",
-        connects: "Your orders, addresses and vehicles.",
-        asks: "A route doesn't fit or a delivery is urgent.",
-      },
-      {
-        title: "Counter",
-        role: "Stock",
-        does: "Helps count your stock and puts the numbers straight into your till system.",
-        connects: "Your till system (POS).",
-        asks: "A count is far off from what it should be.",
-      },
-      {
-        title: "Label manager",
-        role: "Store",
-        does: "Keeps your electronic shelf labels in line with your till prices. A new price is right on the shelf at once.",
-        connects: "Your till system and electronic labels (ESL).",
-        asks: "A price change is large or a label doesn't respond.",
-      },
+      { context: "Wholesale", outcome: "Monday 8 am: the orders are ready for your approval." },
+      { context: "Admin", outcome: "Your invoices are checked. You only see what needs attention." },
+      { context: "Delivery", outcome: "Tomorrow's routes are ready before you go home." },
+      { context: "Stock", outcome: "Once the count is done, the numbers are already in your till." },
+      { context: "Store", outcome: "A new price is right on the shelf straight away." },
     ],
     noteTitle: "Your work? We build the colleague.",
-    note: "Other work that keeps coming back? Tell us. We'll set up an AI employee for it.",
+    note: "Other work that keeps coming back? Tell us. We look at how you do it now and set up an AI employee for it.",
   },
-  think: {
-    eyebrow: "How an AI employee works",
-    title: "Sees. Thinks. Does.",
-    intro: "Every AI employee works the same way — like a good colleague.",
+  approach: {
+    eyebrow: "How we work with you",
+    title: "First we listen. Then we build.",
+    intro: "Every business works differently. That's why we don't start with a package, but with your work.",
     steps: [
-      { id: "01", title: "Sees", text: "It notices what comes in: a message, an invoice, an order, a number that's off." },
-      { id: "02", title: "Thinks", text: "It knows your business: your prices, your customers, your agreements. That tells it what needs to happen." },
-      { id: "03", title: "Does", text: "It gets it done — processing, replying, reminding, planning — and keeps you posted." },
+      { id: "01", title: "We listen", text: "What work comes back every day? And what takes up most of your time?" },
+      { id: "02", title: "We look at a working day together", text: "We walk through a normal day with you: how work comes in and how you handle it now." },
+      { id: "03", title: "We set it up around your process", text: "The AI employee follows the way you work, in the systems you already have." },
+      { id: "04", title: "You keep the decision", text: "Nothing goes out without your approval. You decide what it may finish on its own." },
     ],
-    footnote: "The screen you look at isn't extra work: it's where you see what your employee has done.",
+    footnote: "What we set up depends on your process. That's why we always discuss it with you first.",
   },
   how: {
-    eyebrow: "How it works",
+    eyebrow: "From call to subscription",
     title: "Set up in four steps",
-    intro: "No big project. You see what they do first, then you decide.",
+    intro: "No big project. You see what it brings first, then you decide.",
     steps: [
       { id: "01", title: "Intro", text: "You plan a call or send us a WhatsApp. We ask: what work takes up your time every day?" },
-      { id: "02", title: "Demo with your data", text: "You see the employee work on your own invoices or orders." },
-      { id: "03", title: "Trial month €69", text: "They work with you for a month. You approve. At the end you get an overview of what they did." },
-      { id: "04", title: "Subscription", text: "Happy? We keep managing it. From €249/mo, cancel monthly." },
+      { id: "02", title: "Tailored proposal", text: "Based on your working day, we show what an AI employee could prepare for you." },
+      { id: "03", title: "Trial month €69", text: "It works with you for a month, in your process. You approve. At the end you get an overview." },
+      { id: "04", title: "Subscription", text: "Happy? We keep managing it and adjust it as your work changes. From €249/mo, cancel monthly." },
     ],
   },
   control: {
@@ -636,29 +522,29 @@ const en: HomeAiDictionary = {
   },
   pricing: {
     eyebrow: "What does an AI employee cost?",
-    title: "Clear prices, per month",
+    title: "Tailored, with a clear monthly price",
     headline: "First month €69 — then from €249/mo.",
-    terms: "Matched to your workload. Cancel monthly. Excl. VAT.",
+    terms: "Matched to your process and workload. Cancel monthly. Excl. VAT.",
     trial: {
       label: "Trial month",
       price: "€69",
-      points: ["1 employee, 1 task", "Works with your real data", "No setup fee", "Overview of what they did"],
+      points: ["Set up for one task from your work", "Works in your process, with your real data", "No setup fee", "Overview of what it did"],
     },
-    detailsToggle: "Which packages are there? (indication)",
+    detailsToggle: "How it can grow (indication)",
     tiers: [
       {
-        name: "1 Employee",
-        volume: "1 employee · 1 connection · about 300 tasks per month",
-        points: ["One job, done every day", "You approve where you want"],
+        name: "One task",
+        volume: "One recurring task, set up around your process",
+        points: ["Done every day", "You approve where you want"],
       },
       {
-        name: "Team",
-        volume: "3 employees · for example invoices, orders and planning",
+        name: "Several tasks",
+        volume: "A few tasks that belong together in your business",
         points: ["Priority support", "Monthly improvements together"],
       },
       {
-        name: "Department",
-        volume: "5 or more employees · tailored",
+        name: "Whole department",
+        volume: "Several processes · worked out together",
         points: ["Set up around your business", "Fixed contact person"],
       },
     ],
@@ -682,7 +568,7 @@ const en: HomeAiDictionary = {
     intro: "Repetitive work exists in every sector. We start with the sector we know best.",
     first: {
       name: "Supermarket, wholesale & food",
-      text: "Invoices, orders, routes, counting and shelf labels. This is where our first employees work.",
+      text: "Food is the work we know best: from orders to invoices and shelf labels.",
       cta: "Ask about food",
       whatsappText: "Hi, I run a food business (supermarket/wholesale) and would like to know more about an AI employee.",
     },

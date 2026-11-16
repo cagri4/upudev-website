@@ -69,8 +69,8 @@ type Common = {
     eyebrow: string;
     title: string;
     intro: string;
-    asksLabel: string;
-    members: { robot: RobotKey; name: string; role: string; text: string; asks: string }[];
+    /** 16 Kas 2026 (Çağrı): yöntem ("neyi okur/karşılaştırır, ne zaman durur") YOK — yalnız SONUÇ. */
+    members: { robot: RobotKey; name: string; context: string; outcome: string }[];
     more: { title: string; text: string; examples: string[] };
   };
   how: { eyebrow: string; title: string; steps: { title: string; text: string }[] };
@@ -103,7 +103,8 @@ export type AiTeamLandingDictionary = Common & {
       before: StoryStep[];
       afterLabel: string;
       after: string[];
-      upsell: string;
+      /** Kaldırıldı (16 Kas): yöntem ele veriyordu. */
+      upsell?: string;
     };
     boekhoud: {
       name: string;
@@ -124,22 +125,19 @@ const commonNl: Common = {
   team: {
     eyebrow: "Ons AI-team",
     title: "Zo kan jouw team eruitzien",
-    intro: "Elke AI-medewerker heeft één vak. Hij werkt in de systemen die je al hebt en vraagt het jou als iets niet klopt.",
-    asksLabel: "Vraagt jou als",
+    intro: "Geen kant-en-klare rollen uit een catalogus. Elke AI-medewerker richten we in op jouw proces. Twee voorbeelden uit de groothandel:",
     members: [
       {
         robot: "order",
         name: "Order-medewerker",
-        role: "Verkoop",
-        text: "Leest bestellingen uit WhatsApp, mail en voicemail. Hij maakt er nette orderregels van in je systeem. En hij stelt voor wat een klant meestal ook bestelt.",
-        asks: "een product of klant niet duidelijk is.",
+        context: "Voorbeeld · Verkoop",
+        outcome: "Je begint de dag met de bestellingen klaar in je systeem, wachtend op jouw akkoord.",
       },
       {
         robot: "boekhoud",
         name: "Boekhoud-medewerker",
-        role: "Administratie",
-        text: "Controleert elke inkoopfactuur tegen je afgesproken prijzen. Ziet hij een prijsverschil of een fout, dan meldt hij het meteen.",
-        asks: "een prijs anders is dan afgesproken.",
+        context: "Voorbeeld · Administratie",
+        outcome: "Facturen die niet kloppen met je afspraken liggen apart voor je klaar.",
       },
     ],
     more: {
@@ -149,13 +147,13 @@ const commonNl: Common = {
     },
   },
   how: {
-    eyebrow: "Zo werkt het",
-    title: "In vier stappen ingericht",
+    eyebrow: "Zo werken we samen",
+    title: "Eerst luisteren. Dan pas bouwen.",
     steps: [
-      { title: "Kennismaking", text: "Een kort gesprek: welk werk kost jou elke dag tijd?" },
-      { title: "Demo met jouw data", text: "Je ziet de medewerker werken op jouw eigen orders of facturen." },
-      { title: "Proefmaand €69", text: "Hij werkt een maand mee. Jij keurt goed en kijkt mee." },
-      { title: "Abonnement", text: "Tevreden? Wij beheren hem verder. Maandelijks opzegbaar." },
+      { title: "We luisteren", text: "Een kort gesprek: welk werk kost jou elke dag tijd, en hoe doe je het nu?" },
+      { title: "Samen naar een werkdag kijken", text: "We lopen een gewone werkdag met je door en bepalen samen wat klaargezet moet worden." },
+      { title: "Proefmaand €69", text: "Ingericht op jouw proces. Hij werkt een maand mee, jij keurt alles goed." },
+      { title: "Abonnement", text: "Tevreden? Wij beheren hem verder en stemmen hem af als je werk verandert. Maandelijks opzegbaar." },
     ],
   },
   control: {
@@ -171,7 +169,7 @@ const commonNl: Common = {
   pricing: {
     eyebrow: "Wat kost het?",
     headline: "Eerste maand €69 — daarna vanaf €249 p/m.",
-    terms: "Afgestemd op jouw werkvolume. Maandelijks opzegbaar. Excl. btw.",
+    terms: "Op maat: afgestemd op jouw proces en werkvolume. Maandelijks opzegbaar. Excl. btw.",
     note: "De precieze prijs hoor je in het gesprek, op basis van jouw werk. Altijd vooraf.",
   },
   form: {
@@ -219,7 +217,7 @@ const aiElemanNl: AiTeamLandingDictionary = {
     title: "Wij zetten klaar. Jij keurt goed.",
     subtitle:
       "Wij richten AI-medewerkers in binnen je bestaande systemen en beheren ze op abonnementsbasis. Zo heb je capaciteit voor het werk dat elke dag terugkomt: orders, facturen, planning.",
-    priceNote: "Eerste maand €69 — daarna vanaf €249 p/m. Afgestemd op jouw werkvolume.",
+    priceNote: "Eerste maand €69 — daarna vanaf €249 p/m. Op maat, afgestemd op jouw proces.",
   },
   whatsappText: "Hoi, ik wil meer weten over een AI-medewerker.",
   subject: "AI-medewerker — gesprek (ai-eleman)",
@@ -231,14 +229,14 @@ const groothandelNl: AiTeamLandingDictionary = {
   meta: {
     title: "AI-medewerkers voor groothandels — orders en facturen | UPU Dev",
     description:
-      "Maandag 08:00 en de orders staan al klaar. Een Order-medewerker zet losse bestellingen om in nette orderregels, een Boekhoud-medewerker controleert je facturen. Eerste maand €69, daarna vanaf €249 p/m.",
+      "Maandag 08:00 en de orders staan al klaar voor jouw akkoord. AI-medewerkers, ingericht op hoe jouw groothandel werkt. Eerste maand €69, daarna vanaf €249 p/m.",
   },
   hero: {
     badge: "AI-medewerkers voor groothandels",
     title: "Maandag 08:00. De orders staan al klaar.",
     subtitle:
-      "Je Order-medewerker zet losse bestellingen om in nette orderregels. Je Boekhoud-medewerker controleert de facturen. Jij begint de week met overzicht.",
-    priceNote: "Eerste maand €69 — daarna vanaf €249 p/m. Afgestemd op jouw werkvolume.",
+      "De bestellingen van het weekend staan klaar voor jouw akkoord. Facturen die niet kloppen liggen apart. Ingericht op hoe jouw groothandel werkt — jij begint de week met overzicht.",
+    priceNote: "Eerste maand €69 — daarna vanaf €249 p/m. Op maat, afgestemd op jouw proces.",
   },
   whatsappText: "Hoi, ik heb een groothandel en wil meer weten over de Order- en Boekhoud-medewerker.",
   subject: "AI-medewerker — gesprek (groothandel)",
@@ -256,8 +254,7 @@ const groothandelNl: AiTeamLandingDictionary = {
         { channel: "Mail", text: "Een foto van een handgeschreven lijst." },
       ],
       afterLabel: "Klaargezet in je systeem",
-      after: ["Klant herkend", "Artikelen gekoppeld", "Aantallen nagekeken", "Bevestiging klaar voor jouw akkoord"],
-      upsell: "Tip: deze klant bestelt meestal ook olijfolie. Zal ik het voorstellen?",
+      after: ["Order klaar in je systeem", "Bevestiging wacht op jouw akkoord"],
     },
     boekhoud: {
       name: "Boekhoud-medewerker",
@@ -278,22 +275,19 @@ const commonTr: Common = {
   team: {
     eyebrow: "AI ekibimiz",
     title: "Ekibiniz böyle görünebilir",
-    intro: "Her AI elemanın tek bir işi vardır. Zaten kullandığınız sistemlerde çalışır ve bir şey tutmazsa size sorar.",
-    asksLabel: "Size sorar, eğer",
+    intro: "Katalogdan seçilen hazır roller yok. Her AI elemanı sizin sürecinize göre kurarız. Toptancılıktan iki örnek:",
     members: [
       {
         robot: "order",
         name: "Order-medewerker (Sipariş Elemanı)",
-        role: "Satış",
-        text: "WhatsApp, e-posta ve sesli mesajdan gelen siparişleri okur. Sisteminizde düzgün sipariş satırlarına çevirir. Müşterinin genelde birlikte aldığı ürünü de önerir.",
-        asks: "bir ürün ya da müşteri net değilse.",
+        context: "Örnek · Satış",
+        outcome: "Güne, siparişler sisteminizde onayınızı bekler hâlde başlarsınız.",
       },
       {
         robot: "boekhoud",
         name: "Boekhoud-medewerker (Muhasebe Elemanı)",
-        role: "Muhasebe",
-        text: "Her alış faturasını anlaştığınız fiyatlarla karşılaştırır. Fiyat farkı ya da hata görürse hemen haber verir.",
-        asks: "bir fiyat anlaşılandan farklıysa.",
+        context: "Örnek · Muhasebe",
+        outcome: "Anlaşmanıza uymayan faturalar ayrılmış, sizi bekliyor.",
       },
     ],
     more: {
@@ -303,13 +297,13 @@ const commonTr: Common = {
     },
   },
   how: {
-    eyebrow: "Nasıl çalışır",
-    title: "Dört adımda kurulum",
+    eyebrow: "Sizinle nasıl çalışırız",
+    title: "Önce dinleriz. Sonra kurarız.",
     steps: [
-      { title: "Tanışma", text: "Kısa bir görüşme: her gün hangi iş zamanınızı alıyor?" },
-      { title: "Kendi verinizle demo", text: "Elemanın kendi siparişleriniz ya da faturalarınız üzerinde çalıştığını görürsünüz." },
-      { title: "Deneme ayı €69", text: "Bir ay sizinle çalışır. Siz onaylar, takip edersiniz." },
-      { title: "Abonelik", text: "Memnun musunuz? Yönetimini biz sürdürürüz. Her ay iptal edilebilir." },
+      { title: "Dinleriz", text: "Kısa bir görüşme: her gün hangi iş zamanınızı alıyor, şu an nasıl yapıyorsunuz?" },
+      { title: "Bir iş gününe birlikte bakarız", text: "Sıradan bir iş gününüzü birlikte geçer, neyin hazırlanacağına birlikte karar veririz." },
+      { title: "Deneme ayı €69", text: "Sizin sürecinize göre kurulur. Bir ay sizinle çalışır, her şeyi siz onaylarsınız." },
+      { title: "Abonelik", text: "Memnun musunuz? Yönetimini biz sürdürür, işiniz değiştikçe ayarlarız. Her ay iptal edilebilir." },
     ],
   },
   control: {
@@ -325,7 +319,7 @@ const commonTr: Common = {
   pricing: {
     eyebrow: "Ne kadar?",
     headline: "İlk ay €69 — sonra aylık €249'dan başlayan fiyatlarla.",
-    terms: "İş hacminize göre belirlenir. Her ay iptal edilebilir. Fiyatlara KDV (btw) dahil değildir.",
+    terms: "Size özel: sürecinize ve iş hacminize göre belirlenir. Her ay iptal edilebilir. Fiyatlara KDV (btw) dahil değildir.",
     note: "Kesin fiyatı görüşmede, işinize göre öğrenirsiniz. Her zaman önceden.",
   },
   form: {
@@ -373,7 +367,7 @@ const aiElemanTr: AiTeamLandingDictionary = {
     title: "Biz hazırlarız. Siz onaylarsınız.",
     subtitle:
       "AI elemanları mevcut sistemlerinizin içinde kurar ve abonelikle yönetiriz. Böylece her gün tekrar eden işler için kapasiteniz olur: siparişler, faturalar, planlama.",
-    priceNote: "İlk ay €69 — sonra aylık €249'dan başlayan fiyatlarla. İş hacminize göre.",
+    priceNote: "İlk ay €69 — sonra aylık €249'dan başlayan fiyatlarla. Sürecinize göre, size özel.",
   },
   whatsappText: "Merhaba, AI eleman hakkında bilgi almak istiyorum.",
   subject: "AI eleman — görüşme (ai-eleman)",
@@ -385,14 +379,14 @@ const groothandelTr: AiTeamLandingDictionary = {
   meta: {
     title: "Toptancılar için AI elemanlar — sipariş ve fatura | UPU Dev",
     description:
-      "Pazartesi 08:00, siparişler hazır. Order-medewerker dağınık siparişleri düzgün sipariş satırlarına çevirir, Boekhoud-medewerker faturalarınızı kontrol eder. İlk ay €69, sonra aylık €249'dan başlayan fiyatlarla.",
+      "Pazartesi 08:00, siparişler onayınız için hazır. Toptancılığınızın çalışma şekline göre kurulan AI elemanlar. İlk ay €69, sonra aylık €249'dan başlayan fiyatlarla.",
   },
   hero: {
     badge: "Toptancılar için AI elemanlar",
     title: "Pazartesi 08:00. Siparişler hazır.",
     subtitle:
-      "Sipariş elemanınız dağınık siparişleri düzgün sipariş satırlarına çevirir. Muhasebe elemanınız faturaları kontrol eder. Siz haftaya düzenli başlarsınız.",
-    priceNote: "İlk ay €69 — sonra aylık €249'dan başlayan fiyatlarla. İş hacminize göre.",
+      "Hafta sonu gelen siparişler onayınız için hazır. Tutmayan faturalar ayrılmış. Toptancılığınızın çalışma şekline göre kurulur — siz haftaya düzenli başlarsınız.",
+    priceNote: "İlk ay €69 — sonra aylık €249'dan başlayan fiyatlarla. Sürecinize göre, size özel.",
   },
   whatsappText: "Merhaba, toptancıyım. Sipariş ve muhasebe elemanı hakkında bilgi almak istiyorum.",
   subject: "AI eleman — görüşme (groothandel)",
@@ -410,8 +404,7 @@ const groothandelTr: AiTeamLandingDictionary = {
         { channel: "E-posta", text: "Elle yazılmış bir listenin fotoğrafı." },
       ],
       afterLabel: "Sisteminizde hazırlandı",
-      after: ["Müşteri tanındı", "Ürünler eşleşti", "Adetler kontrol edildi", "Onay mesajı onayınızı bekliyor"],
-      upsell: "İpucu: bu müşteri genelde zeytinyağı da alıyor. Önereyim mi?",
+      after: ["Sipariş sisteminizde hazır", "Onay mesajı onayınızı bekliyor"],
     },
     boekhoud: {
       name: "Boekhoud-medewerker",
@@ -432,22 +425,19 @@ const commonEn: Common = {
   team: {
     eyebrow: "Our AI team",
     title: "This is what your team could look like",
-    intro: "Every AI employee has one job. It works in the systems you already use and asks you when something is off.",
-    asksLabel: "Asks you when",
+    intro: "No ready-made roles from a catalogue. We set up every AI employee around your process. Two examples from wholesale:",
     members: [
       {
         robot: "order",
         name: "Order-medewerker (Order employee)",
-        role: "Sales",
-        text: "Reads orders from WhatsApp, email and voicemail and turns them into clean order lines in your system. It also suggests what a customer usually orders too.",
-        asks: "a product or customer is unclear.",
+        context: "Example · Sales",
+        outcome: "You start the day with the orders ready in your system, waiting for your approval.",
       },
       {
         robot: "boekhoud",
         name: "Boekhoud-medewerker (Bookkeeping employee)",
-        role: "Administration",
-        text: "Checks every purchase invoice against your agreed prices. If it sees a price difference or a mistake, it tells you right away.",
-        asks: "a price differs from what was agreed.",
+        context: "Example · Administration",
+        outcome: "Invoices that don't match your agreements are set aside for you.",
       },
     ],
     more: {
@@ -457,13 +447,13 @@ const commonEn: Common = {
     },
   },
   how: {
-    eyebrow: "How it works",
-    title: "Set up in four steps",
+    eyebrow: "How we work with you",
+    title: "First we listen. Then we build.",
     steps: [
-      { title: "Intro call", text: "A short call: which work takes up your time every day?" },
-      { title: "Demo with your data", text: "You see the employee work on your own orders or invoices." },
-      { title: "Trial month €69", text: "It works with you for a month. You approve and follow along." },
-      { title: "Subscription", text: "Happy? We keep managing it. Cancel monthly." },
+      { title: "We listen", text: "A short call: which work takes up your time every day, and how do you do it now?" },
+      { title: "A working day together", text: "We walk through a normal working day with you and decide together what should be prepared." },
+      { title: "Trial month €69", text: "Set up around your process. It works with you for a month, you approve everything." },
+      { title: "Subscription", text: "Happy? We keep managing it and adjust it as your work changes. Cancel monthly." },
     ],
   },
   control: {
@@ -527,7 +517,7 @@ const aiElemanEn: AiTeamLandingDictionary = {
     title: "We prepare. You approve.",
     subtitle:
       "We set up AI employees inside your existing systems and manage them on a subscription basis. That gives you capacity for the work that comes back every day: orders, invoices, planning.",
-    priceNote: "First month €69 — then from €249 per month. Based on your workload.",
+    priceNote: "First month €69 — then from €249 per month. Tailored to your process.",
   },
   whatsappText: "Hi, I would like to know more about an AI employee.",
   subject: "AI employee — call (ai-eleman)",
@@ -539,14 +529,14 @@ const groothandelEn: AiTeamLandingDictionary = {
   meta: {
     title: "AI employees for wholesalers — orders and invoices | UPU Dev",
     description:
-      "Monday 08:00 and the orders are ready. An Order-medewerker turns scattered orders into clean order lines, a Boekhoud-medewerker checks your invoices. First month €69, then from €249 per month.",
+      "Monday 08:00 and the orders are ready for your approval. AI employees set up around how your wholesale business works. First month €69, then from €249 per month.",
   },
   hero: {
     badge: "AI employees for wholesalers",
     title: "Monday 08:00. The orders are ready.",
     subtitle:
-      "Your Order employee turns scattered orders into clean order lines. Your Bookkeeping employee checks the invoices. You start the week with a clear view.",
-    priceNote: "First month €69 — then from €249 per month. Based on your workload.",
+      "The weekend's orders are ready for your approval. Invoices that don't add up are set aside. Set up around how your wholesale business works — you start the week with a clear view.",
+    priceNote: "First month €69 — then from €249 per month. Tailored to your process.",
   },
   whatsappText: "Hi, I run a wholesale business and want to know more about the Order and Bookkeeping employee.",
   subject: "AI employee — call (groothandel)",
@@ -564,8 +554,7 @@ const groothandelEn: AiTeamLandingDictionary = {
         { channel: "Email", text: "A photo of a handwritten list." },
       ],
       afterLabel: "Prepared in your system",
-      after: ["Customer recognised", "Products matched", "Quantities checked", "Confirmation ready for your OK"],
-      upsell: "Tip: this customer usually orders olive oil too. Shall I suggest it?",
+      after: ["Order ready in your system", "Confirmation waiting for your OK"],
     },
     boekhoud: {
       name: "Boekhoud-medewerker",
