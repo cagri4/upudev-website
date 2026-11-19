@@ -160,7 +160,7 @@ export default async function DemoMccPage({ params }: { params: Promise<{ locale
               ))}
             </ol>
             <div className="mx-auto mt-8 w-full max-w-[420px]">
-              <Image src={COPADAM.team.src} alt="" width={COPADAM.team.w} height={COPADAM.team.h} sizes="(min-width: 768px) 420px, 80vw" className="h-auto w-full" />
+              <Image src={COPADAM.team.src} alt="" width={COPADAM.team.w} height={COPADAM.team.h} unoptimized className="h-auto w-full" />
             </div>
           </div>
         </section>
