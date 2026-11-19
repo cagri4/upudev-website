@@ -17,16 +17,16 @@ import { COPADAM } from "@/content/ai-team-landing";
  */
 
 const PAGE_PATH = "/nl/demo/mcc";
-const AUDIO_SRC = "/media/demo/mcc-ea1f6b6f5ec6af8d.mp3";
-const AUDIO_SECONDS = 46;
+const AUDIO_SRC = "/media/demo/mcc-1a51a40cfd5575df.mp3";
+const AUDIO_SECONDS = 45;
 const WA_HREF = `https://wa.me/31611352773?text=${encodeURIComponent("Hoi Çağrı, ik heb je bericht beluisterd. Ik heb een taak in gedachten: ")}`;
 const MAIL_HREF = `mailto:info@upudev.nl?subject=${encodeURIComponent("MCC — een taak voor een AI-medewerker")}`;
 const CREAM = "bg-[#FBF7EF]";
 
 const TRANSCRIPT = [
   "Hoi! Dank je voor je voicebericht. Eerlijk is eerlijk: mijn Nederlands is nog niet goed genoeg. Ik woon pas sinds december 2024 in Nederland. Daarom heeft mijn AI-assistent dit bericht voor mij in het Nederlands gemaakt, met mijn eigen stem.",
-  "En dat is precies wat wij doen: we bouwen AI-medewerkers die echt werk overnemen. Social media, content, klantenservice, bijna elk proces in elk bedrijf.",
-  "Jullie beschrijven globaal de taak, ik bouw een voorbeeld, en jullie zetten hem in voor jezelf of verhuren hem aan je klanten. Ik factureer aan jullie, volledig op afstand.",
+  "En dat is precies wat wij doen: we bouwen AI-medewerkers die terugkerend werk klaarzetten. Social media, content, klantenservice, bijna elk proces in elk bedrijf.",
+  "Jullie beschrijven globaal de taak, ik bouw een voorbeeld, en jullie zetten hem in voor jezelf of voor je klanten. Ik factureer aan jullie, volledig op afstand.",
   "Heb je al een taak in gedachten? Stuur me een korte omschrijving, dan maak ik er een voorbeeld van.",
 ];
 
