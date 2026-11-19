@@ -22,7 +22,8 @@ export type WhatsAppSource =
   | "groothandel-pricing"
   | "groothandel-closing"
   | "groothandel-success"
-  | "ai-eleman-pricing";
+  | "ai-eleman-pricing"
+  | "demo-mcc";
 
 /**
  * WhatsApp deep-link + Meta Pixel tracking.

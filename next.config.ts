@@ -17,6 +17,17 @@ const nextConfig: NextConfig = {
         destination: "/:locale",
         statusCode: 301,
       },
+      // Kişiye özel demo (MCC Agency, 19 Kas 2026): DM'de kısa link /demo/mcc → yalnız NL sayfası.
+      {
+        source: "/demo/mcc",
+        destination: "/nl/demo/mcc",
+        permanent: false,
+      },
+      {
+        source: "/:locale(tr|en)/demo/mcc",
+        destination: "/nl/demo/mcc",
+        permanent: false,
+      },
       // Eski ürün/portföy sayfaları kaldırıldı (Çağrı 16 Kas 2026): doğrulanmamış vaka/rakam + yöntem detayı → ilgili dilin ana sayfası.
       {
         source: "/:locale(tr|en|nl)/urunler/:path*",

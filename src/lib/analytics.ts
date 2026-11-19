@@ -9,7 +9,9 @@ export type GtmEvent =
     }
   | { event: "phone_click"; phone: string; location: string; locale?: string }
   | { event: "email_click"; email: string; location: string; locale?: string }
-  | { event: "whatsapp_click"; location: string; locale?: string };
+  | { event: "whatsapp_click"; location: string; locale?: string }
+  /** Kişiye özel demo sayfaları (/nl/demo/<ad>) — açılış + ses oynatma. dataLayer'a gider; tag'ler GTM consent mode'a uyar. */
+  | { event: "demo_mcc_view" | "demo_mcc_audio_play" | "demo_mcc_audio_complete"; page_path: string };
 
 export function pushEvent(event: GtmEvent) {
   if (typeof window === "undefined") return;
