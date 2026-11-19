@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import Image from "next/image";
+import { StaticImage } from "@/components/static-image";
 import Link from "next/link";
 import { notFound } from "next/navigation";
 import { VoicePlayer } from "@/components/demo/voice-player";
@@ -160,7 +160,7 @@ export default async function DemoMccPage({ params }: { params: Promise<{ locale
               ))}
             </ol>
             <div className="mx-auto mt-8 w-full max-w-[420px]">
-              <Image src={COPADAM.team.src} alt="" width={COPADAM.team.w} height={COPADAM.team.h} unoptimized className="h-auto w-full" />
+              <StaticImage img={COPADAM.team} alt="" sizes="(min-width: 768px) 420px, 80vw" className="h-auto w-full" />
             </div>
           </div>
         </section>

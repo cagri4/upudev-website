@@ -1,4 +1,4 @@
-import Image from "next/image";
+import { StaticImage } from "@/components/static-image";
 import Link from "next/link";
 import type { Locale } from "@/lib/i18n";
 import {
@@ -98,11 +98,9 @@ export function AiTeamLanding({
               <p className="mt-5 text-sm font-medium text-neutral-600">{dict.hero.priceNote}</p>
             </div>
             <div className="mx-auto w-full max-w-[420px] md:max-w-[500px]">
-              <Image
-                src={COPADAM.team.src}
+              <StaticImage
+                img={COPADAM.team}
                 alt={`${orderMember.name} & ${boekhoudMember.name}`}
-                width={COPADAM.team.w}
-                height={COPADAM.team.h}
                 priority
                 sizes="(min-width: 768px) 500px, 92vw"
                 className="h-auto w-full"
@@ -124,7 +122,7 @@ export function AiTeamLanding({
                 <article className="rounded-3xl border border-neutral-200 p-5 md:p-7">
                   <h3 className="text-xl font-bold text-[#1D7F75]">{story.order.name}</h3>
                   <div className="mx-auto mt-4 max-w-[300px]">
-                    <Image src={COPADAM.orders.src} alt="" width={COPADAM.orders.w} height={COPADAM.orders.h} sizes="300px" className="h-auto w-full" />
+                    <StaticImage img={COPADAM.orders} alt="" sizes="300px" className="h-auto w-full" />
                   </div>
                   <p className="mt-6 text-xs font-semibold uppercase tracking-wider text-neutral-500">{story.order.beforeLabel}</p>
                   <ul className="mt-2 space-y-2">
@@ -158,7 +156,7 @@ export function AiTeamLanding({
                 <article className="rounded-3xl border border-neutral-200 p-5 md:p-7">
                   <h3 className="text-xl font-bold text-[#634287]">{story.boekhoud.name}</h3>
                   <div className="mt-4">
-                    <Image src={COPADAM.prijsverschil.src} alt="" width={COPADAM.prijsverschil.w} height={COPADAM.prijsverschil.h} sizes="(min-width: 1024px) 520px, 92vw" className="h-auto w-full" />
+                    <StaticImage img={COPADAM.prijsverschil} alt="" sizes="(min-width: 1024px) 520px, 92vw" className="h-auto w-full" />
                   </div>
                   <p className="mt-6 text-xs font-semibold uppercase tracking-wider text-neutral-500">{story.boekhoud.beforeLabel}</p>
                   <div className="mt-2 rounded-xl border border-neutral-200 bg-neutral-50 px-4 py-3 font-mono text-sm text-neutral-700">
@@ -193,12 +191,10 @@ export function AiTeamLanding({
               {dict.team.members.map((m) => (
                 <article key={m.name} className="grid gap-5 rounded-3xl border border-neutral-200 p-5 sm:grid-cols-[160px_1fr] sm:items-center md:p-6">
                   <div className="flex justify-center">
-                    <Image
-                      src={COPADAM[m.robot].src}
+                    <StaticImage
+                      img={COPADAM[m.robot]}
                       alt={m.name}
-                      width={COPADAM[m.robot].w}
-                      height={COPADAM[m.robot].h}
-                      sizes="160px"
+                      sizes={`${Math.round((COPADAM[m.robot].w * 260) / COPADAM[m.robot].h)}px`}
                       className="h-[260px] w-auto"
                     />
                   </div>
@@ -215,11 +211,9 @@ export function AiTeamLanding({
                 ortada el ele Order + Boekhoud, iki yanda soluk '?' robotlar, altında satır ve "Plan een gesprek". */}
             <div className={`mt-6 rounded-3xl ${CREAM} px-5 py-10 text-center md:px-10 md:py-14`}>
               <div className="mx-auto w-full max-w-[560px]">
-                <Image
-                  src={COPADAM.teamPlusVraag.src}
+                <StaticImage
+                  img={COPADAM.teamPlusVraag}
                   alt=""
-                  width={COPADAM.teamPlusVraag.w}
-                  height={COPADAM.teamPlusVraag.h}
                   sizes="(min-width: 768px) 560px, 92vw"
                   className="h-auto w-full"
                 />

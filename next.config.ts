@@ -2,6 +2,9 @@ import type { NextConfig } from "next";
 
 const nextConfig: NextConfig = {
   images: {
+    // 19 Kas 2026 (Çağrı onayı): Vercel Image Optimization KAPALI — Hobby kotası dolunca /_next/image 402 → kırık görsel.
+    // Görseller scripts/gorsel-webp.py ile önceden WebP'ye boyutlandırılır, <StaticImage> ile srcSet verilir.
+    unoptimized: true,
     remotePatterns: [
       {
         protocol: "https",

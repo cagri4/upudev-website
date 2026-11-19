@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import Image from "next/image";
+import { StaticImage } from "@/components/static-image";
 import { notFound } from "next/navigation";
 import { getHomeDictionary, isLocale, locales } from "@/lib/i18n";
 import { buildAlternates } from "@/lib/seo";
@@ -105,14 +105,13 @@ export default async function HomeLocalePage({ params }: { params: Promise<{ loc
           </div>
           <div className="io-hero-media">
             {/* Çöp adam hero (ajans upu-robots, 15 Kas 2026) — eski 3D hero-illustration-square.jpg yerine. */}
-            <Image
-              src="/robots/copadam/hero-desk.png"
+            <StaticImage
+              img={COPADAM.heroDesk}
               alt={dict.hero.imageAlt}
-              fill
               priority
               sizes="(min-width: 900px) 600px, 92vw"
               className="io-image"
-              style={{ objectFit: "contain" }}
+              style={{ position: "absolute", inset: 0, width: "100%", height: "100%", objectFit: "contain" }}
             />
           </div>
         </section>
@@ -178,7 +177,7 @@ export default async function HomeLocalePage({ params }: { params: Promise<{ loc
                   const robot = teamRobot(i);
                   return (
                     <div className="mt-2 flex justify-center">
-                      <Image src={robot.src} alt="" width={robot.w} height={robot.h} sizes="160px" className="h-[260px] w-auto" />
+                      <StaticImage img={robot} alt="" sizes={`${Math.round((robot.w * 260) / robot.h)}px`} className="h-[260px] w-auto" />
                     </div>
                   );
                 })()}
@@ -187,7 +186,7 @@ export default async function HomeLocalePage({ params }: { params: Promise<{ loc
             ))}
             <article className="flex flex-col rounded-2xl border border-dashed border-neutral-300 p-6">
               <div className="flex justify-center">
-                <Image src={COPADAM.vraag.src} alt="" width={COPADAM.vraag.w} height={COPADAM.vraag.h} sizes="160px" className="h-[260px] w-auto" />
+                <StaticImage img={COPADAM.vraag} alt="" sizes="98px" className="h-[260px] w-auto" />
               </div>
               <h3 className="mt-4 text-xl font-bold tracking-tight text-[#122d54]">{dict.team.noteTitle}</h3>
               <p className="mt-2 text-base leading-relaxed text-neutral-700">{dict.team.note}</p>

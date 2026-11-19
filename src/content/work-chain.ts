@@ -15,7 +15,7 @@ import type { Locale } from "@/lib/i18n";
  * `tone`: gri (monokrom) hâlde ton eşitleme — saf siyah logo "dark" (daha soluk), açık renkli logo "light" (koyulaştırılır).
  */
 export const SYSTEM_LOGOS: { name: string; src: string; big?: boolean; tone?: "dark" | "light" }[] = [
-  { name: "e-Boekhouden", src: "/logos/systems/e-boekhouden.png" },
+  { name: "e-Boekhouden", src: "/logos/systems/e-boekhouden-64.webp" },
   { name: "Exact", src: "/logos/systems/exact.svg" },
   { name: "WhatsApp", src: "/logos/systems/whatsapp.svg", big: true },
   { name: "Gmail", src: "/logos/systems/gmail.svg" },
@@ -26,7 +26,7 @@ export const SYSTEM_LOGOS: { name: string; src: string; big?: boolean; tone?: "d
   { name: "Instagram", src: "/logos/systems/instagram.svg" },
   { name: "Linux", src: "/logos/systems/linux.svg" },
   { name: "Claude (Anthropic)", src: "/logos/systems/claude.svg" },
-  { name: "Higgsfield", src: "/logos/systems/higgsfield.png", tone: "light" },
+  { name: "Higgsfield", src: "/logos/systems/higgsfield-64.webp", tone: "light" },
   { name: "Replicate", src: "/logos/systems/replicate.svg", tone: "dark" },
 ];
 export type WorkChainDictionary = {

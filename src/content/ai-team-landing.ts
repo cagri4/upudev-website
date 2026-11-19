@@ -1,4 +1,5 @@
 import type { Locale } from "@/lib/i18n";
+import type { StaticImageSource } from "@/components/static-image";
 
 /**
  * Reklam landing'leri (15 Kas 2026, Çağrı onayı). Dil: "AI-implementatiepartner" — IND iş planı G.5
@@ -19,21 +20,23 @@ export type RobotKey = "order" | "boekhoud";
 
 /**
  * Çöp adam (copadam) görselleri — reklamın A versiyonuyla aynı çizim (ajans upu-robots/out/web-copadam, 15 Kas 2026).
- * Şeffaf PNG @2x; w/h = gösterilecek 1x CSS boyutu. Robotları ~250 px yükseklikten küçük gösterme (çizgi incelir).
+ * 19 Kas 2026: önceden boyutlandırılmış WebP (scripts/gorsel-webp.py) + <StaticImage>; next/image optimizer KAPALI.
+ * w/h = yerleşim oranı (1x CSS). Kaynak PNG @2x public'te kalır. Robotları ~250 px yükseklikten küçük gösterme (çizgi incelir).
  * Koyu (navy) zeminde kullanma — çizgi rengi koyu.
  */
 export const COPADAM = {
-  order: { src: "/robots/copadam/robot-order.png", w: 339, h: 573 },
-  boekhoud: { src: "/robots/copadam/robot-boekhoud.png", w: 356, h: 573 },
-  vraag: { src: "/robots/copadam/robot-vraag-soluk.png", w: 216, h: 573 },
-  planner: { src: "/robots/copadam/robot-planner.png", w: 380, h: 573 },
-  teller: { src: "/robots/copadam/robot-teller.png", w: 360, h: 573 },
-  etiketbeheerder: { src: "/robots/copadam/robot-etiketbeheerder.png", w: 405, h: 573 },
-  team: { src: "/robots/copadam/team-hand-in-hand.png", w: 548, h: 477 },
-  teamPlusVraag: { src: "/robots/copadam/team-plus-vraag.png", w: 647, h: 477 },
-  orders: { src: "/robots/copadam/hero-s1-bestellingen-dikey-4x5.png", w: 514, h: 643 },
-  prijsverschil: { src: "/robots/copadam/hero-s5-prijsverschil-band-yatay.png", w: 996, h: 561 },
-} as const;
+  order: { base: "/robots/copadam/robot-order", widths: [154, 308], w: 339, h: 573 },
+  boekhoud: { base: "/robots/copadam/robot-boekhoud", widths: [162, 324], w: 356, h: 573 },
+  vraag: { base: "/robots/copadam/robot-vraag-soluk", widths: [98, 196], w: 216, h: 573 },
+  planner: { base: "/robots/copadam/robot-planner", widths: [172, 344], w: 380, h: 573 },
+  teller: { base: "/robots/copadam/robot-teller", widths: [163, 326], w: 360, h: 573 },
+  etiketbeheerder: { base: "/robots/copadam/robot-etiketbeheerder", widths: [184, 368], w: 405, h: 573 },
+  team: { base: "/robots/copadam/team-hand-in-hand", widths: [500, 720, 1000], w: 548, h: 477 },
+  teamPlusVraag: { base: "/robots/copadam/team-plus-vraag", widths: [560, 800, 1120], w: 647, h: 477 },
+  orders: { base: "/robots/copadam/hero-s1-bestellingen-dikey-4x5", widths: [300, 600], w: 514, h: 643 },
+  prijsverschil: { base: "/robots/copadam/hero-s5-prijsverschil-band-yatay", widths: [520, 920, 1840], w: 996, h: 561 },
+  heroDesk: { base: "/robots/copadam/hero-desk", widths: [600, 900, 1200], w: 600, h: 600 },
+} as const satisfies Record<string, StaticImageSource>;
 
 export const COPADAM_OG = { url: "/robots/copadam/og-team.jpg", width: 1200, height: 630 };
 
