@@ -11,7 +11,7 @@ import { CtaPair, WhatsAppGlyph } from "@/components/landing/cta-pair";
 import { WhatsAppLink } from "@/components/landing/whatsapp-link";
 import { SiteFooter } from "@/components/site-footer";
 import { WorkChain } from "@/components/landing/work-chain";
-import { getWorkChain } from "@/content/work-chain";
+import { CORE_SYSTEM_LOGOS, SYSTEM_LOGOS, getWorkChain } from "@/content/work-chain";
 
 /**
  * Ortak reklam landing'i — "AI-implementatiepartner": wij zetten klaar, jij keurt goed.
@@ -177,7 +177,7 @@ export function AiTeamLanding({
 
         {/* HIJ ZET KLAAR, JIJ KEURT GOED */}
         <div className="border-b border-neutral-100 py-14 md:py-20">
-          <WorkChain dict={getWorkChain(locale)} id="keten" sloganInHero={variant === "ai-eleman"} className="mx-auto max-w-6xl px-4 md:px-6" />
+          <WorkChain dict={getWorkChain(locale)} id="keten" sloganInHero={variant === "ai-eleman"} logos={variant === "groothandel" ? CORE_SYSTEM_LOGOS : SYSTEM_LOGOS} className="mx-auto max-w-6xl px-4 md:px-6" />
         </div>
 
         {/* ONS AI-TEAM */}

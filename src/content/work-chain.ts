@@ -29,6 +29,13 @@ export const SYSTEM_LOGOS: { name: string; src: string; big?: boolean; tone?: "d
   { name: "Higgsfield", src: "/logos/systems/higgsfield-64.webp", tone: "light" },
   { name: "Replicate", src: "/logos/systems/replicate.svg", tone: "dark" },
 ];
+/**
+ * Sade şerit — yalnız /[locale]/ai-medewerkers/groothandel (Çağrı onayı 20 Kas 2026, Meta A/B reklam sayfası).
+ * Ana sayfa ve ai-eleman tam listeyi (SYSTEM_LOGOS) kullanmaya devam eder; onlar için ayrı karar Çağrı'da.
+ */
+const CORE_SYSTEM_NAMES = ["e-Boekhouden", "Exact", "WhatsApp", "Gmail", "Outlook"];
+export const CORE_SYSTEM_LOGOS = SYSTEM_LOGOS.filter((l) => CORE_SYSTEM_NAMES.includes(l.name));
+
 export type WorkChainDictionary = {
   eyebrow: string;
   title: string;

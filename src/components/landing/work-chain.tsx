@@ -10,13 +10,17 @@ export function WorkChain({
   id = "zo-werkt-het",
   className = "",
   sloganInHero = false,
+  logos = SYSTEM_LOGOS,
 }: {
   dict: WorkChainDictionary;
   id?: string;
   className?: string;
   /** Hero H1 zaten slogan ise zincir başlığı altTitle olur (tekrar yok). */
   sloganInHero?: boolean;
+  /** Gösterilecek logolar (varsayılan tam onaylı liste). Groothandel CORE_SYSTEM_LOGOS verir. */
+  logos?: typeof SYSTEM_LOGOS;
 }) {
+  const few = logos.length <= 5;
   return (
     <section id={id} className={className}>
       <p className="text-xs font-bold uppercase tracking-[0.18em] text-[#1D7F75]">{dict.eyebrow}</p>
@@ -63,10 +67,10 @@ export function WorkChain({
         <p className="text-lg font-bold text-neutral-900">{dict.systems.title}</p>
         <p className="mt-1 text-sm leading-relaxed text-neutral-600">{dict.systems.text}</p>
         <ul className="mt-5 flex flex-wrap justify-center gap-2 sm:gap-3">
-          {SYSTEM_LOGOS.map((l) => (
+          {logos.map((l) => (
             <li
               key={l.name}
-              className="group flex h-[92px] basis-[calc((100%-1rem)/3)] flex-col items-center justify-center gap-2 rounded-xl border border-neutral-200 bg-neutral-50 px-2 text-center sm:basis-[calc((100%-2.25rem)/4)] lg:basis-[calc((100%-4.5rem)/7)]"
+              className={`group flex h-[92px] basis-[calc((100%-1rem)/3)] flex-col items-center justify-center gap-2 rounded-xl border border-neutral-200 bg-neutral-50 px-2 text-center ${few ? "sm:basis-[calc((100%-3rem)/5)]" : "sm:basis-[calc((100%-2.25rem)/4)] lg:basis-[calc((100%-4.5rem)/7)]"}`}
             >
               {/* eslint-disable-next-line @next/next/no-img-element */}
               <img src={l.src} alt={`${l.name} logo`} width={32} height={32} loading="lazy" className={`h-8 w-8 object-contain grayscale transition duration-200 group-hover:opacity-100 group-hover:grayscale-0 group-hover:brightness-100 ${l.big ? "scale-[1.35]" : ""} ${l.tone === "dark" ? "opacity-40" : l.tone === "light" ? "opacity-70 brightness-75" : "opacity-60"}`} />
