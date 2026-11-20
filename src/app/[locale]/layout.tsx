@@ -8,6 +8,7 @@ import { FloatingContact } from "@/components/floating-contact";
 import { CookieBanner } from "@/components/cookie-banner";
 import { MeetingModal } from "@/components/meeting-modal";
 import { MetaPixel } from "@/components/meta-pixel";
+import { AttributionCapture } from "@/components/attribution-capture";
 
 const GTM_ID = process.env.NEXT_PUBLIC_GTM_ID?.trim();
 
@@ -109,6 +110,7 @@ export default async function LocaleLayout({
         <FloatingContact locale={locale} />
         <ScrollToTop />
         <CookieBanner />
+        <AttributionCapture />
         <MeetingModal />
       </body>
     </html>

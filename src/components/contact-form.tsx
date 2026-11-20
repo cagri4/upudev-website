@@ -1,5 +1,6 @@
 "use client";
 
+import { getAttribution } from "@/lib/attribution";
 import { FormEvent, useState } from "react";
 import type { Locale } from "@/lib/i18n";
 import { pushEvent } from "@/lib/analytics";
@@ -60,6 +61,7 @@ export function ContactForm({ locale, labels }: { locale: Locale; labels: Contac
       message: String(formData.get("message") ?? ""),
       website: String(formData.get("website") ?? ""),
       locale,
+      attribution: getAttribution(),
     };
 
     const form = event.currentTarget;

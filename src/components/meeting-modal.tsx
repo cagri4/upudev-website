@@ -1,5 +1,6 @@
 "use client";
 
+import { getAttribution } from "@/lib/attribution";
 import { FormEvent, useCallback, useEffect, useRef, useState } from "react";
 import { usePathname } from "next/navigation";
 import { pushEvent } from "@/lib/analytics";
@@ -229,6 +230,7 @@ export function MeetingModal() {
           subject,
           message: messageBody,
           locale,
+          attribution: getAttribution(),
         }),
       });
 

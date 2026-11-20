@@ -1,5 +1,6 @@
 import nodemailer from "nodemailer";
 import { NextRequest, NextResponse } from "next/server";
+import { formatAttributionLine } from "@/lib/attribution";
 
 export const runtime = "nodejs";
 
@@ -45,6 +46,7 @@ export async function POST(request: NextRequest) {
       message?: string;
       website?: string;
       locale?: "tr" | "en" | "nl";
+      attribution?: unknown;
     };
     const locale = body.locale ?? "tr";
     const isEn = locale === "en";
@@ -85,24 +87,27 @@ export async function POST(request: NextRequest) {
     const phone = (body.phone ?? "").trim();
     const company = (body.company ?? "").trim();
     const subject = (body.subject ?? "").trim();
-    const message = (body.message ?? "").trim();
+    const userMessage = (body.message ?? "").trim();
     const website = (body.website ?? "").trim();
 
     if (website) {
       return NextResponse.json({ ok: true });
     }
 
-    if (!name || !email || !subject || !message) {
+    if (!name || !email || !subject || !userMessage) {
       return NextResponse.json({ ok: false, message: t.required }, { status: 400 });
     }
 
-    if (name.length > 100 || email.length > 160 || subject.length > 140 || message.length > 2500) {
+    if (name.length > 100 || email.length > 160 || subject.length > 140 || userMessage.length > 2500) {
       return NextResponse.json({ ok: false, message: t.limits }, { status: 400 });
     }
 
     if (!email.includes("@")) {
       return NextResponse.json({ ok: false, message: t.email }, { status: 400 });
     }
+
+    // Kampanya satırı ("via" satırının altına) — bkz. src/lib/attribution.ts
+    const message = `${userMessage}\n${formatAttributionLine(body.attribution)}`;
 
     const host = requiredEnv("SMTP_HOST");
     const port = Number(requiredEnv("SMTP_PORT"));

@@ -15,7 +15,7 @@ export interface PrivacyContent extends LegalPage {
 }
 
 const privacyTr: PrivacyContent = {
-  lastUpdated: "Son güncelleme: Mart 2026",
+  lastUpdated: "Son güncelleme: Kasım 2026",
   title: "Gizlilik Politikası",
   intro:
     "Bu gizlilik politikası, UPU Dev B.V. tarafından geliştirilen ve işletilen SaaS platformları üzerinden toplanan, işlenen ve saklanan kişisel verilere ilişkin uygulamaları açıklar.",
@@ -34,7 +34,7 @@ const privacyTr: PrivacyContent = {
     },
     {
       heading: "Veri Paylaşımı",
-      body: "Kişisel verileriniz üçüncü taraflarla paylaşılmaz. Veriler yalnızca AI işleme amacıyla Anthropic Claude API'ye gönderilir ve bu işlem AB veri koruma standartlarına uygun şekilde gerçekleştirilir.",
+      body: "Kişisel verileriniz üçüncü taraflarla paylaşılmaz. Tek istisna: web sitesinde çerezleri kabul ederseniz ziyaret verileri Google ve Meta'ya iletilir (bkz. Çerezler). Platform verileri yalnızca AI işleme amacıyla Anthropic Claude API'ye gönderilir ve bu işlem AB veri koruma standartlarına uygun şekilde gerçekleştirilir.",
     },
     {
       heading: "GDPR Uyumluluğu",
@@ -46,7 +46,7 @@ const privacyTr: PrivacyContent = {
     },
     {
       heading: "Çerezler",
-      body: "Platformlarımızda çerezler yalnızca oturum yönetimi amacıyla (Supabase auth) kullanılmaktadır. Pazarlama veya takip amaçlı çerez kullanılmaz.",
+      body: "Web sitesi (upudev.nl): Çerez banner'ında \"Kabul Et\" derseniz, ziyaretleri ölçmek ve reklamlarımızı iyileştirmek için Google Tag Manager (analiz) ve Meta Pixel (pazarlama) çerezleri çalışır; bu durumda ziyaret verileri Google ve Meta'ya iletilir. \"Reddet\" derseniz yalnızca zorunlu çerezler kullanılır. Seçiminiz tarayıcınızda saklanır; tarayıcı verilerini silerek değiştirebilirsiniz.\n\nPlatformlarımız (SaaS): Çerezler yalnızca oturum yönetimi amacıyla (Supabase auth) kullanılır.",
     },
     {
       heading: "İletişim",
@@ -56,7 +56,7 @@ const privacyTr: PrivacyContent = {
 };
 
 const privacyEn: PrivacyContent = {
-  lastUpdated: "Last updated: March 2026",
+  lastUpdated: "Last updated: November 2026",
   title: "Privacy Policy",
   intro:
     "This privacy policy describes the practices regarding the collection, processing, and storage of personal data through SaaS platforms developed and operated by UPU Dev B.V.",
@@ -75,7 +75,7 @@ const privacyEn: PrivacyContent = {
     },
     {
       heading: "Data Sharing",
-      body: "Your personal data is not shared with third parties. Data is only sent to the Anthropic Claude API for AI processing, and this is done in compliance with EU data protection standards.",
+      body: "Your personal data is not shared with third parties. The only exception: if you accept cookies on the website, visit data is shared with Google and Meta (see Cookies). Platform data is only sent to the Anthropic Claude API for AI processing, and this is done in compliance with EU data protection standards.",
     },
     {
       heading: "GDPR Compliance",
@@ -87,7 +87,7 @@ const privacyEn: PrivacyContent = {
     },
     {
       heading: "Cookies",
-      body: "Our platforms use cookies solely for session management purposes (Supabase auth). No marketing or tracking cookies are used.",
+      body: "Website (upudev.nl): If you click \"Accept\" in the cookie banner, Google Tag Manager (analytics) and Meta Pixel (marketing) cookies are used to measure visits and improve our ads; visit data is then shared with Google and Meta. If you click \"Reject\", only essential cookies are used. Your choice is stored in your browser; you can change it by clearing your browser data.\n\nOur platforms (SaaS): cookies are used solely for session management (Supabase auth).",
     },
     {
       heading: "Contact",
@@ -97,7 +97,7 @@ const privacyEn: PrivacyContent = {
 };
 
 const privacyNl: PrivacyContent = {
-  lastUpdated: "Laatst bijgewerkt: Maart 2026",
+  lastUpdated: "Laatst bijgewerkt: November 2026",
   title: "Privacybeleid",
   intro:
     "Dit privacybeleid beschrijft de praktijken met betrekking tot het verzamelen, verwerken en opslaan van persoonsgegevens via SaaS-platforms die zijn ontwikkeld en beheerd door UPU Dev B.V.",
@@ -116,7 +116,7 @@ const privacyNl: PrivacyContent = {
     },
     {
       heading: "Gegevens delen",
-      body: "Uw persoonsgegevens worden niet gedeeld met derden. Gegevens worden uitsluitend verzonden naar de Anthropic Claude API voor AI-verwerking, in overeenstemming met de EU-normen voor gegevensbescherming.",
+      body: "Uw persoonsgegevens worden niet gedeeld met derden. Enige uitzondering: als u op de website cookies accepteert, gaan bezoekgegevens naar Google en Meta (zie Cookies). Platformgegevens worden uitsluitend verzonden naar de Anthropic Claude API voor AI-verwerking, in overeenstemming met de EU-normen voor gegevensbescherming.",
     },
     {
       heading: "AVG-naleving",
@@ -128,7 +128,7 @@ const privacyNl: PrivacyContent = {
     },
     {
       heading: "Cookies",
-      body: "Onze platforms gebruiken cookies uitsluitend voor sessiebeheer (Supabase auth). Er worden geen marketing- of trackingcookies gebruikt.",
+      body: "Website (upudev.nl): Klikt u in de cookiemelding op \"Accepteren\", dan gebruiken wij cookies van Google Tag Manager (analyse) en Meta Pixel (marketing) om bezoek te meten en onze advertenties te verbeteren; bezoekgegevens gaan dan naar Google en Meta. Klikt u op \"Weigeren\", dan gebruiken wij alleen noodzakelijke cookies. Uw keuze wordt in uw browser bewaard; u kunt deze wijzigen door uw browsergegevens te wissen.\n\nOnze platforms (SaaS): cookies uitsluitend voor sessiebeheer (Supabase auth).",
     },
     {
       heading: "Contact",

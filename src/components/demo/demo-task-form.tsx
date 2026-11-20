@@ -1,5 +1,6 @@
 "use client";
 
+import { getAttribution } from "@/lib/attribution";
 import { FormEvent, useState } from "react";
 import { pushEvent } from "@/lib/analytics";
 
@@ -45,6 +46,7 @@ export function DemoTaskForm({ subject, formLocation, pagePath }: { subject: str
           message: `Taak:\n${task}\n\n— via upudev.nl${pagePath}`,
           website: get("website"),
           locale: "nl",
+          attribution: getAttribution(),
         }),
       });
       const json = (await res.json().catch(() => ({ ok: false }))) as { ok?: boolean; message?: string };

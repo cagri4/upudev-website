@@ -9,6 +9,7 @@
  * Başarıda: GTM quote_form_submit (form_location) + Meta Pixel Lead.
  */
 
+import { getAttribution } from "@/lib/attribution";
 import { FormEvent, useState } from "react";
 import type { Locale } from "@/lib/i18n";
 import { pushEvent } from "@/lib/analytics";
@@ -74,6 +75,7 @@ export function AiTeamForm({
           message: `${message}\n\n— via upudev.nl/${locale}/${pagePath}`,
           website: get("website"),
           locale,
+          attribution: getAttribution(),
         }),
       });
       const json = (await res.json().catch(() => ({ ok: false }))) as { ok?: boolean; message?: string };

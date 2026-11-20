@@ -20,7 +20,7 @@ const labels: Record<
   tr: {
     title: "Çerezler",
     description:
-      "Bu site, oturumunuzu yönetmek ve deneyiminizi iyileştirmek için çerezler kullanır. Pazarlama veya takip çerezleri kullanılmaz.",
+      "Kabul ederseniz, ziyaretleri ölçmek ve reklamlarımızı iyileştirmek için Google Tag Manager (analiz) ve Meta Pixel (pazarlama) çerezlerini kullanırız. Reddederseniz yalnızca sitenin çalışması için gereken zorunlu çerezler kullanılır.",
     privacyLabel: "Gizlilik Politikası",
     accept: "Kabul Et",
     reject: "Reddet",
@@ -28,7 +28,7 @@ const labels: Record<
   en: {
     title: "Cookies",
     description:
-      "This site uses cookies to manage your session and improve your experience. No marketing or tracking cookies are used.",
+      "If you accept, we use Google Tag Manager (analytics) and Meta Pixel (marketing) cookies to measure visits and improve our ads. If you reject, we only use the essential cookies the site needs to work.",
     privacyLabel: "Privacy Policy",
     accept: "Accept",
     reject: "Reject",
@@ -36,7 +36,7 @@ const labels: Record<
   nl: {
     title: "Cookies",
     description:
-      "Deze site gebruikt cookies om uw sessie te beheren en uw ervaring te verbeteren. Er worden geen marketing- of trackingcookies gebruikt.",
+      "Als je accepteert, gebruiken we cookies van Google Tag Manager (analyse) en Meta Pixel (marketing) om bezoek te meten en onze advertenties te verbeteren. Weiger je, dan gebruiken we alleen de noodzakelijke cookies die de site nodig heeft.",
     privacyLabel: "Privacybeleid",
     accept: "Accepteren",
     reject: "Weigeren",
