@@ -742,3 +742,11 @@ a {
     padding-bottom: calc(184px + env(safe-area-inset-bottom)) !important;
   }
 }
+
+/* Masaüstü (md+): footer link grubu sağdaki yüzen buton sütununa (sağ 20px + 56px) girmesin
+   (Çağrı 20 Kas). Yalnız boşluk yetmediğinde sağdan pay verir; geniş ekranda 0 → tasarım aynı. */
+@media (min-width: 768px) {
+  .io-footer.io-fab-space .io-wrap > div {
+    margin-right: max(0px, calc(96px - (100vw - 100%) / 2));
+  }
+}
