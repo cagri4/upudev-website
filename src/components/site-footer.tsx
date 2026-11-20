@@ -16,7 +16,7 @@ export function SiteFooter({ locale, copyright }: SiteFooterProps) {
   const t = labels[locale];
 
   return (
-    <footer className="io-footer">
+    <footer className="io-footer io-fab-space">
       <div className="io-wrap">
         <p>{copyright}</p>
         <div>

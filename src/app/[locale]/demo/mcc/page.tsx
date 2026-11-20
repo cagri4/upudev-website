@@ -192,7 +192,7 @@ export default async function DemoMccPage({ params }: { params: Promise<{ locale
         </section>
       </main>
 
-      <footer className="border-t border-neutral-200 px-4 pb-28 pt-6 text-center md:pb-6 text-xs text-neutral-500">
+      <footer className="io-fab-space border-t border-neutral-200 px-4 pb-6 pt-6 text-center text-xs text-neutral-500">
         © 2026 UPU Dev · Utrecht
       </footer>
     </div>

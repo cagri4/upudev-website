@@ -721,5 +721,24 @@ a {
     min-height: 92px;
     flex-direction: column;
     justify-content: center;
+    padding-block: 1rem;
+    text-align: center;
+  }
+
+  /* Mobil footer linkleri sarılır, kesilmez (Çağrı 20 Kas). */
+  .io-footer div {
+    flex-wrap: wrap;
+    justify-content: center;
+    column-gap: 1rem;
+    row-gap: 0.5rem;
+  }
+}
+
+/* Yüzen tel/WA/yukarı-çık butonları (FloatingContact + ScrollToTop) mobilde sayfa sonunu
+   örtmesin: footer'ın altına buton yığını kadar boşluk (Çağrı 20 Kas). Masaüstü değişmez.
+   Yığın (mobil): alt 20px + WA 48 + 8 + tel 48 → 124px; yukarı-çık 44px @ bottom 132 → üst 176px. */
+@media (max-width: 767px) {
+  .io-fab-space {
+    padding-bottom: calc(184px + env(safe-area-inset-bottom)) !important;
   }
 }
